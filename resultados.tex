@@ -1,0 +1,59 @@
+%% Los cap'itulos inician con \chapter{T'itulo}, estos aparecen numerados y
+%% se incluyen en el 'indice general.
+%%
+%% Recuerda que aqu'i ya puedes escribir acentos como: 'a, 'e, 'i, etc.
+%% La letra n con tilde es: 'n.
+\chapter{Resultados}
+\section{Paquete de R \emph{geneticae}}
+Para la construcción del paquete geneticae se seleccionaron datos abiertos de investigaciones agrícolas, se programaron y compilaron funciones, se documentaron los datos y las funciones, y se realizó el empaquetado.
+
+%https://kbroman.org/pkg_primer/pages/data.html
+
+\subsection{Datos incluidos en el paquete geneticae}
+
+
+\subsection{Funciones incluidas en el paquete}
+
+\subsection{Documentación de las funciones}
+
+\subsection{Documentación de los datos}
+
+\subsection{Chequeo del paquete}
+
+\subsection{\emph{geneticae} al repositorio de R}
+
+\subsection{Preparación del paquete y manual en windows}
+
+\subsection{Publicación de geneticae}
+
+\subsection{Ejemplos utilizando el paquete}
+
+\section{Geneticae Shiny Web App}
+
+En primer lugar se debe cargar el paquete Shiny como primera línea del script:
+
+\begin{lstlisting}[frame=single]
+library(shiny) 
+\end{lstlisting}
+
+La funcion ui contiene todas las indicaciones para construir la interfaz del usuario. Estas instrucciones se pueden agrupar con respecto a los siguientes aspectos:
+\begin{enumerate}
+\item La estructura de la aplicación: Por defecto, las aplicaciones hechas con Shiny tienen un título, un panel lateral y un panel principal que se indican con las funciones headerPanel(), sidebarPanel() y mainPanel().
+\item Los inputs: La reactividad de la aplicación toma como punto de partida los inputs que son los campos en los que dejamos libertad al usuario para elegir diferentes valores a través de los widgets. Hay diferentes tipos de widgets como los que reciben valores numéricos, texto, listas desplegables, etc. En nuestra aplicación, hemos incluido el widget sliderInput() que inserta una barra deslizable y permite elegir un valor de r entre -1 y 1. El valor seleccionado pasará a server.R bajo el nombre de r\$input donde el identificador "r" aparece como el primer argumento de la función sliderInput().
+\item Los outputs: La reactividad de la aplicación fructifica en los outputs que son los resultados (valores numéricos, tablas, gráficos) que recibe la interfaz desde el server.R. En nuestro caso, el resultado es un gráfico y se inserta con la función
+plotOutput().
+\end{enumerate}
+
+Además de las funciones citadas, el usuario puede encontrar las siguientes:
+\begin{enumerate}
+\item  h5(): Contenido de texto con diferentes tamaños. Otros tamaños son h1(), h2(), h3() y h4().
+\item p(): Bloques de texto con diferentes componentes.
+\item img(): Imagen (los archivos de las imágenes incluidas deben estar dentro del subdirectorio www).
+\end{enumerate}
+
+El archivo server.R realiza las operaciones necesarias hasta obtener los outputs que envía como resultado a ui.R. Como hemos mencionado anteriormente, nuestra aplicación depende del valor del input r\$input. Este archivo comienza de nuevo cargando el paquete Shiny y todos los necesarios para realizar los cálculos correspondientes. A excepción de las funciones definidas en R que sean necesarias para el tratamiento de los inputs, los cálculos concretos que deben "reaccionar" a las decisiones de los usuarios están incluidos dentro de  
+
+
+Las funciones ui y server de nuestra aplicación se encuentra en el apéndice B.
+
+
