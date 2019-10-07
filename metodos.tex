@@ -8,12 +8,149 @@
 
 \chapter{Métodos}
 %\setcounter{section}{1}
+\section{Métodos estadísticos}
+
+\subsection{Modelo AMMI}
+
+\textbf{Modelo AMMI clásico}
+
+El modelo AMMI, \emph{Additive Main effects and Multiplicative Interaccion} llamados así por Zobel et al (1998) y Gauch (1998) es un modelo multiplicativo en el cual se expresa la respuesta de un genotipo en un ambiente de la siguiente forma:
+
+$y_{ij}= \mu +G_i + A_j + \sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ \vspace{1cm} $ i=1,...,g$; $ j=1,...,a$ $q=min(g-1,a-1)$
+donde 
+\begin{itemize}
+\item $y_{ij}$ es la característica fenotípica evaluada (rendimiento u otra variable cuantitativa de interés) del $i$-ésimo genotipo en el $j$-ésimo ambiente,
+\item $\mu$ es la media general,
+\item  $G_i$ es el efecto del $i$-ésimo genotipo,
+\item $A_j$ es el efecto del $j$-ésimo ambiente
+\item $\sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ es la sumatoria de componentes multiplicativas utilizadas para modelar la IGA. Siendo, $\lambda_k$ el valor singular para la  $k$-ésima IPC $\alpha_{ik}$ y $\gamma_{jk}$ son los scores de las PC para el $i$-ésimo genotipo y el $j$-ésima ambiente para la $k$-ésima componente, respectivamente;
+\end{itemize}
+
+La estimación de los parámetros de interacción GA en el modelo AMMI de efectos fijos se hace por medio de la DVS de una matriz que contiene
+los residuos del modelo aditivo luego de ajustar por mínimos cuadrados el modelo de efectos principales.
+
+Generalmente los dos primeros términos multiplicativos son suficientes para explicar los patrones de interacción; la variabilidad remanente se interpreta como ruido. 
+
+Para visualizar gráficamente los patrones de interacción, se construyen los biplots \emph{Genotipe-Environment}, a menudo llamados biplots GE. El concepto del biplot fue presentado por Gabriel (1971). Es una representación, en un mismo gráfico, de las filas (individuos) y las columnas (variables) de una matriz de datos. 
+
+\textbf{Biplot GE}
+
+En los modelos AMMI, el biplot GE ayuda a interpretar la variación producida por los efectos de la IGA. Se grafican en un sistema de coordenadas cartesianas de dos dimensiones los scores de los genotipos ($\alpha_{ik}$) y los ambientes ($\gamma_{jk}$), ponderados por la raíz cuadrada del autovalor correspondiente ($\lambda_k$).
+
+Tanto los genotipos y los ambientes son definidos como vectores desde el origen (0,0) a los extremos por sus scores, por lo que el biplot se interpreta en términos de las direcciones de vectores y sus proyecciones.\\
+
+La magnitud del vector de un ambiente da una idea de la contribución del mismo a la
+interacción. Los puntos de los genotipos que están cercanos al origen se interpretan como que contribuyen poco a la interacción, es decir, se adaptan de igual manera a todos los ambientes. Puntos cercanos entre sí tienen patrones de interacción similares, mientras que puntos alejados entre sí tienen patrones diferentes. Cuando los marcadores (o puntos) de los ambientes y genotipos están próximosn(entre ellos forman un ángulo $< 90^o$ ó $> 270^o$), indica que contribuyen positivamente a la interacción, esndecir, hay una asociación positiva entre ese genotipo y ese ambiente; y mientras más alejados delnorigen estén los marcadores, más fuerte será esa asociación. Una fuerte asociación positiva entre un
+genotipo y un ambiente se interpreta como que ese ambiente es muy favorable para ese genotipo. De
+manera similar, cuando los marcadores del genotipo y el ambiente están opuestos entre sí (forman un
+ángulo entre $90^o$ y $270^o$) se interpreta que ese ambiente es muy desfavorable para ese genotipo.\\
+En la Figura 1, se presenta un ejemplo de un biplot GE con 6 ambientes (A, B, C, D, E y F) y
+10 genotipos (1, 2, 3, 4, 5, 6, 7, 8, 9 y 10). Se observa que la magnitud de los vectores de los ambientes
+A y E es mayor a la de los demás ambientes, es decir que esos dos ambientes son los que
+más contribuyen a la interacción. La cercanía de los marcadores de los genotipos 1 y 2 indica que esos
+genotipos tienen patrones de interacción similares, y a la vez, muy distintos a los del genotipo 4. Del
+biplot también se destacan las cercanías entre el genotipo 9 y el ambiente A, entre el genotipo 5 con el
+ambiente C, entre los genotipos 1 y 2 con el ambiente E, entre los genotipos 6, 7 y 10 con el ambiente F
+y entre el genotipo 4 con el ambiente D, lo que indica, debido a la gran distancia al origen, una fuerte
+asociación positiva entre esos genotipos y esos ambientes, es decir, esos ambientes son muy favorables
+para esos genotipos.\\
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=10cm]{./Graficos/GE.png}
+	\end{center}
+	\caption{Ejemplo de un biplot GE}
+\end{figure}
+
+Entre las altas asociaciones negativas se puede mencionar a la del ambiente A con el genotipo 10
+(marcadores opuestos en el biplot) y se interpreta que ese ambiente es considerablemente desfavorable
+para ese genotipo.\\
+También se observa que los genotipos 3 y 8 están próximos al origen, lo que quiere decir que se
+adaptan en igual medida a todos los ambientes.
+
+\textbf{Modelo AMMI robusto}
+
+
+\subsection{Modelo SREG}
+
+El modelo SREG (Cornelius et al., 1996; Crossa y Cornelius, 1997 y 2002) expresa el rendimiento medio de un genotipo en un ambiente en función del efecto ambiente aditivo y los efectos genotipo e interacción agrupados y en forma multiplicativa.
+
+
+$y_{ij}= \mu +  A_j + \sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ \vspace{1cm} $ i=1,...,g$; $ j=1,...,a$ $q=min(g-1,a-1)$
+donde 
+\begin{itemize}
+\item $y_{ij}$ es la característica fenotípica evaluada (rendimiento u otra variable cuantitativa de interés) del $i$-ésimo genotipo en el $j$-ésimo ambiente,
+\item $\mu$ es la media general,
+\item  $G_i$ es el efecto del $i$-ésimo genotipo,
+\item $A_j$ es el efecto del $j$-ésimo ambiente
+\item $\sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ es la sumatoria de componentes multiplicativas utilizadas para modelar los efectos G e IGA en forma conjunta. Siendo, $\lambda_k$ el valor singular para la  $k$-ésima IPC $\alpha_{ik}$ y $\gamma_{jk}$ son los scores de las PC para el $i$-ésimo genotipo y el $j$-ésima ambiente para la $k$-ésima componente, respectivamente;
+\end{itemize}
+
+
+Para visualizar conjuntamente estos dos efectos, con remoción de los efectos de ambiente (datos centrados por sitio), Yan et al. (2000) proponen los gráficos biplots GGE (Genotipe plus Genotipe-Environment). A partir de estos gráficos se puede investigar la diferenciación de mega-ambientes entre los ambientes en estudio, seleccionar cultivares superiores en un mega-ambiente dado y seleccionar los mejores ambientes de evaluación para analizar las causas de la interacción GA. Se define como mega-ambiente a un grupo de ambientes en donde los cultivares de mejor desempeño son los mismos.
+
+\textbf{Biplot GGE}
+En los modelos SREG, el biplot GGE, ayuda a interpretar conjuntamente la variación producida por los efectos principales de los G e IGA.
+
+Para la construcción de los biplots GGE, al igual que para los biplots GE, se grafican en un sistema de coordenadas cartesianas de dos dimensiones los scores de los genotipos ($\alpha_{ik}$) y los ambientes ($\gamma_{jk}$), ponderados por la raíz cuadrada del autovalor correspondiente ($\lambda_k$).
+
+Para una mejor comprensión de las interpretaciones que se pueden extraer del gráfico biplot GGE, se presenta un ejemplo del mismo para un ensayo de 6 ambientes (A, B, C, D, E y F) con 12 genotipos (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 y 12).
+
+
+Para identificar los mejores genotipos en un ambiente a través del biplot GGE, Yan y Hunt (2002) sugieren trazar una recta que pase por el identificador del ambiente y el origen, la cual constituye el eje del ambiente. Luego, las proyecciones de los marcadores de los genotipos sobre ese eje, proveen un ranking de los genotipos en ese ambiente. El genotipo de mayor rendimiento en el ambiente es aquel cuya proyección sobre el eje está más alejada del origen hacia el semi-eje donde se encuentra el marcador del ambiente. Aquel cuya proyección sea la segunda más alejada del origen en ese sentido, es el de segundo mejor rendimiento y así hasta llegar al de menor rendimiento en el ambiente, que es aquel cuya proyección está más alejada del origen en sentido contrario al identificador del ambiente. La perpendicular al eje del ambiente que pasa por el origen, divide a los genotipos de rendimiento superior e inferior al promedio del ambiente.
+
+Como se observa en la Figura 4.2, el genotipo de mayor rendimiento en el ambiente D es el 4, luego le sigue el 7, luego el 8, y así sucesivamente hasta llegar al genotipo 12, que es el de peor rendimiento en ese ambiente.
+
+Los marcadores de los genotipos 4, 7, 8, 11, 2 y 5 quedan del lado del marcador del ambiente D, de acuerdo a la división de la perpendicular que pasa por el origen, por que se interpreta que estos genotipos tienen un rendimiento mayor al promedio del ambiente D. Los restantes genotipos tienen un rendimiento inferior al promedio.
+
+
+Para visualizar el desempeño de un genotipo en los diferentes ambientes, Yan y Hunt (2002) sugieren graficar una línea que una el marcador del genotipo con el origen y luego trazar otra línea perpendicular a la primera. Esta última perpendicular es la que separa los sitos favorables y desfavorables para el genotipo. Los sitios cuyos marcadores queden en el mismo lado donde está el genotipo son los mejores para ese genotipo y los restantes son aquellos donde el genotipo rinde por debajo de su promedio.
+
+
+Como se puede apreciar en la Figura 4.3, la perpendicular al marcador del genotipo 2, determina que los ambientes favorables para ese genotipo son A, E, F y D, en donde el mismo tiene rendimientos mayores a su promedio. Los ambientes desfavorables son B y C.
+También se observa que el ambiente más favorable es el A, luego le siguen el E y el F. Si bien el ambiente D también es favorable, en ese ambiente el rendimiento del genotipo 2 es apenas superior a su rendimiento medio ya que el marcador del ambiente D, está muy cerca de la perpendicular que pasa por el origen.
+
+
+Para comparar dos genotipos, se propone unir mediante una línea recta los genotipos a comparar, luego trazar una línea que pase por el origen y que sea perpendicular a la línea que une a los genotipos. Esta última línea es la que separa sitios favorables a uno y a otro genotipo.
+
+
+Los sitios cuyos marcadores queden en el mismo lado donde está el marcador del genotipo son los mejores para ese genotipo. Si un ambiente queda posicionado sobre la línea perpendicular, los dos genotipos tienen rendimientos similares en ese ambiente. Si dos genotipos están cercanos, sus rendimientos son similares en los ambientes evaluados. Por último, si todos los ambientes quedan a un lado de la línea perpendicular, el genotipo cuyo identificador está de ese lado rinde más que el otro en todos los ambientes.
+En la Figura 4.4 se puede ver la comparación de los desempeños de los genotipos 6 y 8. Los ambientes que resultan favorables para el genotipo 6 son el E, el A y el F. Mientras que los favorables para el genotipo 8 son el B, el C y el D.
+
+
+
+Para poder identificar mega-ambientes y los mejores genotipos en cada uno de ellos se propone graficar un polígono envolvente. Este polígono se forma uniendo los genotipos más extremos en el biplot con segmentos continuados. Luego se trazan líneas rectas que pasan por el origen y que son perpendiculares a cada uno de los lados del polígono (o a sus proyecciones). De esta forma, el biplot queda dividido en cuadrantes, y los sitios que quedan dentro un mismo cuadrante se consideran pertenecientes a un mismo mega-ambiente. Generalmente cada cuadrante contiene un genotipo en el vértice, que es el de mayor rendimiento en el mega-ambiente.
+En la Figura 4.5 se presenta el biplot GGE con el polígono envolvente y las perpendiculares a sus lados, que ayudan a la interpretación del mismo.
+En primer lugar se observa que los marcadores de los ambientes A y B son mayores a los restantes, lo que indica que la variabilidad en esos ambientes es superior, es decir, en ellos es donde mejor se diferencian los efectos de los genotipos.
+Las perpendiculares a los lados del polígono envolvente determinan tres mega-ambientes:
+\begin{itemize}
+\item uno formado por los ambientes A, E y F, en donde el genotipo de mejor desempeño es el 2 (se
+encuentra en el vértice del polígono encerrado por las perpendiculares).
+\item otro está formado solo por el ambiente D y el genotipo ganador en él es el 4, y
+\item  el tercer mega-ambiente lo componen los ambientes B y C, en este caso el genotipo ganador es el 1.
+\end{itemize}
+
+Si se identifican distintos mega-ambientes, la selección de genotipos debe hacerse para cada mega-ambiente en particular. Los genotipos se seleccionan en base a su desempeño y a su estabilidad a través de los ambientes.
+En el biplot, se puede definir un eje medio para todos los ambientes pertenecientes a un mismo mega-ambiente. Para ello se calcula la media de scores promediando los scores de la componente 1 y la componente 2 de los ambientes pertenecientes al mega-ambiente. Una vez obtenidos estos promedios, se traza una línea recta entre ese punto medio y el origen, que se denomina eje de la media de scores de ambientes. A continuación se traza una línea que pase por el origen y que sea perpendicular a la línea
+media de scores de ambientes. Estas dos líneas constituyen ``el eje de coordenadas de ambiente medio''.
+Las proyecciones de los marcadores de los genotipos sobre el eje de la media de scores de ambientes da un ranking de los rendimientos de los genotipos en ese mega-ambiente. A su vez la magnitud de la proyección de los marcadores de los genotipos a la perpendicular al eje de ambientes da una idea de la estabilidad. Cuanto mayor sea esta magnitud, más inestable será el genotipo.
+En este ejemplo se calcula el ambiente medio para un mega-ambiente, en la Figura 4.6 se presenta el gráfico del eje medio para el mega-ambiente formado por los ambientes A, E y F. El promedio de los scores de la primer componentes es 1,00 y el de la segunda es 1,133, por lo que el punto medio que determina la dirección del eje es (1; 1,133), que está graficado con un círculo en la Figura 4.6.
+
+Como se puede observar en el biplot el orden de los genotipos (de mayor a menor rendimiento) es: 2, 4, 12, 11, 5, 6 todos ellos con rendimientos superiores al promedio, seguidos por los de rendimiento menor al promedio: el 10, 9, 7, 3 y por último el 1, el de peor rendimiento medio en ese mega-ambiente.
+Debido a que las proyecciones sobre el eje perpendicular al eje medio de ambiente dan una idea de la estabilidad, se observa que el genotipo 12, el 9, el 7 y el 4 son los más inestables. También se observa que el genotipo 2, además de tener el mejor rendimiento medio es de los más estables en el megaambiente.
+
+
+\subsection{Métodos de imputación}
+
+
+
+
 \section{Paquete de R}
 
 %https://oscarperpinan.github.io/R/Paquetes.html 
 Una librería o paquete (\emph{package}) es una colección de objetos creados y organizados siguiendo un protocolo fijo que garantiza un soporte mínimo para el usuario así como la ausencia de errores (de sintaxis) en la programación.
 
-\section{Creación del paquete de R}
+\subsection{Creación del paquete de R}
 Los pasos necesarios para la creación de un paquete son:
 \begin{itemize}
 \item Creación de los objetos que contendrá el paquete (funciones y/o
@@ -25,10 +162,10 @@ datos).
 \item Prueba y publicación.
 \end{itemize}
 
-\subsection{Objetos del paquete}
+\subsubsection{Objetos del paquete}
 Un paquete puede contener cualquier tipo de objetos de R : funciones, datos etc. Lo primero que debe hacerse es programar las funciones y preparar los datos. El proceso de creación vigila que no hayan errores sintácticos pero no controla si hay errores lógicos.
  
-\subsection{Esqueleto y estructura del paquete}
+\subsubsection{Esqueleto y estructura del paquete}
 R proporciona una función \emph{package.skeleton} que permite automatizar el proceso de creación de un paquete creando los directorios, los archivos de documentación y otros objetos necesarios.
 La  siguiente instrucción construye la estructura de un paquete llamado \emph{geneticae}, 
 
@@ -84,7 +221,7 @@ La documentación es uno de los aspectos mas importantes del código, sin ella, 
 Además de generar archivos .Rd, \emph{roxygen2} también creará un archivo NAMESPACE y administrará el campo \emph{Imports} del archivo DESCRIPTION.
 
 
-\subsection{Compilación e instalación}
+\subsubsection{Compilación e instalación}
 Una vez creada la documentación se debe chequear el paquete y generar los instaladores con su corresponiente manual. Para ello se utilizan las siguiente funciones:
 \begin{itemize}
 \item \emph{R CMD check} verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros.
@@ -92,7 +229,7 @@ Una vez creada la documentación se debe chequear el paquete y generar los insta
 \item \emph{RCMD Rd2dvi --pdf} preparará el manual y \emph{R CMD INSTALL} instalará el paquete dejándolo listo para su uso
 \end{itemize}
 
-\subsection{Publicación}
+\subsubsection{Publicación}
 %https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/paquetes/paquetes.html
 Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál se pueden descargarlos. Entre los repositorios más populares de paquetes R se encuentran:
 
@@ -122,11 +259,10 @@ install_github(jangelini/geneticae)
 
 {\Huge{(Ideas de: TRABAJO FINAL P SHINY)}}
 
-\section{Aplicación Web}
+\section{Shiny APP}
 Una aplicación web es una aplicación o herramienta informática accesible desde cualquier navegador, bien sea a través de internet (lo habitual) o bien a través de una red local. 
 Estas aplicaciones son muy populares hoy en día para los usuarios no expertos, debido a la facilidad de su uso, ya que no es preciso instalar nada en el ordenador, simplemente se accede a través de un navegador. Además se puede acceder desde cualquier dispositivo con conexión a internet, ya sea un ordenador, un smartphone o una tablet, es decir que es independiente del sistema operativo del usuario. Otra gran ventaja es el bajo consumo de recursos, ya que la mayor parte del tiempo estos se consumen en el servidor donde se encuentra alojada la aplicación, que generalmente tiene mucha más potencia de cómputo que cualquier ordenador personal.
 
-\section{Shiny APP}
 %https://datanalytics.com/libro_r/shiny.html
 Shiny es un paquete, que se encuentra instalado por defecto con Rstudio, con el que se pueden desarrollar aplicaciones web interactivas, directamente desde Rstudio sin necesitar conocimientos de HTML, CSS o Javascript. Shiny implementa la programación reactiva (cita de archivo aplicacion shiny) en donde los objetos (gráficos y tablas) que forman la aplicación responden a los inputs de los usuarios, dotando a estos de una gran capacidad de control.
 
@@ -154,7 +290,7 @@ En lugar de usar un CSS propio para la interfaz de la aplicación se ha usado el
 
 
 
-\section{Creación de la Shiny APP}
+\subsection{Creación de la Shiny APP}
 %http://www.rpubs.com/JohanMarin/Shiny
 La instalación de este paquete puede realizarse a través de los menús de Rstudio o simplemente con la siguiente orden:\\
 
@@ -206,7 +342,7 @@ La Figura \ref{fig:fig33} muestra el diseño utilizado en la aplicación. Se cue
 \label{fig:fig33}
 \end{figure}
 
-\subsection{Tipos de componentes de Shiny Web App}
+\subsubsection{Tipos de componentes de Shiny Web App}
 
 Los tipos de componentes de una aplación Shiny son:
 \begin{itemize}
@@ -281,6 +417,6 @@ tabPanel()	 & \\
 Para más información sobre estas componentes ver hoja de referencia de Shiny (Apéndice A).
 
 
-\subsection{Compartiendo una Shiny Web App}
+\subsubsection{Compartiendo una Shiny Web App}
 
 Una vez creada la aplicación, resulta conveniente ponerlas a disposición de los usuarios. En este caso la Shiny Web App encuentra disponible en el servidor de CONICET \url{www.cefobi.com}. Además el proyecto se encuentra en GitHub \url{https://github.com/jangelini/shinyAPP_geneticae}. 
