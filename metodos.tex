@@ -62,7 +62,7 @@ El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el 
 Rodrigues 2015 proponen una generalización robusta del modelo AMMI. La metología propuesta se puede obtener en dos etapas de la siguiente manera: primero ajustar la regresión robusta basada
 en el estimador M-Huber \citep{Huber1981} para reemplazar el ANOVA; y luego utilizar un procedimiento SVD / PCA robusto para reemplazar el SVD estándar. En la segunda etapa, consideraron varios métodos dando lugar a total de cinco robustos: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
 
-El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes en los biplots puede dar como resultado un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (es decir, megaambientes; \cite{Gauch1997}; \cite{Yanetal2000}). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de producción de rendimiento.
+El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes en los biplots puede dar como resultado un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (es decir, megaambientes; \citealp{Gauch1997,Yanetal2000}). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de producción de rendimiento.
 
 Debe tenerse en cuenta que los biplots robustos mantienen las características e interpretación estándar del modelo AMMI clásico.
 
@@ -181,72 +181,127 @@ Debido a que las proyecciones sobre el eje perpendicular al eje medio de ambient
 \subsection{Métodos de imputación}
 
 
+Una limitación importante que presentan los modelos multiplicativos (AMMI y SREG) es que requieren que el conjunto de datos este completo, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común, debido por ejemplo a la incorporación de nuevos genotipos, errores de medición o causas naturales como la destrucción de plantas por animales, inundaciones o durante la cosecha.
+
+Entre las posibles soluciones para tratar un conjunto de datos con observaciones perdidas: el uso de un subconjunto completo de datos, eliminando aquellos genotipos que tienen valores faltantes (Ceccarelli et al., 2007, Yan et al., 2011), completar datos faltantes con la media ambiental, o imputación de los valores faltantes mediante estimaciones utilizando, por ejemplo, un modelo multiplicativo (Kumar et al., 2012).
+
+Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
+
+\begin{itemize}
+\item EM-AMMI: Gauch y Zobel (1990) desarrollaron este enfoque mediante el cual se imputa utilizando el algoritmo EM (\emph{Expectation-Maximization}) incorporando el modelo AMMI. Consiste en un procedimiento iterativo que funciona de la siguiente forma: .............
+Dependiendo del número de términos multiplicativos empleados, el método de imputación puede denominarse EM-AMMI0, EM-AMMI1, etc. (Gauch y Zobel 1990). Los estudios de Caliński y col. (1992), Piepho (1995), Arciniegas-Alarcón y Dias (2009) y Paderewski y
+Rodrigues (2014) mostraron que se obtienen los mejores resultados para la imputación con modelos AMMI al incluir como máximo una componente multiplicativa.
+\end{itemize}
+\begin{itemize}
+\item EM-SVD: Perry (2009a) propone un método de imputación que combina el algoritmo EM con SVD. Este método reemplaza los valores faltantes de una matriz $G \times E$ inicialmente por valores arbitrarios para obtener una matriz completa, y luego la DVS se calcula iterativamente en esa matriz. Al final del proceso, cuando las iteraciones alcanzan estabilidad, se obtiene la matriz imputada.
+.....Podria ponerlo tambien de manera formal... pero creo que con esto basta
+\end{itemize}
+\begin{itemize}
+\item EM-PCA:
+\end{itemize}
+\begin{itemize}
+\item Gabriel Eigen: Arciniegas-Alarcón et al. (2010) propuso un método de imputación que combina regresión y aproximación de rango inferior usando SVD. El método reemplaza inicialmente las celdas faltantes por valores arbitrarios, y posteriormente el
+las imputaciones se refinan a través de un esquema iterativo que define una partición de la matriz para cada valor que falta a su vez y utiliza una regresión lineal de columnas (o filas) para obtener el nueva imputación. En esta regresión, la matriz de diseño se aproxima por una matriz de menor rango usando la SVD.
+\end{itemize}
+\begin{itemize}
+\item WGabriel Eigen:
+\end{itemize}
+
+Vale la pena señalar que el modelo de análisis no siempre será el mismo que el modelo de imputación.
+
+
+
 
 
 \section{Paquete de R}
 
 %https://oscarperpinan.github.io/R/Paquetes.html 
-Una librería o paquete (\emph{package}) es una colección de objetos creados y organizados siguiendo un protocolo fijo que garantiza un soporte mínimo para el usuario así como la ausencia de errores (de sintaxis) en la programación.
+Una librería o paquete (\emph{package}) es una colección de objetos creados y organizados siguiendo un protocolo fijo que garantiza la ausencia de errores (de sintaxis) en la programación. Éstos son las unidades fundamentales de un código reproducible de R ya que incluyen funciones reutilizables, la documentación que describe cómo usar cada una de ellas y, además datos de ejemplo. 
 
-\subsection{Creación del paquete de R}
 Los pasos necesarios para la creación de un paquete son:
 \begin{itemize}
-\item Creación de los objetos que contendrá el paquete (funciones y/o
-datos).
 \item Creación del esqueleto del paquete.
+\item Inclusión de los objetos que contendrá el paquete (funciones y/o datos).
 \item Redacción de la documentación.
+\item Redacción de la viñeta.
 \item Compilación del paquete en Linux y creación de la versión para Windows.
 \item Instalación.
 \item Prueba y publicación.
 \end{itemize}
 
-\subsubsection{Objetos del paquete}
-Un paquete puede contener cualquier tipo de objetos de R : funciones, datos etc. Lo primero que debe hacerse es programar las funciones y preparar los datos. El proceso de creación vigila que no hayan errores sintácticos pero no controla si hay errores lógicos.
- 
-\subsubsection{Esqueleto y estructura del paquete}
-R proporciona una función \emph{package.skeleton} que permite automatizar el proceso de creación de un paquete creando los directorios, los archivos de documentación y otros objetos necesarios.
-La  siguiente instrucción construye la estructura de un paquete llamado \emph{geneticae}, 
 
-\begin{lstlisting}[frame=single]
-package.skeleton(name = geneticae)
+Para la cración del paquete se utilizan numerosas funciones incluidas en el paquete \emph{devtools} en el cual se encuentran un conjunto de paquetes que admiten varios aspectos del desarrollo de paquetes. Por lo tanto, antes de comenzar a crear el paquete se deben instalar el mismo como se indica a continuación:\\
+
+\begin{lstlisting}
+# Instalar el paquete devtools desde CRAN
+install.packages("devtools")
+
+# Instalar el paquete devtools desde GitHub:
+devtools::install_github("r-lib/devtools")
 \end{lstlisting}
 
-creando una carpeta de nombre \emph{geneticae} con 3 sub-carpetas en el directorio de trabajo y tres archivos sin extensión. Estos ultimos son los siguintes: 
+\subsection{Esqueleto y estructura del paquete}
+
+Para crear la estructura del paquete se utiliza la función create\_package(). El principal y único argumento requerido por dicha función es el directorio donde el nuevo paquete se alojará. Por lo general, si el directorio se llama ``geneticae'', entonces el nombre del paquete también será ``geneticae'':
+
+
+\begin{lstlisting}
+# Cargar la libreria devtools
+library(devtools)
+
+# Crear el paquete geneticae
+create_package("C:/Users/Julia/Desktop/geneticae")
+\end{lstlisting}
+
+
+El resultado de ejecutar la función create\_package() es un paquete con los siguientes componentes:
 \begin{itemize}
-
-\item DESCRIPTION: contenido básico para
-documentar según la descripción del paquete:
-
-Package: geneticae\\
-Type: Package\\
-Title: What the package does (short line)\\
-Version: 1.0\\
-Date: 2019-09-21\\
-Author: Who wrote it\\
-Maintainer: Who to complain to <yourfault@somewhere.net>\\
-Description: More about what it does (maybe more than one line)\\
-License: What license is it under?\\
-
-\item NAMESPACE: R usa un sistema de gestión de espacio de nombres que permite al autor del paquete especificar:
+\item Un directorio R/.
+\end{itemize}
 \begin{itemize}
-\item las variables del paquete que se exportan (y son, por tanto, accesibles a los usuarios)
-\item las variables que se importan de otros paquetes.
-\item las clases y métodos S3 y S4 que deben registrarse.
+\item DESCRIPTION, un archivo simple cuyo objetivo es almacenar metadatos importantes sobre el paquete, epecifica el título, la versión del mismo, identifica al autor y brinda un mail de contacto, una breve descripción del paquete, la lista de los paquetes que el paquete creado necesita para funcionar, la licencia, entre otros.
+
+El contenido básico en un archivo DESCRIPTION es:
 \end{itemize}
 
-Este mecanismo queda definido en el contenido del fichero NAMESPACE.
+\begin{verbatim}
+Package: geneticae
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "First",
+           family = "Last",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+\end{verbatim}
 
-\item Read-and-delete-me: contiene algunas instrucciones importantes sobre cómo personalizar el paquete.
-\end{itemize}
 
-Las siguientes son las 3 sub-carpetas creadas:
+
 
 \begin{itemize}
-\item La carpeta \textbf{data} contiene todos los archivos correspondientes a los datos comprimidos con el nombre con el que fueron creados, con la extensión .rda. Estos no pueden ser modificados.
-\item La carpeta \textbf{man} contiene todos los archivos de extensión .Rd y un archivo por objeto creado (datos o programa). Estos documentos son parte del sistema de ayuda del paquete en PDF y en HTML; por este motivo, la escritura sigue las reglas de LaTeX.
-\item La carpeta \textbf{R} contiene todos los programas fuente, siendo .R la extensión de los mismos.
+\item Un archivo NAMESPACE
 \end{itemize}
-La documentación es uno de los aspectos mas importantes del código, sin ella, los usuarios no sabrán cómo usar el paquete. R proporciona una forma estándar de documentar paquetes: escribir archivos .Rd en la carpeta man, los cuales utilizan una sintaxis personalizada, basada en LaTeX. Sin embargo, el paquete \emph{roxygen2}, utilizado en este trabajo, permite obtener la documentación de una manera sencilla, proporcionando una serie de ventajas sobre la escritura los archivos .Rd:
+
+También puede incluir un archivo de proyecto de RStudio pkgname.Rproj, que hace que su paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete R desde la fuente; .gitignore anticipa el uso de Git e ignora algunos archivos estándar detrás de escena creados por R y RStudio.
+
+\subsection{Creación de funciones y conjuntos de datos}
+
+Una vez creada la estructura del paquete se debe comenzar a incluir las funciones que contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. La funcion use\_r() crea y/o abre un script de la carpeta R/.
+
+Una vez creada una función, para probarla se utiliza load\_all() que simula el proceso de construcción, instalación y conexión del paquete. Permite que las funciones creadas estén disponible rápidamente para uso interactivo, del mismo modo que si se hubiera construido e instalado el paquete y luego cargado a través de library(geneticae).
+
+Muy frecuentemente se utilizan funciones de otros paquetes, para ello se utiliza la función use\_package() que agrega el paquete  a lista de los paquetes que el paquete creado necesita para funcionar del archivo DESCRIPTION.
+
+A menudo es útil incluir datos en un paquete, con estos se proporcionan casos de uso convincentes para las funciones del paquete. La ubicación más común para los datos es data/, siendo cada archivo de este directorio un .RData que sólo contiene un  objeto. Para esto, se utiliza la funció usethis::use\_data(). Se puede observar que el archivo DESCRIPTION creado con la función create\_package() contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocuparán ninguna memoria hasta que los use.
+
+\subsection{Documentación}
+
+La documentación es uno de los aspectos más importantes del código, sin ella, los usuarios no sabrán cómo usar el paquete. Existen múltiples formas de documentar un paquete, la forma estándar es escribir archivos .Rd en la carpeta man, los cuales utilizan una sintaxis personalizada, basada en LaTeX. Sin embargo, el paquete \emph{roxygen2}, utilizado en este trabajo, convierte los comentarios con formato especial en archivos .Rd. Esta última proporciona una serie de ventajas sobre la estándar:
 
 \begin{itemize}
 \item El código y la documentación son adyacentes, de modo que cuando el código se modifique, será fácil actualizar la documentación.
@@ -256,18 +311,89 @@ La documentación es uno de los aspectos mas importantes del código, sin ella, 
 \item Resume las diferencias en la documentación de los métodos S3 y S4, los genéricos y las clases, por lo que necesita aprender menos detalles.
 \end{itemize}
 
-Además de generar archivos .Rd, \emph{roxygen2} también creará un archivo NAMESPACE y administrará el campo \emph{Imports} del archivo DESCRIPTION.
+Además de generar archivos .Rd, \emph{roxygen2} también creará el archivo NAMESPACE.
 
-
-\subsubsection{Compilación e instalación}
-Una vez creada la documentación se debe chequear el paquete y generar los instaladores con su corresponiente manual. Para ello se utilizan las siguiente funciones:
+El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} es el siguiente:
 \begin{itemize}
-\item \emph{R CMD check} verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros.
-\item  \emph{R CMD build} compilará el paquete generando un archivo geneticae.tar.gz listo para su instalación en Linux y \emph{RCMD build -binary} generará el archivo para la instalación en Windows.
-\item \emph{RCMD Rd2dvi --pdf} preparará el manual y \emph{R CMD INSTALL} instalará el paquete dejándolo listo para su uso
+\item Agregar comentarios a los archivos .R, los cuales comienzan con \#' y preceden a una función. La primera oración se convierte en el título y el segundo párrafo es una descripción de la función. Seguidamente, las funciones son documentadas, la mayoría de las funciones tienen tres etiquetas: @param, @examples y @return.
+
+\begin{itemize}
+\item  @param describe los parámetros de la función, indica de que clase es el parámetro y para que sirve.
+\item @examples proporciona un código ejecutable que muestra cómo usar la función en la práctica. 
+\item @return describe el resultado de la función. 
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+
+\item Ejecutar devtools::document() para convertir los comentarios de roxygen en archivos .Rd. 
+
 \end{itemize}
 
-\subsubsection{Publicación}
+Roxigen permite utilizar la descripción de los parámetros de otras funciones usando @inheritParams source function. Esta etiqueta traerá toda la documentación de los parámetros que no están documentados en la función actual, pero que están documentados en la función fuente. La fuente puede ser una función en el paquete actual, vía @inheritParams function, u otro paquete, vía @inheritParams package::function.
+
+A diferencia de las funciones que son documentadas directamente, para los objetos en data/, se debe crear un archivo y guardarlo en el directorio R/.
+
+
+
+\subsection{Viñetas}
+
+EXPLICAR UN POCO QUE ES UNA VINETA
+
+
+Para crear la viñeta, se utiliza usethis::use\_vignette(``my-vignette''). La misma crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y redacta la viñeta. Las tres componentes fundamentales de la misma son las siguientes:
+
+\begin{itemize}
+\item El bloque inicial de metadatos, que contiene la siguiente información:
+\end{itemize}
+
+\begin{verbatim}
+---
+title: "Vignette Title"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+\end{verbatim}
+
+\begin{itemize}
+\item Markdown para formatear texto.
+\item Knitr para interpretar texto, código y resultados.
+\end{itemize}
+
+\subsection{Pruebas del flujo de trabajo}
+
+Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el código haga lo que realmente se desea. Existen pruebas informales como aquellas realizadas con la función load\_all. Sin embargo, estas pruebas interactivas pueden convertirse en scripts reproducibles, los cuales resultan superiores debido a que:
+
+\begin{itemize}
+\item Se indica explícitamente cómo debería comportarse el código, provocando que los errores solucionados no vuelvan a ocurrir.
+
+\item El código que es fácil de probar generalmente está mejor diseñado, reduce la duplicación en el código. Como resultado, las funciones serán más fáciles de probar, comprender y trabajar.
+
+\item Si toda la funcionalidad del paquete tiene una prueba asociada, se pueden hacer grandes cambios sin preocuparse por generar errores.
+\end{itemize}
+
+
+Para probar el flujo de trabajo se utiliza la función usethis::usetestthat(). Esta crea un directorio tests/testthat, agrega testthat al campo Suggests en el archivo DESCRIPTION y además, crea un archivo tests/testthat.R que ejecuta todas las pruebas cuando R CMD check se ejecuta. 
+
+Las pruebas se organizan jerárquicamente: las expectativas se agrupan en pruebas que se organizan en archivos :
+\begin{itemize}
+\item Una expectativa describe el resultado esperado de un cálculo.
+
+\item Una prueba agrupa múltiples expectativas para probar la salida de una función simple, un rango de posibilidades para un solo parámetro de una función más complicada o una funcionalidad estrechamente relacionada de varias funciones.
+
+\item Un archivo agrupa múltiples pruebas relacionadas. Los archivos reciben un nombre legible para humanos con context().
+\end{itemize}
+
+Se utiliza la funcion test(), para ejecutar todas las pruebas creadas a la vez. Las pruebas también se ejecutan cada vez que se utiliza la función check() descripta a continuación. 
+
+\subsection{Compilación e instalación}
+
+Mediante la función load\_all se fue simulando el proceso de construcción, instalación y conexión del paquete, con el fin de ir probando las funciones creadas. Sin embargo, R CMD check ejecutado en el shell o check(), es el estándar de oro para verificar que un paquete R esté en pleno funcionamiento. La misma verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros. Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones ya que si se incorporan muchas y luego se verifican será dificil identificar y resolver los problemas. Una vez que las verificaciones completas no encuentran errores, advertencias o notas, se ejecuta la función install(), con el objetivo de instalar el paquete en la biblioteca.
+
+
+\subsection{Publicación}
 %https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/paquetes/paquetes.html
 Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál se pueden descargarlos. Entre los repositorios más populares de paquetes R se encuentran:
 
@@ -281,17 +407,15 @@ Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál 
 \item \textbf{R-Forge} y \textbf{RForge}: son entornos de desarrollo de paquetes y repositorios. Eso significa que incluyen control de fuente, seguimiento de errores y otras características. Puede obtener versiones de desarrollo de paquetes de estos.
 \end{itemize}
 
-El paquete \emph{geneticae} se encuentra en GitHub, para instalar el mismo (o cualquiera que se encuentre en dicho repositorio) se deben seguir las siguientes instrucciones:\\
+El paquete \emph{geneticae} se encuentra en GitHub, para instalar el mismo se deben seguir las siguientes instrucciones:\\
 
 
-\begin{lstlisting}[frame=single]
-install.packages(remotes) 
-library(remotes)
-install_github(jangelini/geneticae) 
+\begin{lstlisting}
+library(devtools)
+install_github("jangelini/geneticae") 
 \end{lstlisting}
 
 
-{\Huge{FALTAN LAS COMILLITAS EN INSTALL Y EN EL USUARIO DE GITHUB.. ME DA ERROR CUANDO LAS PONGO}}
 
 
 
@@ -332,8 +456,8 @@ En lugar de usar un CSS propio para la interfaz de la aplicación se ha usado el
 %http://www.rpubs.com/JohanMarin/Shiny
 La instalación de este paquete puede realizarse a través de los menús de Rstudio o simplemente con la siguiente orden:\\
 
-\begin{lstlisting}[frame=single]
-install.packages(shiny)
+\begin{lstlisting}
+install.packages("shiny")
 \end{lstlisting}
 
 Para crear una Shiny app en \emph{File} se elige la opción Shiny Web App (figura \ref{fig:fig322}).

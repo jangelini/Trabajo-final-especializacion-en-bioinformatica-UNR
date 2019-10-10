@@ -3,22 +3,26 @@
 \usepackage{tcolorbox}
 \usepackage{listings}
 \usepackage{graphicx}
-\usepackage{color}
 \usepackage{pdfpages}
 \usepackage{lscape}
+\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{bm}
+\usepackage{color}    
 
+\lstset{
+basicstyle=\ttfamily,
+keywordstyle=\bfseries,
+showstringspaces=false,
+columns = fullflexible,
+mathescape = true,
+language=R,
+frame = single,  
+framexleftmargin=15pt}
 
-\lstset{language=R,
-    basicstyle=\small\ttfamily,
-    stringstyle=\color{DarkGreen},
-    otherkeywords={0,1,2,3,4,5,6,7,8,9},
-    morekeywords={TRUE,FALSE},
-    deletekeywords={data,frame,length,as,character},
-    keywordstyle=\color{blue},
-    commentstyle=\color{DarkGreen},
-    breaklines=true, 
-    basicstyle=\footnotesize
-}
 
 
 %% # Opciones disponibles para el documento #
@@ -82,7 +86,7 @@
 %% Quitar el comentario en la siguiente linea para austar los m'argenes del
 %% documento. Leer la documentaci'on de "geometry" para m'as informaci'on.
 
-\geometry{top=40mm,bottom=33mm,inner=40mm,outer=25mm}
+\geometry{top=30mm,bottom=30mm,inner=30mm,outer=20mm}
 
  
 %% El siguiente comando agrega ligas activas en el documento para las
@@ -104,6 +108,9 @@
 %% un nuevo archivo e incluirlo aqu'i.
 %% Para m'as detalles y un ejemplo mirar el archivo "gracias.tex".
 \include{ddjj}
+
+\pagestyle{plain}
+\pagenumbering{roman}
 \include{gracias}
 \include{abrysimb}
 \include{resumen}
@@ -117,25 +124,22 @@
 \addtocontents{toc}{\hspace{-7.5mm} \textbf{Capítulos}}
 \addtocontents{toc}{\hfill \textbf{Página} \par}
 \addtocontents{toc}{\vspace{-2mm} \hspace{-7.5mm} \hrule \par}
-
-\thispagestyle{empty}
 \tableofcontents
-\thispagestyle{empty}
 \cleardoublepage
 
 \listoffigures
-\thispagestyle{empty}
 \cleardoublepage
 
 \renewcommand{\listtablename}{Índice de tablas}
 \renewcommand{\tablename}{Tabla}
 \listoftables
-\thispagestyle{empty}
+\cleardoublepage
 
 %% # Cap'itulos #
 %% Por cada cap'itulo hay que crear un nuevo archivo e incluirlo aqu'i.
 %% Mirar el archivo "intro.tex" para un ejemplo y recomendaciones para
 %% escribir.
+
 \pagestyle{plain}
 \pagenumbering{arabic}
 
@@ -155,6 +159,7 @@
 
 %% Incluir la bibliograf'ia. Mirar el archivo "biblio.bib" para m'as detales
 %% y un ejemplo.
+
 \bibliography{biblio}
 
 \end{document}
