@@ -22,14 +22,14 @@ donde
 \item $\mu$ es la media general,
 \item  $G_i$ es el efecto del $i$-ésimo genotipo,
 \item $A_j$ es el efecto del $j$-ésimo ambiente
-\item $\sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ es la sumatoria de componentes multiplicativas utilizadas para modelar la IGA. Siendo, $\lambda_k$ el valor singular para la  $k$-ésima IPC $\alpha_{ik}$ y $\gamma_{jk}$ son los scores de las PC para el $i$-ésimo genotipo y el $j$-ésima ambiente para la $k$-ésima componente, respectivamente;
+\item $\sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ es la sumatoria de componentes multiplicativas utilizadas para modelar la IGA. Siendo, $\lambda_k$ el valor singular para la  $k$-ésima PC $\alpha_{ik}$ y $\gamma_{jk}$ son los scores de las PC para el $i$-ésimo genotipo y el $j$-ésima ambiente para la $k$-ésima componente, respectivamente;
 \end{itemize}
 
 Los parámetros de IGA en el modelo AMMI se estiman por medio de la DVS de la matriz que contiene los residuos del modelo aditivo luego de ajustar por mínimos cuadrados el modelo de efectos principales.
 
 Generalmente los dos primeros términos multiplicativos son suficientes para explicar los patrones de interacción; la variabilidad remanente se interpreta como ruido. 
 
-Los patrones de interacción se pueden visualizar mediante los biplots \emph{Genotipe-Environment}, a menudo llamados biplots GE. El concepto del biplot fue presentado por Gabriel (1971), que consiste en una representación de las filas (individuos) y las columnas (variables) de una matriz de datos en un mismo gráfico. 
+Los patrones de interacción se pueden visualizar mediante los biplots GE, a menudo llamados biplots GE. El concepto del biplot fue presentado por Gabriel (1971), que consiste en una representación de las filas (individuos) y las columnas (variables) de una matriz de datos en un mismo gráfico. 
 
 \textbf{Biplot GE}
 
@@ -60,7 +60,7 @@ También se observa que los genotipos 3 y 8 están próximos al origen, lo que q
 El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. La presencia de observaciones atípicas es más una regla que una excepción cuando se consideran datos agronómicos debido a errores de medición, algunas plagas / enfermedad que puede influir en algunos genotipos en un ambiente dado que resultando por ejemplo en un rendimiento inferior al esperado, o incluso debido a alguna característica inherente de los genotipos que se miden.
 
 Rodrigues 2015 proponen una generalización robusta del modelo AMMI. La metología propuesta se puede obtener en dos etapas de la siguiente manera: primero ajustar la regresión robusta basada
-en el estimador M-Huber \citep{Huber1981} para reemplazar el ANOVA; y luego utilizar un procedimiento SVD / PCA robusto para reemplazar el SVD estándar. En la segunda etapa, consideraron varios métodos dando lugar a total de cinco robustos: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
+en el estimador M-Huber \citep{Huber1981} para reemplazar el ANOVA; y luego utilizar un procedimiento DVS / APC robusto para reemplazar el DVS estándar. En la segunda etapa, consideraron varios métodos dando lugar a total de cinco robustos: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
 
 El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes en los biplots puede dar como resultado un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (es decir, megaambientes; \citealp{Gauch1997,Yanetal2000}). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de producción de rendimiento.
 
@@ -188,20 +188,20 @@ Entre las posibles soluciones para tratar un conjunto de datos con observaciones
 Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
 
 \begin{itemize}
-\item EM-AMMI: Gauch y Zobel (1990) desarrollaron este enfoque mediante el cual se imputa utilizando el algoritmo EM (\emph{Expectation-Maximization}) incorporando el modelo AMMI. Consiste en un procedimiento iterativo que funciona de la siguiente forma: .............
+\item EM-AMMI: Gauch y Zobel (1990) desarrollaron este enfoque mediante el cual se imputa utilizando el algoritmo de maximización de la esperanza (EM, del inglés \emph{Expectation-Maximization}) incorporando el modelo AMMI. Consiste en un procedimiento iterativo que funciona de la siguiente forma: .............
 Dependiendo del número de términos multiplicativos empleados, el método de imputación puede denominarse EM-AMMI0, EM-AMMI1, etc. (Gauch y Zobel 1990). Los estudios de Caliński y col. (1992), Piepho (1995), Arciniegas-Alarcón y Dias (2009) y Paderewski y
 Rodrigues (2014) mostraron que se obtienen los mejores resultados para la imputación con modelos AMMI al incluir como máximo una componente multiplicativa.
 \end{itemize}
 \begin{itemize}
-\item EM-SVD: Perry (2009a) propone un método de imputación que combina el algoritmo EM con SVD. Este método reemplaza los valores faltantes de una matriz $G \times E$ inicialmente por valores arbitrarios para obtener una matriz completa, y luego la DVS se calcula iterativamente en esa matriz. Al final del proceso, cuando las iteraciones alcanzan estabilidad, se obtiene la matriz imputada.
+\item EM-SVD: Perry (2009a) propone un método de imputación que combina el algoritmo EM con DVS. Este método reemplaza los valores faltantes de una matriz $G \times E$ inicialmente por valores arbitrarios para obtener una matriz completa, y luego la DVS se calcula iterativamente en esa matriz. Al final del proceso, cuando las iteraciones alcanzan estabilidad, se obtiene la matriz imputada.
 .....Podria ponerlo tambien de manera formal... pero creo que con esto basta
 \end{itemize}
 \begin{itemize}
 \item EM-PCA:
 \end{itemize}
 \begin{itemize}
-\item Gabriel Eigen: Arciniegas-Alarcón et al. (2010) propuso un método de imputación que combina regresión y aproximación de rango inferior usando SVD. El método reemplaza inicialmente las celdas faltantes por valores arbitrarios, y posteriormente el
-las imputaciones se refinan a través de un esquema iterativo que define una partición de la matriz para cada valor que falta a su vez y utiliza una regresión lineal de columnas (o filas) para obtener el nueva imputación. En esta regresión, la matriz de diseño se aproxima por una matriz de menor rango usando la SVD.
+\item Gabriel Eigen: Arciniegas-Alarcón et al. (2010) propuso un método de imputación que combina regresión y aproximación de rango inferior usando DVS. El método reemplaza inicialmente las celdas faltantes por valores arbitrarios, y posteriormente el
+las imputaciones se refinan a través de un esquema iterativo que define una partición de la matriz para cada valor que falta a su vez y utiliza una regresión lineal de columnas (o filas) para obtener el nueva imputación. En esta regresión, la matriz de diseño se aproxima por una matriz de menor rango usando la DVS.
 \end{itemize}
 \begin{itemize}
 \item WGabriel Eigen:
@@ -419,21 +419,25 @@ install_github("jangelini/geneticae")
 
 
 
-{\Huge{(Ideas de: TRABAJO FINAL P SHINY)}}
+{\Huge{(Ideas de: https://mastering-shiny.org/dependency-tracking.html)}}
 
 \section{Shiny APP}
 Una aplicación web es una aplicación o herramienta informática accesible desde cualquier navegador, bien sea a través de internet (lo habitual) o bien a través de una red local. 
-Estas aplicaciones son muy populares hoy en día para los usuarios no expertos, debido a la facilidad de su uso, ya que no es preciso instalar nada en el ordenador, simplemente se accede a través de un navegador. Además se puede acceder desde cualquier dispositivo con conexión a internet, ya sea un ordenador, un smartphone o una tablet, es decir que es independiente del sistema operativo del usuario. Otra gran ventaja es el bajo consumo de recursos, ya que la mayor parte del tiempo estos se consumen en el servidor donde se encuentra alojada la aplicación, que generalmente tiene mucha más potencia de cómputo que cualquier ordenador personal.
+Estas aplicaciones son muy populares hoy en día para los usuarios no expertos, debido a la facilidad de su uso, ya que no requiere de una instalación en el ordenador del usuario, simplemente se accede a través de un navegador. Por lo que es posible utilizar una aplicación web desde desde cualquier dispositivo con conexión a internet, ya sea un ordenador, un smartphone o una tablet, es decir que es independiente del sistema operativo del usuario. Otra gran ventaja es el bajo consumo de recursos, ya que la mayor parte del tiempo estos se consumen en el servidor donde se encuentra alojada la aplicación, que generalmente tiene mucha más potencia de cómputo que cualquier ordenador personal.
 
 %https://datanalytics.com/libro_r/shiny.html
-Shiny es un paquete, que se encuentra instalado por defecto con Rstudio, con el que se pueden desarrollar aplicaciones web interactivas, directamente desde Rstudio sin necesitar conocimientos de HTML, CSS o Javascript. Shiny implementa la programación reactiva (cita de archivo aplicacion shiny) en donde los objetos (gráficos y tablas) que forman la aplicación responden a los inputs de los usuarios, dotando a estos de una gran capacidad de control.
+Shiny es un paquete R que te permite crear aplicaciones web interactivas, permitiendo exhibir un trabajo de R a través de un navegador web para que cualquiera pueda usarlo. 
 
-En general, en estas aplicaciones, se distinguen tres pasos en el funcionamiento de la aplicación:
-\begin{enumerate}
-\item El usuario modifica todos aquellos widgets que quedan a su disposición en el navegador (los llamaremos inputs).
-\item Los valores de los inputs se envían a R que realiza los análisis indicados.
-\item Los resultados de estos cálculos se muestran en el navegador (los llamaremos outputs).
-\end{enumerate}
+Crear aplicaciones web puede resultar difícil para la mayoría de los usuarios de R debido a que se necesita un conocimiento profundo de las tecnologías web como HTML, CSS y JavaScript; y además hacer aplicaciones interactivas complejas requiere un análisis cuidadoso de los flujos de interacción para asegurarse de que cuando una entrada cambie, solo se actualicen las salidas relacionadas. Sin embargo, shiny hace que sea mucho más fácil para el programador R crear aplicaciones web al proporcionar un conjunto de funciones de interfaz de usuario (UI para abreviar) que generan el HTML, CSS y JavaScript que necesita para tareas comunes. Esto significa que no se necesita conocer los detalles de HTML / CSS / JS.
+
+Shiny fomenta la separación del código que genera tu interfaz de usuario (el \emph{front-end}) del código que impulsa el comportamiento de tu aplicación (el \emph{backend}. Por lo tanto, Los dos componentes clave de cada una Shiny APP son: 
+
+\begin{itemize}
+\item ui (\emph{user interfaz}): la interfaz de usuario controla el diseño de la aplicación, recibe los inputs y
+muestra los outputs en el navegador.
+\item server, funciones de R que contienen las instrucciones que se necesitan para construir los resultados de los análisis incluidos en la aplicación.
+\item shinyApp, función que crea objetos de aplicación Shiny a partir de ui / servidor.
+\end{itemize}
 
 El esquema interno de la aplicación puede observarse en la Figura \ref{fig:fig321}. 
 
@@ -446,44 +450,40 @@ El esquema interno de la aplicación puede observarse en la Figura \ref{fig:fig3
 \end{figure}
 
 
-En las páginas y aplicaciones web se ha estandarizado el uso de ciertos lenguajes, tales como HTML, CSS, PHP o Javascript entre otros. Por defecto Shiny utiliza una plantilla básica de Twitter Bootstrap [18] para crear la interfaz de usuario, pero podemos descargar otras plantillas o crear una propia para personalizar nuestra aplicación. Twitter Bootstrap es un entorno de trabajo desarrollado por empleados de Twitter para fomentar la consistencia entre las herramientas internas, de forma que todas siguieran el mismo estilo. En 2011 Twitter liberó Bootstrap como código abierto, permitiendo que cualquiera lo usara para diseñar sus sitios o aplicaciones web. Contiene elementos de diseño basado en HTML, CSS y Javascript. Una de las mayores ventajas de Bootstrap es que permite crear interfaces web con CSS y JavaScript que adaptan la interfaz dependiendo del tamaño del dispositivo en el que se visualice de forma nativa, es decir, automáticamente se adapta al tamaño de un ordenador o de una tablet sin que el usuario tenga que hacer nada. Esto se denomina diseño adaptable o Responsive Design.
+La programación reactiva es un estilo de programación que enfatiza valores que cambian con el tiempo, y cálculos y acciones que dependen de esos valores. Esto es importante para las aplicaciones Shiny porque son interactivas: los usuarios cambian los controles de entrada (arrastrando controles deslizantes, escribiendo en cuadros de texto y marcando casillas de verificación), lo que hace que la lógica se ejecute en el servidor (leer CSV, subconjunto de datos y modelos de ajuste) que finalmente resultan en actualización de salidas (parcelas de respuesta, actualización de tablas).
 
-En lugar de usar un CSS propio para la interfaz de la aplicación se ha usado el paquete de R shinythemes [8], publicado por los creadores del propio Shiny. Shinytemes ofrece una serie de estilos básicos para aplicaciones Shiny.
+Para que las aplicaciones Shiny sean útiles, necesitamos dos cosas:
+
+Las expresiones y las salidas deben actualizarse siempre que cambie uno de sus valores de entrada. Esto asegura que la entrada y la salida permanezcan sincronizadas.
+
+Las expresiones y las salidas deben actualizarse solo cuando una de sus entradas cambia. Esto garantiza que las aplicaciones respondan rápidamente a la entrada del usuario, haciendo la cantidad mínima.
+
+Es relativamente fácil satisfacer una de las dos condiciones, pero es mucho más difícil satisfacer ambas. Para ver por qué y para ver cómo podríamos atacar el problema básico con otros estilos de programación, utilizaremos un ejemplo muy simple, eliminando la complejidad adicional de una aplicación web y enfocándonos en el código subyacente.
 
 
+\subsection{Flujo de trabajo}
 
-\subsection{Creación de la Shiny APP}
-%http://www.rpubs.com/JohanMarin/Shiny
-La instalación de este paquete puede realizarse a través de los menús de Rstudio o simplemente con la siguiente orden:\\
+El esta sección se motrará como mejorar dos flujos de trabajo de Shiny importantes: El ciclo de desarrollo básico de crear aplicaciones, realizar cambios y experimentar con los resultados; y la Depuración, el arte y el oficio de descubrir qué salió mal con su código y las soluciones de lluvia de ideas para solucionarlo.\\
+
+
+\textbf{1.\hspace{1cm} Flujo de trabajo de desarrollo}\\
+
+
+El objetivo de optimizar el flujo de trabajo de desarrollo es reducir el tiempo entre hacer un cambio y ver el resultado. Cuanto más rápido se pueda iterar, más rápido se podrá experimentar y más rápido podrá obtener su Shiny. Aquí hay dos flujos de trabajo principales para optimizar: crear la aplicación por primera vez y acelerar el ciclo iterativo de ajustar el código y probar los resultados.
+
+
+\textbf{Creación de la Shiny APP}
+
+
+Para poder crear una shiny APP se debe tener instado R, RStudio ya que tiene algunas características agradables específicamente para autoría, depuración y desplegando aplicaciones estas aplicaciones, y lo siguientes paquetes:
 
 \begin{lstlisting}
-install.packages("shiny")
+install.packages(c(
+  "ggforce", "shiny", "shinythemes", "tidyverse", "vroom" 
+))
 \end{lstlisting}
 
-Para crear una Shiny app en \emph{File} se elige la opción Shiny Web App (figura \ref{fig:fig322}).
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=12cm]{./Graficos/figura4}
-\end{center}
-\caption{Creación de Shiny Web App desde Rstudio}
-\label{fig:fig322}
-\end{figure}
-
-
-Las aplicaciones Shiny están compuestas por un archivo app.R o dos archivos ui.R y server.R, es decir, se puede partir de un solo fichero que aglutine todo el código o se puede partir de dos archivos que separan la parte cliente de la parte servidora.
-
-En este trabajo, se crea la aplicación Shiny mediante un unico script llamado app.R. El mismo se encuentra en un directorio (por ejemplo newdir/) y la aplicación se puede ejecutar con runApp(``newdir''). El script app.R esta formado por tres componentes:
-
-\begin{itemize}
-\item ui (\emph{user interfaz}): la interfaz de usuario controla el diseño de la aplicación, recibe los inputs y
-muestra los outputs en el navegador.
-\item server, funciones de R que contienen las instrucciones que se necesitan para construir los resultados de los análisis incluidos en la aplicación.
-\item shinyApp, función que crea objetos de aplicación Shiny a partir de ui / servidor.
-\end{itemize}
-
-
-El archivo app.R deberá comenzar cargando el paquete Shiny y finalizar con una llamada a shinyApp:\\
+Para crear una Shiny APP, lo más simple es crear un nuevo directorio para su aplicación y crear un sólo archivo llamado app.R en él. Este archivo se usará para indicarle a Shiny cómo debería verse la aplicación y cómo debería comportarse.
 
 \begin{lstlisting}[frame=single]
 library(shiny)
@@ -492,93 +492,80 @@ server<- ...
 shinyApp(ui = ui, server = server)
 \end{lstlisting}
 
+
+Por lo tanto, en el archivo app.R se realizan las siguientes tareas:
+
+\begin{itemize}
+\item Carga el paquete shiny: 
+\begin{lstlisting} 
+library(shiny) 
+\end{lstlisting}
+\item Define la interfaz de usuario, la página web HTML con la que los usuarios interactúan.
+\item Especifica el comportamiento de nuestra aplicación definiendo la  función server. 
+\item Se ejecuta shinyApp(ui, server)para construir e iniciar una aplicación Shiny desde la interfaz de usuario y el servidor.
+\end{itemize}
+
+
 La sesión de R estará monitoreando la aplicación y ejecutando las reacciones de la aplicación mientras la aplicación Shiny esté activa, por lo que no podrá ejecutar ningún comando.
 
-La Figura \ref{fig:fig323} muestra el diseño utilizado en la aplicación. Se cuenta con un titulo y diferentes pestañas que conducen a diferentes páginas de la aplicación (\textbf{A}). Se cuenta con un panel de barra lateral (\textbf{B}), que contiene principalmente widgets con los cuales el usuario puede determinar el análisis que desea realizar y un panel principal (\textbf{C}) en el cual se obtenene los resultados del análisis solicitado.
+En todo tipo de programación, es una mala práctica tener código duplicado; puede ser un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código.
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=12cm]{./Graficos/figura6}
-\end{center}
-\caption{Diseño de la aplicación Shiny. \textbf{A}: título y pestañas; \textbf{B}: área de entrada; \textbf{C}: área de resultados.}
-\label{fig:fig323}
-\end{figure}
+En la secuencia de comandos R tradicional, utilizamos dos técnicas para lidiar con el código duplicado: capturamos el valor usando una variable o capturamos el cálculo con una función. Desafortunadamente, ninguno de estos enfoques funciona aquí y se necesita un nuevo mecanismo: expresiones reactivas . Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse.
 
-\subsubsection{Tipos de componentes de Shiny Web App}
 
-Los tipos de componentes de una aplación Shiny son:
+\textbf{Ver los cambios}
+
+
+Al crear o modificar la aplicacion, se la ejecuta para poder ver los cambios realizados, por lo que el dominio de flujo de trabajo de desarrollo es especialmente importante. La primera forma de reducir la velocidad de iteración es evitar hacer clic en el botón "Ejecutar aplicación" y, en su lugar, aprender el método abreviado de teclado Cmd/Ctrl+ Shift+ Enter. Esto le brinda el siguiente flujo de trabajo de desarrollo:
+
+\begin{enumerate}
+\item Escribe un código.
+\item Inicie la aplicación con Cmd/Ctrl+ Shift+ Enter.
+\item Experimentar interactivamente con la aplicación.
+\item Cierra la aplicación.
+\item Ir a 1.
+\end{enumerate}
+
+
+Otra forma de reducir aún más la velocidad de iteración es activar la recarga automática (options(shiny.autoreload = TRUE)) y luego ejecutar la aplicación en un trabajo en segundo plano, como se describe en https://github.com/sol-eng/background-jobs/tree/master/shiny-trabajo. Con este flujo de trabajo tan pronto como guarde un archivo, su aplicación se reiniciará: no es necesario cerrarla y reiniciarla. Esto conduce a un flujo de trabajo aún más rápido:
+\begin{enumerate}
+\item Escriba un código y presione Cmd/Ctrl+ Spara guardar en el archivo.
+\item Experimentar interactivamente.
+\item Ir a 1.
+\end{enumerate}
+La principal desventaja de esta técnica es que debido a que la aplicación se ejecuta en un proceso separado, es considerablemente más difícil de depurar.
+
+De manera predeterminada, cuando ejecuta la aplicación, aparecerá en una ventana emergente. Sin embargo ,existen otras dos opciones que puede elegir del menú desplegable \emph{Run App}
+\begin{enumerate}
+\item La ejecución en el panel del visor es útil para aplicaciones más pequeñas porque puede verla al mismo tiempo que ejecuta el código de la aplicación.
+\item Ejecutar en un navegador externo es útil para aplicaciones más grandes, o si desea verificar que su aplicación se ve exactamente de la manera que espera en el contexto que la mayoría de los usuarios la verán.
+\end{enumerate}
+
+
+\textbf{2.\hspace{1cm} Depuración}\\
+
+
+Entre los problemas que pueden surgir al crear una Shiny app se encuentran los siguientes:
+
 \begin{itemize}
-\item Componentes de Inputs y Outputs. Entre los inputs se encuentran numericInput, sliderInput, textInput, checkboxInput, entre otros. Posibles outputs se encuentran en la tabla \ref{tab:tabla1}, con las correspondientes funciones para server.R y ui.R
-\item Componentes de Diseño. Algunos ejemplos se muestra en la tabla \ref{tab:tabla2}.
-\item Componentes HTML (tags).
+\item Error inesperado. Este es el caso más fácil, porque obtendrá un rastreo que le permitirá averiguar exactamente de dónde proviene el error. Una vez que haya identificado el problema, deberá probar sistemáticamente su suposición hasta que encuentre una diferencia entre sus expectativas y lo que realmente está sucediendo. El depurador interactivo es una herramienta poderosa para este proceso.
+\item No obtiene ningún error, pero un valor es incorrecto. Aquí, generalmente es mejor transformar esto en el primer problema utilizando stop()para arrojar un error cuando se produce el valor incorrecto.
+\item Todos los valores son correctos, pero no se actualizan cuando espera. Este es el problema más desafiante porque es exclusivo de Shiny, por lo que no puede aprovechar sus habilidades de depuración de R.
+
 \end{itemize}
 
 
-\begin{table}[h]
-\begin{center}
-\caption{Funciones para Outputs tanto para server.R como para ui.R}
-\label{tab:tabla1}
-\resizebox{\textwidth}{!} {
-\begin{tabular}{cccc}
-\hline
-server.R & ui.R & espera & crea \\
-\hline 
-renderPlot & plotOutput & Gráfica & Gráfica\\
-renderPrint & verbatimTextOutput, htmlOutput& salida impresa & texto\\
-renderTable & tableOutput & objetos como tablas & tabla simple\\
-renderDataTable & dataTableOutput & objetos como tablas & tabla DataTables.js\\
-downloadHandler	& downloadButton, downloadLink & &\\
-\hline 
-\end{tabular}
-}
-\end{center}
-\end{table}
+Una vez localizado la fuente del error, la herramienta más poderosa es el depurador interactivo. El depurador detiene la ejecución y le brinda una consola R interactiva donde puede ejecutar cualquier código para descubrir qué salió mal. Hay dos formas de iniciar el depurador:
 
-\subsubsection{Componentes de Diseño}
-% http://rstudio-pubs-static.s3.amazonaws.com/21373_8af3d3634b97461089c8a76659982915.html#componentes-shiny
 \begin{itemize}
-\item navbarPage(): Crea una página con una barra de navegación de nivel superior.
-\item tabPanel(): Crea un panel de pestañas.
-\item sidebarLayout(): Diseña de una barra lateral y el área principal.
-\item sidebarPanel(): Crea un panel de barra lateral.
-\item mainPanel(): Crea un panel principal.
-\item navlistPanel(): Crea un panel de lista de navegación.
-\item prettyRadioButtons(): Crea botones que permiten seleccionar un elemento de una lista.
-\item materialSwitch(): Crea un interruptor de palanca para activar o desactivar una selección.
-\item pickerInput(): Crea un control de selección de entrada.
-\item navbarMenu():
+\item Agregar una llamada a la función browser() en código fuente. Esta es la forma estándar de R de iniciar el depurador interactivo, y funcionará sin embargo, se está ejecutando brillante.
+\item Agregar un punto de interrupción RStudio haciendo clic a la izquierda del número de línea. Puede eliminar el punto de interrupción haciendo clic en el círculo rojo. La ventaja de los puntos de interrupción es que no son código, por lo que nunca tendrá que preocuparse por registrarlos accidentalmente en su sistema de control de versiones.
 \end{itemize}
 
-{\small
-\begin{table}[h]
-\begin{center}
-\caption{Componentes de Diseño de Shiny Web App}
-\label{tab:tabla2}
-\resizebox{0.6\textwidth}{!} {
-\begin{tabular}{cccc}
-\hline 
-Componente	& Subcomponente	 \\
-\hline
-navbarPage(): & tabPanel(), navbarMenu()\\
-navbarMenu() & tabPanel() \\
-navlistPanel() & tabPanel()\\
-titlePanel() &	\\
-sidebarLayout() & sidebarPanel()  mainPanel() (obligatorio)	\\
-sidebarPanel() & \\
-mainPanel() & \\
-tabsetPanel() &	\\
-tabPanel()	 & \\
-\hline
-\end{tabular}
-}
-\end{center}
-\end{table}
-}
 
 
-Para más información sobre estas componentes ver hoja de referencia de Shiny (Apéndice A).
 
 
-\subsubsection{Compartiendo una Shiny Web App}
+\subsection{Compartiendo una Shiny Web App}
 
 Una vez creada la aplicación, resulta conveniente ponerlas a disposición de los usuarios. En este caso la Shiny Web App encuentra disponible en el servidor de CONICET \url{www.cefobi.com}. Además el proyecto se encuentra en GitHub \url{https://github.com/jangelini/shinyAPP_geneticae}. 
