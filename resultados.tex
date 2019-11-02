@@ -6,7 +6,9 @@
 \chapter{Resultados}
 \section{Paquete de R \emph{geneticae}}
 
-El paquete \emph{geneticae} ofrece funciones para el análisis de datos de etapas avanzadas de programas de mejoramiento, donde se evalúan pocos genotipos. Para instalarlo se deben utilizar las siguientes sentencias:
+El paquete \emph{geneticae} ofrece funciones para el análisis de datos de etapas avanzadas de programas de mejoramiento, donde se evalúan pocos genotipos. 
+
+Para instalarlo se deben ejecutar las siguientes instrucciones:
 
 \begin{lstlisting}
 install.packages("devtools")
@@ -14,23 +16,23 @@ library(devtools)
 install_github("jangelini/geneticae")
 \end{lstlisting}
 
-Una vez que se instala el paquete geneticae, se debe cargar en la sesion de R:
+Una vez que se instala el paquete geneticae, se debe cargar en la sesion de R indicando:
 
 \begin{lstlisting}
 library(geneticae)
 \end{lstlisting}
 
 
-Se puede obtener información detallada sobre las funciones del paquete geneticae de los archivos de ayuda mediante \emph{help (package = "geneticae")}.  La ayuda para una función, por ejemplo, imputación, en una sesión R se puede obtener usando \emph{?imputation} o \emph{help(imputation)}.
+Es posible obtener información detallada sobre las funciones del paquete geneticae mediante de los archivos de ayuda indicando \emph{help (package = "geneticae")}.  La ayuda para una función, por ejemplo, \emph{imputation}, en una sesión R se puede obtener usando \emph{?imputation} o \emph{help(imputation)}.
 
 
-\subsection{Conjuntos de datos incluidos}
+\subsection{Conjuntos de datos en geneticae}
 
 El paquete geneticae proporciona dos conjuntos de datos para ilustrar la metodología incluida para analizar los datos MET.
 
 \begin{itemize}
 \item yan.winterwheat dataset: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. No hay réplicas disponibles en los datos. Este conjunto de datos se obtuvo del paquete agridat.
-
+\end{itemize}
 \begin{lstlisting}
 library(geneticae)
 data(yan.winterwheat)
@@ -47,9 +49,9 @@ head(dat_yan)
 ## 5 Del BH93 4.390
 ## 6 Dia BH93 5.178
 \end{verbatim}
-
+\begin{itemize}
 \item plrv dataset: rendimiento, peso de planta y parcela de 28 clones de la población del virus del enrollamiento de la papa (PLRV) evaluada en seis entornos. Las réplicas están disponibles en los datos. Este conjunto de datos se obtuvo del paquete agricolae.
-
+\end{itemize}
 \begin{lstlisting}
 data(plrv)
 dat_rep <- plrv
@@ -66,13 +68,13 @@ head(dat_rep)
 ## 5   157.26     Ayac   1   0.6250000       5.00 23.14815
 ## 6    163.9     Ayac   1   0.5120000       2.56 18.96296
 \end{verbatim}
-\end{itemize}
+
  
-\subsection{Funciones incluidas}
+\subsection{Funciones en geneticae}
 
 \textbf{Modelo de regresión por sitio}
 
-Para ejecutar la función \emph{GGEmodel}, se debe proporcionar un conjunto de datos con genotipos, ambientes, repeticiones (si hay disponibles), el fenotipo observado y los nombres de las variables en el archivo de entrada. Además, se debe indicar el método de centrado, escala y SVD.
+Para ejecutar la función \emph{GGEmodel}, se debe proporcionar un conjunto de datos con genotipos, ambientes, repeticiones (si hay disponibles), el fenotipo observado y los nombres que dichas variables tienen en el archivo de entrada. Además, se debe indicar el método de centrado, escala y SVD.
 
 Cuando no hay repeticiones disponibles en el conjunto de datos, como es el caso del conjunto de datos yan.winterwheat, el modelo GGE se indica de la siguiente manera:
 
@@ -125,37 +127,36 @@ names(GGE1)
 ## [10] "centering"       "scaling"         "SVP"
 \end{verbatim}
 
+
 \textbf{Biplot GGE}
 
 Para ejecutar la función \emph{GGEPlot}, se requiere un objeto de la clase \emph{GGEmodel}. La salida es un biplot construido a través de los componentes principales generados por \emph{GGEmodel}.
 
-Los diferentes biplots que se pueden obtener usando la función \emph{GGEPlot} se muestran usando el conjunto de datos yan.winterwheat.
+Los diferentes biplots que se pueden obtener usando la función \emph{GGEPlot} se muestran usando el conjunto de datos yan.winterwheat. Si hay repeticiones disponibles en el conjunto de datos, como es el caso del conjunto plrv, se debe indicar el nombre de la columna que contiene las réplicas en el archivo de entrada.
 
 
 \begin{itemize}
-\item Biplot básico, se obtiene indicando type = "Biplot".
+\item Biplot básico
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Biplot")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/GGE_BIPLOT.png}
 	\end{center}
 	\caption{Biplot básico obtenido de la función \emph{GGEPlot}}
 \end{figure}
 
-\item Biplot básico, se obtiene indicando type = "Biplot".
-
-\item Ranking de los cultivares en función de su rendimiento en cualquier ambiente dado se obtiene indicando type="Selected Environment" y el nombre del ambiente para examinarse selectedE = "OA93".
+\item Ranking de los cultivares en función de su rendimiento en el ambiente OA93.
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93")
 \end{lstlisting}
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/SelectedEnvironment.png}
 	\end{center}
@@ -163,13 +164,13 @@ GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93")
 \end{figure}
 
 
-\item Ranking de los ambientes en función del rendimiento relativo de cualquier cultivar determinado se obtiene indicando  type="Selected Genotype" y el nombre del ambiente para examinarse selectedG = "Kat".
+\item Ranking de los ambientes en función del rendimiento relativo del cultivar Kat.
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/SelectedGenotype.png}
 	\end{center}
@@ -177,26 +178,26 @@ GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat")
 \end{figure}
 
 
-\item Relación entre ambientes, se obtiene indicando type="Relationship Among Environments".
+\item Relación entre ambientes.
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Relationship Among Environments")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/RelationshipAmongEnvironments.png}
 	\end{center}
 	\caption{Relación entre ambientes obtenido de la función \emph{GGEPlot}}
 \end{figure}
 
-\item Comparación entre dos genotipos se obtiene indicando type = "Comparison of Genotype" y los genotipos para comparar selectedG1 = "Kat" con selectedG2 = "Cas".
+\item Comparación entre los genotipos Kat y Cas.
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = "Cas")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/ComparisonofGenotype.png}
 	\end{center}
@@ -204,70 +205,70 @@ GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = 
 \end{figure}
 
 
-\item Identificación del mejor cultivar en cada ambiente indicando type = "Which Won Where/What".
+\item Identificación del mejor cultivar en cada ambiente.
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Which Won Where/What")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
-		\includegraphics[width=10cm]{./Graficos/WhichWonWhereWhat.png}
+		\includegraphics[width=12cm]{./Graficos/WhichWonWhereWhat.png}
 	\end{center}
 	\caption{Identificación del mejor cultivar en cada ambiente a partir de la función \emph{GGEPlot}}
 \end{figure}
 
 
 
-\item Evaluación de los ambientes basados tanto en la capacidad de discriminación como en la representatividad indicando type = "Which Won Where/What".
+\item Evaluación de los ambientes basados tanto en la capacidad de discriminación como en la representatividad.
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Discrimination vs. representativeness")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
-		\includegraphics[width=10cm]{./Graficos/Discriminationvsrepresentativeness.png}
+		\includegraphics[width=12cm]{./Graficos/Discriminationvsrepresentativeness.png}
 	\end{center}
 	\caption{Evaluación de los ambientes basados tanto en la capacidad de discriminación y representatividad a partir de la función \emph{GGEPlot}}
 \end{figure}
 
 
 
-\item Clasificación de ambientes con respecto al ambiente ideal, indicando type="Ranking Environments".
+\item Clasificación de ambientes con respecto al ambiente ideal.
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Ranking Environments")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
-		\includegraphics[width=10cm]{./Graficos/RankingEnvironments.png}
+		\includegraphics[width=12cm]{./Graficos/RankingEnvironments.png}
 	\end{center}
 	\caption{Clasificación de ambientes con respecto al ambiente ideal a partir de la función \emph{GGEPlot}}
 \end{figure}
 
 
-\item Clasificación de genotipos con respecto al genotipo ideal, indicando type = "Ranking Genotypes".
+\item Clasificación de genotipos con respecto al genotipo ideal.
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Ranking Genotypes")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/RankingGenotypes.png}
 	\end{center}
 	\caption{Clasificación de genotipos con respecto al genotipo ideal a partir de la función \emph{GGEPlot}}
 \end{figure}
 
-\item Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad, indicando type = "Mean vs. Stability".
+\item Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad.
 
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Mean vs. Stability")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/MeanvsStability.png}
 	\end{center}
@@ -279,15 +280,16 @@ GGEPlot(GGE1, type = "Mean vs. Stability")
 
 \textbf{Classic AMMI model}
 
-Para ejecutar la función rAMMI, como en la función GGEmodel, se debe proporcionar un conjunto de datos con genotipo, entorno, repeticiones (si las hay) y la variable de respuesta. Se debe indicar el nombre de las columnas que contienen genotipo, entorno, repeticiones y la respuesta. La salida es un biplot.
+Para ejecutar la función rAMMI, como en la función \emph{GGEmodel}, se debe proporcionar un conjunto de datos con genotipo, entorno, repeticiones (si las hay) y la variable de respuesta. Se debe indicar el nombre de las columnas que contienen cada una de estas variables en el conjunto de datos de entradas. La salida de la función es un biplot.
 
 A continuación se muestra el biplot GE obtenido del modelo AMMI clásico obtenido con el conjunto de datos yan.winterwheat.
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "AMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
+ type = "AMMI")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/AMMI.png}
 	\end{center}
@@ -296,17 +298,18 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type =
 
 \textbf{Robust AMMI model}
 
-Los biplots de los cinco modelos AMMI robustos propuestos por Rodrigues et al. (2015), usando el conjunto de datos yan.winterwheat se muestran a continuación.
+Como se dijo anteriormente, el modelo AMMI clasico, en su forma estándar, no funciona bien en presencia de observaciones atípicas. Dado que los outliers son muy comun en los datos agronómicos, Rodrigues et al. (2015) proponen cinco modelos AMMI robustos, que permiten superar el problema de la contaminación de datos con observaciones atípicas. Los biplots de los cinco modelos AMMI robustos propuestos por Rodrigues et al. (2015), usando el conjunto de datos yan.winterwheat se muestran a continuación.
 
 \begin{itemize}
 
-\item  type = "rAMMI"
+\item  modelo "rAMMI"
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "rAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
+ type = "rAMMI")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/rAMMI.png}
 	\end{center}
@@ -314,13 +317,14 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type =
 \end{figure}
 
 
-\item  type = "hAMMI"
+\item  modelo "hAMMI"
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "hAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
+ type = "hAMMI")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/hAMMI.png}
 	\end{center}
@@ -328,13 +332,14 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type =
 \end{figure}
 
 
-\item  type = "gAMMI"
+\item  modelo "gAMMI"
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "gAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
+ type = "gAMMI")
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/gAMMI.png}
 	\end{center}
@@ -343,14 +348,15 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type =
 
 
 
-\item  type = "lAMMI"
+\item  modelo "lAMMI"
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "lAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
+ type = "lAMMI")
 \end{lstlisting}
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/lAMMI.png}
 	\end{center}
@@ -358,13 +364,14 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type =
 \end{figure}
 
 
-\item  type = "ppAMMI"
+\item  modelo "ppAMMI"
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "ppAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
+ type = "ppAMMI")
 \end{lstlisting}
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/ppAMMI.png}
 	\end{center}
@@ -372,32 +379,203 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type =
 \end{figure}
 
 \end{itemize}
-\section{Geneticae Shiny Web App}
 
-En primer lugar se debe cargar el paquete Shiny como primera línea del script:
+\textbf{Métodos de imputación}
+Una limitación importante de los modelos presentados anteriormente es que requieren una que el conjunto de datos este completo. Por lo tanto, en el paquete se incluyen una serie de metodologías propuestas, algunas de las cuales no se encuentran disponible en R, para superar el problema de falta de equilibrio. 
 
-\begin{lstlisting}[frame=single]
-library(shiny) 
+El conjunto de datos yan.winterwheat se utilizó como ejemplo. Como el conjunto de datos no contaba con observaciones perdidas, algunas fueron eliminadas con el objetivo de mostrar las metodologías de imputación incluidas.
+
+\begin{lstlisting}
+# generates missing data
+dat_yan[1, 3] <- NA
+dat_yan[3, 3] <- NA
+dat_yan[2, 3] <- NA
 \end{lstlisting}
 
-La funcion ui contiene todas las indicaciones para construir la interfaz del usuario. Estas instrucciones se pueden agrupar con respecto a los siguientes aspectos:
-\begin{enumerate}
-\item La estructura de la aplicación: Por defecto, las aplicaciones hechas con Shiny tienen un título, un panel lateral y un panel principal que se indican con las funciones headerPanel(), sidebarPanel() y mainPanel().
-\item Los inputs: La reactividad de la aplicación toma como punto de partida los inputs que son los campos en los que dejamos libertad al usuario para elegir diferentes valores a través de los widgets. Hay diferentes tipos de widgets como los que reciben valores numéricos, texto, listas desplegables, etc. En nuestra aplicación, hemos incluido el widget sliderInput() que inserta una barra deslizable y permite elegir un valor de r entre -1 y 1. El valor seleccionado pasará a server.R bajo el nombre de r\$input donde el identificador "r" aparece como el primer argumento de la función sliderInput().
-\item Los outputs: La reactividad de la aplicación fructifica en los outputs que son los resultados (valores numéricos, tablas, gráficos) que recibe la interfaz desde el server.R. En nuestro caso, el resultado es un gráfico y se inserta con la función
-plotOutput().
-\end{enumerate}
 
-Además de las funciones citadas, el usuario puede encontrar las siguientes:
-\begin{enumerate}
-\item  h5(): Contenido de texto con diferentes tamaños. Otros tamaños son h1(), h2(), h3() y h4().
-\item p(): Bloques de texto con diferentes componentes.
-\item img(): Imagen (los archivos de las imágenes incluidas deben estar dentro del subdirectorio www).
-\end{enumerate}
+\begin{itemize}
+\item GabrielEigein proposed by Arciniegas-Alarcón S., et al. (2010).
+\end{itemize}
+\begin{lstlisting}
+imputation(dat_yan, PC.nb = 2, genotype = "gen", environment = "env", response = "yield", 
+    type = "EM-AMMI")
+\end{lstlisting}
 
-El archivo server.R realiza las operaciones necesarias hasta obtener los outputs que envía como resultado a ui.R. Como hemos mencionado anteriormente, nuestra aplicación depende del valor del input r\$input. Este archivo comienza de nuevo cargando el paquete Shiny y todos los necesarios para realizar los cálculos correspondientes. A excepción de las funciones definidas en R que sean necesarias para el tratamiento de los inputs, los cálculos concretos que deben "reaccionar" a las decisiones de los usuarios están incluidos dentro de  
+\begin{verbatim}
+##         BH93  EA93  HW93  ID93  KE93  NN93  OA93  RN93  WP93
+## Ann 4.150120 4.150 2.849 3.084 5.940 4.450 4.351 4.039 2.672
+## Ari 4.035814 4.771 2.912 3.506 5.699 5.152 4.956 4.386 2.938
+## Aug 4.305244 4.578 3.098 3.460 6.070 5.025 4.730 3.900 2.621
+## Cas 4.732000 4.745 3.375 3.904 6.224 5.340 4.226 4.893 3.451
+## Del 4.390000 4.603 3.511 3.848 5.773 5.421 5.147 4.098 2.832
+## Dia 5.178000 4.475 2.990 3.774 6.583 5.045 3.985 4.271 2.776
+## Ena 3.375000 4.175 2.741 3.157 5.342 4.267 4.162 4.063 2.032
+## Fun 4.852000 4.664 4.425 3.952 5.536 5.832 4.168 5.060 3.574
+## Ham 5.038000 4.741 3.508 3.437 5.960 4.859 4.977 4.514 2.859
+## Har 5.195000 4.662 3.596 3.759 5.937 5.345 3.895 4.450 3.300
+## Kar 4.293000 4.530 2.760 3.422 6.142 5.250 4.856 4.137 3.149
+## Kat 3.151000 3.040 2.388 2.350 4.229 4.257 3.384 4.071 2.103
+## Luc 4.104000 3.878 2.302 3.718 4.555 5.149 2.596 4.956 2.886
+## Reb 4.375000 4.701 3.655 3.592 6.189 5.141 3.933 4.208 2.925
+## Ron 4.940000 4.698 2.950 3.898 6.063 5.326 4.302 4.299 3.031
+## Rub 3.786000 4.969 3.379 3.353 4.774 5.304 4.322 4.858 3.382
+## Zav 4.238000 4.654 3.607 3.914 6.641 4.830 5.014 4.363 3.111
+## m12 3.340000 3.854 2.419 2.783 4.629 5.090 3.281 3.918 2.561
+\end{verbatim}
 
 
-Las funciones ui y server de nuestra aplicación se encuentra en el apéndice B.
+\begin{itemize}
+\item EM-AMMI proposed by Gauch and Zobel (1990).
+\end{itemize}
+\begin{lstlisting}
+imputation(dat_yan, PC.nb = 1, genotype = "gen", environment = "env", response = "yield", 
+    type = "EM-AMMI")
+\end{lstlisting}
+
+\begin{verbatim}
+##         BH93  EA93  HW93  ID93  KE93  NN93  OA93  RN93  WP93
+## Ann 4.136249 4.150 2.849 3.084 5.940 4.450 4.351 4.039 2.672
+## Ari 4.474249 4.771 2.912 3.506 5.699 5.152 4.956 4.386 2.938
+## Aug 4.386299 4.578 3.098 3.460 6.070 5.025 4.730 3.900 2.621
+## Cas 4.732000 4.745 3.375 3.904 6.224 5.340 4.226 4.893 3.451
+## Del 4.390000 4.603 3.511 3.848 5.773 5.421 5.147 4.098 2.832
+## Dia 5.178000 4.475 2.990 3.774 6.583 5.045 3.985 4.271 2.776
+## Ena 3.375000 4.175 2.741 3.157 5.342 4.267 4.162 4.063 2.032
+## Fun 4.852000 4.664 4.425 3.952 5.536 5.832 4.168 5.060 3.574
+## Ham 5.038000 4.741 3.508 3.437 5.960 4.859 4.977 4.514 2.859
+## Har 5.195000 4.662 3.596 3.759 5.937 5.345 3.895 4.450 3.300
+## Kar 4.293000 4.530 2.760 3.422 6.142 5.250 4.856 4.137 3.149
+## Kat 3.151000 3.040 2.388 2.350 4.229 4.257 3.384 4.071 2.103
+## Luc 4.104000 3.878 2.302 3.718 4.555 5.149 2.596 4.956 2.886
+## Reb 4.375000 4.701 3.655 3.592 6.189 5.141 3.933 4.208 2.925
+## Ron 4.940000 4.698 2.950 3.898 6.063 5.326 4.302 4.299 3.031
+## Rub 3.786000 4.969 3.379 3.353 4.774 5.304 4.322 4.858 3.382
+## Zav 4.238000 4.654 3.607 3.914 6.641 4.830 5.014 4.363 3.111
+## m12 3.340000 3.854 2.419 2.783 4.629 5.090 3.281 3.918 2.561
+\end{verbatim}
+
+
+
+\begin{itemize}
+\item EM-SVD proposed by Perry (2009)
+\end{itemize}
+\begin{lstlisting}
+imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", 
+    type = "EM-SVD")
+\end{lstlisting}
+
+\begin{verbatim}
+##           [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9]
+##  [1,] 4.332467 4.150 2.849 3.084 5.940 4.450 4.351 4.039 2.672
+##  [2,] 4.332467 4.771 2.912 3.506 5.699 5.152 4.956 4.386 2.938
+##  [3,] 4.332467 4.578 3.098 3.460 6.070 5.025 4.730 3.900 2.621
+##  [4,] 4.732000 4.745 3.375 3.904 6.224 5.340 4.226 4.893 3.451
+##  [5,] 4.390000 4.603 3.511 3.848 5.773 5.421 5.147 4.098 2.832
+##  [6,] 5.178000 4.475 2.990 3.774 6.583 5.045 3.985 4.271 2.776
+##  [7,] 3.375000 4.175 2.741 3.157 5.342 4.267 4.162 4.063 2.032
+##  [8,] 4.852000 4.664 4.425 3.952 5.536 5.832 4.168 5.060 3.574
+##  [9,] 5.038000 4.741 3.508 3.437 5.960 4.859 4.977 4.514 2.859
+## [10,] 5.195000 4.662 3.596 3.759 5.937 5.345 3.895 4.450 3.300
+## [11,] 4.293000 4.530 2.760 3.422 6.142 5.250 4.856 4.137 3.149
+## [12,] 3.151000 3.040 2.388 2.350 4.229 4.257 3.384 4.071 2.103
+## [13,] 4.104000 3.878 2.302 3.718 4.555 5.149 2.596 4.956 2.886
+## [14,] 4.375000 4.701 3.655 3.592 6.189 5.141 3.933 4.208 2.925
+## [15,] 4.940000 4.698 2.950 3.898 6.063 5.326 4.302 4.299 3.031
+## [16,] 3.786000 4.969 3.379 3.353 4.774 5.304 4.322 4.858 3.382
+## [17,] 4.238000 4.654 3.607 3.914 6.641 4.830 5.014 4.363 3.111
+## [18,] 3.340000 3.854 2.419 2.783 4.629 5.090 3.281 3.918 2.561
+\end{verbatim}
+
+
+\begin{itemize}
+\item WGabriel proposed by Alarcon…..
+\end{itemize}
+\begin{lstlisting}
+imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", 
+    type = "WGabriel")
+\end{lstlisting}
+
+\begin{verbatim}
+##         BH93  EA93  HW93  ID93  KE93  NN93  OA93  RN93  WP93
+## Ann 4.004664 4.150 2.849 3.084 5.940 4.450 4.351 4.039 2.672
+## Ari 4.455727 4.771 2.912 3.506 5.699 5.152 4.956 4.386 2.938
+## Aug 4.328095 4.578 3.098 3.460 6.070 5.025 4.730 3.900 2.621
+## Cas 4.732000 4.745 3.375 3.904 6.224 5.340 4.226 4.893 3.451
+## Del 4.390000 4.603 3.511 3.848 5.773 5.421 5.147 4.098 2.832
+## Dia 5.178000 4.475 2.990 3.774 6.583 5.045 3.985 4.271 2.776
+## Ena 3.375000 4.175 2.741 3.157 5.342 4.267 4.162 4.063 2.032
+## Fun 4.852000 4.664 4.425 3.952 5.536 5.832 4.168 5.060 3.574
+## Ham 5.038000 4.741 3.508 3.437 5.960 4.859 4.977 4.514 2.859
+## Har 5.195000 4.662 3.596 3.759 5.937 5.345 3.895 4.450 3.300
+## Kar 4.293000 4.530 2.760 3.422 6.142 5.250 4.856 4.137 3.149
+## Kat 3.151000 3.040 2.388 2.350 4.229 4.257 3.384 4.071 2.103
+## Luc 4.104000 3.878 2.302 3.718 4.555 5.149 2.596 4.956 2.886
+## Reb 4.375000 4.701 3.655 3.592 6.189 5.141 3.933 4.208 2.925
+## Ron 4.940000 4.698 2.950 3.898 6.063 5.326 4.302 4.299 3.031
+## Rub 3.786000 4.969 3.379 3.353 4.774 5.304 4.322 4.858 3.382
+## Zav 4.238000 4.654 3.607 3.914 6.641 4.830 5.014 4.363 3.111
+## m12 3.340000 3.854 2.419 2.783 4.629 5.090 3.281 3.918 2.561
+\end{verbatim}
+
+\begin{itemize}
+\item EM-PCA proposed by
+\end{itemize}
+\begin{lstlisting}
+imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", 
+    type = "EM-PCA")
+\end{lstlisting}
+
+\begin{verbatim}
+##         BH93  EA93  HW93  ID93  KE93  NN93  OA93  RN93  WP93
+## Ann 3.980317 4.150 2.849 3.084 5.940 4.450 4.351 4.039 2.672
+## Ari 4.463093 4.771 2.912 3.506 5.699 5.152 4.956 4.386 2.938
+## Aug 4.327731 4.578 3.098 3.460 6.070 5.025 4.730 3.900 2.621
+## Cas 4.732000 4.745 3.375 3.904 6.224 5.340 4.226 4.893 3.451
+## Del 4.390000 4.603 3.511 3.848 5.773 5.421 5.147 4.098 2.832
+## Dia 5.178000 4.475 2.990 3.774 6.583 5.045 3.985 4.271 2.776
+## Ena 3.375000 4.175 2.741 3.157 5.342 4.267 4.162 4.063 2.032
+## Fun 4.852000 4.664 4.425 3.952 5.536 5.832 4.168 5.060 3.574
+## Ham 5.038000 4.741 3.508 3.437 5.960 4.859 4.977 4.514 2.859
+## Har 5.195000 4.662 3.596 3.759 5.937 5.345 3.895 4.450 3.300
+## Kar 4.293000 4.530 2.760 3.422 6.142 5.250 4.856 4.137 3.149
+## Kat 3.151000 3.040 2.388 2.350 4.229 4.257 3.384 4.071 2.103
+## Luc 4.104000 3.878 2.302 3.718 4.555 5.149 2.596 4.956 2.886
+## Reb 4.375000 4.701 3.655 3.592 6.189 5.141 3.933 4.208 2.925
+## Ron 4.940000 4.698 2.950 3.898 6.063 5.326 4.302 4.299 3.031
+## Rub 3.786000 4.969 3.379 3.353 4.774 5.304 4.322 4.858 3.382
+## Zav 4.238000 4.654 3.607 3.914 6.641 4.830 5.014 4.363 3.111
+## m12 3.340000 3.854 2.419 2.783 4.629 5.090 3.281 3.918 2.561
+\end{verbatim}
+
+
+\section{Geneticae Shiny Web App}
+
+Hoy, los programas de computadora se han convertido en una herramienta básica para el análisis de datos. Actualmente, R es uno de los programas más utilizados debido a su poder y distribución gratuita. R tiene una sintaxis compleja y, por lo tanto, no es del todo amigable para aquellos que no tienen conocimiento del lenguaje de programación R.
+
+Con frecuencia, los mejoradores usan programas que tienen una interfaz para realizar el análisis estadístico deseado y sin necesidad del manejo de un lenguaje de programación. El objetivo de esta aplicación Shiny es crear una interfaz gráfica para eliminar el obstáculo de la complejidad del software para el análisis de los datos provenientes de MET. Geneticae Shiny Web App
+es un software interactivo, no comercial y de código abierto, que ofrece una alternativa gratuita al software comercial disponible.
+
+\subsection{Conjuntos de datos en disponibles en Shiny Web App}
+
+La aplicación Shiny Web App cuenta con los dos conjuntos de datos disponibles en el paquete agricolae. Los mismo se pueden descargar con el fin de probar la aplicación. Además, estos son utilizados para desarrollar los ejemplosque se presentan a continuación y en la ayuda disponible en la aplicación.
+
+Los mismos se pueden ver y descargar en la pestaña data $\rightarrow$ Example datasets. 
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withoutrep.png}
+	\end{center}
+	\caption{Conjunto de datos sin repetición disponible en Shiny Web App}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
+	\end{center}
+	\caption{Conjunto de datos sin repetición disponible en Shiny Web App}
+\end{figure}
+
+\subsection{Análisis disponibles con Shiny Web App}
 
 
