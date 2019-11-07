@@ -6,6 +6,8 @@
 \usepackage{pdfpages}
 \usepackage{lscape}
 \usepackage{xcolor}
+\usepackage{todonotes}
+\usepackage{lipsum}
 \usepackage{bbding}
 \usepackage{pifont}
 \usepackage{wasysym}
@@ -15,6 +17,34 @@
 \usepackage{color}    
 \usepackage{enumitem}
 \definecolor{blue}{rgb}{1,0.5,0}
+
+%Para hacer comentarios
+
+\makeatletter
+\def\myaddcontentsline#1#2#3{%
+  \addtocontents{#1}{\protect\contentsline{#2}{#3}{see \thesection\ at p. \thepage}{}}}
+\renewcommand{\@todonotes@addElementToListOfTodos}{%
+    \if@todonotes@colorinlistoftodos%
+        \myaddcontentsline{tdo}{todo}{{%
+            \colorbox{\@todonotes@currentbackgroundcolor}%
+                {\textcolor{\@todonotes@currentbackgroundcolor}{o}}%
+            \ \@todonotes@caption}}%
+    \else%
+        \myaddcontentsline{tdo}{todo}{{\@todonotes@caption}}%
+    \fi}%
+\newcommand*\mylistoftodos{%
+  \begingroup
+       \setbox\@tempboxa\hbox{see 9.9 at p. 99}%
+       \renewcommand*\@tocrmarg{\the\wd\@tempboxa}%
+       \renewcommand*\@pnumwidth{\the\wd\@tempboxa}%
+       \listoftodos%
+  \endgroup
+}
+\makeatother
+
+
+
+
 
 
 \lstset{
@@ -146,6 +176,11 @@ framexleftmargin=15pt}
 %% Mirar el archivo "intro.tex" para un ejemplo y recomendaciones para
 %% escribir.
 
+%%Lista de comentarios
+\pagestyle{plain}
+\mylistoftodos
+\cleardoublepage
+
 \pagestyle{plain}
 \pagenumbering{arabic}
 
@@ -155,6 +190,9 @@ framexleftmargin=15pt}
 \include{resultados}
 %\include{capitulo3}
 \include{conclu}
+
+
+
 
 \appendix
 %% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices
