@@ -328,7 +328,7 @@ Una vez creada una función, para probarla se utiliza load\_all() que simula el 
 
 Muy frecuentemente se utilizan funciones de otros paquetes, para ello se utiliza la función use\_package() que agrega el paquete  a lista de los paquetes que el paquete creado necesita para funcionar del archivo DESCRIPTION.
 
-A menudo es útil incluir datos en un paquete, con estos se proporcionan casos de uso convincentes para las funciones del paquete. La ubicación más común para los datos es data/, siendo cada archivo de este directorio un .RData que sólo contiene un  objeto. Para esto, se utiliza la funció usethis::use\_data(). Se puede observar que el archivo DESCRIPTION creado con la función create\_package() contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocuparán ninguna memoria hasta que los use.
+A menudo es útil incluir datos en un paquete, con estos se proporcionan casos de uso convincentes para las funciones del paquete. La ubicación más común para los datos es data/, siendo cada archivo de este directorio un .RData que sólo contiene un  objeto. Para esto, se utiliza la función usethis::use\_data(). Se puede observar que el archivo DESCRIPTION creado con la función create\_package() contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocuparán ninguna memoria hasta que los use.
 
 \subsection{Documentación}
 
@@ -450,18 +450,16 @@ install_github("jangelini/geneticae")
 
 
 
-{\Huge{(Ideas de: https://mastering-shiny.org/dependency-tracking.html)}}
+%https://mastering-shiny.org/dependency-tracking.html
 
 \section{Shiny APP}
 Una aplicación web es una aplicación o herramienta informática accesible desde cualquier navegador, bien sea a través de internet (lo habitual) o bien a través de una red local. 
 Estas aplicaciones son muy populares hoy en día para los usuarios no expertos, debido a la facilidad de su uso, ya que no requiere de una instalación en el ordenador del usuario, simplemente se accede a través de un navegador. Por lo que es posible utilizar una aplicación web desde desde cualquier dispositivo con conexión a internet, ya sea un ordenador, un smartphone o una tablet, es decir que es independiente del sistema operativo del usuario. Otra gran ventaja es el bajo consumo de recursos, ya que la mayor parte del tiempo estos se consumen en el servidor donde se encuentra alojada la aplicación, que generalmente tiene mucha más potencia de cómputo que cualquier ordenador personal.
 
 %https://datanalytics.com/libro_r/shiny.html
-Shiny es un paquete R que te permite crear aplicaciones web interactivas, permitiendo exhibir un trabajo de R a través de un navegador web para que cualquiera pueda usarlo. 
+Crear aplicaciones web puede resultar difícil para la mayoría de los usuarios de R debido a que se necesita un conocimiento profundo de las tecnologías web como HTML, CSS y JavaScript; y además hacer aplicaciones interactivas complejas requiere un análisis cuidadoso de los flujos de interacción para asegurarse de que cuando una entrada cambie, solo se actualicen las salidas relacionadas. Shiny es un paquete R que te permite crear aplicaciones web interactivas, permitiendo exhibir un trabajo de R a través de un navegador web para que cualquiera pueda usarlo. Este paquete hace que sea mucho más fácil para el programador R crear aplicaciones web al proporcionar un conjunto de funciones de interfaz de usuario (UI para abreviar) que generan el HTML, CSS y JavaScript que necesita para tareas comunes. Esto significa que no se necesita conocer los detalles de HTML / CSS / JS. 
 
-Crear aplicaciones web puede resultar difícil para la mayoría de los usuarios de R debido a que se necesita un conocimiento profundo de las tecnologías web como HTML, CSS y JavaScript; y además hacer aplicaciones interactivas complejas requiere un análisis cuidadoso de los flujos de interacción para asegurarse de que cuando una entrada cambie, solo se actualicen las salidas relacionadas. Sin embargo, shiny hace que sea mucho más fácil para el programador R crear aplicaciones web al proporcionar un conjunto de funciones de interfaz de usuario (UI para abreviar) que generan el HTML, CSS y JavaScript que necesita para tareas comunes. Esto significa que no se necesita conocer los detalles de HTML / CSS / JS.
-
-Shiny fomenta la separación del código que genera tu interfaz de usuario (el \emph{front-end}) del código que impulsa el comportamiento de tu aplicación (el \emph{backend}. Por lo tanto, Los dos componentes clave de cada una Shiny APP son: 
+Los dos componentes clave de una Shiny APP son: 
 
 \begin{itemize}
 \item ui (\emph{user interfaz}): la interfaz de usuario controla el diseño de la aplicación, recibe los inputs y
@@ -483,30 +481,21 @@ El esquema interno de la aplicación puede observarse en la Figura \ref{fig:fig3
 
 La programación reactiva es un estilo de programación que enfatiza valores que cambian con el tiempo, y cálculos y acciones que dependen de esos valores. Esto es importante para las aplicaciones Shiny porque son interactivas: los usuarios cambian los controles de entrada (arrastrando controles deslizantes, escribiendo en cuadros de texto y marcando casillas de verificación), lo que hace que la lógica se ejecute en el servidor (leer CSV, subconjunto de datos y modelos de ajuste) que finalmente resultan en actualización de salidas (parcelas de respuesta, actualización de tablas).
 
-Para que las aplicaciones Shiny sean útiles, necesitamos dos cosas:
-
-Las expresiones y las salidas deben actualizarse siempre que cambie uno de sus valores de entrada. Esto asegura que la entrada y la salida permanezcan sincronizadas.
-
-Las expresiones y las salidas deben actualizarse solo cuando una de sus entradas cambia. Esto garantiza que las aplicaciones respondan rápidamente a la entrada del usuario, haciendo la cantidad mínima.
-
-Es relativamente fácil satisfacer una de las dos condiciones, pero es mucho más difícil satisfacer ambas. Para ver por qué y para ver cómo podríamos atacar el problema básico con otros estilos de programación, utilizaremos un ejemplo muy simple, eliminando la complejidad adicional de una aplicación web y enfocándonos en el código subyacente.
-
-
 \subsection{Flujo de trabajo}
 
-El esta sección se motrará como mejorar dos flujos de trabajo de Shiny importantes: El ciclo de desarrollo básico de crear aplicaciones, realizar cambios y experimentar con los resultados; y la Depuración, el arte y el oficio de descubrir qué salió mal con su código y las soluciones de lluvia de ideas para solucionarlo.\\
+El esta sección se motrará como mejorar dos flujos de trabajo de Shiny importantes: el ciclo de desarrollo básico de crear aplicaciones, realizar cambios y experimentar con los resultados; y la depuración, proceso de identificar y corregir errores de programación.\\
 
 
 \textbf{1.\hspace{1cm} Flujo de trabajo de desarrollo}\\
 
 
-El objetivo de optimizar el flujo de trabajo de desarrollo es reducir el tiempo entre hacer un cambio y ver el resultado. Cuanto más rápido se pueda iterar, más rápido se podrá experimentar y más rápido podrá obtener su Shiny. Aquí hay dos flujos de trabajo principales para optimizar: crear la aplicación por primera vez y acelerar el ciclo iterativo de ajustar el código y probar los resultados.
+El objetivo de optimizar el flujo de trabajo de desarrollo es reducir el tiempo entre hacer un cambio y ver el resultado. Cuanto más rápido se pueda iterar, más rápido se podrá experimentar y más rápido se podrá obtener la Shiny APP. Aquí hay dos flujos de trabajo principales para optimizar: crear la aplicación por primera vez y acelerar el ciclo iterativo de ajustar el código y probar los resultados.\\
 
 
 \textbf{Creación de la Shiny APP}
 
 
-Para poder crear una shiny APP se debe tener instado R, RStudio ya que tiene algunas características agradables específicamente para autoría, depuración y desplegando aplicaciones estas aplicaciones, y lo siguientes paquetes:
+Para poder crear una shiny APP se debe tener instado R, RStudio, y lo siguientes paquetes:
 
 \begin{lstlisting}
 install.packages(c(
@@ -514,7 +503,7 @@ install.packages(c(
 ))
 \end{lstlisting}
 
-Para crear una Shiny APP, lo más simple es crear un nuevo directorio para su aplicación y crear un sólo archivo llamado app.R en él. Este archivo se usará para indicarle a Shiny cómo debería verse la aplicación y cómo debería comportarse.
+Para crear una Shiny APP, lo más simple es crear un nuevo directorio para la aplicación con un sólo archivo llamado app.R. Este archivo se usará para indicarle a Shiny cómo debería verse la aplicación y cómo debería comportarse.
 
 \begin{lstlisting}[frame=single]
 library(shiny)
@@ -532,8 +521,8 @@ Por lo tanto, en el archivo app.R se realizan las siguientes tareas:
 library(shiny) 
 \end{lstlisting}
 \item Define la interfaz de usuario, la página web HTML con la que los usuarios interactúan.
-\item Especifica el comportamiento de nuestra aplicación definiendo la  función server. 
-\item Se ejecuta shinyApp(ui, server)para construir e iniciar una aplicación Shiny desde la interfaz de usuario y el servidor.
+\item Especifica el comportamiento de la aplicación definiendo la función server. 
+\item Se ejecuta shinyApp(ui, server) para construir e iniciar una aplicación Shiny desde la interfaz de usuario y el servidor.
 \end{itemize}
 
 
@@ -541,26 +530,26 @@ La sesión de R estará monitoreando la aplicación y ejecutando las reacciones 
 
 En todo tipo de programación, es una mala práctica tener código duplicado; puede ser un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código.
 
-En la secuencia de comandos R tradicional, utilizamos dos técnicas para lidiar con el código duplicado: capturamos el valor usando una variable o capturamos el cálculo con una función. Desafortunadamente, ninguno de estos enfoques funciona aquí y se necesita un nuevo mecanismo: expresiones reactivas . Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse.
+En la secuencia de comandos R tradicional, se utilizan dos técnicas para lidiar con el código duplicado: capturar el valor usando una variable o capturar el cálculo con una función. Desafortunadamente, ninguno de estos enfoques funciona en una Shiny APP y se necesita un nuevo mecanismo: expresiones reactivas. Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse.\\
 
 
-\textbf{Ver los cambios}
+\textbf{Ver los cambios}\\
 
 
-Al crear o modificar la aplicacion, se la ejecuta para poder ver los cambios realizados, por lo que el dominio de flujo de trabajo de desarrollo es especialmente importante. La primera forma de reducir la velocidad de iteración es evitar hacer clic en el botón "Ejecutar aplicación" y, en su lugar, aprender el método abreviado de teclado Cmd/Ctrl+ Shift+ Enter. Esto le brinda el siguiente flujo de trabajo de desarrollo:
+Al crear o modificar la aplicacion, se la ejecuta para poder ver los cambios realizados, por lo que el dominio de flujo de trabajo de desarrollo es especialmente importante. La primera forma de reducir la velocidad de iteración es evitar hacer clic en el botón ``Ejecutar aplicación'' y, en su lugar, aprender el método abreviado de teclado Cmd/Ctrl+ Shift+ Enter. Esto brinda el siguiente flujo de trabajo de desarrollo:
 
 \begin{enumerate}
-\item Escribe un código.
-\item Inicie la aplicación con Cmd/Ctrl+ Shift+ Enter.
+\item Escribir un código.
+\item Iniciar la aplicación con Cmd/Ctrl+ Shift+ Enter.
 \item Experimentar interactivamente con la aplicación.
-\item Cierra la aplicación.
+\item Cerrar la aplicación.
 \item Ir a 1.
 \end{enumerate}
 
 
-Otra forma de reducir aún más la velocidad de iteración es activar la recarga automática (options(shiny.autoreload = TRUE)) y luego ejecutar la aplicación en un trabajo en segundo plano, como se describe en https://github.com/sol-eng/background-jobs/tree/master/shiny-trabajo. Con este flujo de trabajo tan pronto como guarde un archivo, su aplicación se reiniciará: no es necesario cerrarla y reiniciarla. Esto conduce a un flujo de trabajo aún más rápido:
+Otra forma de reducir aún más la velocidad de iteración es activar la recarga automática (options(shiny.autoreload = TRUE)) y luego ejecutar la aplicación en un trabajo en segundo plano, como se describe en https://github.com/sol-eng/background-jobs/tree/master/shiny-trabajo. Con este flujo de trabajo cuando se guarde un archivo, su aplicación se reiniciará: no es necesario cerrarla y reiniciarla. Esto conduce a un flujo de trabajo aún más rápido:
 \begin{enumerate}
-\item Escriba un código y presione Cmd/Ctrl+ Spara guardar en el archivo.
+\item Escribir un código y presione Cmd/Ctrl+S para guardar en el archivo.
 \item Experimentar interactivamente.
 \item Ir a 1.
 \end{enumerate}
