@@ -142,7 +142,7 @@ Los diferentes biplots que se pueden obtener usando la función \emph{GGEPlot} s
 GGEPlot(GGE1, type = "Biplot")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/GGE_BIPLOT.png}
 	\end{center}
@@ -156,7 +156,7 @@ GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93")
 \end{lstlisting}
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/SelectedEnvironment.png}
 	\end{center}
@@ -170,7 +170,7 @@ GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93")
 GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/SelectedGenotype.png}
 	\end{center}
@@ -184,7 +184,7 @@ GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat")
 GGEPlot(GGE1, type = "Relationship Among Environments")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/RelationshipAmongEnvironments.png}
 	\end{center}
@@ -197,7 +197,7 @@ GGEPlot(GGE1, type = "Relationship Among Environments")
 GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = "Cas")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/ComparisonofGenotype.png}
 	\end{center}
@@ -211,7 +211,7 @@ GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = 
 GGEPlot(GGE1, type = "Which Won Where/What")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=12cm]{./Graficos/WhichWonWhereWhat.png}
 	\end{center}
@@ -226,7 +226,7 @@ GGEPlot(GGE1, type = "Which Won Where/What")
 GGEPlot(GGE1, type = "Discrimination vs. representativeness")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=12cm]{./Graficos/Discriminationvsrepresentativeness.png}
 	\end{center}
@@ -241,7 +241,7 @@ GGEPlot(GGE1, type = "Discrimination vs. representativeness")
 GGEPlot(GGE1, type = "Ranking Environments")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=12cm]{./Graficos/RankingEnvironments.png}
 	\end{center}
@@ -255,7 +255,7 @@ GGEPlot(GGE1, type = "Ranking Environments")
 GGEPlot(GGE1, type = "Ranking Genotypes")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/RankingGenotypes.png}
 	\end{center}
@@ -268,7 +268,7 @@ GGEPlot(GGE1, type = "Ranking Genotypes")
 GGEPlot(GGE1, type = "Mean vs. Stability")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/MeanvsStability.png}
 	\end{center}
@@ -289,7 +289,7 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
  type = "AMMI")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/AMMI.png}
 	\end{center}
@@ -305,11 +305,10 @@ Como se dijo anteriormente, el modelo AMMI clasico, en su forma estándar, no fu
 \item  modelo "rAMMI"
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
- type = "rAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "rAMMI")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/rAMMI.png}
 	\end{center}
@@ -320,11 +319,10 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
 \item  modelo "hAMMI"
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
- type = "hAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "hAMMI")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/hAMMI.png}
 	\end{center}
@@ -335,11 +333,10 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
 \item  modelo "gAMMI"
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
- type = "gAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "gAMMI")
 \end{lstlisting}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/gAMMI.png}
 	\end{center}
@@ -351,12 +348,11 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
 \item  modelo "lAMMI"
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
- type = "lAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "lAMMI")
 \end{lstlisting}
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/lAMMI.png}
 	\end{center}
@@ -366,12 +362,11 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
 
 \item  modelo "ppAMMI"
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
- type = "ppAMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "ppAMMI")
 \end{lstlisting}
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/ppAMMI.png}
 	\end{center}
@@ -397,11 +392,11 @@ dat_yan[2, 3] <- NA
 \item GabrielEigein proposed by Arciniegas-Alarcón S., et al. (2010).
 \end{itemize}
 \begin{lstlisting}
-imputation(dat_yan, PC.nb = 2, genotype = "gen", environment = "env", response = "yield", 
-    type = "EM-AMMI")
+imputation(dat_yan, PC.nb = 2, genotype = "gen", environment = "env", response = "yield", type = "EM-AMMI")
 \end{lstlisting}
-
-\begin{verbatim}
+\centering
+\begin{small}
+\begin{Verbatim}[frame=single,baselinestretch=0.3]
 ##         BH93  EA93  HW93  ID93  KE93  NN93  OA93  RN93  WP93
 ## Ann 4.150120 4.150 2.849 3.084 5.940 4.450 4.351 4.039 2.672
 ## Ari 4.035814 4.771 2.912 3.506 5.699 5.152 4.956 4.386 2.938
@@ -421,15 +416,15 @@ imputation(dat_yan, PC.nb = 2, genotype = "gen", environment = "env", response =
 ## Rub 3.786000 4.969 3.379 3.353 4.774 5.304 4.322 4.858 3.382
 ## Zav 4.238000 4.654 3.607 3.914 6.641 4.830 5.014 4.363 3.111
 ## m12 3.340000 3.854 2.419 2.783 4.629 5.090 3.281 3.918 2.561
-\end{verbatim}
+\end{Verbatim}
+\end{small}
 
 
 \begin{itemize}
 \item EM-AMMI proposed by Gauch and Zobel (1990).
 \end{itemize}
 \begin{lstlisting}
-imputation(dat_yan, PC.nb = 1, genotype = "gen", environment = "env", response = "yield", 
-    type = "EM-AMMI")
+imputation(dat_yan, PC.nb = 1, genotype = "gen", environment = "env", response = "yield", type = "EM-AMMI")
 \end{lstlisting}
 
 \begin{verbatim}
@@ -460,8 +455,7 @@ imputation(dat_yan, PC.nb = 1, genotype = "gen", environment = "env", response =
 \item EM-SVD proposed by Perry (2009)
 \end{itemize}
 \begin{lstlisting}
-imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", 
-    type = "EM-SVD")
+imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "EM-SVD")
 \end{lstlisting}
 
 \begin{verbatim}
@@ -491,8 +485,7 @@ imputation(dat_yan, genotype = "gen", environment = "env", response = "yield",
 \item WGabriel proposed by Alarcon…..
 \end{itemize}
 \begin{lstlisting}
-imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", 
-    type = "WGabriel")
+imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "WGabriel")
 \end{lstlisting}
 
 \begin{verbatim}
@@ -521,8 +514,7 @@ imputation(dat_yan, genotype = "gen", environment = "env", response = "yield",
 \item EM-PCA proposed by
 \end{itemize}
 \begin{lstlisting}
-imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", 
-    type = "EM-PCA")
+imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "EM-PCA")
 \end{lstlisting}
 
 \begin{verbatim}
@@ -550,13 +542,29 @@ imputation(dat_yan, genotype = "gen", environment = "env", response = "yield",
 
 \section{Geneticae Shiny Web App}
 
-\subsection{Conjuntos de datos en disponibles en Shiny Web App}
+La aplicación Geneticae se organiza en las siguientes pestañas:
+\begin{itemize}
+\item Los datos
+\item Análisis descriptivo
+\item ANOVA
+\item Biplot GGE
+\item Biplot GE
+\item Ayuda
+\end{itemize}
 
-La aplicación Shiny Web App cuenta con los dos conjuntos de datos disponibles en el paquete geneticae de R. Los mismo se pueden descargar con el fin de probar la aplicación, debido a que estos son utilizados para desarrollar los ejemplos que se presentan a continuación y en la ayuda disponible en la aplicación.
+En muchos casos, algunos atributos estilísticos de salida pueden personalizarse para que el usuario obtenga la salida a su gusto. A su vez, los gráficos obtenidos pueden ser descargados.
 
-Los mismos se pueden ver y descargar en la pestaña \emph{The data} $\rightarrow$ \emph{Example datasets} (Figura \ref{fig:fig41},\ref{fig:fig42}). 
+\subsection{Los datos}
+Al iniciar la aplicación Geneticae, se muestra una pantalla en la cual se carga el conjunto de datos a analizar. La aplicación admite datos en formato .csv, delimitados por coma o punto y coma; y también acepta la primera fila como encabezado. La aplicación puede leer un tipo de formato de datos: 
+\begin{itemize}
+\item Cada fila contiene una observación, que se compone de tres o cuatro valores: nombre del cultivar, ambiente, repetición si \item está disponible y valor fenotipico medido.
+\item La primera fila de encabezado contiene los nombres de cada variable. Los encabezados pueden dar cualquier nombre que elija, y deben indicarse al cargar el archivo de datos.
+\item El número de repeticiones puede diferir con los genotipos y los entornos.
+\end{itemize}
 
-\begin{figure}[h!]
+Se utilizan dos conjuntos de datos, incluidos en el paquete Geneticae, para ilustrar la aplicación. Estos conjuntos de datos, uno de los cuales tiene repeticiones (conjunto de datos plrv) y el otro no (conjunto de datos yang), los cuales se pueden ver y descargar en la pestaña \emph{The data} $\rightarrow$ \emph{Example datasets} (Figura \ref{fig:fig41},\ref{fig:fig42}). 
+
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withoutrep.png}
 	\end{center}
@@ -565,7 +573,7 @@ Los mismos se pueden ver y descargar en la pestaña \emph{The data} $\rightarrow
 \end{figure}
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
 	\end{center}
@@ -573,6 +581,105 @@ Los mismos se pueden ver y descargar en la pestaña \emph{The data} $\rightarrow
 	\label{fig:fig42}
 \end{figure}
 
-\subsection{Análisis disponibles con Shiny Web App}
+\subsection{Análisis descriptivo}
+
+El menú estadística descriptiva le permite describir un conjunto de datos utilizando diagrama de caja (o \emph{boxplot}), gráfico y matriz de correlación y gráfico de interacción.
+
+\subsubsection{\emph{Boxplot}}
+El \emph{boxplot} proporciona una medida central, la mediana y una idea de la dispersión a través del rango y el rango intercuartil. La posición de la mediana dentro de la caja y la similitud en la longitud de los bigotes nos dan una idea de la simetría de la distribución. 
+
+Un boxplot intetactivo que compara el caracter cuantitativo de interés a través de genotipos, así como a través de los ambientes se pueden obtener (Figura \ref{fig:fig43},\ref{fig:fig44}).  Estos gráficos se pueden descagar en formato interactivo (.HTML) a partir del boton \emph{Download} (Figura \ref{fig:fig43}), así como también en formato .png (Figura \ref{fig:fig44}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
+	\end{center}
+	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
+	\label{fig:fig43}
+\end{figure}
 
 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
+	\end{center}
+	\caption{Boxplot de ambientes a través de los genotipos para el conjunto de datos Plrv}
+	\label{fig:fig44}
+\end{figure}
+
+\subsubsection{Gráfico de correlación}
+El correlograma o gráfico de correlación muestra la correlación entre pares de variables. Se pueden mostrar las correlaciones de Pearson y Spearman. Las correlaciones positivas se muestran en azul y las negativas en rojo. La intensidad del color y el tamaño del círculo son proporcionales a los coeficientes de correlación. Se pueden trazar ambas correlaciones entre entornos y entre genotipos (Figura \ref{fig:fig45},\ref{fig:fig46}).
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
+	\end{center}
+	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
+	\label{fig:fig45}
+\end{figure}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
+	\end{center}
+	\caption{Boxplot de ambientes a través de los genotipos para el conjunto de datos Plrv}
+	\label{fig:fig46}
+\end{figure}
+
+\subsubsection{Matriz de correlación}
+Una matriz de correlación se utiliza como una forma de resumir datos. Muestra los coeficientes de correlación de pares de variables. Las correlaciones de Spearman o Pearson se pueden calcular tanto para entornos como para genotipos (Figura \ref{fig:fig47},\ref{fig:fig48}).
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
+	\end{center}
+	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
+	\label{fig:fig47}
+\end{figure}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
+	\end{center}
+	\caption{Boxplot de ambientes a través de los genotipos para el conjunto de datos Plrv}
+	\label{fig:fig48}
+\end{figure}
+
+\subsubsection{Gráfico de interacción}
+Un diagrama de interacción es una representación visual de la interacción entre los efectos de dos factores, o entre un factor y una variable numérica. 
+
+Se puede obtener el gráfico interactivo que muestra el cambio en el efecto genotípico a través de los entornos y también el que muestra el cambio en el efecto ambiental a través de los genotipos (Figura \ref{fig:fig49},\ref{fig:fig410}). Es posible descargarlo en formato interactivo (.HTML) a partir del boton \emph{Download} (Figura \ref{fig:fig49}), así como también en formato .png como se muestra en la Figura \ref{fig:fig410}.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
+	\end{center}
+	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
+	\label{fig:fig49}
+\end{figure}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=17cm]{./Graficos/Exampledatasets_withrep.png}
+	\end{center}
+	\caption{Boxplot de ambientes a través de los genotipos para el conjunto de datos Plrv}
+	\label{fig:fig410}
+\end{figure}
+
+
+\subsection{Análisis de la variancia}
+
+
+\subsection{Biplot GGE}
+El biplot GGE aborda visualmente muchos problemas relacionados con la evaluación de los genotipo y ambientes de prueba. En el caso de repeticiones disponibles en el conjunto de datos, se obtiene el valor fenotípico promedio para cada combinación de genotipo y ambiente. Los valores faltantes no están permitidos.
+
+
+\subsection{Biplot GE}
+
+\subsection{Ayuda}
