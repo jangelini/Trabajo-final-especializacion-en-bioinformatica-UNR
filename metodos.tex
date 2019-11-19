@@ -254,37 +254,35 @@ Los pasos necesarios para la creación de un paquete son:
 \item Creación del esqueleto del paquete.
 \item Inclusión de los objetos que contendrá el paquete (funciones y/o datos).
 \item Redacción de la documentación.
-\item Redacción de la viñeta.
 \item Compilación del paquete en Linux y creación de la versión para Windows.
 \item Instalación.
 \item Prueba y publicación.
 \end{itemize}
 
 
-Para la cración del paquete se utilizan numerosas funciones incluidas en el paquete \emph{devtools} que permiten realizar diversos aspectos del desarrollo de paquetes. Por lo tanto, antes de comenzar a crear el paquete se deben instalar el mismo como se indica a continuación:\\
+Para la cración del paquete se utilizan numerosas funciones incluidas en el paquete \emph{devtools} que permiten realizar diversos aspectos del desarrollo de paquetes. Por lo tanto, antes de comenzar a crear el paquete se deben instalar el mismo como se indica a continuación:
 
 \begin{lstlisting}
 # Instalar el paquete devtools desde CRAN
 install.packages("devtools")
-
 # Instalar el paquete devtools desde GitHub:
-devtools::install_github("r-lib/devtools")
+install_github(``r-lib/devtools")
 \end{lstlisting}
 
 \subsection{Esqueleto y estructura del paquete}
 
-Para crear la estructura del paquete se utiliza la función create\_package(). El principal y único argumento requerido por dicha función es el directorio donde el nuevo paquete se alojará. Por lo general, si el directorio se llama ``geneticae'', entonces el nombre del paquete también será ``geneticae'':
+Para crear la estructura del paquete se utiliza la función \textcolor{blue}{create\_package}(). El principal y único argumento requerido por dicha función es el directorio donde el nuevo paquete se alojará. Por lo general, si el directorio se llama ``geneticae'', entonces el nombre del paquete también será ``geneticae'':
 
 
 \begin{lstlisting}
 # Cargar la libreria devtools
 library(devtools)
 # Crear el paquete geneticae
-create_package("C:/Users/Julia/Desktop/geneticae")
+create_package(``C:/Users/Julia/Desktop/geneticae")
 \end{lstlisting}
 
 
-El resultado de ejecutar la función create\_package() es un paquete con los siguientes componentes:
+El resultado de ejecutar la función \textcolor{blue}{create\_package}() es un paquete con los siguientes componentes:
 \begin{itemize}
 \item Un directorio R/.
 \end{itemize}
@@ -317,17 +315,21 @@ LazyData: true
 \item Un archivo NAMESPACE
 \end{itemize}
 
-También puede incluir un archivo de proyecto de RStudio pkgname.Rproj, que hace que su paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete R desde la fuente; .gitignore anticipa el uso de Git.
+Estas carpetas se iran modificando a medida que el paquete se vaya creando. También puede incluir un archivo de proyecto de RStudio pkgname.Rproj, que hace que su paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete R desde la fuente; .gitignore anticipa el uso de Git.
+Se crearán, a través de devtools, las siguientes carpetas: data/ y  man/.
+
+
+
 
 \subsection{Creación de funciones y conjuntos de datos}
 
-Una vez creada la estructura del paquete se deben incluir las funciones que el mismo contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. Para ello, se utiliza la función use\_r() la cual crea y/o abre un script de la carpeta R/.
+Una vez creada la estructura del paquete se deben incluir las funciones que el mismo contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. Para ello, se utiliza la función \textcolor{blue}{use\_r}() la cual crea y/o abre un script de la carpeta R/.
 
-Una vez creada una función, se realizan pruebas para asegurar que el código realice lo que realmente se desea utilizando la función load\_all() que simula el proceso de construcción, instalación y conexión del paquete. Permite que las funciones creadas estén disponible rápidamente para uso interactivo, del mismo modo que si se hubiera construido e instalado el paquete y luego cargada en la sesión de R a través de la función library(geneticae).
+Una vez creada una función, se realizan pruebas para asegurar que el código realice lo que realmente se desea utilizando la función \textcolor{blue}{load\_all}() que simula el proceso de construcción, instalación y conexión del paquete. Permite que las funciones creadas estén disponible rápidamente para uso interactivo, del mismo modo que si se hubiera construido e instalado el paquete y luego cargada en la sesión de R a través de la función \textcolor{blue}{library}(geneticae).
 
-Muy frecuentemente se utilizan funciones que se encuentran disponibles en otros paquetes, para ello se utiliza la función use\_package() que agrega el paquete al archivo DESCRIPTION.
+Muy frecuentemente se utilizan funciones que se encuentran disponibles en otros paquetes, para ello se utiliza la función \textcolor{blue}{use\_package}() que agrega el paquete al archivo DESCRIPTION.
 
-A menudo es útil incluir datos en un paquete a fin de proporcionar ejemplos de aplicaciones de las funciones incluidas en él. La ubicación más común para los datos es data/, siendo cada archivo de este directorio un .RData que sólo contiene un objeto. Para esto, se utiliza la función usethis::use\_data(). Notar que el archivo DESCRIPTION creado con la función create\_package(), mencionada anteriormente, contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocupen memoria hasta que sean usados.
+A menudo es útil incluir datos en un paquete a fin de proporcionar ejemplos de aplicaciones de las funciones incluidas en él. Ellos se almacenan en el directorio data/, siendo cada archivo un .RData que sólo contiene un objeto. Para esto, se utiliza la función \textcolor{blue}{usethis::use\_data}(). Notar que el archivo DESCRIPTION creado con la función \textcolor{blue}{create\_package}(), mencionada anteriormente, contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocupen memoria hasta que sean usados.
 
 \subsection{Documentación}
 
@@ -345,7 +347,7 @@ Además de generar archivos .Rd, \emph{roxygen2} también creará el archivo NAM
 
 El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} es el siguiente:
 \begin{itemize}
-\item Agregar comentarios a los archivos .R, los cuales comienzan con \#' y preceden a una función. La primera oración se convierte en el título y el segundo párrafo es una descripción de la función. Seguidamente, las funciones son documentadas, la mayoría de las funciones tienen tres etiquetas: @param, @examples y @return.
+\item Agregar comentarios a los archivos .R, los cuales comienzan con \#'  y preceden a una función. La primera oración se convierte en el título y el segundo párrafo es una descripción de la función. Seguidamente, las funciones son documentadas, la mayoría de las funciones tienen tres etiquetas: @param, @examples y @return.
 
 \begin{itemize}
 \item @param describe los parámetros de la función, indica de que clase es el parámetro y para que sirve.
@@ -359,18 +361,19 @@ El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} 
 
 \end{itemize}
 
-Roxigen permite utilizar la descripción de los parámetros de otras funciones usando @inheritParams source function. Esta etiqueta traerá toda la documentación de los parámetros que no están documentados en la función actual, pero que están documentados en la función fuente. La fuente puede ser una función en el paquete actual, vía @inheritParams function, u otro paquete, vía @inheritParams package::function.
+\emph{Roxygen2} permite utilizar la descripción de los parámetros de otras funciones usando @inheritParams. Esta documentará los parámetros que no están documentados en la función actual, pero que si lo están en la función fuente. La fuente puede ser una función en el paquete actual, vía @inheritParams function, u otro paquete, vía @inheritParams package::function.
 
-A diferencia de las funciones que son documentadas directamente, para los objetos en data/, se debe crear un archivo y guardarlo en el directorio R/.
+A diferencia de las funciones que son documentadas directamente, para los objetos en data/, se debe crear un archivo y guardarlo en el directorio R/.\\
 
+\textbf{Viñetas}
 
+A diferencia de la documentación, en la cual se detalla como se utiliza cada una de las funciones del paquete, una viñeta es una descripción el problema que el paquete está diseñado para resolver y muestra al lector cómo resolverlo.
 
-\subsection{Viñetas}
+Muchos de los paquetes existentes tienen viñetas la cual puede ser buscada mediante la función \textcolor{blue}{browseVignettes}("packagename"). Cada viñeta proporciona el archivo fuente original, una página HTML o PDF y un archivo de código R. Las viñetas de paquetes que no han sido instalados pueden ser consultados en su página de CRAN, por ejemplo para el paquete \emph{dplyr}: \url{http://cran.r-project.org/web/packages/dplyr}.
 
-EXPLICAR UN POCO QUE ES UNA VINETA
+Las Viñetas se pueden construir de diversas formas, en este trabajo se utiliza \emph{devtools} para crear la estructura de la misma y luego se añade el contenido que se desee en formato Rmarkdown. Rmarkdown permite combinar, texto plano, bloques de código y salidas. 
 
-
-Para crear la viñeta, se utiliza usethis::use\_vignette(``my-vignette''). La misma crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y redacta la viñeta. Las tres componentes fundamentales de la misma son las siguientes:
+Para crear la viñeta, se utiliza \textcolor{blue}{usethis::use\_vignette}(``my-vignette''). La misma crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y redacta la viñeta. Las tres componentes fundamentales de la misma son las siguientes:
 
 \begin{itemize}
 \item El bloque inicial de metadatos, que contiene la siguiente información:
@@ -394,7 +397,7 @@ vignette: >
 
 \subsection{Pruebas del flujo de trabajo}
 
-Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el código haga lo que realmente se desea. Existen pruebas informales como aquellas realizadas con la función load\_all. Sin embargo, estas pruebas interactivas pueden convertirse en scripts reproducibles, los cuales resultan superiores debido a que:
+Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el código haga lo que realmente se desea. Existen pruebas informales como aquellas realizadas con la función \textcolor{blue}{load\_all}(). Sin embargo, estas pruebas interactivas pueden convertirse en scripts reproducibles, los cuales resultan superiores debido a que:
 
 \begin{itemize}
 \item Se indica explícitamente cómo debería comportarse el código, provocando que los errores solucionados no vuelvan a ocurrir.
@@ -405,27 +408,34 @@ Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el 
 \end{itemize}
 
 
-Para probar el flujo de trabajo se utiliza la función usethis::usetestthat(). Esta crea un directorio tests/testthat, agrega testthat al campo Suggests en el archivo DESCRIPTION y además, crea un archivo tests/testthat.R que ejecuta todas las pruebas cuando R CMD check se ejecuta. 
+Para ello se utiliza la función \textcolor{blue}{usethis::usetestthat}() (Wickham,2011). Esta crea un directorio tests/testthat, agrega testthat al campo Suggests en el archivo DESCRIPTION y además, crea un archivo tests/testthat.R. 
 
-Las pruebas se organizan jerárquicamente: las expectativas se agrupan en pruebas que se organizan en archivos :
+Las pruebas se organizan jerárquicamente, las expectativas se agrupan en pruebas que se organizan en archivos :
 \begin{itemize}
 \item Una expectativa describe el resultado esperado de un cálculo.
 
 \item Una prueba agrupa múltiples expectativas para probar la salida de una función simple, un rango de posibilidades para un solo parámetro de una función más complicada o una funcionalidad estrechamente relacionada de varias funciones.
 
-\item Un archivo agrupa múltiples pruebas relacionadas. Los archivos reciben un nombre legible para humanos con context().
+\item Un archivo agrupa múltiples pruebas relacionadas.
 \end{itemize}
 
-Se utiliza la funcion test(), para ejecutar todas las pruebas creadas a la vez. Las pruebas también se ejecutan cada vez que se utiliza la función check() descripta a continuación. 
+
+Existen tres formas de llevar a cabo las pruebas:
+\begin{itemize}
+\item Ejecutar todas las pruebas en un archivo o directorio \textcolor{blue}{test\_file}() o \textcolor{blue}{test\_dir}().
+\item Ejecutar pruebas automáticamente cada vez que algo cambie con la función \textcolor{blue}{autotest}(). Estas son útiles cuando las pruebas se ejecutan con frecuencia. Si se modifica un archivo de prueba, probará ese archivo; si se modifica un archivo de código, volverá a cargar ese archivo y volverá a ejecutar todas las pruebas.
+\item Hacer que R CMD check ejecute sus pruebas.
+\end{itemize}
+
 
 \subsection{Compilación e instalación}
 
-Mediante la función load\_all se fue simulando el proceso de construcción, instalación y conexión del paquete, con el fin de ir probando las funciones creadas. Sin embargo, R CMD check ejecutado en el shell o check(), es el estándar de oro para verificar que un paquete R esté en pleno funcionamiento. La misma verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros. Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones ya que si se incorporan muchas y luego se verifican será dificil identificar y resolver los problemas. Una vez que las verificaciones completas no encuentran errores, advertencias o notas, se ejecuta la función install(), con el objetivo de instalar el paquete en la biblioteca.
+Mediante la función \textcolor{blue}{load\_all}() fue utilizado para simular el proceso de construcción, instalación y conexión del paquete, con el fin de ir probando las funciones creadas. Sin embargo, R CMD check ejecutado en el shell o la función \textcolor{blue}{check}(), es utilizado para verificar que un paquete R esta en pleno funcionamiento. La misma verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros. Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones ya que si se incorporan muchas y luego se verifican será dificil identificar y resolver los problemas. Una vez que las verificaciones completas no encuentran errores, advertencias o notas, se ejecuta la función \textcolor{blue}{install}(), con el objetivo de instalar el paquete en la biblioteca.
 
 
 \subsection{Publicación}
 %https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/paquetes/paquetes.html
-Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál se pueden descargarlos. Entre los repositorios más populares de paquetes R se encuentran:
+Un repositorio es el lugar dónde se encuentran alojados los paquetes y desde el cuál se pueden descargarlos. Entre los repositorios más populares de paquetes R se encuentran:
 
 \begin{itemize}
 \item \textbf{CRAN}: es el principal repositorio de paquetes de R, está coordinado por la fundación R. Previa a la publicación en este repositorio el paquete debe pasar por diferentes pruebas para asegurar que cumple con las políticas de CRAN.
@@ -437,8 +447,7 @@ Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál 
 \item \textbf{R-Forge} y \textbf{RForge}: son entornos de desarrollo de paquetes y repositorios. Eso significa que incluyen control de fuente, seguimiento de errores y otras características. Puede obtener versiones de desarrollo de paquetes de estos.
 \end{itemize}
 
-El paquete \emph{geneticae} se encuentra en GitHub, para instalar el mismo se deben seguir las siguientes instrucciones:\\
-
+El paquete \emph{geneticae} se encuentra en GitHub, para instalar el mismo se deben seguir las siguientes instrucciones:
 
 \begin{lstlisting}
 library(devtools)
@@ -458,8 +467,8 @@ Estas aplicaciones son muy populares hoy en día para los usuarios no expertos, 
 %https://datanalytics.com/libro_r/shiny.html
 Crear aplicaciones web puede resultar difícil para la mayoría de los usuarios de R debido a que se necesita un conocimiento profundo de las tecnologías web como HTML, CSS y JavaScript; y además hacer aplicaciones interactivas complejas requiere un análisis cuidadoso de los flujos de interacción para asegurarse de que cuando una entrada cambie, solo se actualicen las salidas relacionadas. Shiny es un paquete R que te permite crear aplicaciones web interactivas, permitiendo exhibir un trabajo de R a través de un navegador web para que cualquiera pueda usarlo. Este paquete hace que sea mucho más fácil para el programador R crear aplicaciones web al proporcionar un conjunto de funciones de interfaz de usuario (UI para abreviar) que generan el HTML, CSS y JavaScript que necesita para tareas comunes. Esto significa que no se necesita conocer los detalles de HTML / CSS / JS. 
 
-Los dos componentes clave de una Shiny APP son: 
 
+Los dos componentes clave de una Shiny APP son: 
 \begin{itemize}
 \item ui (\emph{user interfaz}): la interfaz de usuario controla el diseño de la aplicación, recibe los inputs y
 muestra los outputs en el navegador.
@@ -469,7 +478,7 @@ muestra los outputs en el navegador.
 
 El esquema interno de la aplicación puede observarse en la Figura \ref{fig:fig321}. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=7cm]{./Graficos/figura7}
 \end{center}
@@ -478,7 +487,7 @@ El esquema interno de la aplicación puede observarse en la Figura \ref{fig:fig3
 \end{figure}
 
 
-La programación reactiva es un estilo de programación que enfatiza valores que cambian con el tiempo, y cálculos y acciones que dependen de esos valores. Esto es importante para las aplicaciones Shiny porque son interactivas: los usuarios cambian los controles de entrada (arrastrando controles deslizantes, escribiendo en cuadros de texto y marcando casillas de verificación), lo que hace que la lógica se ejecute en el servidor (leer CSV, subconjunto de datos y modelos de ajuste) que finalmente resultan en actualización de salidas (parcelas de respuesta, actualización de tablas).
+
 
 \subsection{Flujo de trabajo}
 
@@ -494,17 +503,11 @@ El objetivo de optimizar el flujo de trabajo de desarrollo es reducir el tiempo 
 \textbf{Creación de la Shiny APP}
 
 
-Para poder crear una shiny APP se debe tener instado R, RStudio, y lo siguientes paquetes:
-
-\begin{lstlisting}
-install.packages(c(
-  "ggforce", "shiny", "shinythemes", "tidyverse", "vroom" 
-))
-\end{lstlisting}
+Para poder crear una shiny APP se debe tener instado R, RStudio, y el paquete shiny:
 
 Para crear una Shiny APP, lo más simple es crear un nuevo directorio para la aplicación con un sólo archivo llamado app.R. Este archivo se usará para indicarle a Shiny cómo debería verse la aplicación y cómo debería comportarse.
 
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}
 library(shiny)
 ui<- ...
 server<- ...
@@ -515,25 +518,20 @@ shinyApp(ui = ui, server = server)
 Por lo tanto, en el archivo app.R se realizan las siguientes tareas:
 
 \begin{itemize}
-\item Carga el paquete shiny: 
-\begin{lstlisting} 
-library(shiny) 
-\end{lstlisting}
+\item Carga el paquete shiny: \textcolor{blue}{library}(shiny)
 \item Define la interfaz de usuario, la página web HTML con la que los usuarios interactúan.
 \item Especifica el comportamiento de la aplicación definiendo la función server. 
-\item Se ejecuta shinyApp(ui, server) para construir e iniciar una aplicación Shiny desde la interfaz de usuario y el servidor.
+\item Se ejecuta función \textcolor{blue}{shinyApp}(ui, server) para construir e iniciar una aplicación Shiny desde la interfaz de usuario y el servidor.
 \end{itemize}
 
 
 La sesión de R estará monitoreando la aplicación y ejecutando las reacciones de la aplicación mientras la aplicación Shiny esté activa, por lo que no podrá ejecutar ningún comando.
 
-En todo tipo de programación, es una mala práctica tener código duplicado; puede ser un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código.
+En todo tipo de programación, es una mala práctica tener código duplicado; puede ser un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código. En la secuencia de comandos R tradicional, se utilizan dos técnicas para lidiar con el código duplicado: capturar el valor usando una variable o capturar el cálculo con una función. Desafortunadamente, ninguno de estos enfoques funciona en una Shiny APP y se necesita un nuevo mecanismo: expresiones reactivas. Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse.
 
-En la secuencia de comandos R tradicional, se utilizan dos técnicas para lidiar con el código duplicado: capturar el valor usando una variable o capturar el cálculo con una función. Desafortunadamente, ninguno de estos enfoques funciona en una Shiny APP y se necesita un nuevo mecanismo: expresiones reactivas. Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse.\\
-
+La programación reactiva es un estilo de programación que enfatiza valores que cambian con el tiempo, y cálculos y acciones que dependen de esos valores. Esto es importante para las aplicaciones Shiny porque son interactivas: los usuarios cambian los inputs, lo que hace que la lógica se ejecute en el servidor que finalmente resultan en actualización de los outputs/resultados.\\
 
 \textbf{Ver los cambios}\\
-
 
 Al crear o modificar la aplicacion, se la ejecuta para poder ver los cambios realizados, por lo que el dominio de flujo de trabajo de desarrollo es especialmente importante. La primera forma de reducir la velocidad de iteración es evitar hacer clic en el botón ``Ejecutar aplicación'' y, en su lugar, aprender el método abreviado de teclado Cmd/Ctrl+ Shift+ Enter. Esto brinda el siguiente flujo de trabajo de desarrollo:
 
@@ -546,13 +544,14 @@ Al crear o modificar la aplicacion, se la ejecuta para poder ver los cambios rea
 \end{enumerate}
 
 
-Otra forma de reducir aún más la velocidad de iteración es activar la recarga automática (options(shiny.autoreload = TRUE)) y luego ejecutar la aplicación en un trabajo en segundo plano, como se describe en https://github.com/sol-eng/background-jobs/tree/master/shiny-trabajo. Con este flujo de trabajo cuando se guarde un archivo, su aplicación se reiniciará: no es necesario cerrarla y reiniciarla. Esto conduce a un flujo de trabajo aún más rápido:
+Otra forma de reducir aún más la velocidad de iteración es activar la recarga automática (options(shiny.autoreload = TRUE)) y luego ejecutar la aplicación en un trabajo en segundo plano. Con este flujo de trabajo cuando se guarde un archivo, su aplicación se reiniciará: no es necesario cerrarla y reiniciarla. Esto conduce a un flujo de trabajo aún más rápido:
 \begin{enumerate}
 \item Escribir un código y presione Cmd/Ctrl+S para guardar en el archivo.
 \item Experimentar interactivamente.
 \item Ir a 1.
 \end{enumerate}
 La principal desventaja de esta técnica es que debido a que la aplicación se ejecuta en un proceso separado, es considerablemente más difícil de depurar.
+
 
 De manera predeterminada, cuando ejecuta la aplicación, aparecerá en una ventana emergente. Sin embargo ,existen otras dos opciones que puede elegir del menú desplegable \emph{Run App}
 \begin{enumerate}

@@ -8,22 +8,9 @@
 
 El paquete \emph{geneticae} ofrece funciones para el análisis de datos de etapas avanzadas de programas de mejoramiento, donde se evalúan pocos genotipos. 
 
-Para instalarlo se deben ejecutar las siguientes instrucciones:
+Una vez que se instalado el paquete geneticae, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae)
 
-\begin{lstlisting}
-install.packages("devtools")
-library(devtools)
-install_github("jangelini/geneticae")
-\end{lstlisting}
-
-Una vez que se instala el paquete geneticae, se debe cargar en la sesion de R indicando:
-
-\begin{lstlisting}
-library(geneticae)
-\end{lstlisting}
-
-
-Es posible obtener información detallada sobre las funciones del paquete geneticae mediante de los archivos de ayuda indicando \emph{help (package = "geneticae")}.  La ayuda para una función, por ejemplo, \emph{imputation}, en una sesión R se puede obtener usando \emph{?imputation} o \emph{help(imputation)}.
+Es posible obtener información detallada sobre las funciones del paquete geneticae mediante de los archivos de ayuda indicando \textcolor{blue}{help}(package = "geneticae").  La ayuda para una función, por ejemplo, \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation).
 
 
 \subsection{Conjuntos de datos en geneticae}
@@ -34,7 +21,6 @@ El paquete geneticae proporciona dos conjuntos de datos para ilustrar la metodol
 \item yan.winterwheat dataset: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. No hay réplicas disponibles en los datos. Este conjunto de datos se obtuvo del paquete agridat.
 \end{itemize}
 \begin{lstlisting}
-library(geneticae)
 data(yan.winterwheat)
 dat_yan <- yan.winterwheat
 head(dat_yan)
@@ -74,14 +60,13 @@ head(dat_rep)
 
 \textbf{Modelo de regresión por sitio}
 
-Para ejecutar la función \emph{GGEmodel}, se debe proporcionar un conjunto de datos con genotipos, ambientes, repeticiones (si hay disponibles), el fenotipo observado y los nombres que dichas variables tienen en el archivo de entrada. Además, se debe indicar el método de centrado, escala y SVD.
+Para ejecutar la función \textcolor{blue}{GGEmodel}(), se debe proporcionar un conjunto de datos con genotipos, ambientes, repeticiones (si hay disponibles), el fenotipo observado y los nombres que dichas variables tienen en el archivo de entrada. Además, se debe indicar el método de centrado, escala y SVD.
 
 Cuando no hay repeticiones disponibles en el conjunto de datos, como es el caso del conjunto de datos yan.winterwheat, el modelo GGE se indica de la siguiente manera:
 
 
 \begin{lstlisting}
-GGE1 <- GGEmodel(dat_yan, genotype = "gen", environment = "env", 
-response = "yield", centering = "tester")
+GGE1 <- GGEmodel(dat_yan, genotype = "gen", environment = "env", response = "yield", centering = "tester")
 \end{lstlisting}
 
 
@@ -89,12 +74,11 @@ Sin embargo, en el caso de que haya repeticiones disponibles, como el conjunto d
 
 
 \begin{lstlisting}
-GGE1_rep <- GGEmodel(dat_rep, genotype = "Genotype", environment = "Locality", 
-response = "Yield", rep = "Rep", centering = "tester")
+GGE1_rep <- GGEmodel(dat_rep, genotype = "Genotype", environment = "Locality", response = "Yield", rep = "Rep", centering = "tester")
 \end{lstlisting}
 
 
-La salida de la función GGEmodel es una lista con los siguientes elementos:
+La salida de la función \textcolor{blue}{GGEmodel}() es una lista con los siguientes elementos:
 
 
 \begin{itemize}
@@ -130,9 +114,9 @@ names(GGE1)
 
 \textbf{Biplot GGE}
 
-Para ejecutar la función \emph{GGEPlot}, se requiere un objeto de la clase \emph{GGEmodel}. La salida es un biplot construido a través de los componentes principales generados por \emph{GGEmodel}.
+Para ejecutar la función \textcolor{blue}{GGEPlot}(), se requiere un objeto de la clase \textcolor{blue}{GGEmodel}(). La salida es un biplot construido a través de los componentes principales generados por \textcolor{blue}{GGEmodel}().
 
-Los diferentes biplots que se pueden obtener usando la función \emph{GGEPlot} se muestran usando el conjunto de datos yan.winterwheat. Si hay repeticiones disponibles en el conjunto de datos, como es el caso del conjunto plrv, se debe indicar el nombre de la columna que contiene las réplicas en el archivo de entrada.
+Los diferentes biplots que se pueden obtener usando la función \textcolor{blue}{GGEPlot}() se muestran usando el conjunto de datos yan.winterwheat. Si hay repeticiones disponibles en el conjunto de datos, como es el caso del conjunto plrv, se debe indicar el nombre de la columna que contiene las réplicas en el archivo de entrada.
 
 
 \begin{itemize}
@@ -146,7 +130,7 @@ GGEPlot(GGE1, type = "Biplot")
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/GGE_BIPLOT.png}
 	\end{center}
-	\caption{Biplot básico obtenido de la función \emph{GGEPlot}}
+	\caption{Biplot básico obtenido de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 \item Ranking de los cultivares en función de su rendimiento en el ambiente OA93.
@@ -160,7 +144,7 @@ GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93")
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/SelectedEnvironment.png}
 	\end{center}
-	\caption{Ranking de cultivares para un ambiente determinado obtenido de la función \emph{GGEPlot}}
+	\caption{Ranking de cultivares para un ambiente determinado obtenido de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 
@@ -174,7 +158,7 @@ GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat")
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/SelectedGenotype.png}
 	\end{center}
-	\caption{Ranking de ambientes para cultivar determinado obtenido de la función \emph{GGEPlot}}
+	\caption{Ranking de ambientes para cultivar determinado obtenido de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 
@@ -188,7 +172,7 @@ GGEPlot(GGE1, type = "Relationship Among Environments")
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/RelationshipAmongEnvironments.png}
 	\end{center}
-	\caption{Relación entre ambientes obtenido de la función \emph{GGEPlot}}
+	\caption{Relación entre ambientes obtenido de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 \item Comparación entre los genotipos Kat y Cas.
@@ -201,7 +185,7 @@ GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = 
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/ComparisonofGenotype.png}
 	\end{center}
-	\caption{Comparación entre dos genotipos obtenido de la función \emph{GGEPlot}}
+	\caption{Comparación entre dos genotipos obtenido de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 
@@ -215,7 +199,7 @@ GGEPlot(GGE1, type = "Which Won Where/What")
 	\begin{center}
 		\includegraphics[width=12cm]{./Graficos/WhichWonWhereWhat.png}
 	\end{center}
-	\caption{Identificación del mejor cultivar en cada ambiente a partir de la función \emph{GGEPlot}}
+	\caption{Identificación del mejor cultivar en cada ambiente a partir de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 
@@ -230,7 +214,7 @@ GGEPlot(GGE1, type = "Discrimination vs. representativeness")
 	\begin{center}
 		\includegraphics[width=12cm]{./Graficos/Discriminationvsrepresentativeness.png}
 	\end{center}
-	\caption{Evaluación de los ambientes basados tanto en la capacidad de discriminación y representatividad a partir de la función \emph{GGEPlot}}
+	\caption{Evaluación de los ambientes basados tanto en la capacidad de discriminación y representatividad a partir de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 
@@ -245,7 +229,7 @@ GGEPlot(GGE1, type = "Ranking Environments")
 	\begin{center}
 		\includegraphics[width=12cm]{./Graficos/RankingEnvironments.png}
 	\end{center}
-	\caption{Clasificación de ambientes con respecto al ambiente ideal a partir de la función \emph{GGEPlot}}
+	\caption{Clasificación de ambientes con respecto al ambiente ideal a partir de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 
@@ -259,7 +243,7 @@ GGEPlot(GGE1, type = "Ranking Genotypes")
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/RankingGenotypes.png}
 	\end{center}
-	\caption{Clasificación de genotipos con respecto al genotipo ideal a partir de la función \emph{GGEPlot}}
+	\caption{Clasificación de genotipos con respecto al genotipo ideal a partir de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 \item Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad.
@@ -272,7 +256,7 @@ GGEPlot(GGE1, type = "Mean vs. Stability")
 	\begin{center}
 		\includegraphics[width=10cm]{./Graficos/MeanvsStability.png}
 	\end{center}
-	\caption{Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad a partir de la función \emph{GGEPlot}}
+	\caption{Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad a partir de la función \textcolor{blue}{GGEPlot}()}
 \end{figure}
 
 \end{itemize}
@@ -280,13 +264,12 @@ GGEPlot(GGE1, type = "Mean vs. Stability")
 
 \textbf{Classic AMMI model}
 
-Para ejecutar la función rAMMI, como en la función \emph{GGEmodel}, se debe proporcionar un conjunto de datos con genotipo, entorno, repeticiones (si las hay) y la variable de respuesta. Se debe indicar el nombre de las columnas que contienen cada una de estas variables en el conjunto de datos de entradas. La salida de la función es un biplot.
+Para ejecutar la función \textcolor{blue}{rAMMI}(), como en la función \textcolor{blue}{GGEmodel}(), se debe proporcionar un conjunto de datos con genotipo, entorno, repeticiones (si las hay) y la variable de respuesta. Se debe indicar el nombre de las columnas que contienen cada una de estas variables en el conjunto de datos de entradas. La salida de la función es un biplot.
 
 A continuación se muestra el biplot GE obtenido del modelo AMMI clásico obtenido con el conjunto de datos yan.winterwheat.
 
 \begin{lstlisting}
-rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
- type = "AMMI")
+rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type = "AMMI")
 \end{lstlisting}
 
 \begin{figure}[H]
@@ -298,7 +281,7 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield",
 
 \textbf{Robust AMMI model}
 
-Como se dijo anteriormente, el modelo AMMI clasico, en su forma estándar, no funciona bien en presencia de observaciones atípicas. Dado que los outliers son muy comun en los datos agronómicos, Rodrigues et al. (2015) proponen cinco modelos AMMI robustos, que permiten superar el problema de la contaminación de datos con observaciones atípicas. Los biplots de los cinco modelos AMMI robustos propuestos por Rodrigues et al. (2015), usando el conjunto de datos yan.winterwheat se muestran a continuación.
+Como se dijo anteriormente, el modelo AMMI clasico, en su forma estándar, no funciona bien en presencia de observaciones atípicas. Dado que los outliers son muy comun en los datos agronómicos, Rodrigues et al. (2015) proponen cinco modelos AMMI robustos, que permiten superar el problema de la contaminación de datos con observaciones atípicas. Los biplots de los cinco modelos AMMI robustos propuestos por Rodrigues et al. (2015), se pueden obtener utilizando la función \textcolor{blue}{rAMMI}() A continuación se muestran los biplots obtenidos con dichos modelos robustos usando el conjunto de datos yan.winterwheat.
 
 \begin{itemize}
 
