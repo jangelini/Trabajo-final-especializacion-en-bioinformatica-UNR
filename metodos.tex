@@ -261,7 +261,7 @@ Los pasos necesarios para la creación de un paquete son:
 \end{itemize}
 
 
-Para la cración del paquete se utilizan numerosas funciones incluidas en el paquete \emph{devtools} en el cual se encuentran un conjunto de paquetes que admiten varios aspectos del desarrollo de paquetes. Por lo tanto, antes de comenzar a crear el paquete se deben instalar el mismo como se indica a continuación:\\
+Para la cración del paquete se utilizan numerosas funciones incluidas en el paquete \emph{devtools} que permiten realizar diversos aspectos del desarrollo de paquetes. Por lo tanto, antes de comenzar a crear el paquete se deben instalar el mismo como se indica a continuación:\\
 
 \begin{lstlisting}
 # Instalar el paquete devtools desde CRAN
@@ -279,7 +279,6 @@ Para crear la estructura del paquete se utiliza la función create\_package(). E
 \begin{lstlisting}
 # Cargar la libreria devtools
 library(devtools)
-
 # Crear el paquete geneticae
 create_package("C:/Users/Julia/Desktop/geneticae")
 \end{lstlisting}
@@ -318,17 +317,17 @@ LazyData: true
 \item Un archivo NAMESPACE
 \end{itemize}
 
-También puede incluir un archivo de proyecto de RStudio pkgname.Rproj, que hace que su paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete R desde la fuente; .gitignore anticipa el uso de Git e ignora algunos archivos estándar detrás de escena creados por R y RStudio.
+También puede incluir un archivo de proyecto de RStudio pkgname.Rproj, que hace que su paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete R desde la fuente; .gitignore anticipa el uso de Git.
 
 \subsection{Creación de funciones y conjuntos de datos}
 
-Una vez creada la estructura del paquete se debe comenzar a incluir las funciones que contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. La funcion use\_r() crea y/o abre un script de la carpeta R/.
+Una vez creada la estructura del paquete se deben incluir las funciones que el mismo contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. Para ello, se utiliza la función use\_r() la cual crea y/o abre un script de la carpeta R/.
 
-Una vez creada una función, para probarla se utiliza load\_all() que simula el proceso de construcción, instalación y conexión del paquete. Permite que las funciones creadas estén disponible rápidamente para uso interactivo, del mismo modo que si se hubiera construido e instalado el paquete y luego cargado a través de library(geneticae).
+Una vez creada una función, se realizan pruebas para asegurar que el código realice lo que realmente se desea utilizando la función load\_all() que simula el proceso de construcción, instalación y conexión del paquete. Permite que las funciones creadas estén disponible rápidamente para uso interactivo, del mismo modo que si se hubiera construido e instalado el paquete y luego cargada en la sesión de R a través de la función library(geneticae).
 
-Muy frecuentemente se utilizan funciones de otros paquetes, para ello se utiliza la función use\_package() que agrega el paquete  a lista de los paquetes que el paquete creado necesita para funcionar del archivo DESCRIPTION.
+Muy frecuentemente se utilizan funciones que se encuentran disponibles en otros paquetes, para ello se utiliza la función use\_package() que agrega el paquete al archivo DESCRIPTION.
 
-A menudo es útil incluir datos en un paquete, con estos se proporcionan casos de uso convincentes para las funciones del paquete. La ubicación más común para los datos es data/, siendo cada archivo de este directorio un .RData que sólo contiene un  objeto. Para esto, se utiliza la función usethis::use\_data(). Se puede observar que el archivo DESCRIPTION creado con la función create\_package() contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocuparán ninguna memoria hasta que los use.
+A menudo es útil incluir datos en un paquete a fin de proporcionar ejemplos de aplicaciones de las funciones incluidas en él. La ubicación más común para los datos es data/, siendo cada archivo de este directorio un .RData que sólo contiene un objeto. Para esto, se utiliza la función usethis::use\_data(). Notar que el archivo DESCRIPTION creado con la función create\_package(), mencionada anteriormente, contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocupen memoria hasta que sean usados.
 
 \subsection{Documentación}
 
@@ -349,7 +348,7 @@ El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} 
 \item Agregar comentarios a los archivos .R, los cuales comienzan con \#' y preceden a una función. La primera oración se convierte en el título y el segundo párrafo es una descripción de la función. Seguidamente, las funciones son documentadas, la mayoría de las funciones tienen tres etiquetas: @param, @examples y @return.
 
 \begin{itemize}
-\item  @param describe los parámetros de la función, indica de que clase es el parámetro y para que sirve.
+\item @param describe los parámetros de la función, indica de que clase es el parámetro y para que sirve.
 \item @examples proporciona un código ejecutable que muestra cómo usar la función en la práctica. 
 \item @return describe el resultado de la función. 
 \end{itemize}
