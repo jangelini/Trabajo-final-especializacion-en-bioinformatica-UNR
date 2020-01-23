@@ -10,12 +10,12 @@ El paquete \emph{geneticae} permite analizar datos provenientes de etapas avanza
 
 Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae)
 
-Es posible obtener información detallada sobre las funciones del paquete geneticae mediante de los archivos de ayuda indicando \textcolor{blue}{help}(package = "geneticae").  La ayuda para una función, por ejemplo, \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). Además, a partir de la función \textcolor{blue}{browseVignettes}("geneticae") se obtiene la viñeta del mismo, es decir una descripción el problema que el paquete está diseñado para resolver asi como ejemplos de aplicación del mismo.
+Es posible obtener información detallada sobre las funciones del paquete geneticae mediante \textcolor{blue}{help}(package = "geneticae").  La ayuda para una función, por ejemplo, \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). Además, a partir de la función \textcolor{blue}{browseVignettes}("geneticae") se obtiene la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver asi como ejemplos de aplicación del mismo.
 
 
 \subsection{Conjuntos de datos en geneticae}
 
-El paquete geneticae proporciona dos conjuntos de datos para ilustrar la metodología incluida para analizar los datos obtenidos de MET.
+El paquete geneticae proporciona dos conjuntos de datos para ilustrar la metodología incluida para analizar los datos obtenidos de EMA.
 
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
 \item yan.winterwheat dataset: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. No hay réplicas disponibles en los datos. Este conjunto de datos se obtuvo del paquete agridat.
@@ -441,7 +441,8 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type =
 \end{itemize}
 
 \textbf{Métodos de imputación}
-Una limitación importante de los modelos presentados anteriormente es que requieren una que el conjunto de datos este completo. Por lo tanto, en el paquete se incluyen una serie de metodologías propuestas, algunas de las cuales no se encuentran disponible en R, para superar el problema de falta de equilibrio. 
+
+Una limitación importante de los modelos presentados anteriormente es que requieren una que el conjunto de datos este completo. Por lo tanto, en el paquete se incluyen una serie de metodologías propuestas, algunas de las cuales no se encuentran disponible en R, para superar el problema de las observaciones perdidas. 
 
 El conjunto de datos yan.winterwheat se utilizó como ejemplo. Como el conjunto de datos no contaba con observaciones perdidas, algunas fueron eliminadas con el objetivo de mostrar las metodologías de imputación incluidas.
 \begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -648,7 +649,7 @@ imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", t
 
 \section{Geneticae Shiny Web App}
 
-La aplicación Geneticae se organiza en las siguientes pestañas:
+La aplicación Geneticae permite a los usuarios realizar alguno de los análisis incluidos en el paquete geneticae. La misma se organiza en las siguientes pestañas:
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
 \item Los datos
 \item Análisis descriptivo
@@ -660,6 +661,7 @@ La aplicación Geneticae se organiza en las siguientes pestañas:
 
 En muchos casos, algunos atributos estilísticos de salida pueden personalizarse para que el usuario obtenga la salida a su gusto. A su vez, los gráficos obtenidos pueden ser descargados.
 
+
 \subsection{Los datos}
 Al iniciar la aplicación Geneticae, se muestra una pantalla en la cual se carga el conjunto de datos a analizar. La aplicación admite datos en formato .csv, delimitados por coma o punto y coma; y permite el siguiente formato de datos: 
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
@@ -668,7 +670,7 @@ Al iniciar la aplicación Geneticae, se muestra una pantalla en la cual se carga
 \item El número de repeticiones puede diferir con los genotipos y los ambientes.
 \end{itemize}
 
-Se utilizan dos conjuntos de datos, incluidos en el paquete Geneticae, para ilustrar la aplicación. Estos conjuntos de datos, uno de los cuales tiene repeticiones (plrv dataset) y el otro no (yan.winterwheat dataset), los cuales se pueden ver y descargar en la pestaña \emph{The data} $\rightarrow$ \emph{Example datasets} (Figura \ref{fig:fig41},\ref{fig:fig42}). 
+Se utilizan dos conjuntos de datos, incluidos en el paquete geneticae, para ilustrar la aplicación. Estos conjuntos de datos, uno de los cuales tiene repeticiones (plrv dataset) y el otro no (yan.winterwheat dataset), los cuales se pueden ver y descargar en la pestaña \emph{The data} $\rightarrow$ \emph{Example datasets} (Figura \ref{fig:fig41},\ref{fig:fig42}). 
 
 \begin{figure}[H]
 	\begin{center}
@@ -815,4 +817,3 @@ El biplot GGE aborda visualmente muchos problemas relacionados con la evaluació
 
 \subsection{Biplot GE}
 
-\subsection{Ayuda}
