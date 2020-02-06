@@ -4,22 +4,17 @@
 %% Recuerda que aqu'i ya puedes escribir acentos como: 'a, 'e, 'i, etc.
 %% La letra n con tilde es: 'n.
 \chapter{Resultados}
+
 \section{Paquete de R \emph{geneticae}}
 
-El paquete \emph{geneticae} permite analizar datos provenientes de etapas avanzadas de los programas de mejoramiento, donde se evalúan pocos genotipos. 
+El paquete \emph{geneticae} permite analizar datos provenientes de etapas avanzadas de los programas de mejoramiento, donde se evalúan pocos genotipos en diversos ambientes. 
 
-Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae)
-
-Es posible obtener información detallada sobre las funciones del paquete geneticae mediante \textcolor{blue}{help}(package = "geneticae").  La ayuda para una función, por ejemplo, \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). Además, a partir de la función \textcolor{blue}{browseVignettes}("geneticae") se obtiene la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver asi como ejemplos de aplicación del mismo.
-
+Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae). Es posible obtener información detallada sobre las funciones del paquete geneticae mediante \textcolor{blue}{help}(package = "geneticae"). La ayuda para una función, por ejemplo, \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). Además, a partir de la función \textcolor{blue}{browseVignettes}("geneticae") se obtiene la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver asi como ejemplos de aplicación del mismo.
 
 \subsection{Conjuntos de datos en geneticae}
-
-El paquete geneticae proporciona dos conjuntos de datos para ilustrar la metodología incluida para analizar los datos obtenidos de EMA.
-
-\begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
+El paquete geneticae proporciona dos conjuntos de datos que permiten ilustrar la metodología incluida para analizar los datos obtenidos de EMA.
+\begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex, noitemsep,topsep=0pt]
 \item yan.winterwheat dataset: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. No hay réplicas disponibles en los datos. Este conjunto de datos se obtuvo del paquete agridat.
-
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -45,7 +40,7 @@ head(dat_yan)
 \end{verbatim}
 \end{tcolorbox}
 
-\item plrv dataset: rendimiento, peso de planta y parcela de 28 clones de la población del virus del enrollamiento de la papa (PLRV) evaluada en seis ambientes. Las réplicas están disponibles en los datos. Este conjunto de datos se obtuvo del paquete agricolae.
+\item plrv dataset: rendimiento, peso de planta y parcela de 28 clones de la población del virus del enrollamiento de la papa (PLRV) evaluada en seis ambientes. Las réplicas están disponibles en los datos. Este conjunto de datos se obtuvo del paquete agricolae.\\
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -71,61 +66,48 @@ head(dat_rep)
 ## 6    163.9     Ayac   1   0.5120000       2.56 18.96296
 \end{verbatim}
 \end{tcolorbox} 
- 
 \end{itemize}
- 
- 
- 
+  
 \subsection{Funciones en geneticae}
 
 \textbf{Modelo de regresión por sitio}
 
 Para ejecutar la función \textcolor{blue}{GGEmodel}(), se debe proporcionar un conjunto de datos con genotipos, ambientes, repeticiones (si hay disponibles), el fenotipo observado y los nombres que dichas variables tienen en el archivo de entrada. Además, se debe indicar el método de centrado, escala y SVD.
 
-Cuando no hay repeticiones disponibles en el conjunto de datos, como es el caso del conjunto de datos yan.winterwheat, el modelo GGE se indica de la siguiente manera:
-\begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
-    width=1\linewidth,
-    height=0.1\linewidth,
-    boxsep=-3mm]
-\begin{lstlisting}
+Para el conjunto de datos yan.winterwheat, en el cual no se dispone de replicas, el modelo GGE se indica de la siguiente manera:
+		\begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
+   				width=1\linewidth,
+    			height=0.1\linewidth,
+    			boxsep=-3mm]
+			\begin{lstlisting}
 GGE1 <- GGEmodel(dat_yan, genotype = "gen", environment = "env", response = "yield", centering = "tester")
-\end{lstlisting}
-\end{tcolorbox}
-Sin embargo, en el caso de que haya repeticiones disponibles, como el conjunto de datos plrv, se indica de la siguiente manera:
+			\end{lstlisting}
+		\end{tcolorbox}
+Mientras que para el conjunto de datos plrv, la función a utilizar debe incluir además el nombre de la columna que contiene las réplicas en el conjunto de datos:
 
-\begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
-    width=1\linewidth,
-    height=0.1\linewidth,
-    boxsep=-3mm]
-\begin{lstlisting}
-GGE1_rep <- GGEmodel(dat_rep, genotype = "Genotype", environment = "Locality", response = "Yield", rep = "Rep", centering = "tester")
-\end{lstlisting}
-\end{tcolorbox}
+		\begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
+   				width=1\linewidth,
+    			height=0.1\linewidth,
+    			boxsep=-3mm]
+			\begin{lstlisting}
+GGE1_rep <- GGEmodel(dat_rep, genotype = "Genotype", environment = "Locality", response = "Yield", rep = "Rep", 		centering = "tester")
+			\end{lstlisting}
+		\end{tcolorbox}
 
-La salida de la función \textcolor{blue}{GGEmodel}() es una lista con los siguientes elementos:
-
-\begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
-\item coordgenotype: trazado de coordenadas para genotipos de todos los componentes.
-\item coordenviroment: trazado de coordenadas para entornos de todos los componentes.
-\item valores propios: vector de valores propios de cada componente.
-\item vartotal: varianza general.
-\item varexpl: porcentaje de varianza explicado por cada componente.
-\item labelgen: nombres de genotipo.
-\item labelenv: nombres de entorno.
-\item ejes: etiquetas de eje.
-\item Datos: datos de entrada escalados y centrados.
-\item centrado: nombre del método de centrado.
-\item escala: nombre del método de escala.
-\item SVP: nombre del método SVP.
-\end{itemize}
+La salida de la función \textcolor{blue}{GGEmodel}() es una lista que contiene las coordenadas para genotipos de todos los componentes, coordenadas para los ambientes de todos los componentes, vector de valores propios de cada componente, variancia total, porcentaje de variancia explicado por cada componente, entre otros.\\
 
 \textbf{Biplot GGE}
 
 Para ejecutar la función \textcolor{blue}{GGEPlot}(), se requiere un objeto de la clase \textcolor{blue}{GGEmodel}(). La salida es un biplot construido a través de los componentes principales generados por \textcolor{blue}{GGEmodel}().
-Los diferentes biplots que se pueden obtener usando la función \textcolor{blue}{GGEPlot}() se muestran usando el conjunto de datos yan.winterwheat. Si hay repeticiones disponibles en el conjunto de datos, como es el caso del conjunto plrv, se debe indicar el nombre de la columna que contiene las réplicas en el archivo de entrada.
+Los diferentes biplots que se pueden obtener usando la función \textcolor{blue}{GGEPlot}() se muestran usando el conjunto de datos yan.winterwheat. En caso de contar con réplicas, se debe indicar el nombre de la columna que contiene las mismas en el archivo de entrada.
 
-\begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
-\item Biplot básico
+\begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex, noitemsep,topsep=0pt]
+\item \emph{Biplot básico}
+
+\textbf{FALTA COMENTARIO}
+
+En la figura \ref{fig:fig4121}
+
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -142,10 +124,17 @@ GGEPlot(GGE1, type = "Biplot")
 		\includegraphics[width=8cm]{./Graficos/GGE_BIPLOT.png}
 	\end{center}
 	\caption{Biplot básico obtenido de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4121}
 \end{figure}
 \end{tcolorbox} 
 
-\item Ranking de los cultivares en función de su rendimiento en el ambiente OA93.
+
+\item \emph{Ranking de los cultivares en función de su rendimiento en el ambiente OA93}\\
+
+
+Para identificar los mejores genotipos en un ambiente a través del biplot GGE, Yan y Hunt (2002) sugieren constituir un eje del ambiente trazando una recta que pase por el identificador del ambiente y el origen. Las proyecciones de los marcadores de los genotipos sobre ese eje, proveen un ranking de los genotipos en ese ambiente, siendo el genotipo de mayor rendimiento en el ambiente es aquel cuya proyección sobre el eje está más alejada del origen hacia el semi-eje donde se encuentra el marcador del ambiente. Aquel cuya proyección sea la segunda más alejada del origen en ese sentido, será el de segundo mejor rendimiento y así hasta llegar al de menor rendimiento en el ambiente, que es aquel cuya proyección está más alejada del origen en sentido contrario al identificador del ambiente. La perpendicular al eje del ambiente que pasa por el origen, divide a los genotipos de rendimiento superior e inferior al promedio del ambiente.\\
+Como se observa en la Figura \ref{fig:fig4122}, el genotipo de mayor rendimiento en el ambiente OA93 es Luc seguido por Kat, m12, y así sucesivamente hasta llegar al genotipo Zav, que es el de rendimiento mas bajo en ese ambiente. Los marcadores de los genotipos Luc, m12, Kat, Rub, Fun, Har y Ema quedan del lado del marcador del ambiente OA93, de acuerdo a la división de la perpendicular que pasa por el origen, por que se interpreta que estos genotipos tienen un rendimiento mayor al promedio del ambiente OA93. Los restantes genotipos tienen un rendimiento inferior al promedio.\\ 
+
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -154,19 +143,24 @@ GGEPlot(GGE1, type = "Biplot")
 \begin{lstlisting}
 GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93")
 \end{lstlisting}
-
 \tcblower\vskip-\baselineskip
 \tcblower
-
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=8cm]{./Graficos/SelectedEnvironment.png}
 	\end{center}
 	\caption{Ranking de cultivares para un ambiente determinado obtenido de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4122}
 \end{figure}
 \end{tcolorbox} 
 
-\item Ranking de los ambientes en función del rendimiento relativo del cultivar Kat.
+
+
+\item \emph{Ranking de los ambientes en función del rendimiento relativo del cultivar Kat}\\
+
+Para visualizar el desempeño de un genotipo en los diferentes ambientes, Yan y Hunt (2002) sugieren graficar una línea que una el marcador del genotipo con el origen y luego trazar otra línea perpendicular a la primera. Esta última perpendicular es la que separa los sitos favorables y desfavorables para el genotipo. Los sitios cuyos marcadores queden en el mismo lado donde está el genotipo son los mejores para ese genotipo y los restantes son aquellos donde el genotipo rinde por debajo de su promedio.\\
+Como se puede apreciar en la Figura \ref{fig:fig41231}, la perpendicular al marcador del genotipo Kat determina que ninguno de los ambientes evaluados son favorables para ese genotipo.\\
+
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -182,9 +176,15 @@ GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat")
 		\includegraphics[width=8cm]{./Graficos/SelectedGenotype.png}
 	\end{center}
 	\caption{Ranking de ambientes para cultivar determinado obtenido de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4123}
 \end{figure}
 \end{tcolorbox} 
-\item Relación entre ambientes.
+
+
+\item \emph{Relación entre ambientes}\\
+
+figu \ref{fig:fig4124}
+
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -200,9 +200,17 @@ GGEPlot(GGE1, type = "Relationship Among Environments")
 		\includegraphics[width=8cm]{./Graficos/RelationshipAmongEnvironments.png}
 	\end{center}
 	\caption{Relación entre ambientes obtenido de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4124}
 \end{figure}
 \end{tcolorbox}
-\item Comparación entre los genotipos Kat y Cas.
+
+\item \emph{Comparación entre los genotipos Kat y Cas}\\
+
+Para comparar dos genotipos, se propone unir mediante una línea recta los genotipos a comparar, luego trazar una línea que pase por el origen y que sea perpendicular a la línea que une a los genotipos. Esta última línea es la que separa sitios favorables a uno y a otro genotipo.\\
+Los sitios cuyos marcadores queden en el mismo lado donde está el marcador del genotipo son los mejores para ese genotipo. Si un ambiente queda posicionado sobre la línea perpendicular, los dos genotipos tienen rendimientos similares en ese ambiente. Si dos genotipos están cercanos, sus rendimientos son similares en los ambientes evaluados. Por último, si todos los ambientes quedan a un lado de la línea perpendicular, el genotipo cuyo identificador está de ese lado rinde más que el otro en todos los ambientes.\\
+En la Figura \ref{fig:fig4125} se puede ver la comparación de los desempeños de los genotipos Kat y Cas. Todos los ambientes resultan favorables para Cas y ninguno para Kat.\\
+
+
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -218,9 +226,20 @@ GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = 
 		\includegraphics[width=8cm]{./Graficos/ComparisonofGenotype.png}
 	\end{center}
 	\caption{Comparación entre dos genotipos obtenido de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4125}
 \end{figure}
 \end{tcolorbox}
-\item Identificación del mejor cultivar en cada ambiente.
+
+
+\item \emph{Identificación del mejor cultivar en cada ambiente}\\
+
+Para poder identificar mega-ambientes y los mejores genotipos en cada uno de ellos se propone graficar un polígono envolvente. Este polígono se forma uniendo los genotipos más extremos en el biplot con segmentos continuados. Luego se trazan líneas rectas que pasan por el origen y que son perpendiculares a cada uno de los lados del polígono (o a sus proyecciones). De esta forma, el biplot queda dividido en cuadrantes, y los sitios que quedan dentro un mismo cuadrante se consideran pertenecientes a un mismo mega-ambiente. Generalmente cada cuadrante contiene un genotipo en el vértice, que es el de mayor rendimiento en el mega-ambiente.\\
+En la Figura \ref{fig:fig4126} se presenta el biplot GGE con el polígono envolvente y las perpendiculares a sus lados, que ayudan a la interpretación del mismo.
+En primer lugar se observa que los marcadores de los ambientes OA93 y KE93 son mayores a los restantes, lo que indica que la variabilidad en esos ambientes es superior, es decir, en ellos es donde mejor se diferencian los efectos de los genotipos.
+Las perpendiculares a los lados del polígono envolvente determinan dos mega-ambientes:
+- uno formado por los ambientes OA93 y KE93, en donde el genotipo de mejor desempeño es el Zav (se encuentra en el vértice del polígono encerrado por las perpendiculares).
+- el segundo mega-ambiente lo componen los restantes ambientes, en este caso el genotipo ganador es el Fun.\\
+
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -236,9 +255,14 @@ GGEPlot(GGE1, type = "Which Won Where/What")
 		\includegraphics[width=8cm]{./Graficos/WhichWonWhereWhat.png}
 	\end{center}
 	\caption{Identificación del mejor cultivar en cada ambiente a partir de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4126}
 \end{figure}
 \end{tcolorbox}
-\item Evaluación de los ambientes basados tanto en la capacidad de discriminación como en la representatividad.
+
+
+\item \emph{Evaluación de los ambientes basados tanto en la capacidad de discriminación como en la representatividad}\\
+
+figu \ref{fig:fig4127}
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -254,9 +278,14 @@ GGEPlot(GGE1, type = "Discrimination vs. representativeness")
 		\includegraphics[width=8cm]{./Graficos/Discriminationvsrepresentativeness.png}
 	\end{center}
 	\caption{Evaluación de los ambientes basados tanto en la capacidad de discriminación y representatividad a partir de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4127}
 \end{figure}
 \end{tcolorbox}
-\item Clasificación de ambientes con respecto al ambiente ideal.
+
+
+\item \emph{Clasificación de ambientes con respecto al ambiente ideal}\\
+figu \ref{fig:fig4128}
+
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -272,9 +301,13 @@ GGEPlot(GGE1, type = "Ranking Environments")
 		\includegraphics[width=8cm]{./Graficos/RankingEnvironments.png}
 	\end{center}
 	\caption{Clasificación de ambientes con respecto al ambiente ideal a partir de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4128}
 \end{figure}
 \end{tcolorbox}
-\item Clasificación de genotipos con respecto al genotipo ideal.
+
+\item \emph{Clasificación de genotipos con respecto al genotipo ideal}\\
+
+figu \ref{fig:fig4129}
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -290,9 +323,16 @@ GGEPlot(GGE1, type = "Ranking Genotypes")
 		\includegraphics[width=8cm]{./Graficos/RankingGenotypes.png}
 	\end{center}
 	\caption{Clasificación de genotipos con respecto al genotipo ideal a partir de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4129}
 \end{figure}
 \end{tcolorbox}
-\item Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad.
+
+\item \emph{Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad}\\
+
+Como se puede observar en el biplot de la figura \ref{fig:fig41210} el orden de los genotipos (de mayor a menor rendimiento) es: Kat, m12, Ena, Luc, Ann todos ellos con rendimientos superiores al promedio, seguidos por los de rendimiento menor al promedio y por último Fun, el de peor rendimiento medio en ese mega-ambiente.
+Debido a que las proyecciones sobre el eje perpendicular al eje medio de ambiente dan una idea de la estabilidad, se observa que el genotipo Luc y Fun son los más inestables. También se
+observa que el genotipo Kat, además de tener el mejor rendimiento medio es de los más estables en el megaambiente.\textbf{VER... ES CONTRADICTORIO... VER SI EL AEC ES SOBRE UN MEGA AMBIENTE O SI ES SOBRE TODOS}
+
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -308,9 +348,13 @@ GGEPlot(GGE1, type = "Mean vs. Stability")
 		\includegraphics[width=8cm]{./Graficos/MeanvsStability.png}
 	\end{center}
 	\caption{Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad a partir de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig41210}
 \end{figure}
 \end{tcolorbox}
+
+
 \end{itemize}
+
 
 \textbf{Classic AMMI model}
 
@@ -458,7 +502,7 @@ dat_yan[2, 3] <- NA
 \end{tcolorbox}
 
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
-\item GabrielEigein proposed by Arciniegas-Alarcón S., et al. (2010).
+\item \emph{GabrielEigein}
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -496,7 +540,7 @@ imputation(dat_yan, PC.nb = 2, genotype = "gen", environment = "env", response =
 \end{tcolorbox}
 
 
-\item EM-AMMI proposed by Gauch and Zobel (1990).
+\item \emph{EM-AMMI}
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -534,7 +578,7 @@ imputation(dat_yan, PC.nb = 1, genotype = "gen", environment = "env", response =
 \end{tcolorbox}
 
 
-\item EM-SVD proposed by Perry (2009)
+\item \emph{EM-SVD}
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -571,7 +615,7 @@ imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", t
 \end{tcolorbox}
 
 
-\item WGabriel proposed by Alarcon…..
+\item \emph{WGabriel}
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -609,7 +653,7 @@ imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", t
 \end{tcolorbox}
 
 
-\item EM-PCA proposed by
+\item \emph{EM-PCA}
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -649,7 +693,7 @@ imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", t
 
 \section{Geneticae Shiny Web App}
 
-La aplicación Geneticae permite a los usuarios realizar alguno de los análisis incluidos en el paquete geneticae. La misma se organiza en las siguientes pestañas:
+La aplicación Geneticae permite a los usuarios realizar muchos de los análisis incluidos en el paquete geneticae. La misma se organiza en las siguientes pestañas:
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
 \item Los datos
 \item Análisis descriptivo
@@ -812,7 +856,7 @@ Por último, la presencia de observaciones atipicas u outliers provoca que el AN
 \end{figure}
 
 \subsection{Biplot GGE}
-El biplot GGE aborda visualmente muchos problemas relacionados con la evaluación de los genotipo y ambientes de prueba. En el caso de repeticiones disponibles en el conjunto de datos, se obtiene el valor fenotípico promedio para cada combinación de genotipo y ambiente. Los valores faltantes no están permitidos.
+El biplot GGE aborda visualmente muchos problemas relacionados con la evaluación de los genotipo y ambientes de prueba. En el caso de repeticiones disponibles en el conjunto de datos, se obtiene el valor fenotípico promedio para cada combinación de genotipo y ambiente. Los valores faltantes no están permitidos. Se incluyen en la aplicación web los biplots mas utilizados.
 
 
 \subsection{Biplot GE}

@@ -8,11 +8,9 @@
 %\setcounter{section}{1}
 \section{Métodos estadísticos}
 
-\subsection{Modelo AMMI}
+\subsection{Modelo AMMI y SREG}
 
-\textbf{Modelo AMMI clásico}
-
-El modelo AMMI es un modelo multiplicativo en el cual se expresa el fenotipo de un genotipo en un ambiente de la siguiente forma:
+El modelo AMMI propuesto por Zobel et al. (1988) es un modelo multiplicativo en el cual se expresa el fenotipo de un genotipo en un ambiente de la siguiente forma:
 \begin{center}
 $y_{ij}= \mu +G_i + A_j + \sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ \hspace{0.5cm} $ i=1,...,g$;\hspace{0.15cm} $ j=1,...,a$;\hspace{0.15cm} $q=min(g-1,a-1)$
 \end{center} 
@@ -25,208 +23,39 @@ donde
 \item $\sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ es la sumatoria de componentes multiplicativas utilizadas para modelar la IGA. Siendo, $\lambda_k$ el valor singular para la  $k$-ésima componente principal (PC) $\alpha_{ik}$ y $\gamma_{jk}$ son los scores de las PC para el $i$-ésimo genotipo y el $j$-ésima ambiente para la $k$-ésima componente, respectivamente;
 \end{itemize}
 
-Los parámetros de IGA en el modelo AMMI se estiman por medio de la DVS de la matriz que contiene los residuos del modelo aditivo luego de ajustar por mínimos cuadrados el modelo de efectos principales. Generalmente los dos primeros términos multiplicativos son suficientes para explicar los patrones de interacción; la variabilidad remanente se interpreta como ruido. 
-
-Los patrones de interacción se pueden visualizar mediante los biplots GE. El concepto del biplot fue presentado por Gabriel (1971), que consiste en una representación de las filas (individuos) y las columnas (variables) de una matriz de datos en un mismo gráfico. 
-
-
-\textbf{Biplot GE}
-
-El biplot GE ayuda a interpretar la variación producida por los efectos de la IGA. Se grafican en un sistema de coordenadas cartesianas de dos dimensiones los scores de los genotipos ($\alpha_{ik}$) y los ambientes ($\gamma_{jk}$), ponderados por la raíz cuadrada del autovalor correspondiente ($\lambda_k$).
-
-Dado que los genotipos y los ambientes son definidos como vectores desde el origen (0,0) hasta sus scores, el biplot se interpreta en términos de las direcciones de vectores y sus proyecciones.\\
-
-El módulo del vector de un ambiente indica la contribución del mismo a la interacción. Los puntos de los genotipos que se encuentran próximos al origen indican que los mismos contribuyen poco a la interacción, es decir, se adaptan de igual manera a todos los ambientes. Puntos cercanos entre sí indican patrones de interacción similares, mientras que puntos alejados entre sí tienen patrones diferentes. Ángulos de $< 90^o$ ó $> 270^o$ entre los ambientes y genotipos indica que contribuyen positivamente a la interacción (hay una asociación positiva entre ese genotipo y ese ambiente); y mientras más alejados del origen se encuentre los marcadores, más fuerte será esa asociación. Una asociación fuerte y positiva indica que ese ambiente es muy favorable para ese genotipo. De manera similar, cuando un genotipo y un ambiente forman un ángulo entre $90^o$ y $270^o$ se interpreta que ese ambiente es muy desfavorable para ese genotipo.\\
-
-
-En la Figura \ref{fig:fig311}, se presenta un ejemplo de un biplot GE con 6 ambientes (A, B, C, D, E y F) y 10 genotipos (1, 2, 3, 4, 5, 6, 7, 8, 9 y 10). Se observa los ambientes A y E son los que más contribuyen a la interacción. La cercanía de los genotipos 1 y 2 indica que esos genotipos tienen patrones de interacción similares, y a la vez, muy distintos a los del genotipo 4. Las cercanías entre el genotipo 9 y el ambiente A, entre el genotipo 5 con el ambiente C, entre los genotipos 1 y 2 con el ambiente E, entre los genotipos 6, 7 y 10 con el ambiente F y entre el genotipo 4 con el ambiente D, lo que indica, y la gran distancia con el origen de coordenadas, indica que esos ambientes son muy favorables para esos genotipos. Por otro lado, el ambiente A es considerablemente desfavorable para el genotipo 10. También se observa que los genotipos 3 y 8 se adaptan en igual medida a todos los ambientes, debido a su proximidad con el origen de coordenadas.
-
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10cm]{./Graficos/GE_biplot.png}
-	\end{center}
-	\caption{Ejemplo de un biplot GE}
-	\label{fig:fig311}
-\end{figure}
-
-
-
-\textbf{Modelo AMMI robusto}
-
-El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. La presencia de observaciones atípicas es más una regla que una excepción cuando se consideran datos agronómicos debido a errores de medición, algunas plagas / enfermedad que puede influir en algunos genotipos en un ambiente resultando por ejemplo en un rendimiento inferior al esperado, o incluso debido a alguna característica inherente de los genotipos que se evalúan.
-
-Rodrigues et al. (2015) proponen una generalización robusta del modelo AMMI, que se puede obtener en dos etapas: primero ajustar la regresión robusta basada en el estimador M-Huber \citep{Huber1981} para reemplazar el ANOVA; y luego utilizar un procedimiento DVS / PCA robusto para reemplazar la DVS estándar. En la segunda etapa, consideraron varios métodos dando lugar a total de cinco robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
-
-El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes en los biplots puede dar como resultado un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (es decir, megaambientes; \citealp{Gauch1997,Yanetal2000}). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de producción de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico (Rodrigues et al. (2015)).
-
-\subsection{Modelo SREG}
-
-El modelo SREG (Cornelius et al., 1996; Crossa y Cornelius, 1997 y 2002) expresa el fenotipo de un genotipo en un ambiente en función del efecto ambiente aditivo y los efectos genotipo e interacción agrupados y en forma multiplicativa.
+En cambio, el modelo SREG (Cornelius et al., 1996; Crossa y Cornelius, 1997 y 2002) expresa el fenotipo de un genotipo en un ambiente en función del efecto ambiente aditivo y los efectos genotipo e interacción agrupados y en forma multiplicativa:
+\begin{center}
 $y_{ij}= \mu +  A_j + \sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ \hspace{0.5cm} $ i=1,...,g$;\hspace{0.15cm} $ j=1,...,a$; \hspace{0.15cm} $q=min(g-1,a-1)$
-donde 
-\begin{itemize}
-\item $y_{ij}$ es la característica fenotípica evaluada (rendimiento u otra variable cuantitativa de interés) del $i$-ésimo genotipo en el $j$-ésimo ambiente,
-\item $\mu$ es la media general,
-\item  $G_i$ es el efecto del $i$-ésimo genotipo,
-\item $A_j$ es el efecto del $j$-ésimo ambiente
-\item $\sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ es la sumatoria de componentes multiplicativas utilizadas para modelar los efectos G e IGA en forma conjunta. Siendo, $\lambda_k$ el valor singular para la  $k$-ésima PC $\alpha_{ik}$ y $\gamma_{jk}$ son los scores de las PC para el $i$-ésimo genotipo y el $j$-ésima ambiente para la $k$-ésima PC, respectivamente;
-\end{itemize}
+\end{center} 
+
+Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la DVS de la matriz que contiene los residuos del modelo aditivo luego de ajustar por mínimos cuadrados el modelo de efectos principales. Generalmente los dos primeros términos multiplicativos son suficientes para explicar los patrones de interacción; la variabilidad remanente se interpreta como ruido. 
+
+Para visualizar el efecto de IGA o conjuntamente el efecto de G y IGA se proponen los gráficos biplots GE y GGE (proveniente de las siglas en inglés G de Genotipe y GE de Genotipe-Environment) (Yan et al., 2000) respectivamente. El concepto del biplot fue presentado por Gabriel (1971), que consiste en una representación de las filas (individuos) y las columnas (variables) de una matriz de datos en un mismo gráfico. Éstos biplots, son herramientas poderosas definidas para el análisis e interpretación de la estructura de datos provenientes de ensayos multiambientales utilizados en los programas de mejoramiento (Ebdon y Gauch, 2002; Samonte et al., 2004; Yan et al., 2000; Zobel et al., 1988).
+
+El biplot GE ayuda a interpretar la variación producida por los efectos de la IGA. Por otro lado, el biplot GGE permite investigar la diferenciación de mega-ambientes entre los ambientes en estudio, seleccionar cultivares superiores en un mega-ambiente dado y seleccionar los mejores ambientes de evaluación para analizar las causas de la interacción GA. Se define como mega-ambiente a un grupo de ambientes en donde los cultivares de mejor desempeño son los mismos.
 
 
-Para visualizar conjuntamente el efecto de G y IGA Yan et al. (2000) proponen los gráficos biplots GGE (\emph{Genotipe plus Genotipe-Environment}). A partir de estos gráficos se puede investigar la diferenciación de mega-ambientes entre los ambientes en estudio, seleccionar cultivares superiores en un mega-ambiente dado y seleccionar los mejores ambientes de evaluación para analizar las causas de la IGA. Se define como mega-ambiente a un grupo de ambientes en donde los cultivares de mejor desempeño son los mismos.\\
+\subsection{Modelo AMMI robusto}
 
+El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. La presencia de observaciones atípicas es más una regla que una excepción cuando se consideran datos agronómicos debido a errores de medición, algunas plagas / enfermedad que puede influir en algunos genotipos  resultando por ejemplo en un rendimiento inferior al esperado en un ambiente, o incluso debido a alguna característica inherente de los genotipos que se evalúan.
 
-\textbf{Biplot GGE}\\
+Rodrigues et al. (2015) proponen una generalización robusta del modelo AMMI, que se puede obtener en dos etapas: primero ajustar la regresión robusta basada en el estimador M-Huber (Huber, 1981) para reemplazar el ANOVA; y luego utilizar un procedimiento DVS / PCA robusto para reemplazar la DVS estándar. En la segunda etapa, consideraron varios métodos dando lugar a total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
 
+El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes en los biplots puede dar como resultado un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (Gauch1997,Yanetal2000). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de producción de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico (Rodrigues et al. (2015)).
 
-El biplot GGE, ayuda a interpretar conjuntamente la variación producida por los efectos principales de los G + IGA.
-
-Para la construcción de los biplots GGE, al igual que para los biplots GE, se grafican en un sistema de coordenadas cartesianas de dos dimensiones los scores de los genotipos ($\alpha_{ik}$) y los ambientes ($\gamma_{jk}$), ponderados por la raíz cuadrada del autovalor correspondiente ($\lambda_k$).
-
-Para una mejor comprensión de las interpretaciones que se pueden extraer del gráfico biplot GGE, se presenta un ejemplo del mismo para un ensayo de 6 ambientes (A, B, C, D, E y F) con 12 genotipos (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 y 12).\\
-
-\textbf{\emph{Biplot básico}}
-
-
-
-
-\textbf{\emph{Desempeño de los cultivares en un ambiente dado}}\\
-
-Para identificar los mejores genotipos en un ambiente a través del biplot GGE, Yan y Hunt (2002) sugieren trazar una recta que pase por el origen y el punto del ambiente de interes, formando un eje para el ambiente. Luego, ranking de los genotipos en ese ambiente se puede obtener con las proyecciones de los marcadores de los genotipos sobre ese eje. La linea que pasa por el origen y es perpendicular al eje del ambiente separa aquellos genotipos con rendimiento superior e inferior al promedio del ambiente. El genotipo de mayor rendimiento en el ambiente es aquel cuya proyección sobre el eje está más alejada del origen hacia el semi-eje donde se encuentra el marcador del ambiente. Aquel cuya proyección sea la segunda más alejada del origen en ese sentido, es el de segundo mejor rendimiento y así hasta llegar al de menor rendimiento en el ambiente, que es aquel cuya proyección está más alejada del origen en sentido contrario al identificador del ambiente. 
-
-Como se observa en la Figura \ref{fig:fig312}, el genotipo de mayor rendimiento en el ambiente D es el 4, luego le sigue el 7, luego el 8, y así sucesivamente hasta llegar al genotipo 12, que es el de peor rendimiento en ese ambiente. Además, 
-los genotipos 4, 7, 8, 11, 2 y 5 quedan del lado del marcador del ambiente D, de acuerdo a la división de la perpendicular que pasa por el origen, por que se interpreta que estos genotipos tienen un rendimiento mayor al promedio del ambiente D. Los restantes genotipos tienen un rendimiento inferior al promedio.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10cm]{./Graficos/env_GGE.png}
-	\end{center}
-	\caption{Ranking de genotipos en el ambiente D a través del biplot GGE}
-	\label{fig:fig312}
-\end{figure}
-
-
-
-\textbf{\emph{Adaptación relativa de un cultivar dado en diferentes ambientes}}\\
-
-Para identificar qué ambiente es el más adecuado para un cultivar, Yan y Hunt (2002) proponen graficar una línea que una el marcador del genotipo con el origen, formando un eje para el cultivar, y luego trazar otra línea perpendicular a la primera. Esta última perpendicular es la que separa los sitos favorables y desfavorables para el genotipo. Los sitios cuyos marcadores queden en el mismo lado donde está el genotipo son los mejores para ese genotipo y los restantes son aquellos donde el genotipo rinde por debajo de su promedio.
-
-
-
-Como se puede apreciar en la Figura \ref{fig:fig313}, la perpendicular al marcador del genotipo 2, determina que los ambientes favorables para ese genotipo son A, E, F y D, en donde el mismo tiene rendimientos mayores a su promedio. Los ambientes desfavorables son B y C.
-También se observa que el ambiente más favorable es el A, luego le siguen el E y el F. Si bien el ambiente D también es favorable, en ese ambiente el rendimiento del genotipo 2 es apenas superior a su rendimiento medio ya que el marcador del ambiente D, está muy cerca de la perpendicular que pasa por el origen.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10cm]{./Graficos/gen_GGE.png}
-	\end{center}
-	\caption{Ambientes favorables y desfavorables para el genotipo 2 en el biplot GGE}
-	\label{fig:fig313}
-\end{figure}
-
-\textbf{\emph{Relación entre ambientes}}\\
-
-
-\textbf{\emph{Comparación entre dos cultivares}}\\
-
-Para comparar dos cultiares, se propone unir mediante una línea recta los genotipos a comparar, luego trazar una línea perpendicular a la anterior que pase por el origen. Esta última línea es la que separa sitios favorables a uno y a otro genotipo.
-
-Al hacer comparaciones de a pares, la longitud de la linea que conecta los cultivares es importante para hacer inferencias. Cuanto más larga sea, más confiable será la comparación. Por el contrario, una línea corta implica que los dos cultivares a comparar son similares en todos los entornos y, por lo tanto, la comparación puede no tener sentido.
-
-
-Los sitios cuyos marcadores queden en el mismo lado donde está el marcador del genotipo son los mejores para ese genotipo. Si un ambiente queda posicionado sobre la línea perpendicular, los dos genotipos tienen rendimientos similares en ese ambiente. Si dos genotipos están cercanos, sus rendimientos son similares en los ambientes evaluados. Por último, si todos los ambientes quedan a un lado de la línea perpendicular, el genotipo cuyo identificador está de ese lado rinde más que el otro en todos los ambientes.
-
-
-En la Figura  \ref{fig:fig314} se puede ver la comparación de los desempeños de los genotipos 6 y 8. Los ambientes que resultan favorables para el genotipo 6 son el E, el A y el F. Mientras que los favorables para el genotipo 8 son el B, el C y el D.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10cm]{./Graficos/comp_gen_GGE.png}
-	\end{center}
-	\caption{Comparación de los genotipos 6 y 8 en el biplot GGE}
-	\label{fig:fig314}
-\end{figure}
-
-
-\textbf{\emph{''Which-Won-Where"}}\\
-
-Para poder identificar mega-ambientes y los mejores genotipos en cada uno de ellos se propone graficar un polígono envolvente. Este polígono se forma uniendo los genotipos más extremos en el biplot, de manera que todos los cultivares son contenidos en el mismo. Luego se trazan líneas rectas que pasan por el origen y que son perpendiculares a cada uno de los lados del polígono. De esta forma, el biplot queda dividido en sectores, y los sitios que quedan dentro un mismo sector se consideran pertenecientes a un mismo mega-ambiente. El cultivar que se encuentra en el vertice de cada sector es el de mayor rendimiento en todos los ambientes que comparten el sector con él. A los grupos de ambientes de cada sector se los llama mega-ambientes.
-
-En la Figura \ref{fig:fig315} se presenta el biplot GGE con el polígono envolvente y las perpendiculares a sus lados, que ayudan a la interpretación del mismo.
-
-
-En primer lugar se observa una mayor variabilidad en los ambientes A y B, es decir, en ellos es donde mejor se diferencian los efectos de los genotipos.
-
-Las perpendiculares a los lados del polígono envolvente determinan tres mega-ambientes:
-\begin{itemize}
-\item uno formado por los ambientes A, E y F, en donde el genotipo de mejor desempeño es el 2 (se
-encuentra en el vértice del polígono encerrado por las perpendiculares).
-\item otro está formado solo por el ambiente D y el genotipo ganador en él es el 4, y
-\item  el tercer mega-ambiente lo componen los ambientes B y C, en este caso el genotipo ganador es el 1.
-\end{itemize}
-
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10cm]{./Graficos/poligono_GGE.png}
-	\end{center}
-	\caption{Biplot GGE con el polígono envolvente y las perpendiculares a sus lados}
-	\label{fig:fig315}
-\end{figure}
-
-
-
-
-\textbf{\emph{Evaluación de los cultivares basada en el desempeño y estabilidad}}\\
-
-Si se identifican distintos mega-ambientes, la selección de genotipos debe hacerse para cada mega-ambiente en particular. Los genotipos se seleccionan en base a su desempeño y a su estabilidad a través de los ambientes. Esto se puede visualizar al graficar un eje medio para todos los ambientes pertenecientes a un mismo mega-ambiente. Para ello se traza una línea recta entre la media de scores de la componente 1 y la componente 2 de los ambientes pertenecientes al mega-ambiente y el origen; y una perpendicular a la línea media de scores de ambientes. Estas dos líneas constituyen ``el eje de coordenadas de ambiente medio''.
-
-Las proyecciones de los marcadores de los genotipos sobre el eje de la media de scores de ambientes da un ranking de los rendimientos de los genotipos en ese mega-ambiente. A su vez la magnitud de la proyección de los marcadores de los genotipos a la perpendicular al eje de ambientes da una idea de la estabilidad. Cuanto mayor sea esta magnitud, más inestable será el genotipo.
-
-En este ejemplo se calcula el ambiente medio para un mega-ambienteformado por los ambientes A, E y F. El promedio de los scores de la primer componentes es 1,00 y el de la segunda es 1,13, por lo que el punto medio que determina la dirección del eje es (1,00; 1,13), que está graficado con un círculo en la Figura \ref{fig:fig316}.
-
-Como se puede observar en el biplot el orden de los genotipos (de mayor a menor rendimiento) es: 2, 4, 12, 11, 5, 6 todos ellos con rendimientos superiores al promedio, seguidos por los de rendimiento menor al promedio: el 10, 9, 7, 3 y por último el 1, el de peor rendimiento medio en ese mega-ambiente.
-
-Debido a que las proyecciones sobre el eje perpendicular al eje medio de ambiente dan una idea de la estabilidad, se observa que el genotipo 12, el 9, el 7 y el 4 son los más inestables. También se observa que el genotipo 2, además de tener el mejor rendimiento medio es de los más estables en el megaambiente.
-
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10cm]{./Graficos/mean_stab_GGE.png}
-	\end{center}
-	\caption{Eje de coordenadas de ambiente medio para un mega-ambiente en el biplot GGE}
-	\label{fig:fig316}
-\end{figure}
-
-
-
-\textbf{\emph{Comparación de todos los ambientes con respecto a uno ideal}}\\
-
-
-
-
-\textbf{\emph{Comparación de todos los genotipos con respecto a uno ideal}}\\
-
-El cultivar ideal, representado por el círculo pequeño con una flecha apuntando hacia él, se define como el que tiene el mayor rendimiento en todos los entornos. es decir, tiene el rendimiento medio más alto y es absolutamente estable. los genotipos se clasifican según su distancia del cultivar ideal
 
 \subsection{Métodos de imputación}
 
 
-Una limitación importante que presentan los modelos multiplicativos (AMMI y SREG) es que requieren que el conjunto de datos este completo, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común, debido por ejemplo a la incorporación de nuevos genotipos, errores de medición o causas naturales como la destrucción de plantas por animales, inundaciones o durante la cosecha.
-
-Entre las posibles soluciones para tratar un conjunto de datos con observaciones perdidas: el uso de un subconjunto completo de datos, eliminando aquellos genotipos que tienen valores faltantes (Ceccarelli et al., 2007, Yan et al., 2011), completar datos faltantes con la media ambiental, o imputación de los valores faltantes mediante estimaciones utilizando, por ejemplo, un modelo multiplicativo (Kumar et al., 2012).
+Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el conjunto de datos este completo, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de la evaluaciones en las que se incorporan y se descartan genotipos debido a su pobre desempeño (Hill y Rosemberg, 1985)
 
 Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
 
 \begin{itemize}
-\item EM-AMMI: Gauch y Zobel (1990) desarrollaron este enfoque mediante el cual se imputa utilizando el algoritmo de maximización de la esperanza (EM, del inglés \emph{Expectation-Maximization}) incorporando el modelo AMMI. Consiste en un procedimiento iterativo que funciona de la siguiente forma: .............
-Dependiendo del número de términos multiplicativos empleados, el método de imputación puede denominarse EM-AMMI0, EM-AMMI1, etc. (Gauch y Zobel 1990). Los estudios de Caliński y col. (1992), Piepho (1995), Arciniegas-Alarcón y Dias (2009) y Paderewski y
-Rodrigues (2014) mostraron que se obtienen los mejores resultados para la imputación con modelos AMMI al incluir como máximo una componente multiplicativa.
+\item EM-AMMI: Gauch y Zobel (1990) desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza (EM, del inglés \emph{Expectation-Maximization}) incorporando el modelo AMMI. \textbf{Este método reemplaza... (poner como abajo)}. Dependiendo del número de términos multiplicativos empleados, el método de imputación puede denominarse EM-AMMI0, EM-AMMI1, etc. (Gauch y Zobel 1990). 
 \end{itemize}
 \begin{itemize}
-\item EM-SVD: Perry (2009a) propone un método de imputación que combina el algoritmo EM con DVS. Este método reemplaza los valores faltantes de una matriz $G \times E$ inicialmente por valores arbitrarios para obtener una matriz completa, y luego la DVS se calcula iterativamente en esa matriz. Al final del proceso, cuando las iteraciones alcanzan estabilidad, se obtiene la matriz imputada.
-.....Podria ponerlo tambien de manera formal... pero creo que con esto basta
+\item EM-SVD: Perry (2009a) propone un método de imputación que combina el algoritmo EM con DVS. Este método, en forma similar al anterior, reemplaza los valores faltantes de una matriz $G \times E$ inicialmente por valores arbitrarios para obtener una matriz completa, y luego la DVS se calcula iterativamente en esa matriz. 
 \end{itemize}
 \begin{itemize}
 \item EM-PCA:
@@ -238,9 +67,6 @@ las imputaciones se refinan a través de un esquema iterativo que define una par
 \begin{itemize}
 \item WGabriel Eigen:
 \end{itemize}
-
-Vale la pena señalar que el modelo de análisis no siempre será el mismo que el modelo de imputación.
-
 
 
 
