@@ -9,13 +9,13 @@
 
 El paquete \emph{geneticae} permite analizar datos provenientes de etapas avanzadas de los programas de mejoramiento, donde se evalúan pocos genotipos en diversos ambientes. 
 
-Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae). Es posible obtener información detallada sobre las funciones del paquete geneticae mediante \textcolor{blue}{help}(package = "geneticae"). La ayuda para una función, por ejemplo, \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). Además, a partir de la función \textcolor{blue}{browseVignettes}("geneticae") se obtiene la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver asi como ejemplos de aplicación del mismo.
+Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae). Información detallada sobre las funciones del paquete geneticae se puede obtener mediante \textcolor{blue}{help}(package = `` geneticae"). La ayuda para una función, por ejemplo \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). Además, a partir de la función \textcolor{blue}{browseVignettes}(`` geneticae") se obtiene la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver asi como ejemplos de aplicación del mismo.
 
 \subsection{Conjuntos de datos en geneticae}
 
 El paquete geneticae proporciona dos conjuntos de datos que permiten ilustrar la metodología incluida para analizar los datos obtenidos de EMA.
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex, noitemsep,topsep=0pt]
-\item yan.winterwheat dataset: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente, el conjunto de datos se obtuvo del paquete agridat (Wright, 2018) donde solamente se encuentran disponibles las medias por variedad.
+\item \emph{yan.winterwheat dataset}: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente, el conjunto de datos se obtuvo del paquete agridat (Wright, 2018) donde solamente se encuentran disponibles las medias por variedad, como se muestra a continuación:
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -23,8 +23,8 @@ El paquete geneticae proporciona dos conjuntos de datos que permiten ilustrar la
     boxsep=-3mm]
 \begin{lstlisting}[linewidth=\columnwidth]
 data(yan.winterwheat)
-dat_yan <- yan.winterwheat
-head(dat_yan)
+yanwinterwheat <- yan.winterwheat
+head(yanwinterwheat)
 \end{lstlisting}
 
 \tcblower\vskip-\baselineskip
@@ -41,7 +41,7 @@ head(dat_yan)
 \end{verbatim}
 \end{tcolorbox}
 
-\item plrv dataset: rendimiento, peso de planta y parcela de 28 clones de la población del virus del enrollamiento de la papa (PLRV) evaluada en seis ambientes. Cada clon fue evaluado tres veces en cada ambiente. El conjunto de datos se obtuvo del paquete agricolae (de Mendiburu, 2019).\\
+\item \emph{plrv dataset}: rendimiento, peso de planta y parcela de 28 clones de la población del virus del enrollamiento de la papa (PLRV) evaluada en seis ambientes. Cada clon fue evaluado tres veces en cada ambiente. El conjunto de datos se obtuvo del paquete agricolae (de Mendiburu, 2019).\\
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -50,8 +50,8 @@ head(dat_yan)
     boxsep=-3mm]
 \begin{lstlisting}
 data(plrv)
-dat_rep <- plrv
-head(dat_rep)
+plrv <- plrv
+head(plrv)
 \end{lstlisting}
 
 \tcblower\vskip-\baselineskip
@@ -75,38 +75,28 @@ head(dat_rep)
 
 Para ejecutar la función \textcolor{blue}{GGEmodel}(), se debe proporcionar un conjunto de datos con genotipos, ambientes, repeticiones (si hay disponibles), el fenotipo observado y los nombres que dichas variables tienen en el archivo de entrada. Además, se debe indicar el método de centrado, escala y SVD. 
 
-Para el conjunto de datos yan.winterwheat, en el cual no se dispone de replicas, el modelo GGE se indica de la siguiente manera:
-		\begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
-   				width=1\linewidth,
-    			height=0.1\linewidth,
-    			boxsep=-3mm]
-			\begin{lstlisting}
-GGE1 <- GGEmodel(dat_yan, genotype = "gen", environment = "env", response = "yield", centering = "tester")
-			\end{lstlisting}
-		\end{tcolorbox}
-Mientras que para el conjunto de datos plrv, la función a utilizar debe incluir además el nombre de la columna que contiene las réplicas en el conjunto de datos:
+Para el conjunto de datos \emph{plrv} el modelo GGE se indica de la siguiente manera:
 
 		\begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
    				width=1\linewidth,
     			height=0.1\linewidth,
     			boxsep=-3mm]
 			\begin{lstlisting}
-GGE1_rep <- GGEmodel(dat_rep, genotype = "Genotype", environment = "Locality", response = "Yield", rep = "Rep", 		centering = "tester")
+GGE1_rep <- GGEmodel(dat_rep, genotype = ``Genotype", environment = ``Locality", response = ``Yield", rep = ``Rep", 		centering = ``tester")
 			\end{lstlisting}
 		\end{tcolorbox}
-
-La salida de la función \textcolor{blue}{GGEmodel}() es una lista que contiene las coordenadas para genotipos de todos los componentes, coordenadas para los ambientes de todos los componentes, vector de valores propios de cada componente, variancia total, porcentaje de variancia explicado por cada componente, entre otros.\\
+A diferencia de \emph{plrv dataset}, para \emph{yan.winterwheat} no se debe indicar la opcion \emph{rep} ya que se cuenta con las medias por genotipo.
+La salida de la función \textcolor{blue}{GGEmodel}() es una lista que contiene las coordenadas para genotipos y para los ambientes de todas las componentes, el vector de valores propios de cada componente, la variancia total, el porcentaje de variancia explicada por cada componente, entre otros.
 
 \textbf{Biplot GGE}
 
-Para ejecutar la función \textcolor{blue}{GGEPlot}(), se requiere un objeto de la clase \textcolor{blue}{GGEmodel}(). La salida es un biplot construido a través de los componentes principales generados por \textcolor{blue}{GGEmodel}().
+Para ejecutar la función \textcolor{blue}{GGEPlot}(), se requiere un objeto de la clase \textcolor{blue}{GGEmodel}(). La salida es un biplot construido a través de las dos primeras componentes principales generados por \textcolor{blue}{GGEmodel}().
 Los diferentes biplots que se pueden obtener usando la función \textcolor{blue}{GGEPlot}() se muestran usando el conjunto de datos yan.winterwheat. En caso de contar con réplicas, se debe indicar el nombre de la columna que contiene las mismas en el archivo de entrada.
 
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex, noitemsep,topsep=0pt]
 \item \emph{Biplot básico}
 
-En la figura \ref{fig:fig4121} se presenta un biplot simple, donde los cultivares se muestran en minuscula, para diferenciarlos de los ambientes, que están en mayúsculas. La primer componente principal se usa como la abscisa y la segunda como ordenada. El método de centrado, escala y SVD utilizado, y el porcentaje G + GE explicado por los dos ejes se encuentra en la nota al pie del biplot. El biplot explica el 78\% de la variabilidad total de G + GE.
-
+En la figura \ref{fig:fig4121} se presenta un biplot básico, donde los cultivares se muestran en minuscula, para diferenciarlos de los ambientes, que están en mayúsculas. La primer componente principal se usa como la abscisa y la segunda como ordenada. El método de centrado, escala y SVD utilizado, y el porcentaje G + GE explicado por los dos ejes se encuentra en la nota al pie del biplot. El biplot explica el 78\% de la variabilidad total de G + GE.
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -128,10 +118,9 @@ GGEPlot(GGE1, type = "Biplot")
 \end{figure}
 \end{tcolorbox} 
 
+\item \emph{Rendimiento de los cultivares en un ambiente determinado}
 
-\item \emph{Rendimiento de los cultivares en un ambiente determinado}\\
-
-Los mejoradores en general están interesados en identificar los cultivares más adaptados a su área. Esto es posible lograrlo examinando los datos por sí mismos, sin embargo es posible determinarlo a través del biplot GGE. Para identificar los mejores genotipos en un ambiente a través del biplot GGE, Yan y Hunt (2002) sugieren constituir un eje del ambiente, por ejemplo OA93, trazando una recta que pase por el identificador del ambiente y el origen. Los genotipos se pueden clasificar de acuerdo con sus proyecciones en el eje OA93 en función de su rendimiento en dicho ambiente, en la dirección indicada por la flecha (Figura \ref{fig:fig4122}). Por lo tanto, al OA93, el cultivar de mayor rendimiento fue es Zav seguido por Aug, Ham, y así sucesivamente hasta llegar al genotipo Luc, que es el de rendimiento mas bajo en ese ambiente. La línea que pasa a través del origen biplot y es perpendicular al eje OA93 separa los genotipos que rindieron por encima de la media de Zav a Cas y aquellos que rindieron por debajo de la media de Ema a Luc en OA93.\\ 
+Los mejoradores en general están interesados en identificar los cultivares más adaptados a su área. Para identificar los mejores genotipos en un ambiente a través del biplot GGE, Yan y Hunt (2002) sugieren constituir un eje del ambiente, por ejemplo OA93, trazando una recta que pase por el identificador del ambiente y el origen. Los genotipos se pueden clasificar de acuerdo con sus proyecciones en el eje OA93 en función de su rendimiento en dicho ambiente, en la dirección indicada por la flecha (Figura \ref{fig:fig4122}). Por lo tanto, el cultivar de mayor rendimiento fue es Zav seguido por Aug, Ham, y así sucesivamente hasta llegar al genotipo Luc, que es el de rendimiento mas bajo en ese ambiente. La línea que pasa a través del origen de coordenadas y es perpendicular al eje OA93 separa los genotipos que rindieron por encima de la media, de Zav a Cas, de aquellos que rindieron por debajo de la medi,a de Ema a Luc, en OA93.
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -152,17 +141,16 @@ GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93")
 \end{figure}
 \end{tcolorbox} 
 
-\item \emph{Adaptación relativa de un cultivar dado en diferentes ambientes}\\
+\item \emph{Adaptación relativa de un cultivar dado en diferentes ambientes}
 
-Otro interes de los fitomejoradores es determinar cuál es el ambiente más adecuado para un cultivar. La figura \ref{fig:fig4123} ilustra cómo visualizar la adaptación relativa del cultivar Luc en diferentes ambientes. Yan y Hunt (2002) sugieren graficar una línea que una el origen y el marcador de Luc, el cual llamaremos eje Luc. Los ambientes se clasifican a lo largo del eje Luc en la dirección indicada por la flecha. La línea que pasa por el origen del biplot y perpendicular al eje de Luc separa los entornos en los que Luc presentó un rendimiento por debajo de su promedio, OA93 a ID93, de aquellos en los que rindió por encima de la media, RN93 a WP93.\\
-
+Otro interes de los fitomejoradores es determinar cuál es el ambiente más adecuado para un cultivar. La figura \ref{fig:fig4123} ilustra cómo visualizar la adaptación relativa del cultivar Luc en diferentes ambientes. Yan y Hunt (2002) sugieren graficar una línea que una el origen de coordenadas y el marcador de Luc, el cual llamaremos eje Luc. Los ambientes se clasifican a lo largo del eje Luc en la dirección indicada por la flecha. La línea que pasa por el origen y es perpendicular al eje de Luc separa los ambientes en los que Luc presentó un rendimiento por debajo de su promedio, OA93 a ID93, de aquellos en los que rindió por encima de la media, RN93 a WP93.
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
     height=0.7\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
-GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat")
+GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Luc")
 \end{lstlisting}
 \tcblower\vskip-\baselineskip
 \tcblower
@@ -175,9 +163,9 @@ GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat")
 \end{figure}
 \end{tcolorbox} 
 
-\item \emph{Comparación entre los genotipos Rub y Zav}\\
+\item \emph{Comparación entre los genotipos Rub y Zav}
 
-Para comparar dos cultivares, por ejemplo Rub y Zav, se propone unir mediante una línea recta los genotipos a comparar, luego trazar una línea que pase por el origen y que sea perpendicular a la línea que une a los genotipos. (figura \ref{fig:fig4124}). Se observa que tres ambientes, RN93, NN93 y WP93, se encuentran del mismo lado de la línea perpendicular que Rub, y los otros seis ambientes están en el otro lado de la línea perpendicular, junto el marcador del cultivar Zav. Esto indica que Rub fue mas rendidor que Zav en RN93, NN93 y WP93, pero Zav fue superior a Rub en los seis ambientes restantes. \\
+Para comparar dos cultivares, por ejemplo Rub y Zav, se propone unir mediante una línea recta los genotipos a comparar, luego trazar una línea que pase por el origen y que sea perpendicular a la línea que une a los genotipos. (figura \ref{fig:fig4124}). Se observa que tres ambientes, RN93, NN93 y WP93, se encuentran del mismo lado de la línea perpendicular que Rub, y los otros seis ambientes están en el otro lado de la línea perpendicular, junto el marcador del cultivar Zav. Esto indica que Rub fue mas rendidor que Zav en RN93, NN93 y WP93, pero Zav fue superior a Rub en los seis ambientes restantes.
 
 
 \begin{tcolorbox}[skin=bicolor,
@@ -186,7 +174,7 @@ Para comparar dos cultivares, por ejemplo Rub y Zav, se propone unir mediante un
     height=0.7\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
-GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = "Cas")
+GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Rub", selectedG2 = "Zav")
 \end{lstlisting}
 \tcblower\vskip-\baselineskip
 \tcblower
@@ -200,17 +188,14 @@ GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = 
 \end{tcolorbox}
 
 
-\item \emph{Identificación del mejor cultivar en cada ambiente}\\
+\item \emph{Identificación del mejor cultivar en cada ambiente}
 
-La vista poligonal del biplot GGE, documentado por primera vez en Yan (1999), proporciona un medio eficaz de visualización del patrón "quíen ganó dónde" de un conjunto de datos MET (Figura \ref{fig:fig4125}). 
-El polígono se dibuja uniendo los cultivares (fun, zav, ena, kat y luc) que se encuentran más alejados del origen del biplot, de modo que todos los cultivares se encuentren contenidos en el polígono. Los cultivares de vértice son aquellos con  vectores más largos, en sus respectivas direcciones, la cual es una medida de la capacidad de respuesta a los ambientes. 
+La vista poligonal del biplot GGE, documentado por primera vez en Yan (1999), proporciona un medio eficaz de visualización del patrón ``quíen ganó dónde" de un conjunto de datos EMA (Figura \ref{fig:fig4125}). 
+El polígono se dibuja uniendo los cultivares (fun, zav, ena, kat y luc) que se encuentran más alejados del origen de coordenadas, de modo que todos los cultivares se encuentren contenidos en el polígono. Los cultivares de vértice son aquellos con  vectores más largos, en sus respectivas direcciones, la cual es una medida de la capacidad de respuesta a los ambientes. 
 
-Las líneas perpendiculares a los lados del polígono dividen el biplot en megaambientes, cada uno de ellos tiene un cultivar de vértice, el de mayor rendimiento en todos los ambientes que se encuentran en él. Por un lado, se observa que OA93 y KE93 están en el mismo sector y que zav es el mejor cultivar. Otro sector esta formado por el resto de los ambientes, siendo Fun el cultivar que se encuentra en el vertice de dicho sector. 
-
-En los sectores con ena, kat y luc en los vértices no se observó ningun ambiente. Esto indica que estos cultivares fueron los menos rendidores en algunos o todos los ambientes considerados.\\
+Las líneas perpendiculares a los lados del polígono dividen el biplot en megaambientes, cada uno de ellos tiene un cultivar de vértice, el de mayor rendimiento en todos los ambientes que se encuentran en él. Por un lado, se observa que OA93 y KE93 se encuentran en el mismo sector y que Zav es el mejor cultivar. Otro sector esta formado por el resto de los ambientes, siendo Fun el cultivar que se encuentra en el vertice de dicho sector. En los sectores con ena, kat y luc en los vértices no se observó ningun ambiente. Esto indica que estos cultivares fueron los menos rendidores en algunos o todos los ambientes considerados.
 
 Se requieren dos criterios para sugerir la existencia de diferentes megaambientes (Gauch and Zobel, 1997). Primero, diferentes variedades superiores en los diferentes ambientes estudiados; en segundo lugar, la variación entre grupos debería ser significativamente mayor que la variación dentro del grupo.  Ambos criterios se cumplen en el presente caso (Figura \ref{fig:fig4125}). La sugerencia de dos megaambientes coincide con la distribución geográfica de los ambientes. La ubicación de OA (Ottawa) y KE (Kemptville) se extiende hacia el este de Ontario; BH (Bath) también pertenece al este de Ontario, pero es mucho más cálido que OA y KE. Los otros seis lugares pertenecen al oeste o sur de la provincia.
-
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -231,7 +216,7 @@ GGEPlot(GGE1, type = "Which Won Where/What")
 \end{figure}
 \end{tcolorbox}
 
-\item \emph{Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad}\\
+\item \emph{Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad}
 
 Como se puede observar en el biplot de la figura \ref{fig:fig4126} el orden de los genotipos (de mayor a menor rendimiento) es: Kat, m12, Ena, Luc, Ann todos ellos con rendimientos superiores al promedio, seguidos por los de rendimiento menor al promedio y por último Fun, el de peor rendimiento medio en ese mega-ambiente.
 Debido a que las proyecciones sobre el eje perpendicular al eje medio de ambiente dan una idea de la estabilidad, se observa que el genotipo Luc y Fun son los más inestables. También se
@@ -256,19 +241,13 @@ GGEPlot(GGE1, type = "Mean vs. Stability")
 \end{figure}
 \end{tcolorbox}
 
-
-
-\item \emph{Relación entre ambientes}\\
+\item \emph{Relación entre ambientes}
 
 A pesar de que los EMA se realizan para evaluar cultivares, son igualmente útiles para evaluar los ambientes estudiados. La evaluación del ambiente incluye diversos aspectos: (i) ver si la región objetivo pertenece a un solo o varios megaambientes; (ii) identificar mejores ambientes de prueba; (iii) identificar ambientes redundantes que no brindan información adicional sobre los cultivares; (iv) identificar ambientes que pueden usarse para la selección indirecta.
 
-En la figura \ref{fig:fig4127} se observa que los ambientes estan conectados con el origen del biplot a través de vectores, permitiendo comprender las interrelaciones entre los distintos ambientes. El coseno del ángulo entre los vectores de dos ambientes se aproxima al coeficiente de correlación entre ellos. Por ejemplo, NN93 y WP93 tienen un ángulo de aproximadamente $10^{\circ}$ entre sus vectores; por lo tanto, deberían estar estrechamente relacionados. El ángulo entre RN93 y OA93 es de aproximadamente $110^{\circ}$; por lo tanto, deben estar correlacionados ligeramente negativos. El coseno de los ángulos no se traduce con precisión en coeficientes de correlación, ya que el biplot no explica toda la variación en el conjunto de datos. Sin embargo, los ángulos son lo suficientemente informativos como para permitir una imagen completa sobre la interrelación entre el entorno de prueba.
+En la figura \ref{fig:fig4127} se observa que los ambientes estan conectados con el origen de coordenadas a través de vectores, permitiendo comprender las interrelaciones entre los distintos ambientes. El coseno del ángulo entre los vectores de dos ambientes se aproxima al coeficiente de correlación entre ellos. Por ejemplo, NN93 y WP93 tienen un ángulo de aproximadamente $10^{\circ}$ entre sus vectores; por lo tanto, se encuentran estrechamente relacionados; mientras que RN93 y OA93 presentan correlaciones leves y negativas ya que el ángulo supera los $90^{\circ}$. El coseno de los ángulos no se traduce con precisión en coeficientes de correlación, ya que el biplot no explica toda la variación en el conjunto de datos. Sin embargo, los ángulos son lo suficientemente informativos como para permitir una imagen completa sobre la interrelación entre el entorno de prueba.
 
-Por otro lado, la Figura \ref{fig:fig4127} ayuda a identificar ambientes redundantes. Si algunos de los ambientes tienen ángulos pequeños y, por lo tanto, están altamente correlacionados, la información sobre los genotipos obtenidos de estos ambientes debe ser similar. Si esta similitud es repetible a través de los años, estos ambientes son redundantes y por lo tanto, uno solo debería ser suficiente. Obtener la misma o mejor información utilizando menos ambientes reducirá el costo y aumentará la eficiencia de reproducción.
-
-
-
-figu \ref{fig:fig4124}
+Por otro lado, la Figura \ref{fig:fig4127} ayuda a identificar ambientes redundantes. Si algunos de los ambientes tienen ángulos pequeños y, por lo tanto, están altamente correlacionados, la información sobre los genotipos obtenidos de estos ambientes debe ser similar. Si esta similitud es repetible a través de los años, estos ambientes son redundantes y por lo tanto, uno solo debería ser suficiente. Obtener la misma o mejor información utilizando menos ambientes reducirá el costo y aumentará la eficiencia de producción.
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -289,19 +268,12 @@ GGEPlot(GGE1, type = "Relationship Among Environments")
 \end{figure}
 \end{tcolorbox}
 
+\item \emph{Evaluación de los ambientes basados tanto en la capacidad de discriminación como en la representatividad}
 
+La capacidad de discriminación es una medida importante de un ambiente, ya que si no tiene dicha capacidad no proporciona información sobre los cultivares y, por lo tanto, el ambiente carece de utilidad. Otra medida igualmente importante de un ambiente es su representatividad del ambiente objetivo, ya que si no es representativo no solo que carece de utilidad sino que también puede proporcionar información sesgada sobre los cultivares evaluados
 
-\item \emph{Evaluación de los ambientes basados tanto en la capacidad de discriminación como en la representatividad}\\
+La representatividad de un ambiente es difícil de medir, ya que no es posible muestrear todos los ambientes posibles dentro de un megaambiente y, posteriormente, determinar la representatividad de cada uno en forma individual. Mediante el biplot, la manera de medir la representatividad es definir un entorno promedio y usarlo como referencia. \textbf{FALTA}
 
-La capacidad de discriminación es una medida importante de un ambiente, ya que si no tiene dicha capacidad no proporciona información sobre los cultivares y, por lo tanto, el ambiente carece de utilidad. Otra medida igualmente importante de un ambiente es su representatividad del ambiente objetivo, ya que si no es representativo no solo que carece de utilidad sino que también engañoso, ya que puede proporcionar información sesgada sobre los cultivares evaluados
-
-La representatividad de un ambiente es difícil de medir, ya que no es posible muestrear todos los ambientes posibles dentro de un megaambiente y, posteriormente, determinar la representatividad de cada uno en forma individual. Mediante el biplot, la manera de medir la representatividad es definir un entorno promedio y usarlo como referencia.
-
-\textbf{FALTA}
-
-
-
-figu \ref{fig:fig4127}
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -321,10 +293,8 @@ GGEPlot(GGE1, type = "Discrimination vs. representativeness")
 \end{figure}
 \end{tcolorbox}
 
-
-\item \emph{Clasificación de ambientes con respecto al ambiente ideal}\\
+\item \emph{Clasificación de ambientes con respecto al ambiente ideal}
 figu \ref{fig:fig4129}
-
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -344,7 +314,7 @@ GGEPlot(GGE1, type = "Ranking Environments")
 \end{figure}
 \end{tcolorbox}
 
-\item \emph{Clasificación de genotipos con respecto al genotipo ideal}\\
+\item \emph{Clasificación de genotipos con respecto al genotipo ideal}
 
 figu \ref{fig:fig41210}
 \begin{tcolorbox}[skin=bicolor,
@@ -372,9 +342,11 @@ GGEPlot(GGE1, type = "Ranking Genotypes")
 
 \textbf{Classic AMMI model}
 
-Para ejecutar la función \textcolor{blue}{rAMMI}(), como en la función \textcolor{blue}{GGEmodel}(), se debe proporcionar un conjunto de datos con genotipo, entorno, repeticiones (si las hay) y la variable de respuesta. Se debe indicar el nombre de las columnas que contienen cada una de estas variables en el conjunto de datos de entradas. La salida de la función es un biplot.
+Para ejecutar la función \textcolor{blue}{rAMMI}(), en forma análoga a \textcolor{blue}{GGEmodel}(), se debe proporcionar un conjunto de datos con genotipo, entorno, repeticiones (si las hay) y la variable de respuesta. Se debe indicar el nombre de las columnas que contienen cada una de estas variables en el conjunto de datos de entradas. La salida de la función es un biplot.
 
-A continuación se muestra el biplot GE obtenido del modelo AMMI clásico obtenido con el conjunto de datos yan.winterwheat.
+La sentencia a utilizar para obtener el biplot clásico para el conjunto de datos \emph{yan.winterwheat} se muestra a continuación. Para el caso del conjunto de datos \emph{plrv} se debe agregar la opcion \emph{rep} debido a la presencia de repeticiones en el mismo.
+
+
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -391,12 +363,13 @@ rAMMI(dat_yan, genotype = "gen", environment = "env", response = "yield", type =
 		\includegraphics[width=8cm]{./Graficos/AMMI.png}
 	\end{center}
 	\caption{Biplot GE obtenido del modelo clasico AMMI}
+	\label{fig:fig41211}
 \end{figure}
 \end{tcolorbox}
 
 \textbf{Robust AMMI model}
 
-Como se dijo anteriormente, el modelo AMMI clasico, en su forma estándar, no funciona bien en presencia de observaciones atípicas. Dado que los outliers son muy comun en los datos agronómicos, Rodrigues et al. (2015) proponen cinco modelos AMMI robustos, que permiten superar el problema de la contaminación de datos con observaciones atípicas. Los biplots de los cinco modelos AMMI robustos propuestos por Rodrigues et al. (2015), se pueden obtener utilizando la función \textcolor{blue}{rAMMI}() A continuación se muestran los biplots obtenidos con dichos modelos robustos usando el conjunto de datos yan.winterwheat.
+Los biplots de los cinco modelos AMMI robustos propuestos por Rodrigues et al. (2015) que permiten superar el problema de la contaminación de datos con observaciones atípicas, se pueden obtener utilizando la función \textcolor{blue}{rAMMI}() A continuación se muestran los biplots obtenidos con dichos modelos robustos usando el conjunto de datos \emph{yan.winterwheat}.
 
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
 
@@ -707,7 +680,7 @@ imputation(dat_yan, genotype = "gen", environment = "env", response = "yield", t
 
 \section{Geneticae Shiny Web App}
 
-La aplicación Geneticae permite a los usuarios realizar muchos de los análisis incluidos en el paquete geneticae. La misma se organiza en las siguientes pestañas:
+La aplicación Geneticae permite a los usuarios realizar muchos de los análisis incluidos en el paquete geneticae, sin necesidad de conocer el lenguaje de programación R. La misma se organiza en las siguientes pestañas:
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
 \item Los datos
 \item Análisis descriptivo
@@ -717,18 +690,18 @@ La aplicación Geneticae permite a los usuarios realizar muchos de los análisis
 \item Ayuda
 \end{itemize}
 
-En muchos casos, algunos atributos estilísticos de salida pueden personalizarse para que el usuario obtenga la salida a su gusto. A su vez, los gráficos obtenidos pueden ser descargados.
+En muchos casos, algunos atributos estilísticos de salida pueden personalizarse para que el usuario obtenga la salida a su gusto. A su vez, los gráficos obtenidos pueden ser descargados en distintos formatos.
 
 
 \subsection{Los datos}
-Al iniciar la aplicación Geneticae, se muestra una pantalla en la cual se carga el conjunto de datos a analizar. La aplicación admite datos en formato .csv, delimitados por coma o punto y coma; y permite el siguiente formato de datos: 
+Al iniciar la aplicación Geneticae, se muestra una pantalla en la cual se carga el conjunto de datos a analizar. La aplicación admite archivos con extensión .csv, delimitados por coma o punto y coma; con el siguiente formato: 
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex]
-\item Cada fila contiene una observación, en la cual deben estar presentes los siguientes datos: nombre del cultivar, ambiente, repetición si está disponible y valor fenotipico medido. Pueden estar presentes otras variables que no serán utilizadas por la aplicación.
-\item La primera fila de encabezado contiene los nombres de cada variable. Los encabezados pueden dar cualquier nombre que elija, y deben indicarse al cargar el archivo de datos.
+\item Cada fila contiene la informacion de cada cultivar: nombre del cultivar, ambiente, repetición si está disponible y valor fenotipico medido. Pueden estar presentes otras variables/valores fenotípicos que no serán utilizadas por la aplicación.
+\item La primera fila de encabezado contiene los nombres de cada variable. No existen restricciones para los nombres de las variables ya que los mismos deben indicarse al cargar el archivo de datos.
 \item El número de repeticiones puede diferir con los genotipos y los ambientes.
 \end{itemize}
 
-Se utilizan dos conjuntos de datos, incluidos en el paquete geneticae, para ilustrar la aplicación. Estos conjuntos de datos, uno de los cuales tiene repeticiones (plrv dataset) y el otro no (yan.winterwheat dataset), los cuales se pueden ver y descargar en la pestaña \emph{The data} $\rightarrow$ \emph{Example datasets} (Figura \ref{fig:fig41},\ref{fig:fig42}). 
+Se utilizan dos conjuntos de datos, incluidos en el paquete geneticae, para ilustrar la aplicación. Estos conjuntos de datos, uno de los cuales tiene repeticiones (plrv dataset) y el otro no (yan.winterwheat dataset), los cuales se pueden ver y descargar, para poder reproducir la ayuda de la APP, en la pestaña \emph{The data} $\rightarrow$ \emph{Example datasets} (Figura \ref{fig:fig41},\ref{fig:fig42}). 
 
 \begin{figure}[H]
 	\begin{center}
@@ -749,11 +722,9 @@ Se utilizan dos conjuntos de datos, incluidos en el paquete geneticae, para ilus
 
 \subsection{Análisis descriptivo}
 
-El menú \emph{Descriptive analysis} le permite describir un conjunto de datos utilizando diagrama de caja (o \emph{boxplot}), gráfico y matriz de correlación y gráfico de interacción.
+El menú \emph{Descriptive analysis} permite describir un conjunto de datos utilizando diagrama de caja (o \emph{boxplot}), gráfico y matriz de correlación y gráfico de interacción.
 
 \subsubsection{\emph{Boxplot}}
-El \emph{boxplot} proporciona una medida central, la mediana y una idea de la dispersión a través del rango y el rango intercuartil. La posición de la mediana dentro de la caja y la similitud en la longitud de los bigotes nos dan una idea de la simetría de la distribución. 
-
 Un boxplot intetactivo que compara el caracter cuantitativo de interés a través de genotipos, así como a través de los ambientes se pueden obtener (Figura \ref{fig:fig43},\ref{fig:fig44}). A partir de los mismos se pueden obtener medidas resumen en forma interactiva usando el \emph{Toggle Spike Lines} como se muestra en la figura \ref{fig:fig43}. Estos gráficos se pueden descagar en formato interactivo (.HTML) a partir del boton \emph{Download} (Figura \ref{fig:fig43} y \ref{fig:fig44}), así como también en formato .png como se muestra en la Figura \ref{fig:fig44}.
 
 \begin{figure}[H]
@@ -774,7 +745,7 @@ Un boxplot intetactivo que compara el caracter cuantitativo de interés a travé
 \end{figure}
 
 \subsubsection{Gráfico de correlación}
-El correlograma o gráfico de correlación muestra la correlación tanto entre los genotipos como entre los ambientes (Figura \ref{fig:fig45} y \ref{fig:fig46}). Se pueden mostrar las correlaciones de Pearson y Spearman. Las correlaciones positivas se muestran en azul y las negativas en rojo. La intensidad del color y el tamaño del círculo son proporcionales a los coeficientes de correlación. 
+El correlograma o gráfico de correlación muestra la correlación tanto entre los genotipos como entre los ambientes (Figura \ref{fig:fig45} y \ref{fig:fig46}). Se pueden representar las correlaciones de Pearson y Spearman. Las correlaciones positivas se muestran en azul y las negativas en rojo. La intensidad del color y el tamaño del círculo son proporcionales a los coeficientes de correlación. 
 
 
 \begin{figure}[H]
@@ -795,7 +766,7 @@ El correlograma o gráfico de correlación muestra la correlación tanto entre l
 \end{figure}
 
 \subsubsection{Matriz de correlación}
-Una matriz de correlación se utiliza como una forma de resumir datos. Muestra los coeficientes de correlación de pares de variables. Las correlaciones de Spearman o Pearson se pueden calcular tanto para ambientes como para genotipos (Figura \ref{fig:fig47}).
+La matriz de correlación muestra los coeficientes de correlación de Pearson o Spearman, segun se solicite, para todos los pares de ambientes o genotipos. Las correlaciones de Spearman o Pearson se pueden calcular tanto para ambientes como para genotipos (Figura \ref{fig:fig47}).
 
 
 \begin{figure}[H]
@@ -809,9 +780,10 @@ Una matriz de correlación se utiliza como una forma de resumir datos. Muestra l
 
 
 \subsubsection{Gráfico de interacción}
-Un diagrama de interacción es una representación visual de la interacción entre los efectos de dos factores, o entre un factor y una variable numérica. 
 
-Se puede obtener el gráfico interactivo que muestra el cambio en el efecto genotípico a través de los entornos y también el que muestra el cambio en el efecto ambiental a través de los genotipos (Figura \ref{fig:fig49},\ref{fig:fig410}). Es posible descargarlo en formato interactivo (.HTML) a partir del boton \emph{Download} (Figura \ref{fig:fig49}), así como también en formato .png como se muestra en la Figura \ref{fig:fig410}.
+Las inconsistencias en el rendimiento de los genotipo en diferentes amientes complican la tarea de los fitomejoradores ya que no existe un genotipo superior en todos los ambientes estudiados. En tales situaciones, se pueden buscar genotipos que se desempeñen de manera relativamente consistente en los ambientes, genotipos estables o ampliamente adaptados, o elegir diferentes genotipos específicamente adaptados para diferentes ambientes. 
+
+El cambio en el efecto genotípico a través de los ambientes o el cambio en el efecto ambiental a través de los genotipos se puede observar en los gráficos de interacción (Figura \ref{fig:fig49},\ref{fig:fig410}). Es posible descargarlo en formato interactivo (.HTML) a partir del boton \emph{Download} (Figura \ref{fig:fig49}), así como también en formato .png como se muestra en la Figura \ref{fig:fig410}.
 
 
 \begin{figure}[H]
@@ -826,7 +798,9 @@ Se puede obtener el gráfico interactivo que muestra el cambio en el efecto geno
 
 \subsection{Análisis de la variancia}
 
-Cuando se pretende llevar a cabo el análisis de la variancia si el conjunto de datos tiene repeticiones entonces saldrá un mensaje en el cual se aclara que la interacción puede ser testada debido a la presencia de repeticiones "The interaction effect can be tested since there are repetitions in the data set", si no hay repeticiones disponibles entonces el mensaje será que la interacción no puede testarse.
+La variación fenotípica se puede explicar a partir de los efectos del ambiente, genotipo e interacción genotipo por ambiente, cuya significancia se prueba con un ANOVA. Si unicamente los efectos de G y A resultan significativos (es decir, sin interacción), la interacción debe ser ignorada y los biplots carecen de sentido.
+
+Si el conjunto de datos tiene repeticiones entonces saldrá un mensaje en el cual se aclara que la interacción puede ser testada debido a la presencia de repeticiones (``The interaction effect can be tested since there are repetitions in the data set"), si se cuenta con una única réplica entonces el mensaje será que la interacción no puede testarse. Analizando el conjunto de datos \emph{plrv}, se concluye que existe IGA (Figura \ref{fig:fig49}). 
 
 \begin{figure}[H]
 	\begin{center}
@@ -837,9 +811,9 @@ Cuando se pretende llevar a cabo el análisis de la variancia si el conjunto de 
 \end{figure}
 
 
-El ANOVA depende del cumplimiento de los supuestos de que los errores tengan distribución normal con media cero y variancia constante. Por ello, tres pestañas: \emph{Check normality}, \emph{Check homocedasticity} y \emph{Outliers} se encuentran disponibles para la verificación de los supuestos mencionados.
+La validez de las conclusiones del ANOVA depende del cumplimiento de los supuestos de que los errores tengan distribución normal con media cero y variancia constante. Tres pestañas de la aplicación: \emph{Check normality}, \emph{Check homocedasticity} y \emph{Outliers} permiten verificar los supuestos mencionados.
 
-Para verificar el supuesto de normalidad, se puede realizar un histograma, un gráfico de probabilidad normal y la prueba de shapiro-wilks sobre los residuos del ANOVA.
+Para verificar el supuesto de normalidad, se puede realizar un histograma, un gráfico de probabilidad normal y la prueba de shapiro-wilks sobre los residuos del ANOVA (Figura \ref{fig:fig49}).
 
 \begin{figure}[H]
 	\begin{center}
@@ -849,7 +823,7 @@ Para verificar el supuesto de normalidad, se puede realizar un histograma, un gr
 	\label{fig:fig49}
 \end{figure}
 
-El grafico de residuos vs. valores predichos y las pruebas de levene permiten verificar el supuesto de variancia constante u homocedasticidad.
+El grafico de residuos vs. valores predichos y las pruebas de levene permiten verificar el supuesto de variancia constante u homocedasticidad (Figura \ref{fig:fig49}).
 
 \begin{figure}[H]
 	\begin{center}
@@ -859,7 +833,7 @@ El grafico de residuos vs. valores predichos y las pruebas de levene permiten ve
 	\label{fig:fig49}
 \end{figure}
 
-Por último, la presencia de observaciones atipicas u outliers provoca que el ANOVA no de buenos resultados, un grafico para detectar outliers es posible realizarlo.
+Por último, la presencia de observaciones atipicas u outliers provoca que el ANOVA no de buenos resultados, un grafico para detectar outliers es posible realizarlo(Figura \ref{fig:fig49}).
 
 \begin{figure}[H]
 	\begin{center}
