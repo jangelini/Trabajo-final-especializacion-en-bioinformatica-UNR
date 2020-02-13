@@ -74,29 +74,26 @@ las imputaciones se refinan a través de un esquema iterativo que define una par
 \section{Paquete de R}
 
 %https://oscarperpinan.github.io/R/Paquetes.html 
-Una librería o paquete (\emph{package}) es una colección de objetos creados y organizados siguiendo un protocolo fijo que garantiza la ausencia de errores (de sintaxis) en la programación. Éstos son las unidades fundamentales de un código reproducible de R ya que incluyen funciones reutilizables, la documentación que describe cómo usar cada una de ellas y, además pueden incluir datos de ejemplo. 
+En R, la unidad fundamental de código que se puede compartir es el paquete. Éste agrupa códigos, datos, documentación y pruebas, y es fácil de compartir con otros. Para crear uno de ellos, se deben seguir los siguientes pasos:
 
-Los pasos necesarios para la creación de un paquete son:
 \begin{itemize}
-\item Creación del esqueleto del paquete.
-\item Inclusión de los objetos que contendrá el paquete (funciones y/o datos).
+\item Crear el paquete.
+\item Crear, modificar y probar archivos .R
+\item Verificar 
 \item Redacción de la documentación.
-\item Compilación del paquete en Linux y creación de la versión para Windows.
-\item Instalación.
-\item Prueba y publicación.
+\item Verificar 
+\item Instalar.
 \end{itemize}
 
-
-Para la cración del paquete se utilizan numerosas funciones incluidas en el paquete \emph{devtools} que permiten realizar diversos aspectos del desarrollo de paquetes. Por lo tanto, antes de comenzar a crear el paquete se deben instalar el mismo como se indica a continuación:
+Para el desarrollo del paquete se utilizan numerosas funciones incluidas en el paquete \emph{devtools} \citep{Hadley2019} ya que facilita el proceso de creación del mismo. Antes de comenzar, se debe tener instalada la última versión de R, luego mediante el siguiente código se instalarán los paquetes que se necesitan:
 
 \begin{lstlisting}
-# Instalar el paquete devtools desde CRAN
-install.packages("devtools")
-# Instalar el paquete devtools desde GitHub:
-install_github(``r-lib/devtools")
+install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
 \end{lstlisting}
 
-\subsection{Esqueleto y estructura del paquete}
+Se debe contar ademas con una versión reciente del IDE de RStudio. 
+
+\subsection{Creación del paquete}
 
 Para crear la estructura del paquete se utiliza la función \textcolor{blue}{create\_package}(). El principal y único argumento requerido por dicha función es el directorio donde el nuevo paquete se alojará. Por lo general, si el directorio se llama ``geneticae'', entonces el nombre del paquete también será ``geneticae'':
 
