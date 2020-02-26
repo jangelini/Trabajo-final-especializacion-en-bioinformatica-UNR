@@ -21,6 +21,17 @@
 \tcbuselibrary{skins,xparse}
 \usepackage{varwidth}
 \usepackage{lipsum}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+
 \definecolor{blue}{rgb}{0.0, 0.22, 0.66}
 \definecolor{YellowGreen}{rgb}{0.31, 0.49, 0.16}
 \definecolor{ForestGreen}{rgb}{0.31, 0.49, 0.16}
@@ -150,7 +161,7 @@ commentstyle=\color{YellowGreen}   % comment style
 %% El siguiente comando agrega ligas activas en el documento para las
 %% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
 %% instrucci'on antes de \begin{document}.
-\hyperlinking
+%\hyperlinking
 \begin{document}
 
 %% En esta secci'on se describe la estructura del documento de la tesis.
