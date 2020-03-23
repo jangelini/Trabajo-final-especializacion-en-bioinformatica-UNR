@@ -28,7 +28,7 @@ En cambio, el modelo SREG (Cornelius et al., 1996; Crossa y Cornelius, 1997 y 20
 $y_{ij}= \mu +  A_j + \sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ \hspace{0.5cm} $ i=1,...,g$;\hspace{0.15cm} $ j=1,...,a$; \hspace{0.15cm} $q=min(g-1,a)$
 \end{center} 
 
-Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la DVS de la matriz que contiene los residuos del modelo aditivo luego de ajustar por mínimos cuadrados el modelo de efectos principales. Generalmente los dos primeros términos multiplicativos son suficientes para explicar los patrones de la IGA o de G e IGA en forma conjunta; la variabilidad remanente se interpreta como ruido. 
+Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la Descomposición en Valores Singulares (DVS) de la matriz que contiene los residuos del modelo aditivo luego de ajustar por mínimos cuadrados el modelo de efectos principales. Generalmente los dos primeros términos multiplicativos son suficientes para explicar los patrones de la IGA o de G e IGA en forma conjunta; la variabilidad remanente se interpreta como ruido. 
 
 Para visualizar el efecto de IGA o conjuntamente el efecto de G y IGA se proponen los gráficos biplots GE y GGE (proveniente de las siglas en inglés G de \emph{Genotipe} y GE de \emph{Genotipe-Environment}) (Yan et al., 2000) respectivamente. El concepto del biplot fue presentado por Gabriel (1971), que consiste en una representación de las filas (individuos) y las columnas (variables) de una matriz de datos en un mismo gráfico. Éstos biplots, son herramientas poderosas definidas para el análisis e interpretación de la estructura de datos provenientes de ensayos multiambientales utilizados en los programas de mejoramiento (Ebdon y Gauch, 2002; Samonte et al., 2004; Yan et al., 2000; Zobel et al., 1988).
 
@@ -52,17 +52,16 @@ Una limitación importante que presentan los modelos multiplicativos descriptos 
 Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
 
 \begin{itemize}
-\item EM-AMMI: Gauch y Zobel (1990) desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza (EM, del inglés \emph{Expectation-Maximization}) incorporando el modelo AMMI. \textbf{Este método reemplaza... (poner como abajo)}. Dependiendo del número de términos multiplicativos empleados, el método de imputación puede denominarse EM-AMMI0, EM-AMMI1, etc. (Gauch y Zobel 1990). 
+\item EM-AMMI: Gauch y Zobel (1990) desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza (EM, del inglés \emph{Expectation-Maximization}) incorporando el modelo AMMI. 
 \end{itemize}
 \begin{itemize}
-\item EM-SVD: Perry (2009a) propone un método de imputación que combina el algoritmo EM con DVS. Este método, en forma similar al anterior, reemplaza los valores faltantes de una matriz $G \times E$ inicialmente por valores arbitrarios para obtener una matriz completa, y luego la DVS se calcula iterativamente en esa matriz. 
+\item EM-SVD: Perry (2009a) propone un método de imputación que combina el algoritmo EM con DVS. 
 \end{itemize}
 \begin{itemize}
 \item EM-PCA:
 \end{itemize}
 \begin{itemize}
-\item Gabriel Eigen: Arciniegas-Alarcón et al. (2010) propuso un método de imputación que combina regresión y aproximación de rango inferior usando DVS. El método reemplaza inicialmente las celdas faltantes por valores arbitrarios, y posteriormente el
-las imputaciones se refinan a través de un esquema iterativo que define una partición de la matriz para cada valor que falta a su vez y utiliza una regresión lineal de columnas (o filas) para obtener el nueva imputación. En esta regresión, la matriz de diseño se aproxima por una matriz de menor rango usando la DVS.
+\item Gabriel Eigen: Arciniegas-Alarcón et al. (2010) propuso un método de imputación que combina regresión y aproximación de rango inferior usando DVS. 
 \end{itemize}
 \begin{itemize}
 \item WGabriel Eigen:
@@ -77,12 +76,12 @@ las imputaciones se refinan a través de un esquema iterativo que define una par
 En R, la unidad fundamental de código que se puede compartir es el paquete. Éste agrupa códigos, datos, documentación y pruebas, y es fácil de compartir con otros. Para crear uno de ellos, se deben seguir los siguientes pasos:
 
 \begin{itemize}
-\item Crear el paquete.
-\item Crear, modificar y probar archivos .R
-\item Verificar 
-\item Redacción de la documentación.
-\item Verificar 
-\item Instalar.
+\item Crear la estructura del paquete.
+\item Incluir funciones y conjuntos de datos.
+\item Redactar la documentación.
+\item Pruebar el flujo de trabajo.
+\item Compilar e instalar.
+\item Publicar.
 \end{itemize}
 
 Para el desarrollo del paquete se utilizan numerosas funciones incluidas en el paquete \emph{devtools} \citep{Hadley2019} ya que facilita el proceso de creación del mismo. Antes de comenzar, se debe tener instalada la última versión de R, luego mediante el siguiente código se instalarán los paquetes que se necesitan:
@@ -93,7 +92,7 @@ install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
 
 Se debe contar ademas con una versión reciente del IDE de RStudio. 
 
-\subsection{Creación del paquete}
+\subsection{Creación de la estructura}
 
 Para crear la estructura del paquete se utiliza la función \textcolor{blue}{create\_package}(). El principal y único argumento requerido por dicha función es el directorio donde el nuevo paquete se alojará. Por lo general, si el directorio se llama ``geneticae'', entonces el nombre del paquete también será ``geneticae'':
 
@@ -139,13 +138,12 @@ LazyData: true
 \item Un archivo NAMESPACE
 \end{itemize}
 
-Estas carpetas se iran modificando a medida que el paquete se vaya creando. También puede incluir un archivo de proyecto de RStudio pkgname.Rproj, que hace que el paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete R desde la fuente; .gitignore anticipa el uso de Git.
-Se crearán, a través de devtools, las siguientes carpetas: data/ y  man/.
+Estas carpetas se iran modificando a medida que el paquete se vaya creando. También puede incluir un archivo de proyecto de RStudio pkgname.Rproj, que hace que el paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete; .gitignore anticipa el uso de Git.
 
 
 
 
-\subsection{Creación de funciones y conjuntos de datos}
+\subsection{Inclusión de funciones e inclusión de conjuntos de datos}
 
 Una vez creada la estructura del paquete se deben incluir las funciones que el mismo contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. Para ello, se utiliza la función \textcolor{blue}{use\_r}() la cual crea y/o abre un script de la carpeta R/.
 
@@ -157,7 +155,7 @@ A menudo es útil incluir datos en un paquete a fin de proporcionar ejemplos de 
 
 \subsection{Documentación}
 
-La documentación es uno de los aspectos más importantes del código, sin ella, los usuarios no sabrán cómo usar el paquete. Existen múltiples formas de documentar un paquete, la forma estándar es escribir archivos .Rd en la carpeta man, los cuales utilizan una sintaxis personalizada, basada en LaTeX. Sin embargo, el paquete \emph{roxygen2}, utilizado en este trabajo, convierte los comentarios con formato especial en archivos .Rd. Esta última proporciona una serie de ventajas sobre la estándar:
+La documentación es uno de los aspectos más importantes del código, sin ella, los usuarios no sabrán cómo usar el paquete. Existen múltiples formas de documentar un paquete, la forma estándar es escribir archivos .Rd en la carpeta man, los cuales utilizan una sintaxis personalizada, basada en LaTeX. Sin embargo, el paquete \emph{roxygen2}, utilizado en este trabajo, convierte los comentarios con formato especial en archivos .Rd. Esta última proporciona una serie de ventajas sobre la forma estándar:
 
 \begin{itemize}
 \item El código y la documentación son adyacentes, de modo que cuando el código se modifique, será fácil actualizar la documentación.
@@ -185,7 +183,7 @@ El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} 
 
 \end{itemize}
 
-\emph{Roxygen2} permite utilizar la descripción de los parámetros de otras funciones usando @inheritParams. Esta documentará los parámetros que no están documentados en la función actual, pero que si lo están en la función fuente. La fuente puede ser una función en el paquete actual, vía @inheritParams function, u otro paquete, vía @inheritParams package::function.
+\emph{Roxygen2} permite utilizar la descripción de los parámetros de otras funciones usando @inheritParams. Esta documentará los parámetros que no están documentados en la función actual, pero que si lo están en la función fuente. La fuente puede ser una función en el paquete actual, vía @inheritParams function, u otro paquete, vía @inheritParams package::function. Además \emph{Roxygen2} permite incluir referencias utilizando @references.
 
 A diferencia de las funciones que son documentadas directamente, para los objetos en data/, se debe crear un archivo y guardarlo en el directorio R/.\\
 
@@ -193,11 +191,10 @@ A diferencia de las funciones que son documentadas directamente, para los objeto
 
 A diferencia de la documentación, en la cual se detalla como se utiliza cada una de las funciones del paquete, una viñeta es una descripción el problema que el paquete está diseñado para resolver y muestra al lector cómo resolverlo.
 
-Muchos de los paquetes existentes tienen viñetas la cual puede ser buscada mediante la función \textcolor{blue}{browseVignettes}("packagename"). Cada viñeta proporciona el archivo fuente original, una página HTML o PDF y un archivo de código R. Las viñetas de paquetes que no han sido instalados pueden ser consultados en su página de CRAN, por ejemplo para el paquete \emph{dplyr}: \url{http://cran.r-project.org/web/packages/dplyr}.
+Muchos de los paquetes existentes tienen viñetas la cual puede ser buscada mediante la función \textcolor{blue}{browseVignettes}(``packagename") si el mismo se encuentra instalado, sino deben consultarse en su página de CRAN, por ejemplo para el paquete \emph{dplyr}: \url{http://cran.r-project.org/web/packages/dplyr}.
+. Cada viñeta proporciona el archivo fuente original, una página HTML o PDF y un archivo de código R. 
 
-Las Viñetas se pueden construir de diversas formas, en este trabajo se utiliza \emph{devtools} para crear la estructura de la misma y luego se añade el contenido que se desee en formato Rmarkdown. Rmarkdown permite combinar, texto plano, bloques de código y salidas. 
-
-Para crear la viñeta, se utiliza \textcolor{blue}{usethis::use\_vignette}(``my-vignette''). La misma crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y redacta la viñeta. Las tres componentes fundamentales de la misma son las siguientes:
+Las Viñetas se pueden construir de diversas formas, en este trabajo se utiliza se utiliza \textcolor{blue}{usethis::use\_vignette}(``my-vignette''). La misma crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y redacta la viñeta. Las tres componentes fundamentales de la misma son las siguientes:
 
 \begin{itemize}
 \item El bloque inicial de metadatos, que contiene la siguiente información:
@@ -275,28 +272,20 @@ El paquete \emph{geneticae} se encuentra en GitHub, para instalar el mismo se de
 
 \begin{lstlisting}
 library(devtools)
-install_github("jangelini/geneticae") 
+install_github(``jangelini/geneticae") 
 \end{lstlisting}
-
-
-
 
 
 %https://mastering-shiny.org/dependency-tracking.html
 
 \section{Shiny APP}
-Una aplicación web es una aplicación o herramienta informática accesible desde cualquier navegador, bien sea a través de internet (lo habitual) o bien a través de una red local. 
-Estas aplicaciones son muy populares hoy en día para los usuarios no expertos, debido a la facilidad de su uso, ya que no requiere de una instalación en el ordenador del usuario, simplemente se accede a través de un navegador. Por lo que es posible utilizar una aplicación web desde desde cualquier dispositivo con conexión a internet, ya sea un ordenador, un smartphone o una tablet, es decir que es independiente del sistema operativo del usuario. Otra gran ventaja es el bajo consumo de recursos, ya que la mayor parte del tiempo estos se consumen en el servidor donde se encuentra alojada la aplicación, que generalmente tiene mucha más potencia de cómputo que cualquier ordenador personal.
+Shiny es un paquete R que permite crear aplicaciones web interactivas, permitiendo realizar análisis usando R a través de un navegador web sin necesidad de programar. Este paquete facilita al programador de R la creacion de aplicaciones web sin necesidad de conocer en profundidad HTML / CSS / JS. 
 
-%https://datanalytics.com/libro_r/shiny.html
-Crear aplicaciones web puede resultar difícil para la mayoría de los usuarios de R debido a que se necesita un conocimiento profundo de las tecnologías web como HTML, CSS y JavaScript; y además hacer aplicaciones interactivas complejas requiere un análisis cuidadoso de los flujos de interacción para asegurarse de que cuando una entrada cambie, solo se actualicen las salidas relacionadas. Shiny es un paquete R que te permite crear aplicaciones web interactivas, permitiendo exhibir un trabajo de R a través de un navegador web para que cualquiera pueda usarlo. Este paquete hace que sea mucho más fácil para el programador R crear aplicaciones web al proporcionar un conjunto de funciones de interfaz de usuario (UI para abreviar) que generan el HTML, CSS y JavaScript que necesita para tareas comunes. Esto significa que no se necesita conocer los detalles de HTML / CSS / JS. 
-
-
-Los dos componentes clave de una Shiny APP son: 
+Las componentes de una Shiny APP son: 
 \begin{itemize}
 \item ui (\emph{user interfaz}): la interfaz de usuario controla el diseño de la aplicación, recibe los inputs y
 muestra los outputs en el navegador.
-\item server, funciones de R que contienen las instrucciones que se necesitan para construir los resultados de los análisis incluidos en la aplicación.
+\item server, funciones de R que contienen las instrucciones que se necesitan para obtener los resultados de los análisis incluidos en la aplicación.
 \item shinyApp, función que crea objetos de aplicación Shiny a partir de ui / servidor.
 \end{itemize}
 
@@ -315,29 +304,18 @@ El esquema interno de la aplicación puede observarse en la Figura \ref{fig:fig3
 
 \subsection{Flujo de trabajo}
 
-El esta sección se motrará como mejorar dos flujos de trabajo de Shiny importantes: el ciclo de desarrollo básico de crear aplicaciones, realizar cambios y experimentar con los resultados; y la depuración, proceso de identificar y corregir errores de programación.\\
+En esta sección se motrará como mejorar los dos flujos de trabajo de Shiny más importantes: el ciclo de desarrollo básico de crear aplicaciones, realizar cambios y experimentar con los resultados; y la depuración, proceso de identificar y corregir errores de programación.\\
 
 
-\textbf{1.\hspace{1cm} Flujo de trabajo de desarrollo}\\
+\textbf{1.\hspace{1cm} Flujo de trabajo de desarrollo de la Shiny APP}\\
 
 
-El objetivo de optimizar el flujo de trabajo de desarrollo es reducir el tiempo entre hacer un cambio y ver el resultado. Cuanto más rápido se pueda iterar, más rápido se podrá experimentar y más rápido se podrá obtener la Shiny APP. Aquí hay dos flujos de trabajo principales para optimizar: crear la aplicación por primera vez y acelerar el ciclo iterativo de ajustar el código y probar los resultados.\\
+El objetivo de optimizar el flujo de trabajo de desarrollo de la APP es reducir el tiempo entre hacer un cambio y ver el resultado. Cuanto más rápido se pueda iterar, más rápido se podrá experimentar y más rápido se podrá obtener la Shiny APP. Aquí hay dos flujos de trabajo principales para optimizar: crear la aplicación por primera vez y acelerar el ciclo iterativo de ajustar el código y probar los resultados.\\
 
 
 \textbf{Creación de la Shiny APP}
 
-
-Para poder crear una shiny APP se debe tener instado R, RStudio, y el paquete shiny. Una forma de crear la aplicación es crear un nuevo directorio con un sólo archivo llamado app.R. Este archivo especificará la interfaz de usuario así como también las funciones de R que se incluirán.
-
-\begin{lstlisting}
-library(shiny)
-ui<- ...
-server<- ...
-shinyApp(ui = ui, server = server)
-\end{lstlisting}
-
-
-Por lo tanto, en el archivo app.R se realizan las siguientes tareas:
+Para poder crear una shiny APP se debe tener instado R, RStudio, y el paquete shiny. Una forma de desarrollar una  aplicación es a partir de un nuevo directorio con un sólo archivo llamado app.R. En este archivo se realizan las siguientes tareas:
 
 \begin{itemize}
 \item Carga el paquete shiny: \textcolor{blue}{library}(shiny)
@@ -346,10 +324,16 @@ Por lo tanto, en el archivo app.R se realizan las siguientes tareas:
 \item Se ejecuta función \textcolor{blue}{shinyApp}(ui, server) para construir e iniciar una aplicación Shiny desde la interfaz de usuario y el servidor.
 \end{itemize}
 
+\begin{lstlisting}
+library(shiny)
+ui<- ...
+server<- ...
+shinyApp(ui = ui, server = server)
+\end{lstlisting}
 
-La sesión de R estará monitoreando la aplicación y ejecutando las reacciones de la aplicación mientras la aplicación Shiny esté activa, por lo que no se podrá ejecutar ningún comando.
+La sesión de R estará monitoreando la aplicación y ejecutando las ordenes dadas por el usuario y por lo tanto por lo que no se podrá ejecutar ningún comando.
 
-En todo tipo de programación, es una mala práctica tener código duplicado; puede ser un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código. En la secuencia de comandos R tradicional, se utilizan dos técnicas para lidiar con el código duplicado: capturar el valor usando una variable o capturar el cálculo con una función. Desafortunadamente, ninguno de estos enfoques funciona en una Shiny APP y se necesita un nuevo mecanismo: expresiones reactivas. Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse.
+En todo tipo de programación, es una mala práctica tener código duplicado; puede ser un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código. Cuando se programa en R, se utilizan dos técnicas para lidiar con el código duplicado: guardar un valor usando una variable o utilizar una función para almacenar un cálculo. Ninguno de estos enfoques son apropiados en una Shiny APP, sino que se utilizan expresiones reactivas. Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse.
 
 La programación reactiva es un estilo de programación que enfatiza valores que cambian con el tiempo, y cálculos y acciones que dependen de esos valores. Esto es importante para las aplicaciones Shiny porque son interactivas: los usuarios cambian los inputs, lo que hace que la lógica se ejecute en el servidor que finalmente resultan en actualización de los outputs/resultados.\\
 
@@ -388,17 +372,16 @@ De manera predeterminada, cuando ejecuta la aplicación, aparecerá en una venta
 Entre los problemas que pueden surgir al crear una Shiny app se encuentran los siguientes:
 
 \begin{itemize}
-\item Error inesperado. Este es el caso más fácil, porque obtendrá un rastreo que le permitirá averiguar exactamente de dónde proviene el error. Una vez que haya identificado el problema, deberá probar sistemáticamente su suposición hasta que encuentre una diferencia entre sus expectativas y lo que realmente está sucediendo. El depurador interactivo es una herramienta poderosa para este proceso.
-\item No obtiene ningún error, pero un valor es incorrecto. Aquí, generalmente es mejor transformar esto en el primer problema utilizando stop()para arrojar un error cuando se produce el valor incorrecto.
-\item Todos los valores son correctos, pero no se actualizan cuando espera. Este es el problema más desafiante porque es exclusivo de Shiny, por lo que no puede aprovechar sus habilidades de depuración de R.
-
+\item Error inesperado. 
+\item No se obtiene ningún error, pero un valor es incorrecto. 
+\item Todos los valores son correctos, pero no se actualizan cuando espera.
 \end{itemize}
 
 
-Una vez localizado la fuente del error, la herramienta más poderosa es el depurador interactivo. El depurador detiene la ejecución y le brinda una consola R interactiva donde puede ejecutar cualquier código para descubrir qué salió mal. Hay dos formas de iniciar el depurador:
+Una vez localizado la fuente del error, la herramienta más poderosa es el depurador interactivo, éste detiene la ejecución y brinda una consola interactiva donde puede se ejecutar cualquier código para descubrir el error. Hay dos formas de iniciar el depurador:
 
 \begin{itemize}
-\item Agregar una llamada a la función browser() en código fuente. Esta es la forma estándar de R de iniciar el depurador interactivo, y funcionará sin embargo, se está ejecutando brillante.
+\item Agregar la función browser() en el código fuente.
 \item Agregar un punto de interrupción RStudio haciendo clic a la izquierda del número de línea. Puede eliminar el punto de interrupción haciendo clic en el círculo rojo. La ventaja de los puntos de interrupción es que no son código, por lo que nunca tendrá que preocuparse por registrarlos accidentalmente en su sistema de control de versiones.
 \end{itemize}
 
@@ -408,4 +391,4 @@ Una vez localizado la fuente del error, la herramienta más poderosa es el depur
 
 \subsection{Compartiendo una Shiny Web App}
 
-Una vez creada la aplicación, resulta conveniente ponerlas a disposición de los usuarios. En este caso la Shiny Web App encuentra disponible en el servidor de CONICET \url{www.cefobi.com}. Además el proyecto se encuentra en GitHub \url{https://github.com/jangelini/shinyAPP_geneticae}. 
+Una vez creada la aplicación se la publica para su libre uso. En este caso la Shiny Web App encuentra disponible en el servidor de CONICET \url{www.cefobi.com}. Además el proyecto se encuentra en GitHub \url{https://github.com/jangelini/shinyAPP_geneticae}. 
