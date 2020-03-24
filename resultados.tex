@@ -17,7 +17,7 @@ Una vez instalado el paquete, se debe cargar en la sesion de R mediante el coman
 
 El paquete geneticae proporciona dos conjuntos de datos que permiten ilustrar la metodología incluida para analizar los datos obtenidos de EMA.
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex, noitemsep,topsep=0pt]
-\item \emph{yan.winterwheat dataset}: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente, el conjunto de datos se obtuvo del paquete agridat (Wright, 2018) que cuenta con el rendimiento medio por variedad, como se muestra a continuación:
+\item \emph{yan.winterwheat dataset}: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente en el conjunto de datos, obtenido del paquete agridat (Wright, 2018), sólo el rendimiento medio por variedad se encuentra disponible.
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -43,7 +43,7 @@ head(yanwinterwheat)
 \end{verbatim}
 \end{tcolorbox}
 
-\item \emph{plrv dataset}: Estudio de resistencia a PLRV (\emph{Patato Leaf Roll Virus}) causante del enrollamiento de la hoja. Se experimentaron 28 genotipos en 6 ubicaciones en Perú. Cada clon fue evaluado tres veces en cada ambiente, y de cada uno de ellos se contaba con el rendimiento, peso de planta y parcela. Este conjunto de datos se obtuvo de Agricolae Package.\\
+\item \emph{plrv dataset}: Estudio de resistencia a PLRV (\emph{Patato Leaf Roll Virus}) causante del enrollamiento de la hoja. Se experimentaron 28 genotipos en 6 ubicaciones en Perú. Cada clon fue evaluado tres veces en cada ambiente, y de cada uno de ellos se contaba con el rendimiento, peso de planta y parcela. Este conjunto de datos se obtuvo del paquete agricolae.\\
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -78,7 +78,7 @@ A fin de ilustrar la metodología incluida en el paquete se utiliza el conjunto 
 
 \textbf{GGE biplot}
 
-Para visualizar conjuntamente el efecto de G y IGA Yan et al. (2000) propuso el biplot GGE, con el cual se pueden abordar visualmente diversos aspectos relacionados con la evaluación de genotipos y ambientes. Para obtener dicho biplot en primer lugar se debe ajustar el modelo SREG mediante la función \textcolor{blue}{GGEmodel}(). Esta función es menos restrictiva que las ya disponibles en R en cuanto al conjunto de datos de entrada. En general, el formato requerido por las funciones existentes es que los genotipos se encuentren en las filas y los ambientes en las columnas, es decir que no admiten replicas. En cambio, en \textcolor{blue}{GGEmodel}(), el conjunto de datos debe tener en las columnas los genotipos, ambientes, repeticiones (en caso de que haya), el fenotipo observado, pero también puede haber otras variables que no serán utilizadas en el análisis ya que al ajustar el modelo se debe indicar los nombres de las variables a utilizar. Por otro lado, si cada genotipo ha sido evaluado más de una vez en cada ambiente, la función calcula automáticamente el valor fenotípico promedio para cada combinación de genotipo y ambiente para luego ajustar el modelo. Los valores faltantes no están permitidos, en caso de haber, un mensaje de error saldrá en la consola de R.\\  
+Para visualizar conjuntamente el efecto de G y IGA Yan et al. (2000) propuso el biplot GGE, con el cual se pueden abordar visualmente diversos aspectos relacionados con la evaluación de genotipos y ambientes. Para obtener dicho biplot en primer lugar se debe ajustar el modelo SREG mediante la función \textcolor{blue}{GGEmodel}(). Esta función es menos restrictiva que las disponibles actualmente en R en cuanto al conjunto de datos de entrada. En particular, es una modificación de la  función \textcolor{blue}{GGEModel}() del paquete GGEBiplots \textbf{(CITA)} el cual requiere que en el conjunto de datos de entrada los genotipos se encuentren en las filas y los ambientes en las columnas, es decir que no admiten replicas. En este caso, el conjunto de datos de entrada de \textcolor{blue}{GGEmodel}() debe estar en formato largo, lo cual es más ordenado a la hora de registrar la información \textbf{(CITA)}. Esto significa que las observaciones se encuentran en las filas y variables, genotipos, ambientes, repeticiones (en caso de que haya) y el fenotipo observado, en las columnas. Además puede incluir otras variables que no serán utilizadas en el análisis ya que al ajustar el modelo se deben indicar los nombres de las variables a emplear. Por otro lado, si cada genotipo ha sido evaluado más de una vez en cada ambiente, la función calcula automáticamente el valor fenotípico promedio para cada combinación de genotipo y ambiente para luego ajustar el modelo. Los valores faltantes no están permitidos, en caso de haber, un mensaje de error saldrá en la consola de R.\\  
 \begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
    				width=1\linewidth,
     			height=0.1\linewidth,
@@ -205,7 +205,7 @@ GGEPlot(GGE1, type = "Which Won Where/What", footnote = F, titles = F)
 
 Como se puede observar en el biplot de la figura \ref{fig:fig4126} el orden de los genotipos (de mayor a menor rendimiento) es: Kat, m12, Ena, Luc, Ann todos ellos con rendimientos superiores al promedio, seguidos por los de rendimiento menor al promedio y por último Fun, el de peor rendimiento medio en ese mega-ambiente.
 Debido a que las proyecciones sobre el eje perpendicular al eje medio de ambiente dan una idea de la estabilidad, se observa que el genotipo Luc y Fun son los más inestables. También se
-observa que el genotipo Kat, además de tener el mejor rendimiento medio es de los más estables en el megaambiente.\textbf{VER... ES CONTRADICTORIO... VER SI EL AEC ES SOBRE UN MEGA AMBIENTE O SI ES SOBRE TODOS}
+observa que el genotipo Kat, además de tener el mejor rendimiento medio es de los más estables en el megaambiente.\textbf{VER... COMO HCER AEC SOBRE UN MEGA AMBIENTE SOLAMENTE}
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
