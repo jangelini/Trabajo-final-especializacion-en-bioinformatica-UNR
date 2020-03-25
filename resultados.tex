@@ -104,7 +104,7 @@ GGEPlot(GGE1, type = "Biplot", footnote = F, titles = F)
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/GGE_BIPLOT.png}
+		\includegraphics[width=9.5cm]{./Graficos/GGE_BIPLOT.png}
 	\end{center}
 	\caption{Biplot básico obtenido de la función \textcolor{blue}{GGEPlot}()}
 	\label{fig:fig4121}
@@ -125,7 +125,7 @@ GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93", footnote = F, t
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/SelectedEnvironment.png}
+		\includegraphics[width=9.5cm]{./Graficos/SelectedEnvironment.png}
 	\end{center}
 	\caption{Ranking de cultivares para un ambiente determinado obtenido de la función \textcolor{blue}{GGEPlot}()}
 	\label{fig:fig4122}
@@ -145,7 +145,7 @@ GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Luc", footnote = F, title
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/SelectedGenotype.png}
+		\includegraphics[width=9.5cm]{./Graficos/SelectedGenotype.png}
 	\end{center}
 	\caption{Ranking de ambientes para cultivar determinado obtenido de la función \textcolor{blue}{GGEPlot}()}
 	\label{fig:fig4123}
@@ -168,7 +168,7 @@ GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Rub", selectedG2 = 
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/ComparisonofGenotype.png}
+		\includegraphics[width=9.5cm]{./Graficos/ComparisonofGenotype.png}
 	\end{center}
 	\caption{Comparación entre dos genotipos obtenido de la función \textcolor{blue}{GGEPlot}()}
 	\label{fig:fig4124}
@@ -195,7 +195,7 @@ GGEPlot(GGE1, type = "Which Won Where/What", footnote = F, titles = F)
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/WhichWonWhereWhat.png}
+		\includegraphics[width=9.5cm]{./Graficos/WhichWonWhereWhat.png}
 	\end{center}
 	\caption{Identificación del mejor cultivar en cada ambiente a partir de la función \textcolor{blue}{GGEPlot}()}
 	\label{fig:fig4125}
@@ -203,9 +203,10 @@ GGEPlot(GGE1, type = "Which Won Where/What", footnote = F, titles = F)
 \end{tcolorbox}
 
 
-Como se puede observar en el biplot de la figura \ref{fig:fig4126} el orden de los genotipos (de mayor a menor rendimiento) es: Kat, m12, Ena, Luc, Ann todos ellos con rendimientos superiores al promedio, seguidos por los de rendimiento menor al promedio y por último Fun, el de peor rendimiento medio en ese mega-ambiente.
-Debido a que las proyecciones sobre el eje perpendicular al eje medio de ambiente dan una idea de la estabilidad, se observa que el genotipo Luc y Fun son los más inestables. También se
-observa que el genotipo Kat, además de tener el mejor rendimiento medio es de los más estables en el megaambiente.\textbf{VER... COMO HCER AEC SOBRE UN MEGA AMBIENTE SOLAMENTE}
+
+
+Otro interés entre los fitomejoradores es seleccionar cultivares dentro de cada uno de los mega-ambientes definidos. De acuerdo con la figur  \ref{fig:fig4125}, zav es el mejor cultivar para los ambientes en uno de los mega-ambiente y fun en el otro. Sin embargo, los mejoradores no seleccionarán un único cultivar en cada mega-ambiente, sino que es necesario observar en más detalle cada mega-ambiente y evaluar todos los cultivares con el fin de obtener una idea de su desempeño (rendimiento y estabilidad).
+El GGE biplot, particularmente su forma de escalado centrada en el genotipo, proporciona un medio superior para visualizar tanto el rendimiento medio como la estabilidad de los genotipos. La visualización del rendimiento medio y la estabilidad de los genotipos se logra a partir de una coordenada de medio ambiente en el biplot centrado en el genotipo (Figura \ref{fig:fig4126}). La abscisa representa el efecto de G mientras que la ordenada la IGA asociada con cada genotipo, que es una medida de la variabilidad o inestabilidad de los genotipos. Una mayor proyección sobre la ordenada AEC, independientemente de la dirección, significa mayor inestabilidad. Por lo tanto, rub y dia son más variables y menos estables que otros cultivares (Figura \ref{fig:fig4126}). El ambiente BH93 está ubicado en el este de Ontario caracterizado por inviernos más fríos, mientras que RN93 en el sur de Ontario caracterizado por un clima cálido y húmedo en la mayoría de los años. Esto justifica la inestabilidad de rub y dia, ya que el primero es temprano y tiene una poca resistencia al invierno por lo que se desempeñó bien en RN93 y mal en BH93, y el segundo, con un comportamiento contrario al anterior cultivar debido a que es tardío y alto. Los cultivares próximos al eje de las abscisas, cas, zav, reb, del, ari y kar, son más estables que el resto. 
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -219,18 +220,42 @@ GGEPlot(GGE1, type = "Mean vs. Stability", footnote = F, titles = F)
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/MeanvsStability.png}
+		\includegraphics[width=9.5cm]{./Graficos/MeanvsStability.png}
 	\end{center}
 	\caption{Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad a partir de la función \textcolor{blue}{GGEPlot}()}
 	\label{fig:fig4126}
 \end{figure}
 \end{tcolorbox}
 
-A pesar de que los EMA se realizan para evaluar cultivares, son igualmente útiles para evaluar los ambientes estudiados. La evaluación del ambiente incluye diversos aspectos: (i) ver si la región objetivo pertenece a un solo o varios megaambientes; (ii) identificar mejores ambientes de prueba; (iii) identificar ambientes redundantes que no brindan información adicional sobre los cultivares; (iv) identificar ambientes que pueden usarse para la selección indirecta.
+El biplot GGE permite visualizar tanto el rendimiento medio como la estabilidad de los genotipos en la unidad de rendimiento per se. Ésto permite que las dos medidas se combinen y visualicen en una sola medida (Figura \ref{fig:fig4127}). El pequeño círculo en la figura \ref{fig:fig4127} representa el cultivar ideal ya que es el más rendidor del conjunto de datos y es absolutamente estable, al estar ubicado en el eje de abscisa del AEC. Tal genotipo ideal se utiliza como referencia para la evaluacion de los cultivares ya que rara vez es exista. La distancia entre los cultivares con respecto al ideal se puede utilizar como una medida de su conveniencia. Los círculos concéntricos, tomando el cultivar ideal como centro, ayudan a visualizar la distancia entre todos los cultivares y el ideal. El cultivar fun es el más próximo al ideal, y por lo tanto, el más deseable de todos los cultivares probados, seguido por cas y heno, que a su vez son seguidos por ron, ham, rub, zav, del y reb, etc.
 
-En la figura \ref{fig:fig4127} se observa que los ambientes estan conectados con el origen de coordenadas a través de vectores, permitiendo comprender las interrelaciones entre los distintos ambientes. El coseno del ángulo entre los vectores de dos ambientes se aproxima al coeficiente de correlación entre ellos. Por ejemplo, NN93 y WP93 tienen un ángulo de aproximadamente $10^{\circ}$ entre sus vectores; por lo tanto, se encuentran estrechamente relacionados; mientras que RN93 y OA93 presentan correlaciones leves y negativas ya que el ángulo supera los $90^{\circ}$. El coseno de los ángulos no se traduce con precisión en coeficientes de correlación, ya que el biplot no explica toda la variación en el conjunto de datos. Sin embargo, los ángulos son lo suficientemente informativos como para permitir una imagen completa sobre la interrelación entre el entorno de prueba.
 
-Por otro lado, la Figura \ref{fig:fig4127} ayuda a identificar ambientes redundantes. Si algunos de los ambientes tienen ángulos pequeños y, por lo tanto, están altamente correlacionados, la información sobre los genotipos obtenidos de estos ambientes debe ser similar. Si esta similitud es repetible a través de los años, estos ambientes son redundantes y por lo tanto, uno solo debería ser suficiente. Obtener la misma o mejor información utilizando menos ambientes reducirá el costo y aumentará la eficiencia de producción.
+
+\begin{tcolorbox}[skin=bicolor,
+    colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
+    width=1\linewidth,
+    height=0.65\linewidth,
+    boxsep=-3mm]
+\begin{lstlisting}
+GGEPlot(GGE1, type = "Ranking Genotypes", footnote = F, titles = F)
+\end{lstlisting}
+\tcblower\vskip-\baselineskip
+\tcblower
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=9.5cm]{./Graficos/RankingGenotypes.png}
+	\end{center}
+	\caption{Clasificación de genotipos con respecto al genotipo ideal a partir de la función \textcolor{blue}{GGEPlot}()}
+	\label{fig:fig4127}
+\end{figure}
+\end{tcolorbox}
+
+
+A pesar de que los EMA se realizan para evaluar cultivares, son igualmente útiles para evaluar los ambientes estudiados. Ésto incluye diversos aspectos: (i) evaluar si la región objetivo pertenece a uno o varios megaambientes; (ii) identificar mejores ambientes de prueba; (iii) identificar ambientes redundantes que no brindan información adicional sobre los cultivares; (iv) identificar ambientes que pueden usarse para la selección indirecta.
+
+En la figura \ref{fig:fig4128} se observa que los ambientes estan conectados con el origen de coordenadas a través de vectores, permitiendo comprender las interrelaciones entre los distintos ambientes. El coseno del ángulo entre los vectores de dos ambientes se aproxima al coeficiente de correlación entre ellos. Por ejemplo, NN93 y WP93 tienen un ángulo de aproximadamente $10^{\circ}$ entre sus vectores; por lo tanto, se encuentran estrechamente relacionados; mientras que RN93 y OA93 presentan correlaciones leves y negativas ya que el ángulo supera los $90^{\circ}$. El coseno de los ángulos no se traduce con precisión en coeficientes de correlación, ya que el biplot no explica toda la variación en el conjunto de datos. Sin embargo, los ángulos son lo suficientemente informativos como para permitir una imagen completa sobre la interrelación entre el entorno de prueba.
+
+Por otro lado, la Figura \ref{fig:fig4129} ayuda a identificar ambientes redundantes. Si algunos de los ambientes tienen ángulos pequeños y, por lo tanto, están altamente correlacionados, la información sobre los genotipos obtenidos de estos ambientes debe ser similar. Si esta similitud es repetible a través de los años, estos ambientes son redundantes y por lo tanto, uno solo debería ser suficiente. Obtener la misma o mejor información utilizando menos ambientes reducirá el costo y aumentará la eficiencia de producción.
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -244,36 +269,19 @@ GGEPlot(GGE1, type = "Relationship Among Environments", footnote = F, titles = F
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/RelationshipAmongEnvironments.png}
+		\includegraphics[width=9.5cm]{./Graficos/RelationshipAmongEnvironments.png}
 	\end{center}
 	\caption{Relación entre ambientes obtenido de la función \textcolor{blue}{GGEPlot}()}
-	\label{fig:fig4127}
+	\label{fig:fig4128}
 \end{figure}
 \end{tcolorbox}
 
 
 La capacidad de discriminación es una medida importante de un ambiente, ya que si no tiene dicha capacidad no proporciona información sobre los cultivares y, por lo tanto, el ambiente carece de utilidad. Otra medida igualmente importante de un ambiente es su representatividad del ambiente objetivo, ya que si no es representativo no solo que carece de utilidad sino que también puede proporcionar información sesgada sobre los cultivares evaluados
 
-La representatividad de un ambiente es difícil de medir, ya que no es posible muestrear todos los ambientes posibles dentro de un megaambiente y, posteriormente, determinar la representatividad de cada uno en forma individual. Mediante el biplot, la manera de medir la representatividad es definir un entorno promedio y usarlo como referencia. \textbf{FALTA}
+La representatividad de un ambiente es difícil de medir, ya que no es posible muestrear todos los ambientes posibles dentro de un megaambiente y, posteriormente, determinar la representatividad de cada uno en forma individual. Mediante el biplot, la manera de medir la representatividad es definir un entorno promedio y usarlo como referencia. El ambiente promedio está indicado por el círculo pequeño en la figura \ref{fig:fig4129}. El ángulo entre el vector de un ambiente y el eje que pasa a través del origen biplot y el ambiente promedio es una medida de la representatividad del ambiente. Por lo tanto, EA93 e ID93 son los más representativos, mientras que RN93 y BH93 son los menos representativos del ambiente promedio, cuando se analiza el mega-ambiente que no contiene a OA93 y a KE93.
 
-\begin{tcolorbox}[skin=bicolor,
-    colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
-    width=1\linewidth,
-    height=0.65\linewidth,
-    boxsep=-3mm]
-\begin{lstlisting}
-GGEPlot(GGE1, type = "Discrimination vs. representativeness", footnote = F, titles = F)
-\end{lstlisting}
-\tcblower\vskip-\baselineskip
-\tcblower
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/Discriminationvsrepresentativeness.png}
-	\end{center}
-	\caption{Evaluación de los ambientes basados tanto en la capacidad de discriminación y representatividad a partir de la función \textcolor{blue}{GGEPlot}()}
-	\label{fig:fig4128}
-\end{figure}
-\end{tcolorbox}
+Un ambiente de prueba ideal debe ser tanto discriminatorio como representativo. La figura \ref{fig:fig4129}, utiliza el ambiente ideal como el centro de un conjunto de circulos concéntricos que sirven como regla para medir la distancia entre un ambiente y el ideal. HW93 es el ambiente más cercano al ideal y, por lo tanto, es el más deseable de los siete entornos, es seguido por EA93 e ID93, que a su vez son seguidos por WP93 y NN93. RN93 y BH93 fueron los ambientes de prueba menos deseable. Además, EA93 e ID93, y NN93 y WP93 son pares de entornos muy similares, lo cual tambien se visualizó que se pueden visualizar mejor desde la figura. Anterior
 
 
 figu \ref{fig:fig4129}
@@ -289,7 +297,7 @@ GGEPlot(GGE1, type = "Ranking Environments", footnote = F, titles = F)
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/RankingEnvironments.png}
+		\includegraphics[width=9.5cm]{./Graficos/RankingEnvironments.png}
 	\end{center}
 	\caption{Clasificación de ambientes con respecto al ambiente ideal a partir de la función \textcolor{blue}{GGEPlot}()}
 	\label{fig:fig4129}
@@ -297,35 +305,16 @@ GGEPlot(GGE1, type = "Ranking Environments", footnote = F, titles = F)
 \end{tcolorbox}
 
 
-figu \ref{fig:fig41210}
-\begin{tcolorbox}[skin=bicolor,
-    colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
-    width=1\linewidth,
-    height=0.65\linewidth,
-    boxsep=-3mm]
-\begin{lstlisting}
-GGEPlot(GGE1, type = "Ranking Genotypes", footnote = F, titles = F)
-\end{lstlisting}
-\tcblower\vskip-\baselineskip
-\tcblower
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10.5cm]{./Graficos/RankingGenotypes.png}
-	\end{center}
-	\caption{Clasificación de genotipos con respecto al genotipo ideal a partir de la función \textcolor{blue}{GGEPlot}()}
-	\label{fig:fig41210}
-\end{figure}
-\end{tcolorbox}
+
+\textbf{Falta un grafico q es discriminacion vs representatividad q no se como se interpreta....}
+
+\textbf{Biplot GE}
 
 
+Para visualizar solamente el efecto de IGA se utilizan los biplots GE obtenidos del modelo AMMI. Para ejecutar la función \textcolor{blue}{rAMMI}(), siendo el formato del conjunto de datos requerido igual al descripto para la función \textcolor{blue}{GGEmodel}(). Sin embargo, en este caso la salida de la función es el biplot GE. Esta función no se encuentra disponible actualmente en R, es modificada de la publicación de Rodrigues et al. (2015). Esta versión de la función permite incluir otras variables en el conjunto de datos debido a que, al igual que en \textcolor{blue}{GGEmodel}(), se deben indicar los nombres de las variables a emplear y además permite la presencia de repeticiones ya que la función calcula automáticamente el valor fenotípico promedio para cada combinación de genotipo y ambiente para luego ajustar el modelo. Los valores faltantes no están permitidos, en caso de haber, un mensaje de error saldrá en la consola de R.\\ 
 
-\textbf{AMMI model}
 
-
-Para visualizar solamente el efecto de IGA se utilizan los biplots GE obtenidos del modelo AMMI. Para ejecutar la función \textcolor{blue}{rAMMI}(), en forma análoga a \textcolor{blue}{GGEmodel}(), se debe proporcionar un conjunto de datos con genotipo, entorno, repeticiones (si las hay) y la variable de respuesta. Se debe indicar el nombre de las columnas que contienen cada una de estas variables en el conjunto de datos de entradas. La salida de la función es un biplot.
-
-El biplot clásico para el conjunto de datos \emph{yan.winterwheat} se muestra en la \ref{fig:fig4127} junto con la sentencia utlizada para obtener el mismo. Para el caso del conjunto de datos \emph{plrv} se debe agregar la opcion \emph{rep} debido a la presencia de repeticiones en el mismo.
-Se observa que la magnitud de los vectores de los ambientes BH93, KE93 y OA93 es mayor a la de los demás ambientes, es decir que son los que más contribuyen a la interacción. La cercanía de los marcadores de los genotipos m12 y Kat indica que esos genotipos tienen patrones de interacción similares, y a la vez, muy distintos a los de los genotipos Ann y Aug. Del biplot también se destacan las cercanías entre el genotipo Día y el ambiente BH93 lo que indica, debido a la gran distancia al origen, una fuerte asociación positiva entre el genotipos y el ambientes, es decir, es un ambiente muy favorable para ese genotipo.
+El biplot clásico para el conjunto de datos \emph{yan.winterwheat} se muestra en la figura \ref{fig:fig41211} junto con la sentencia utlizada para obtener el mismo. Se observa que la magnitud de los vectores de los ambientes BH93, KE93 y OA93 es mayor a la de los demás ambientes, es decir que son los que más contribuyen a la interacción. La cercanía de los marcadores de los genotipos m12 y Kat indica que esos genotipos tienen patrones de interacción similares, y a la vez, muy distintos a los de los genotipos Ann y Aug. Del biplot también se destacan las cercanías entre el genotipo dia y el ambiente BH93 lo que indica, debido a la gran distancia al origen, una fuerte asociación positiva entre el genotipos y el ambientes, es decir, es un ambiente muy favorable para ese genotipo.
 Entre las altas asociaciones negativas se puede mencionar a la del ambiente OA93 con el genotipo Luc (marcadores opuestos en el biplot) y se interpreta que ese ambiente es considerablemente desfavorable para ese genotipo. También se observa que los genotipos Cas y Reb están próximos al origen, lo que quiere decir que se adaptan en igual medida a todos los ambientes.
 
 
