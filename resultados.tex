@@ -377,18 +377,17 @@ imputation(yanwinterwheat, PC.nb = 2, genotype = "gen", environment = "env", res
 
 Generalmente los mejoradores utilizan programas estadísticos que funcionan mediante una interfaz gráfica lo cual permite realizar el análisis de interés sin necesidad del manejo de un lenguaje de programación. \emph{Geneticae Shiny Web App}, es una aplicación web que permite a los usuarios realizar muchos de los análisis incluidos en el paquete geneticae, sin necesidad de conocer el lenguaje de programación R. 
 
-
 Al iniciar \emph{Geneticae Shiny Web App}, se muestra una pantalla en la cual se carga el conjunto de datos a analizar. Se admiten archivos con extensión .csv, delimitados por coma o punto y coma.
-Dado que esta aplicación se conecta con R y utiliza las funciones del paquete \emph{geneticae} se debe respetar el formato requerido por el mismo. El conjunto de datos de entrada debe estar en formato largo, es decir que las observaciones se encuentran en las filas y las variables, genotipos, ambientes, repeticiones (en caso de que haya) y el fenotipo observado, en las columnas. Además puede incluir otras variables que no serán utilizadas en el análisis ya que al cargar el conjunto de datos se debe indicar que columna corresponde al genotipo, al ambiente, a las repeticiones y al valor fenotípico a analizar. La primera fila de encabezado contiene los nombres de cada variable. El número de repeticiones puede diferir con los genotipos y los ambientes.
+Dado que esta aplicación se conecta con R y utiliza las funciones del paquete \emph{geneticae} se debe respetar el formato requerido por el mismo. El conjunto de datos de entrada debe estar en formato largo, es decir que las observaciones se encuentran en las filas y las variables, genotipos, ambientes, repeticiones (en caso de que haya) y el fenotipo observado, en las columnas. Además puede incluir otras variables que no serán utilizadas en el análisis ya que al cargar el conjunto de datos se debe indicar que columna corresponde al genotipo, al ambiente, a las repeticiones y al valor fenotípico a analizar. La primera fila del conjunto de datos puede contener los nombres de las varibles, y en ese caso se indicará al cargarlo en la aplicación. El número de repeticiones puede diferir con los genotipos y los ambientes.
 
-Dos conjuntos de datos de ejemplo, \emph{plrv} y \emph{yanwinterwheat}, incluidos en el paquete geneticae, se encuentran disponibles en la aplicación para ser descargados y probar la misma (Figura \ref{fig:fig41},\ref{fig:fig42}). La ruta para realizar esto es siguente: \emph{The data} $\rightarrow$ \emph{Example datasets}.
- 
-\begin{figure}[H]
+Dos conjuntos de datos de ejemplo, \emph{plrv} y \emph{yanwinterwheat}, incluidos en el paquete geneticae, se encuentran disponibles en la aplicación para ser descargados y probar la misma (Figura \ref{fig:fig431},\ref{fig:fig432}). La ruta para realizar esto es siguente: \emph{The data} $\rightarrow$ \emph{Example datasets}.
+
+ \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=16cm]{./Graficos/Exampledatasets_withoutrep.png}
 	\end{center}
 	\caption{yanwinterwheat dataset disponible en Shiny Web App}
-	\label{fig:fig41}
+	\label{fig:fig431}
 \end{figure}
 
 \begin{figure}[H]
@@ -396,72 +395,72 @@ Dos conjuntos de datos de ejemplo, \emph{plrv} y \emph{yanwinterwheat}, incluido
 		\includegraphics[width=16cm]{./Graficos/Exampledatasets_withrep.png}
 	\end{center}
 	\caption{plrv dataset disponible en Shiny Web App}
-	\label{fig:fig42}
+	\label{fig:fig432}
 \end{figure}
 
 
-A fin de ilustrar los diferentes análisis que se pueden realizar con esta aplicación se utiliza el conjunto de datos \emph{yanwinterwheat} (Figura \ref{fig:fig41}). Como se dijo anteriormente, cuenta con información sobre el rendimiento medio de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993.
+A fin de ilustrar los diferentes análisis que se pueden realizar con esta aplicación se utiliza el conjunto de datos \emph{yanwinterwheat} (Figura \ref{fig:fig431}). Como se dijo anteriormente, cuenta con información sobre el rendimiento medio de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993.
 
 
 \subsection{Análisis de un caso}
-En primer lugar se debe importar el conjunto de datos, en este caso \emph{yanwinterwheat}, indicar si el archivo .csv esta delimitado por comas o punto y coma, si la primera fila de encabezado contiene los nombres de cada variable y además, el nombre de la columna que contiene la información de los genotipos, ambientes y valores fenotípicos de interés. En caso de contar con repeticiones, también debe especificarse el nombre de la columna con dicha información.
+En primer lugar se debe importar el conjunto de datos, en este caso \emph{yanwinterwheat}, indicar si el archivo .csv esta delimitado por comas o punto y coma, si la primera fila de encabezado contiene los nombres de cada variable y además, el nombre de la columna que contiene la información de los genotipos, ambientes y valores fenotípicos de interés (Figura \ref{fig:fig433}). En caso de contar con repeticiones, también debe especificarse el nombre de la columna con dicha información.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=16cm]{./Graficos/data.png}
 	\end{center}
 	\caption{Importar conjunto de datos}
-	\label{fig:fig42}
+	\label{fig:fig433}
 \end{figure}
 
 
 \textbf{Análisis descriptivo}
 
-El primer paso de cualquier estudio debe ser un análisis descriptivo del conjunto de datos. La pestaña \emph{Descriptive analysis} brinda diversas herramientas para llevar a cabo dicho análisis. Una de ellas es un boxplot que compara el caracter cuantitativo de interés a través de los ambientes (Figura \ref{fig:fig43}) o a través de los genotipos. Estos gráficos son interactivos, al posicionarse sobre una de las cajas se muestran las medidas resumen. Además los mismos se pueden descargar en formato interactivo (.HTML) al hacer click en \emph{Download} así como también en formato .png al hacer click en la cámara que aparece en el gráfico (Figura \ref{fig:fig43}). Algunos aspectos del gráfico, como el color de las cajas y los nombres de los ejes, pueden ser personalizados por el usuario. 
+El primer paso de cualquier estudio debe ser un análisis descriptivo del conjunto de datos. La pestaña \emph{Descriptive analysis} brinda diversas herramientas para llevar a cabo dicho análisis. Una de ellas es un boxplot que compara el caracter cuantitativo de interés a través de los ambientes (Figura \ref{fig:figdesc1}) o a través de los genotipos. Este gráfico es interactivo, al posicionarse sobre cada una de las cajas se muestran las medidas resumen utilizadas para la construcción del mismo. Además los mismos se pueden descargar en formato interactivo (.HTML) al hacer click en \emph{Download} así como también en formato .png al hacer click en la cámara que aparece en el gráfico (Figura \ref{fig:figdesc1}). Algunos aspectos del gráfico, como el color de las cajas y los nombres de los ejes, pueden ser personalizados por el usuario. 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/Boxplot_environment.png}
+		\includegraphics[width=16cm]{./Graficos/Boxplot_environment.png}
 	\end{center}
 	\caption{Boxplot de ambientes a través de los genotipos para el conjunto de datos Plrv}
-	\label{fig:fig43}
+	\label{fig:figdesc1}
 \end{figure}
 
 
 
-Otro interés puede ser estudiar la correlación entre los genotipos o entre los ambientes, para ello tanto el correlograma o gráfico de correlación como la matriz de correlación se pueden realizar (Figura \ref{fig:fig45} y \ref{fig:fig47}). En ambos casos, se pueden estimar tanto las correlaciones de Pearson y Spearman. En el correlograma las correlaciones positivas se muestran en azul y las negativas en rojo y la intensidad del color y el tamaño del círculo son proporcionales a los coeficientes de correlación(Figura \ref{fig:fig45}). 
+Otro interés puede ser estudiar la correlación entre los genotipos o entre los ambientes, para ello tanto el correlograma o gráfico de correlación como la matriz de correlación se pueden realizar (Figura \ref{fig:figdesc2} y \ref{fig:figdesc3}). En ambos casos, se pueden estimar las correlaciones de Pearson o de Spearman. En el correlograma las correlaciones positivas se muestran en azul y las negativas en rojo y la intensidad del color y el tamaño del círculo son proporcionales a los coeficientes de correlación (Figura \ref{fig:figdesc2}). 
 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/corr_gen.png}
+		\includegraphics[width=16cm]{./Graficos/corr_gen.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig45}
+	\label{fig:figdesc2}
 \end{figure}
 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/corr_matrix.png}
+		\includegraphics[width=16cm]{./Graficos/corr_matrix.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig47}
+	\label{fig:figdesc3}
 \end{figure}
 
 
 
-Por último, dado que inconsistencias en el rendimiento de los genotipo en diferentes amientes complican la tarea de los fitomejoradores ya que no existe un genotipo superior en todos los ambientes estudiados y que las técnicas de principal interés de la aplicación carecen de sentido cuando dicho efecto no esta presente en el conjunto de datos, un gráfico de interacción resulta de interés. En la figura \ref{fig:fig49} se observa el cambio en el efecto genotípico a través de los ambientes, sin embargo es posible tambien presentar el cambio en el efecto ambiental a través de los genotipos.
-En forma análoga a los boxplots, éste es un gráfico interactivo, y por lo tanto, es posible descargarlo en formato interactivo (.HTML) a partir del boton \emph{Download}, así como también en formato .png (Figura \ref{fig:fig49}). A su vez, los nombres de los ejes pueden ser personalizados por el usuario. 
+Por último, dado que inconsistencias en el rendimiento de los genotipo en diferentes amientes complican la tarea de los fitomejoradores ya que no existe un genotipo superior en todos los ambientes estudiados y que las técnicas de principal interés de la aplicación carecen de sentido cuando dicho efecto no esta presente en el conjunto de datos, un gráfico de interacción resulta de interés. En la figura \ref{fig:figdesc4} se observa el cambio en el efecto genotípico a través de los ambientes, sin embargo es posible también mostrar el cambio en el efecto ambiental a través de los genotipos.
+En forma análoga al boxplot, éste es un gráfico interactivo, y por lo tanto, es posible descargarlo en formato interactivo (.HTML) a partir del boton \emph{Download}, así como también en formato .png al hacer click en la cámara (Figura \ref{fig:figdesc4}). A su vez, los nombres de los ejes pueden ser personalizados por el usuario. 
 
 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/int_plot.png}
+		\includegraphics[width=16cm]{./Graficos/int_plot.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig49}
+	\label{fig:figdesc4}
 \end{figure}
 
 
@@ -469,58 +468,78 @@ En forma análoga a los boxplots, éste es un gráfico interactivo, y por lo tan
 \textbf{Análisis de la variancia}
 
 
-La variación fenotípica se puede explicar a partir de los efectos del ambiente, genotipo e interacción genotipo por ambiente, cuya significancia se prueba con un ANOVA. Si únicamente los efectos de G y A resultan significativos (es decir, sin interacción), la interacción debe ser ignorada y los biplots carecen de sentido. En caso de no contar con repeticiones en el conjunto de datos, la interacción no podrá ser testeada y un mensaje aparecerá aclarando lo mencionado \emph{``The interaction effect can be tested since there are repetitions in the data set"}. Por lo tanto, en este caso que no se cuenta con repeticiones, carece de sentido probar si existe dicho efecto, pero si se puede probar si existe efecto genotipo y ambiente (Figura \ref{fig:fig49})
+La variación fenotípica se puede explicar a partir de los efectos ambienteales, genotípicos y de la interacción entre ambos, cuya significancia se prueba con un ANOVA. Si únicamente los efectos de G y A resultan significativos (es decir, no hay efecto interacción), la interacción debe ser ignorada y los biplots carecen de sentido. En caso de no contar con repeticiones en el conjunto de datos, la interacción no podrá ser testeada y un mensaje aparecerá aclarando lo mencionado \emph{``The interaction effect can be tested since there are repetitions in the data set"}. Por lo tanto, en este caso que no se cuenta con repeticiones, se puede prueba si existe efecto genotípicos y ambienteales (Figura \ref{fig:fig438})
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/ANOVA.png}
+		\includegraphics[width=16cm]{./Graficos/ANOVA.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig49}
+	\label{fig:fig438}
 \end{figure}
 
 
-La validez de las conclusiones del ANOVA depende del cumplimiento de los supuestos de que los errores tengan distribución normal con media cero y variancia constante. Tres pestañas de la aplicación: \emph{Check normality}, \emph{Check homocedasticity} y \emph{Outliers} permiten verificar los supuestos mencionados.
+La validez de las conclusiones del ANOVA depende del cumplimiento de que los errores tengan distribución normal con media cero y variancia constante. Tres pestañas de la aplicación: \emph{Check normality}, \emph{Check homocedasticity} y \emph{Outliers} permiten verificar los supuestos mencionados.
 
-El supuesto de normalidad se puede verificar graficamente con un histograma y un gráfico de probabilidad normal (Figura \ref{fig:fig49}). Además, se puede probar con el test de shapiro-wilks sobre los residuos del ANOVA. Al realizar este test, aparecerá un mensaje con la conclusión del mismo (Figura \ref{fig:fig49}). 
+El supuesto de normalidad se puede verificar gráficamente con un histograma y un gráfico de probabilidad normal (Figura \ref{fig:fig439}). Además, se puede probar con el test de shapiro-wilks sobre los residuos del ANOVA. Al realizar este test, aparecerá un mensaje con la conclusión del mismo (Figura \ref{fig:fig439}). 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/Normalidad.png}
+		\includegraphics[width=16cm]{./Graficos/Normalidad.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig49}
+	\label{fig:fig439}
 \end{figure}
 
-El grafico de residuos vs. valores predichos y las pruebas de levene permiten verificar el supuesto de variancia constante u homocedasticidad (Figura \ref{fig:fig49}).
+
+El supuesto de variancia constante u homocedasticidad se puede probar con un gráfico de residuos vs. valores predichos, así como también con el test de levene (Figura \ref{fig:fig4310}). Dicho test se puede verificarr tanto para los genotipos como para los ambientes, y al hacer click en el mismo un mensaje saldrá con la conclusión obtenida del mismo.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/Homocedasticidad.png}
+		\includegraphics[width=16cm]{./Graficos/Homocedasticidad.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig49}
+	\label{fig:fig4310}
 \end{figure}
 
-Por último, la presencia de observaciones atipicas u outliers provoca que el ANOVA no de buenos resultados, un grafico para detectar outliers es posible realizarlo(Figura \ref{fig:fig49}).
+Por último, el ANOVA no es robusto ante la presencia de observaciones atipicas, por lo tanto se incluyen gráficos para detectar las mismas \ref{fig:fig4311}).
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/Outliers.png}
+		\includegraphics[width=16cm]{./Graficos/Outliers.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig49}
+	\label{fig:fig4311}
 \end{figure}
 
-\subsection{Biplots}
+Todos los gráficos mostrados para verificar los supuestos requeridos por la técnica ANOVA pueden ser descargados mediante el botón \emph{Download} de la pestaña correspondiente.
 
-\subsubsection{GGE}
-Dada la importancia del biplot GGE en muchos problemas relacionados con la evaluación de los genotipo y ambientes de prueba, se incluyen en la aplicación web el biplot básico y aquellos que permiten: identificar el mejor cultivar en cada ambiente, evaluación de los cultivares con base en el rendimiento promedio y la estabilidad, relación entre ambientes, los ambientes basados tanto en la capacidad de discriminación como en la representatividad, clasificación de ambientes con respecto al ambiente ideal y  clasificación de genotipos con respecto al genotipo ideal.
+\textbf{Biplots}
 
+\emph{Geneticae Shiny Web App} permite obtener tanto el biplot GGE (Figura \ref{fig:fig4312}) como el GE (Figura \ref{fig:fig4313}) . Ciertos atributos estilísticos de dichos gráficos se pueden personalizar y además pueden ser descargados.
 
-\subsubsection{GE}
-Tanto el biplot clásico como los robustos pueden obtenerse a partir de la aplicación shiny.
-
+Dada la importancia del biplot GGE, se incluyen aquellos más utilizados en el análisis de datos provenientes de EMA. Entre ellos, el biplot básico y aquellos que permiten estudiar la relación entre los ambientes (\emph{Relationship Among Environments}), la identificación del mejor cultivar en cada ambiente (\emph{Which Won Where/What}), Discrimination vs. representativeness ( \textbf{Este es el q me falta interpretar en el paquete} ), clasificación de los ambientes con respecto al ambiente ideal (\emph{Ranking Environments}), evaluación de los cultivares con base en el rendimiento promedio y la estabilidad (\emph{Mean vs. Stability}) y  clasificación de genotipos con respecto al genotipo ideal (\emph{Ranking Genotypes}). A la hora de indicar el biplot que se desea realizar se debe especificar el método de SVD, centrado y escalado que se desea. Se debe tener en cuenta que no todos los biplots se hacen con el mismo método SVD, para más detalle recurrir a Yan ...\textbf{CITA}.
 
 
-En ambos biplots (figura ... y ...) es posible personalizar algunos atributos estilísticos para que el usuario obtenga la salida a su gusto. A su vez, los gráficos obtenidos pueden ser descargados.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=16cm]{./Graficos/GGE.png}
+	\end{center}
+	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
+	\label{fig:fig4312}
+\end{figure}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=16cm]{./Graficos/AMMI_S.png}
+	\end{center}
+	\caption{AMMI}
+	\label{fig:fig4313}
+\end{figure}
+
+
+
+\textbf{Ayuda}
+
+Información general y un tutorial de cómo utilizar la aplicación se encuentra disponible en la última pestaña de la misma. Allí se encuentran disponibles ejemplos con una de los conjuntos de ejemplo disponible en la misma.  
