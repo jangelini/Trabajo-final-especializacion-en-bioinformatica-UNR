@@ -17,7 +17,7 @@ Una vez instalado el paquete, se debe cargar en la sesion de R mediante el coman
 
 El paquete geneticae proporciona dos conjuntos de datos que permiten ilustrar la metodología incluida para analizar los datos obtenidos de EMA.
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex, noitemsep,topsep=0pt]
-\item \emph{yan.winterwheat dataset}: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente en el conjunto de datos, obtenido del paquete agridat (Wright, 2018), sólo el rendimiento medio por variedad se encuentra disponible.
+\item \emph{yan.winterwheat dataset}: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente en el conjunto de datos, sólo el rendimiento medio para cada combinación de variedad y ambiente se encuentra disponible. Este conjunto de datos se obtuvo del paquete agridat (Wright, 2018) de R.
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -43,7 +43,7 @@ head(yanwinterwheat)
 \end{verbatim}
 \end{tcolorbox}
 
-\item \emph{plrv dataset}: Estudio de resistencia a PLRV (\emph{Patato Leaf Roll Virus}) causante del enrollamiento de la hoja. Se experimentaron 28 genotipos en 6 ubicaciones en Perú. Cada clon fue evaluado tres veces en cada ambiente, y de cada uno de ellos se contaba con el rendimiento, peso de planta y parcela. Este conjunto de datos se obtuvo del paquete agricolae.\\
+\item \emph{plrv dataset}: Estudio de resistencia a PLRV (\emph{Patato Leaf Roll Virus}) causante del enrollamiento de la hoja. Se experimentaron 28 genotipos en 6 ubicaciones en Perú. Cada clon fue evaluado tres veces en cada ambiente, y de cada uno de ellos se contaba con el rendimiento, peso de planta y parcela. Este conjunto de datos se obtuvo del paquete agricolae (\textbf{CITA}) de R.\\
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -403,7 +403,7 @@ A fin de ilustrar los diferentes análisis que se pueden realizar con esta aplic
 
 
 \subsection{Análisis de un caso}
-En primer lugar se debe importar el conjunto de datos, en este caso \emph{yanwinterwheat}, indicar si el archivo .csv esta delimitado por comas o punto y coma, si la primera fila de encabezado contiene los nombres de cada variable y además, el nombre de la columna que contiene la información de los genotipos, ambientes y valores fenotípicos de interés (Figura \ref{fig:fig433}). En caso de contar con repeticiones, también debe especificarse el nombre de la columna con dicha información.
+En primer lugar se debe importar el conjunto de datos, en este caso \emph{yanwinterwheat}, se indica que el archivo .csv esta delimitado punto y coma, que la primera fila contiene los nombres de cada variable y además, el nombre de la columna que contiene la información de los genotipos, ambientes y valores fenotípicos de interés (Figura \ref{fig:fig433}). En caso de contar con repeticiones, debería especificarse además el nombre de la columna con dicha información.
 
 \begin{figure}[h]
 	\begin{center}
@@ -468,7 +468,7 @@ En forma análoga al boxplot, éste es un gráfico interactivo, y por lo tanto, 
 \textbf{Análisis de la variancia}
 
 
-La variación fenotípica se puede explicar a partir de los efectos ambienteales, genotípicos y de la interacción entre ambos, cuya significancia se prueba con un ANOVA. Si únicamente los efectos de G y A resultan significativos (es decir, no hay efecto interacción), la interacción debe ser ignorada y los biplots carecen de sentido. En caso de no contar con repeticiones en el conjunto de datos, la interacción no podrá ser testeada y un mensaje aparecerá aclarando lo mencionado \emph{``The interaction effect can be tested since there are repetitions in the data set"}. Por lo tanto, en este caso que no se cuenta con repeticiones, se puede prueba si existe efecto genotípicos y ambienteales (Figura \ref{fig:fig438})
+La variación fenotípica se puede explicar a partir de los efectos ambienteales, genotípicos y de la interacción entre ambos, cuya significancia se prueba con un ANOVA. Si únicamente los efectos de G y A resultan significativos (es decir, no hay efecto interacción), la interacción debe ser ignorada y los biplots carecen de sentido. En caso de no contar con repeticiones en el conjunto de datos, la interacción no podrá ser testeada y un mensaje aparecerá aclarando lo mencionado\textbf{ \emph{``The interaction effect can be tested since there are repetitions in the data set"}, VER}. Por lo tanto, en este caso que no se cuenta con repeticiones, se puede prueba si existe efecto genotípicos y ambienteales (Figura \ref{fig:fig438})
 
 \begin{figure}[H]
 	\begin{center}
