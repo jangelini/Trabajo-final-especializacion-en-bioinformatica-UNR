@@ -30,19 +30,19 @@ $y_{ij}= \mu +  A_j + \sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ \hspace{0.
 
 Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la Descomposición en Valores Singulares (DVS) de la matriz que contiene los residuos del modelo aditivo luego de ajustar por mínimos cuadrados el modelo de efectos principales. Generalmente los dos primeros términos multiplicativos son suficientes para explicar los patrones de la IGA o de G e IGA en forma conjunta; la variabilidad remanente se interpreta como ruido. 
 
-Para visualizar el efecto de IGA o conjuntamente el efecto de G y IGA se proponen los gráficos biplots GE y GGE (proveniente de las siglas en inglés G de \emph{Genotipe} y GE de \emph{Genotipe-Environment}) (Yan et al., 2000) respectivamente. El concepto del biplot fue presentado por Gabriel (1971), que consiste en una representación de las filas (individuos) y las columnas (variables) de una matriz de datos en un mismo gráfico. Éstos biplots, son herramientas poderosas definidas para el análisis e interpretación de la estructura de datos provenientes de ensayos multiambientales utilizados en los programas de mejoramiento (Ebdon y Gauch, 2002; Samonte et al., 2004; Yan et al., 2000; Zobel et al., 1988).
+Para visualizar el efecto de IGA o conjuntamente el de G e IGA se proponen los gráficos biplots GE (\emph{Genotipe-Environment}) (\textbf{CITA}) y GGE (\emph{Genotipe} plus \emph{Genotipe-Environment}) (Yan et al., 2000) respectivamente. El concepto del biplot fue presentado por Gabriel (1971), consiste en la representación de las filas (individuos) y las columnas (variables) de una matriz de datos en un mismo gráfico. Éstos biplots, son herramientas poderosas para el análisis e interpretación de la estructura de datos provenientes de ensayos multiambientales utilizados en los programas de mejoramiento (Ebdon y Gauch, 2002; Samonte et al., 2004; Yan et al., 2000; Zobel et al., 1988).
 
-El biplot GE ayuda a interpretar la variación producida por los efectos de la IGA. Por otro lado, el biplot GGE permite investigar la diferenciación de mega-ambientes entre los ambientes en estudio, seleccionar cultivares superiores en un mega-ambiente dado y seleccionar los mejores ambientes de evaluación para analizar las causas de la interacción GA. Se define como mega-ambiente a un grupo de ambientes en donde los cultivares de mejor desempeño son los mismos.
+El biplot GE ayuda a interpretar la variación producida por los efectos de la IGA; mientras que en el biplot GGE se analizan conjuntamente el efecto de G+IGA. Para seleccionar cultivares, el efecto de G e IGA debe considerarse simultáneamente. Por esta razón, el modelo SREG es superior a AMMI para visualizar patrones en datos MET. El biplot GGE permite investigar la existencia de megaambientes (grupo de ambientes en donde los cultivares de mejor desempeño son los mismos) entre los ambientes en estudio, seleccionar cultivares superiores en un megaambiente dado y seleccionar los mejores ambientes de evaluación para analizar las causas de la IGA.
 
-\textbf{Hablar un poco de los metodos deSVD del modelo SREG que da lugar a distintos graficos. y ver si en AMMI tmb es asi}
+\textbf{Hablar un poco de los metodos de SVD del modelo SREG que da lugar a distintos graficos. Un oracion tipo dependiendo del escalado utilizado se pueden obtener distintas interpretaciones....}
 
 \subsection{Modelo AMMI robusto}
 
-El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. La presencia de observaciones atípicas es más una regla que una excepción cuando se consideran datos agronómicos debido a errores de medición, algunas plagas / enfermedad que puede influir en algunos genotipos  resultando por ejemplo en un rendimiento inferior al esperado en un ambiente, o incluso debido a alguna característica inherente de los genotipos que se evalúan.
+El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. La presencia de \emph{outliers} es más una regla que una excepción cuando se consideran datos agronómicos debido a errores de medición, algunas plagas / enfermedad que puede influir en algunos genotipos  resultando por ejemplo en un rendimiento inferior al esperado en un ambiente, o incluso debido a alguna característica inherente de los genotipos que se evalúan.
 
-Rodrigues et al. (2015) proponen una generalización robusta del modelo AMMI, que se puede obtener en dos etapas: primero ajustar la regresión robusta basada en el estimador M-Huber (Huber, 1981) para reemplazar el ANOVA; y luego utilizar un procedimiento DVS / PCA robusto para reemplazar la DVS estándar. En la segunda etapa, consideraron varios métodos dando lugar a un total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
+Rodrigues et al. (2015) proponen una generalización robusta del modelo AMMI, que resulta de ajustar la regresión robusta basada en el estimador M-Huber (Huber, 1981) y luego utilizar un procedimiento DVS / PCA robusto. Consideraron varios métodos de DVS / PCA dando lugar a un total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
 
-El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes en los biplots puede dar como resultado un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (Gauch1997,Yanetal2000). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de producción de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico (Rodrigues et al. (2015)).
+El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes en los biplots puede dar como resultado un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (Gauch1997,Yanetal2000). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico (Rodrigues et al. (2015)).
 
 
 \subsection{Métodos de imputación}
@@ -59,7 +59,7 @@ Se han propuesto numerosas metodologías para superar el problema de valores aus
 \item EM-SVD: Perry (2009a) propone un método de imputación que combina el algoritmo EM con DVS. 
 \end{itemize}
 \begin{itemize}
-\item EM-PCA:
+\item EM-PCA: Josse y Husson (2013) proponen imputar los valores faltantes de un conjunto de datos con el modelo de Análisis de componentes principales.
 \end{itemize}
 \begin{itemize}
 \item Gabriel Eigen: Arciniegas-Alarcón et al. (2010) propuso un método de imputación que combina regresión y aproximación de rango inferior usando DVS. 
@@ -74,7 +74,7 @@ Se han propuesto numerosas metodologías para superar el problema de valores aus
 \section{Paquete de R}
 
 %https://oscarperpinan.github.io/R/Paquetes.html 
-En R, la unidad fundamental de código que se puede compartir es el paquete. Éste agrupa códigos, datos, documentación y pruebas, y es fácil de compartir con otros. Para crear uno de ellos, se deben seguir los siguientes pasos:
+En R, la unidad fundamental de código que se puede compartir es el paquete. Éste agrupa códigos, datos, documentación y pruebas, y es fácil de compartir con otros. Para crear uno de ellos, se deben seguir los siguientes pasos, teniendo en cuenta que en cada uno de ellos se debe probar la presencia de errores:
 
 \begin{itemize}
 \item Crear la estructura del paquete.
@@ -85,13 +85,11 @@ En R, la unidad fundamental de código que se puede compartir es el paquete. És
 \item Publicar.
 \end{itemize}
 
-Para el desarrollo del paquete se utilizan numerosas funciones incluidas en el paquete \emph{devtools} \citep{Hadley2019} ya que facilita el proceso de creación del mismo. Antes de comenzar, se debe tener instalada la última versión de R, luego mediante el siguiente código se instalarán los paquetes que se necesitan:
+\textbf{Quisiera poner algo como que no es un camino lineal, sino que cada cosa que se hace se debe chequear y se va a otro paso y se chequea nuevamente, etc... incluso en la parte de publicación, se crea el readme y se chequea}
 
-\begin{lstlisting}
-install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
-\end{lstlisting}
+Para el desarrollo del mismo se utilizan numerosas funciones incluidas en el paquete \emph{devtools} \citep{Hadley2019} ya que facilita el proceso de creación del mismo, \emph{roxygen2} para redactar la documentación, \emph{testthat} a fin de probar el flujo de trabajo y \emph{knitr} para generación de informes dinámicos. Antes de comenzar, se debe contar con la última versión de R, con una versión reciente del IDE de RStudio y cargar los paquetes mencionados en la sesión de trabajo. 
 
-Se debe contar ademas con una versión reciente del IDE de RStudio. 
+
 
 \subsection{Creación de la estructura}
 
@@ -106,7 +104,7 @@ create_package(``C:/Users/Julia/Desktop/geneticae")
 \end{lstlisting}
 
 
-El resultado de ejecutar la función \textcolor{blue}{create\_package}() es un paquete con los siguientes componentes:
+El resultado de ejecutar dicha función es un paquete con los siguientes componentes:
 \begin{itemize}
 \item Un directorio R/.
 \end{itemize}
@@ -139,49 +137,37 @@ LazyData: true
 \item Un archivo NAMESPACE
 \end{itemize}
 
-Estas carpetas se iran modificando a medida que el paquete se vaya creando. También puede incluir un archivo de proyecto de RStudio pkgname.Rproj, que hace que el paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete; .gitignore anticipa el uso de Git.
+Los archivos y el directorio R/ se irán modificando a medida que el paquete se vaya creando. Además se crearán los siguientes archivos: geneticae.Rproj, proyecto de RStudio que hace que el paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete y .gitignore anticipa el uso de Git.
 
 
 
 
-\subsection{Inclusión de funciones e inclusión de conjuntos de datos}
+\subsection{Inclusión de funciones y de conjuntos de datos}
 
 Una vez creada la estructura del paquete se deben incluir las funciones que el mismo contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. Para ello, se utiliza la función \textcolor{blue}{use\_r}() la cual crea y/o abre un script de la carpeta R/.
 
 Una vez creada una función, se realizan pruebas para asegurar que el código realice lo que realmente se desea utilizando la función \textcolor{blue}{load\_all}() que simula el proceso de construcción, instalación y conexión del paquete. Permite que las funciones creadas estén disponible rápidamente para uso interactivo, del mismo modo que si se hubiera construido e instalado el paquete y luego cargada en la sesión de R a través de la función \textcolor{blue}{library}(geneticae).
 
-Muy frecuentemente se utilizan funciones que se encuentran disponibles en otros paquetes, para ello se utiliza la función \textcolor{blue}{use\_package}() que agrega el paquete al archivo DESCRIPTION.
+Muy frecuentemente se utilizan funciones que se encuentran disponibles en otros paquetes. En algunos casos solo se utilizan unas pocas funciones de otro paquete, por lo tanto con la función \textcolor{blue}{use\_package}() se agrega el paquete de interés a la sección Imports del archivo DESCRIPTION, y luego para llamar a las mismas se utiliza paquete::función. Si las funciones de otro paquete son utilizadas reiteradamente resulta conveniente utilizar, @importFrom paquete función. Esto tiene un pequeño beneficio de rendimiento, ya que :: agrega mayor tiempo de evaluación a la función. Alternativamente, si está utilizando repetidamente muchas funciones de otro paquete, puede importarlas todas utilizando @import paquete. Esta es la solución menos recomendada porque hace que su código sea más difícil de leer (no se puede saber de dónde proviene una función), y si @import tiene muchos paquetes, aumenta la posibilidad de que entren en conflicto nombres de funciones.
 
 A menudo es útil incluir datos en un paquete a fin de proporcionar ejemplos de aplicaciones de las funciones incluidas en él. Ellos se almacenan en el directorio data/, siendo cada archivo un .RData que sólo contiene un objeto. Para esto, se utiliza la función \textcolor{blue}{usethis::use\_data}(). Notar que el archivo DESCRIPTION creado con la función \textcolor{blue}{create\_package}(), mencionada anteriormente, contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocupen memoria hasta que sean usados.
 
 \subsection{Documentación}
 
-La documentación es uno de los aspectos más importantes del código, sin ella, los usuarios no sabrán cómo usar el paquete. Existen múltiples formas de documentar un paquete, la forma estándar es escribir archivos .Rd en la carpeta man, los cuales utilizan una sintaxis personalizada, basada en LaTeX. Sin embargo, el paquete \emph{roxygen2}, utilizado en este trabajo, convierte los comentarios con formato especial en archivos .Rd. Esta última proporciona una serie de ventajas sobre la forma estándar:
-
-\begin{itemize}
-\item El código y la documentación son adyacentes, de modo que cuando el código se modifique, será fácil actualizar la documentación.
-
-\item Inspecciona dinámicamente los objetos que está documentando, para que pueda agregar automáticamente los datos que de otra forma se deben escribir a mano.
-
-\item Resume las diferencias en la documentación de los métodos S3 y S4, los genéricos y las clases, por lo que necesita aprender menos detalles.
-\end{itemize}
-
-Además de generar archivos .Rd, \emph{roxygen2} también creará el archivo NAMESPACE.
+Uno de los aspectos más importantes del paquete es la documentación ya que le indica a los usuarios cómo se deben usar las funciones incluidas. Existen múltiples formas de documentar un paquete, la forma estándar es escribir archivos con extensión .Rd, los cuales utilizan una sintaxis basada en LaTeX, en la carpeta man. Sin embargo, el paquete \emph{roxygen2}, utilizado en este trabajo, convierte los comentarios con formato especial en archivos .Rd. Esta última forma de documentación proporciona una serie de ventajas sobre la forma estándar entre las cuales se encuentra que el código y la documentación son adyacentes, de modo que cuando el código se modifique le exigirá que actualice la documentación. 
 
 El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} es el siguiente:
+
 \begin{itemize}
-\item Agregar comentarios a los archivos .R, los cuales comienzan con \#'  y preceden a una función. La primera oración se convierte en el título y el segundo párrafo es una descripción de la función. Seguidamente, las funciones son documentadas, la mayoría de las funciones tienen tres etiquetas: @param, @examples y @return.
+\item Agregar comentarios a los archivos .R. Estos deben comenzar con \#', para distinguirlo de los comentarios regulares, y preceden a una función. La primera oración se convierte en el título y el segundo párrafo es una descripción de la función. Seguidamente se utilizan las siguientes etiquetas para completar la documentación:
 
 \begin{itemize}
 \item @param describe los parámetros de la función, indica de que clase es el parámetro y para que sirve.
 \item @examples proporciona un código ejecutable que muestra cómo usar la función en la práctica. 
 \item @return describe el resultado de la función. 
 \end{itemize}
-\end{itemize}
-\begin{itemize}
 
 \item Ejecutar devtools::document() para convertir los comentarios de roxygen en archivos .Rd. 
-
 \end{itemize}
 
 \emph{Roxygen2} permite utilizar la descripción de los parámetros de otras funciones usando @inheritParams. Esta documentará los parámetros que no están documentados en la función actual, pero que si lo están en la función fuente. La fuente puede ser una función en el paquete actual, vía @inheritParams function, u otro paquete, vía @inheritParams package::function. Además \emph{Roxygen2} permite incluir referencias utilizando @references.
@@ -192,8 +178,7 @@ A diferencia de las funciones que son documentadas directamente, para los objeto
 
 A diferencia de la documentación, en la cual se detalla como se utiliza cada una de las funciones del paquete, una viñeta es una descripción el problema que el paquete está diseñado para resolver y muestra al lector cómo resolverlo.
 
-Muchos de los paquetes existentes tienen viñetas la cual puede ser buscada mediante la función \textcolor{blue}{browseVignettes}(``packagename") si el mismo se encuentra instalado, sino deben consultarse en su página de CRAN, por ejemplo para el paquete \emph{dplyr}: \url{http://cran.r-project.org/web/packages/dplyr}.
-. Cada viñeta proporciona el archivo fuente original, una página HTML o PDF y un archivo de código R. 
+Muchos de los paquetes existentes tienen viñetas la cuales se pueden encontrar utilizando la función \textcolor{blue}{browseVignettes}(``packagename") si el mismo se encuentra instalado, sino deben consultarse en su página de CRAN, por ejemplo para el paquete \emph{dplyr}: \url{http://cran.r-project.org/web/packages/dplyr}. Cada viñeta proporciona el archivo fuente original, una página HTML o PDF y un archivo de código R. 
 
 Las Viñetas se pueden construir de diversas formas, en este trabajo se utiliza se utiliza \textcolor{blue}{usethis::use\_vignette}(``my-vignette''). La misma crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y redacta la viñeta. Las tres componentes fundamentales de la misma son las siguientes:
 
@@ -219,27 +204,11 @@ vignette: >
 
 \subsection{Pruebas del flujo de trabajo}
 
-Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el código haga lo que realmente se desea. Existen pruebas informales como aquellas realizadas con la función \textcolor{blue}{load\_all}(). Sin embargo, estas pruebas interactivas pueden convertirse en scripts reproducibles, los cuales resultan superiores debido a que:
+Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el código haga lo que realmente se desea. Existen pruebas informales como aquellas realizadas con la función \textcolor{blue}{load\_all}() que permite que las funciones creadas estén disponible rápidamente para uso interactivo. Sin embargo, las pruebas interactivas pueden convertirse en scripts reproducibles, los cuales resultan superiores debido a que se indica explícitamente cómo debería comportarse el código, provocando que los errores solucionados no vuelvan a ocurrir.
 
-\begin{itemize}
-\item Se indica explícitamente cómo debería comportarse el código, provocando que los errores solucionados no vuelvan a ocurrir.
+Por lo tanto, en lugar de \textcolor{blue}{load\_all}(), se utiliza la función \textcolor{blue}{usethis::usetestthat}() (Wickham,2011). Esta crea un directorio tests/testthat, agrega testthat al campo Suggests en el archivo DESCRIPTION y además, crea un archivo tests/testthat.R.  
 
-\item El código que es fácil de probar generalmente está mejor diseñado, reduce la duplicación en el código. Como resultado, las funciones serán más fáciles de probar, comprender y trabajar.
-
-\item Si toda la funcionalidad del paquete tiene una prueba asociada, se pueden hacer grandes cambios sin preocuparse por generar errores.
-\end{itemize}
-
-
-Para ello se utiliza la función \textcolor{blue}{usethis::usetestthat}() (Wickham,2011). Esta crea un directorio tests/testthat, agrega testthat al campo Suggests en el archivo DESCRIPTION y además, crea un archivo tests/testthat.R. 
-
-Las pruebas se organizan jerárquicamente, las expectativas se agrupan en pruebas que se organizan en archivos :
-\begin{itemize}
-\item Una expectativa describe el resultado esperado de un cálculo.
-
-\item Una prueba agrupa múltiples expectativas para probar la salida de una función simple, un rango de posibilidades para un solo parámetro de una función más complicada o una funcionalidad estrechamente relacionada de varias funciones.
-
-\item Un archivo agrupa múltiples pruebas relacionadas.
-\end{itemize}
+Las pruebas se organizan jerárquicamente: una expectativa describe el resultado esperado de un cálculo, cada prueba agrupa múltiples expectativas para probar la salida de una función y un archivo agrupa múltiples pruebas relacionadas.
 
 
 Existen tres formas de llevar a cabo las pruebas:
@@ -252,12 +221,12 @@ Existen tres formas de llevar a cabo las pruebas:
 
 \subsection{Compilación e instalación}
 
-Mediante la función \textcolor{blue}{load\_all}() fue utilizado para simular el proceso de construcción, instalación y conexión del paquete, con el fin de ir probando las funciones creadas. Sin embargo, R CMD check ejecutado en el shell o la función \textcolor{blue}{check}(), es utilizado para verificar que un paquete R esta en pleno funcionamiento. La misma verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros. Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones ya que si se incorporan muchas y luego se verifican será dificil identificar y resolver los problemas. Una vez que las verificaciones completas no encuentran errores, advertencias o notas, se ejecuta la función \textcolor{blue}{install}(), con el objetivo de instalar el paquete en la biblioteca.
+La función \textcolor{blue}{check}() o R CMD check ejecutado en el shell, es utilizado para verificar que un paquete R esta en pleno funcionamiento. La misma verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros. Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones ya que si se incorporan muchas y luego se verifican será dificil identificar y resolver los problemas. Una vez que no se detectan errores, advertencias o notas, se ejecuta la función \textcolor{blue}{install}(), con el objetivo de instalar el paquete en la biblioteca.
 
 
 \subsection{Publicación}
 %https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/paquetes/paquetes.html
-Un repositorio es el lugar dónde se encuentran alojados los paquetes y desde el cuál se pueden descargarlos. Entre los repositorios más populares de paquetes R se encuentran:
+Un repositorio es el lugar dónde se encuentran alojados los paquetes y desde el cuál los usuarios pueden descargarlos. Entre los repositorios más populares de paquetes R se encuentran:
 
 \begin{itemize}
 \item \textbf{CRAN}: es el principal repositorio de paquetes de R, está coordinado por la fundación R. Previa a la publicación en este repositorio el paquete debe pasar por diferentes pruebas para asegurar que cumple con las políticas de CRAN.
@@ -277,20 +246,15 @@ install_github(``jangelini/geneticae")
 \end{lstlisting}
 
 
-%https://mastering-shiny.org/dependency-tracking.html
+Una vez que el paquete se carga en GitHub, resulta importante crear y modificar el archivo README.md ya que constituye la página de inicio del paquete. El objetivo principal de este archivo es responder a las siguientes preguntas sobre el paquete: ¿Por qué debería usarlo?, ¿Cómo lo uso? y ¿Cómo lo consigo?. En GitHub, README.md se representará como HTML y se mostrará en la página de inicio del repositorio. Para generar el readme con R Markdown se utiliza la función \textcolor{blue}{use\_readme\_rmd}() la cual crea una plantilla README.Rmdy la agrega a .Rbuildignore.
+
+Por otro lado, se crea también una página web\footnote{Para visitar la página web del paquete debe dirigirse a \url{https://...........}} para el paquete utilizando \emph{pkgdown}, mediante la función \textcolor{blue}{pkgdown::build\_site}(). En ella se podrá encontrar una breve descripción del paquete, las funciones que incluyen los mismos, la vignette, las distintas versiones del paquete, entre otras cosas.  
+
 
 \section{Shiny APP}
-Shiny es un paquete R que permite crear aplicaciones web interactivas, permitiendo realizar análisis usando R a través de un navegador web sin necesidad de programar. Este paquete facilita al programador de R la creacion de aplicaciones web sin necesidad de conocer en profundidad HTML / CSS / JS. 
+Shiny es un paquete R para crear aplicaciones web interactivas sin necesidad de conocer en profundidad los lenguajes HTML / CSS / JavaScript . Estas aplicaciones constituyen una interfaz gráfica entre el usuario y R, que permiten realizar un análisis a través de un navegador web sin necesidad de programar.
 
-Las componentes de una Shiny APP son: 
-\begin{itemize}
-\item ui (\emph{user interfaz}): la interfaz de usuario controla el diseño de la aplicación, recibe los inputs y
-muestra los outputs en el navegador.
-\item server, funciones de R que contienen las instrucciones que se necesitan para obtener los resultados de los análisis incluidos en la aplicación.
-\item shinyApp, función que crea objetos de aplicación Shiny a partir de ui / servidor.
-\end{itemize}
-
-El esquema interno de la aplicación puede observarse en la Figura \ref{fig:fig321}. 
+El esquema interno de una Shiny APP puede observarse en la Figura \ref{fig:fig321}. Las mismas están compuestas por la interfaz de usuario, ui (\emph{user interfaz}), que controla el diseño de la aplicación, recibe los inputs y muestra los outputs en el navegador; el server que contiene las funciones de R con las instrucciones neesarias para obtener los resultados de los análisis incluidos en la aplicación; y shinyApp es la función que crea objetos de aplicación Shiny a partir de ui / servidor. 
 
 \begin{figure}[H]
 \begin{center}
@@ -301,29 +265,9 @@ El esquema interno de la aplicación puede observarse en la Figura \ref{fig:fig3
 \end{figure}
 
 
+\subsection{Desarrollo de Shiny APP}
 
-
-\subsection{Flujo de trabajo}
-
-En esta sección se motrará como mejorar los dos flujos de trabajo de Shiny más importantes: el ciclo de desarrollo básico de crear aplicaciones, realizar cambios y experimentar con los resultados; y la depuración, proceso de identificar y corregir errores de programación.\\
-
-
-\textbf{1.\hspace{1cm} Flujo de trabajo de desarrollo de la Shiny APP}\\
-
-
-El objetivo de optimizar el flujo de trabajo de desarrollo de la APP es reducir el tiempo entre hacer un cambio y ver el resultado. Cuanto más rápido se pueda iterar, más rápido se podrá experimentar y más rápido se podrá obtener la Shiny APP. Aquí hay dos flujos de trabajo principales para optimizar: crear la aplicación por primera vez y acelerar el ciclo iterativo de ajustar el código y probar los resultados.\\
-
-
-\textbf{Creación de la Shiny APP}
-
-Para poder crear una shiny APP se debe tener instado R, RStudio, y el paquete shiny. Una forma de desarrollar una  aplicación es a partir de un nuevo directorio con un sólo archivo llamado app.R. En este archivo se realizan las siguientes tareas:
-
-\begin{itemize}
-\item Carga el paquete shiny: \textcolor{blue}{library}(shiny)
-\item Define la interfaz de usuario, la página web HTML con la que los usuarios interactúan.
-\item Especifica el comportamiento de la aplicación definiendo la función server. 
-\item Se ejecuta función \textcolor{blue}{shinyApp}(ui, server) para construir e iniciar una aplicación Shiny desde la interfaz de usuario y el servidor.
-\end{itemize}
+Una forma de desarrollar una  aplicación es a partir de un nuevo directorio con un sólo archivo llamado app.R, como se muestra a continuación. 
 
 \begin{lstlisting}
 library(shiny)
@@ -332,62 +276,13 @@ server<- ...
 shinyApp(ui = ui, server = server)
 \end{lstlisting}
 
-La sesión de R estará monitoreando la aplicación y ejecutando las ordenes dadas por el usuario y por lo tanto por lo que no se podrá ejecutar ningún comando.
+En este archivo se carga el paquete shiny, se define la interfaz de usuario y la función server y por último, se ejecuta función que permite construir e iniciar una aplicación. Al ejecutar la aplicación la misma aparecerá, de manera predeterminada, en una ventana emergente. Sin embargo, otras dos opciones se pueden configurar desde el menú desplegable de \emph{Run App}. Una de ellas es la ejecución en el panel del visor que permite verla al mismo tiempo que ejecuta el código. La segunda opción es ejecutar en un navegador externo mostrando la aplicación como la mayoría de los usuarios la verán. Dado que la sesión de R estará monitoreando la aplicación y ejecutando las ordenes dadas por el usuario, no se podrá ejecutar ningún comando.
 
-En todo tipo de programación, es una mala práctica tener código duplicado; puede ser un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código. Cuando se programa en R, se utilizan dos técnicas para lidiar con el código duplicado: guardar un valor usando una variable o utilizar una función para almacenar un cálculo. Ninguno de estos enfoques son apropiados en una Shiny APP, sino que se utilizan expresiones reactivas. Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse.
+En cualquier lenguaje de programación tener el código duplicado genera un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código. Cuando se programa en R, se utilizan dos técnicas para lidiar con el código duplicado: guardar un valor usando una variable o utilizar una función para almacenar un cálculo. Ninguno de estos enfoques son apropiados en una Shiny APP, sino que se utilizan expresiones reactivas. Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse. La programación reactiva es un estilo de programación que enfatiza valores que cambian con el tiempo, y cálculos y acciones que dependen de esos valores. Esto es importante para las aplicaciones Shiny porque son interactivas: los usuarios cambian los inputs, lo que hace que la lógica se ejecute en el servidor que finalmente resultan en actualización de los outputs/resultados.
 
-La programación reactiva es un estilo de programación que enfatiza valores que cambian con el tiempo, y cálculos y acciones que dependen de esos valores. Esto es importante para las aplicaciones Shiny porque son interactivas: los usuarios cambian los inputs, lo que hace que la lógica se ejecute en el servidor que finalmente resultan en actualización de los outputs/resultados.\\
+Entre los problemas que pueden surgir al crear una Shiny app se encuentran los errores inesperados, no se obtiene ningún error pero el valor obtenido es incorrecto, o bien todos los resultados son correctos, pero no se actualizan cuando se deben. Una vez localizada la fuente del error, la herramienta más poderosa es el depurador interactivo, éste detiene la ejecución y brinda una consola interactiva donde puede se ejecutar cualquier código para descubrir el error. Para iniciar el mismo, se puede agregar la función browser() en el código fuente, o bien agregar un punto de interrupción RStudio haciendo clic a la izquierda del número de línea.
 
-\textbf{Ver los cambios}\\
-
-Al crear o modificar la aplicacion, se la ejecuta para poder ver los cambios realizados, por lo que el dominio de flujo de trabajo de desarrollo es especialmente importante. La primera forma de reducir la velocidad de iteración es evitar hacer clic en el botón ``Ejecutar aplicación'' y, en su lugar, aprender el método abreviado de teclado Cmd/Ctrl+ Shift+ Enter. Esto brinda el siguiente flujo de trabajo de desarrollo:
-
-\begin{enumerate}
-\item Escribir un código.
-\item Iniciar la aplicación con Cmd/Ctrl+ Shift+ Enter.
-\item Experimentar interactivamente con la aplicación.
-\item Cerrar la aplicación.
-\item Ir a 1.
-\end{enumerate}
-
-
-Otra forma de reducir aún más la velocidad de iteración es activar la recarga automática (options(shiny.autoreload = TRUE)) y luego ejecutar la aplicación en un trabajo en segundo plano. Con este flujo de trabajo cuando se guarde un archivo, su aplicación se reiniciará: no es necesario cerrarla y reiniciarla. Esto conduce a un flujo de trabajo aún más rápido:
-\begin{enumerate}
-\item Escribir un código y presione Cmd/Ctrl+S para guardar en el archivo.
-\item Experimentar interactivamente.
-\item Ir a 1.
-\end{enumerate}
-La principal desventaja de esta técnica es que debido a que la aplicación se ejecuta en un proceso separado, es considerablemente más difícil de depurar.
-
-
-De manera predeterminada, cuando ejecuta la aplicación, aparecerá en una ventana emergente. Sin embargo ,existen otras dos opciones que puede elegir del menú desplegable \emph{Run App}
-\begin{enumerate}
-\item La ejecución en el panel del visor es útil para aplicaciones más pequeñas porque puede verla al mismo tiempo que ejecuta el código de la aplicación.
-\item Ejecutar en un navegador externo es útil para aplicaciones más grandes, o si desea verificar que su aplicación se ve exactamente de la manera que espera en el contexto que la mayoría de los usuarios la verán.
-\end{enumerate}
-
-
-\textbf{2.\hspace{1cm} Depuración}\\
-
-
-Entre los problemas que pueden surgir al crear una Shiny app se encuentran los siguientes:
-
-\begin{itemize}
-\item Error inesperado. 
-\item No se obtiene ningún error, pero un valor es incorrecto. 
-\item Todos los valores son correctos, pero no se actualizan cuando espera.
-\end{itemize}
-
-
-Una vez localizado la fuente del error, la herramienta más poderosa es el depurador interactivo, éste detiene la ejecución y brinda una consola interactiva donde puede se ejecutar cualquier código para descubrir el error. Hay dos formas de iniciar el depurador:
-
-\begin{itemize}
-\item Agregar la función browser() en el código fuente.
-\item Agregar un punto de interrupción RStudio haciendo clic a la izquierda del número de línea. Puede eliminar el punto de interrupción haciendo clic en el círculo rojo. La ventaja de los puntos de interrupción es que no son código, por lo que nunca tendrá que preocuparse por registrarlos accidentalmente en su sistema de control de versiones.
-\end{itemize}
-
-
-
+Al modificar la aplicación, se la ejecuta para poder ver los cambios realizados, por lo tanto resulta esencial reducir la velocidad de iteración. La primera forma acelerar el proceso consiste en escribir el código, utilizar el atajo del teclado Cmd/Ctrl+ Shift+ Enter en lugar del botón ``Ejecutar aplicación'', experimentar interactivamente con la aplicación y cerrar la aplicación, repitiendo este proceso al realizar cualquier cambio. Otra forma de reducir aún más la velocidad de iteración es activar la recarga automática (options(shiny.autoreload = TRUE)) y luego ejecutar la aplicación en un trabajo en segundo plano. Con este flujo de trabajo cuando se guarde un archivo, su aplicación se reiniciará: no es necesario cerrarla y reiniciarla, lo cual conduce a un flujo de trabajo aún más rápido. La principal desventaja de esta técnica es que debido a que la aplicación se ejecuta en un proceso separado, es considerablemente más difícil de depurar.
 
 
 \subsection{Compartiendo una Shiny Web App}
