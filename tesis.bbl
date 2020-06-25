@@ -1,0 +1,55 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Allard(1967)}]{Allard67}
+R.W. Allard.
+\newblock \emph{Principios de la mejora genética de las plantas}.
+\newblock Ediciones Omega, 1967.
+
+\bibitem[{Crossa et~al.(1990)Crossa, Gauch, y Zobel}]{Crossaetal1990}
+J.~Crossa, H.G. Gauch, y R.W. Zobel.
+\newblock Additive main effects and multiplicative interaction analysis of two
+  international maize cultivar trials.
+\newblock \emph{Crop Science}, 30:493--500, 1990.
+
+\bibitem[{Cruz~Medina(1992)}]{CruzMedina1992}
+R.~Cruz~Medina.
+\newblock Some exact conditional tests for the multiplicative models to explain
+  genotype-environment interaction.
+\newblock \emph{Heredity}, 69:128–--132, 1992.
+
+\bibitem[{Gauch(1988)}]{Gauch1988}
+H.~G. Gauch.
+\newblock Model selection and validation for yield trials.
+\newblock \emph{Theoretical and Applied Genetics}, 80:153--160, 1988.
+
+\bibitem[{Gauch y Zobel(1997)}]{GauchZobel1997}
+H.G. Gauch y R.W. Zobel.
+\newblock Identifying mega-environments and targeting genotypes.
+\newblock \emph{Crop Science}, 37:311–--326, 1997.
+
+\bibitem[{Hadley et~al.(2019)Hadley, Hester, y Chang}]{Hadley2019}
+W.~Hadley, J.~Hester, y W.~Chang.
+\newblock \emph{devtools: Tools to Make Developing R Packages Easier}, 2019.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=devtools}.
+\newblock R package version 2.1.0.
+
+\bibitem[{Kempton(1984)}]{Kempton1984}
+R.~A. Kempton.
+\newblock The use of biplot in interpreting variety by environment
+  interactions.
+\newblock \emph{Journal of Agricultural Science}, 122:335--342, 1984.
+
+\bibitem[{Yan y Kang(2003)}]{YanKang2003}
+W.~Yan y M.~Kang.
+\newblock \emph{GGE Biplot Analysis: A Graphical Tool for Breeders,
+  Geneticists}.
+\newblock CRC Press, 2003.
+
+\end{thebibliography}

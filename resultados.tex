@@ -15,9 +15,10 @@ Una vez instalado el paquete, se debe cargar en la sesion de R mediante el coman
 
 \subsection{Conjuntos de datos en geneticae}
 
-El paquete geneticae proporciona dos conjuntos de datos que permiten ilustrar la metodología incluida para analizar los datos obtenidos de EMA.
+El paquete geneticae contiene dos conjuntos de datos que son usados a modo de ejemplo en las funciones incluidas para analizar los datos provenientes de EMA.
+
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex, noitemsep,topsep=0pt]
-\item \emph{yan.winterwheat dataset}: rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente en el conjunto de datos, sólo el rendimiento medio para cada combinación de variedad y ambiente se encuentra disponible. Este conjunto de datos se obtuvo del paquete agridat (Wright, 2018) de R.
+\item \emph{yan.winterwheat dataset} (Wright, 2018): rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente en el conjunto de datos, sólo el rendimiento medio para cada combinación de variedad y ambiente se encuentra disponible.
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -43,7 +44,7 @@ head(yanwinterwheat)
 \end{verbatim}
 \end{tcolorbox}
 
-\item \emph{plrv dataset}: Estudio de resistencia a PLRV (\emph{Patato Leaf Roll Virus}) causante del enrollamiento de la hoja. Se experimentaron 28 genotipos en 6 ubicaciones en Perú. Cada clon fue evaluado tres veces en cada ambiente, y de cada uno de ellos se contaba con el rendimiento, peso de planta y parcela. Este conjunto de datos se obtuvo del paquete agricolae (\textbf{CITA}) de R.\\
+\item \emph{plrv dataset} (CITA AGRICOLAE): rendimiento, peso de planta y parcela de 28 genotipos en 6 ubicaciones en Perú, con el fin de estudiar la resistencia a PLRV (\emph{Patato Leaf Roll Virus}) causante del enrollamiento de la hoja. Cada clon fue evaluado tres veces en cada ambiente. \\
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -73,12 +74,16 @@ head(plrv)
   
 \subsection{Aplicación de las funciones incluidas en el paquete}
 
-A fin de ilustrar la metodología incluida en el paquete se utiliza el conjunto de datos \emph{yan.winterwheat} a modo de ejemplo.\\
-
+A fin de ilustrar la metodología incluida en el paquete se utiliza el conjunto de datos \emph{yan.winterwheat}.\\
 
 \textbf{GGE biplot}
 
-Para visualizar conjuntamente el efecto de G y IGA Yan et al. (2000) propuso el biplot GGE, con el cual se pueden abordar visualmente diversos aspectos relacionados con la evaluación de genotipos y ambientes. Para obtener dicho biplot en primer lugar se debe ajustar el modelo SREG mediante la función \textcolor{blue}{GGEmodel}(). Esta función es menos restrictiva que las disponibles actualmente en R en cuanto al conjunto de datos de entrada. En particular, es una modificación de la  función \textcolor{blue}{GGEModel}() del paquete GGEBiplots \textbf{(CITA)} el cual requiere que en el conjunto de datos de entrada los genotipos se encuentren en las filas y los ambientes en las columnas, es decir que no admiten replicas. En este caso, el conjunto de datos de entrada de \textcolor{blue}{GGEmodel}() debe estar en formato largo, lo cual es más ordenado a la hora de registrar la información \textbf{(CITA)}. Esto significa que las observaciones se encuentran en las filas y variables, genotipos, ambientes, repeticiones (en caso de que haya) y el fenotipo observado, en las columnas. Además puede incluir otras variables que no serán utilizadas en el análisis ya que al ajustar el modelo se deben indicar los nombres de las variables a emplear. Por otro lado, si cada genotipo ha sido evaluado más de una vez en cada ambiente, la función calcula automáticamente el valor fenotípico promedio para cada combinación de genotipo y ambiente para luego ajustar el modelo. Los valores faltantes no están permitidos, en caso de haber, un mensaje de error saldrá en la consola de R.\\  
+Para visualizar conjuntamente el efecto de G y IGA Yan et al. (2000) propuso el biplot GGE, con el cual se pueden abordar visualmente diversos aspectos relacionados con la evaluación de genotipos y ambientes. Para obtener dicho biplot en primer lugar se debe ajustar el modelo SREG mediante la función \textcolor{blue}{GGEmodel}(). 
+
+La función \textcolor{blue}{GGEmodel}() propuesta en este paquete, es menos restrictiva que las disponibles actualmente en R en cuanto al conjunto de datos de entrada. En particular, es una modificación de la función \textcolor{blue}{GGEModel}() del paquete GGEBiplots \textbf{(CITA)} el cual requiere que en el conjunto de datos de entrada los genotipos se encuentren en las filas y los ambientes en las columnas y por lo tanto, no admite replicas. A diferencia de esto, la función \textcolor{blue}{GGEmodel}() incluida en \emph{geneticae} requiere que los datos se encuentren en formato largo, lo cual es más ordenado a la hora de registrar la información \textbf{(CITA)}. Esto significa que las observaciones se deben encontrar en las filas y variables (genotipos, ambientes, repeticiones -en caso de que haya- y el fenotipo observado) en las columnas. Además, la base de datos puede contener otras variables que no serán utilizadas en el análisis ya que al ajustar el modelo se deben indicar en que columnas se encuentra la información requerida por la técnica que se aplicará. Por otro lado, dado que el modelo requiere de una única observación para cada combinación de genotipo y ambiente, en caso de existir repeticiones el valor fenotípico promedio es calculado automáticamente por la función antes de ajustar el modelo. Los valores faltantes no están permitidos, en caso de haber, un mensaje de error saldrá en la consola de R.\\  
+
+La sentencia utilizada para ajustar el modelo GGE en el conjunto de datos \emph{yan.winterwheat} se muestra a continuación. El primer argumento de la misma consiste en el nombre del \emph{dataframe} y los restantes indican los nombres que reciben las columnas que contienen la información de los genotipos, ambientes y del rasgo fenotípico de interés. Por defecto, la función considera que no hay replicas en el conjunto de datos, sin embargo, si existieran la opción \emph{rep} en la cual se indica el nombre de la columna con dicha información debe ser adicionado. Otros argumentos de dicha función son el método de centrado, de SVD y de escalado. Por defecto los datos se centran por G y GE, dando lugar al modelo SREG, otra opción en dicho argumento dará lugar a un modelo diferente. La elección del método de SVD no altera las relaciones o interacciones relativas entre los genotipos y los ambientes, aunque la apariencia del biplot será diferente, se recomienda la lectura de Yan (2002). Por último, diferentes biplots se pueden generar dependiendo del método de escalado, mayor información se encuentra disponible en Yan and Kang (2003) y Yan and Tinker (2006). En el modelo ajustado a continuación tanto el centrado, como el método SVD y de escalado son los indicados por defecto en la función.
+
 \begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
    				width=1\linewidth,
     			height=0.1\linewidth,
@@ -87,7 +92,8 @@ Para visualizar conjuntamente el efecto de G y IGA Yan et al. (2000) propuso el 
 GGE1 <- GGEmodel(yanwinterwheat, genotype = ``gen", environment = ``env", response = ``yield")
 \end{lstlisting}
 \end{tcolorbox}
-La salida de la función \textcolor{blue}{GGEmodel}() es una lista que contiene las coordenadas para genotipos y ambientes de todas las componentes, el vector de valores propios de cada componente, la variancia total, el porcentaje de variancia explicada por cada componente, entre otros. Utilizando dicha información, la función \textcolor{blue}{GGEPlot}() construye los biplots GGE. En dichos gráficos los cultivares se muestran en minúscula, para diferenciarlos de los ambientes, que están en mayúsculas. La primer componente principal se usa como la abscisa y la segunda como ordenada. Además, es posible adicionar el método de centrado, escala y SVD utilizado, y el porcentaje G + GE explicado por los dos ejes como una nota al pie del biplot con la opción \emph{footnote=T}, así como también el nombre del gráfico con \emph{titles = T}.
+
+La salida de la función \textcolor{blue}{GGEmodel}() es una lista que contiene las coordenadas para los genotipos y ambientes de todas las componentes, el vector de valores propios de cada componente, la variancia total, el porcentaje de variancia explicada por cada componente, entre otros. Utilizando dicha información, la función \textcolor{blue}{GGEPlot}() construye los biplots GGE. En dichos gráficos los cultivares se muestran en minúscula, para diferenciarlos de los ambientes, que están en mayúsculas. La primer componente principal se usa como la abscisa y la segunda como ordenada. Además, es posible adicionar el método de centrado, escalado y de SVD utilizado, así como también el porcentaje G + GE explicado por los dos ejes como una nota al pie del biplot con la opción \emph{footnote=T}, así como también el título del gráfico con \emph{titles = T}.
 
 
 En la figura \ref{fig:fig4121} se presenta un biplot básico, el cual explica el 78\% de la variabilidad total de G + GE. 
@@ -111,7 +117,7 @@ GGEPlot(GGE1, type = "Biplot", footnote = F, titles = F)
 \end{figure}
 \end{tcolorbox} 
 
-Los mejoradores en general están interesados en identificar los cultivares más adaptados a su área. Para identificar los mejores genotipos en un ambiente a través del biplot GGE, Yan y Hunt (2002) sugieren constituir un eje del ambiente, por ejemplo OA93, trazando una recta que pase por el identificador del ambiente y el origen. Los genotipos se pueden clasificar de acuerdo con sus proyecciones en el eje OA93 en función de su rendimiento en dicho ambiente, en la dirección indicada por la flecha (Figura \ref{fig:fig4122}). Por lo tanto, el cultivar de mayor rendimiento fue es Zav seguido por Aug, Ham, y así sucesivamente hasta llegar al genotipo Luc, que es el de rendimiento mas bajo en ese ambiente. La línea que pasa a través del origen de coordenadas y es perpendicular al eje OA93 separa los genotipos que rindieron por encima de la media, de Zav a Cas, de aquellos que rindieron por debajo de la medi,a de Ema a Luc, en OA93.
+Los mejoradores en general están interesados en identificar los cultivares más adaptados a su área, lo cual es posible a través del biplot GGE. Para esto, Yan y Hunt (2002) sugieren constituir un eje del ambiente de interés, por ejemplo OA93, trazando una recta que una el identificador del ambiente y el origen de coordenadas. Los genotipos se  clasifican en función del rendimiento en dicho ambiente de acuerdo con sus proyecciones, en la dirección indicada por el eje OA93 (Figura \ref{fig:fig4122}). Por lo tanto, el cultivar de mayor rendimiento fue es Zav seguido por Aug, Ham, y así sucesivamente hasta llegar al genotipo Luc, que es el de menor rendimiento en ese ambiente. El eje perpendicular al del ambiente de interés, separa los genotipos con rendimiento mayor al promedio, de Zav a Cas, de aquellos con valores inferior a la media, de Ema a Luc, en OA93.
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -132,7 +138,7 @@ GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93", footnote = F, t
 \end{figure}
 \end{tcolorbox} 
 
-Otro interes de los fitomejoradores es determinar cuál es el ambiente más adecuado para un cultivar. La figura \ref{fig:fig4123} ilustra cómo visualizar la adaptación relativa del cultivar Luc en diferentes ambientes. Yan y Hunt (2002) sugieren graficar una línea que una el origen de coordenadas y el marcador de Luc, el cual llamaremos eje Luc. Los ambientes se clasifican a lo largo del eje Luc en la dirección indicada por la flecha. La línea que pasa por el origen y es perpendicular al eje de Luc separa los ambientes en los que Luc presentó un rendimiento por debajo de su promedio, OA93 a ID93, de aquellos en los que rindió por encima de la media, RN93 a WP93.
+Otro interes de los fitomejoradores es determinar cuál es el ambiente más adecuado para un cultivar, es decir estudiar la adaptación especifica de los mismos. Yan y Hunt (2002) sugieren graficar una línea que una el origen de coordenadas y el marcador del genotipo de interés, por ejemplo Luc (\ref{fig:fig4123}). Los ambientes se clasifican a lo largo del eje del genotipo en la dirección indicada por la flecha. El eje perpendicular al del genotipo separa los ambientes en los que Luc presentó un rendimiento por debajo de su promedio, OA93 a ID93, de aquellos en los que rindió por encima de la media, RN93 a WP93.
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -153,7 +159,7 @@ GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Luc", footnote = F, title
 \end{tcolorbox} 
 
 
-Para comparar dos cultivares, por ejemplo Rub y Zav, se propone unir mediante una línea recta los genotipos a comparar, luego trazar una línea que pase por el origen y que sea perpendicular a la línea que une a los genotipos. (figura \ref{fig:fig4124}). Se observa que tres ambientes, RN93, NN93 y WP93, se encuentran del mismo lado de la línea perpendicular que Rub, y los otros seis ambientes están en el otro lado de la línea perpendicular, junto el marcador del cultivar Zav. Esto indica que Rub fue mas rendidor que Zav en RN93, NN93 y WP93, pero Zav fue superior a Rub en los seis ambientes restantes.
+Para comparar dos cultivares, por ejemplo Rub y Zav, una linea recta que una a los genotipos a comparar se debe trazar y luego una perpendicular a la anterior (figura \ref{fig:fig4124}). Se observa que tres ambientes, RN93, NN93 y WP93, se encuentran del mismo lado de la línea perpendicular que Rub, y los otros seis ambientes están junto con el marcador del cultivar Zav. Esto indica que Rub fue más rendidor que Zav en RN93, NN93 y WP93, pero Zav fue superior a Rub en los seis ambientes restantes.
 
 
 \begin{tcolorbox}[skin=bicolor,
@@ -176,12 +182,11 @@ GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Rub", selectedG2 = 
 \end{tcolorbox}
 
 
-La vista poligonal del biplot GGE, documentado por primera vez en Yan (1999), proporciona un medio eficaz de visualización del patrón ``quíen ganó dónde" de un conjunto de datos EMA (Figura \ref{fig:fig4125}). 
-El polígono se dibuja uniendo los cultivares (fun, zav, ena, kat y luc) que se encuentran más alejados del origen de coordenadas, de modo que todos los cultivares se encuentren contenidos en el polígono. Los cultivares de vértice son aquellos con  vectores más largos, en sus respectivas direcciones, la cual es una medida de la capacidad de respuesta a los ambientes. 
+La vista poligonal del biplot GGE proporciona un medio eficaz de visualización del patrón ``quíen ganó dónde" de un conjunto de datos EMA (Figura \ref{fig:fig4125}). El polígono se dibuja uniendo los cultivares (fun, zav, ena, kat y luc) que se encuentran más alejados del origen de coordenadas, de modo que todos se encuentren contenidos en el polígono. la distancia de los cultivares respecto del origen de coordenadas, en sus respectivas direcciones, es una medida de la capacidad de respuesta a los ambientes. Los cultivares de vértice son aquellos más alejados, por lo tanto son los que más responden, mientras que los que se encuentran en el origen de coordenadas no responden en absoluto a los ambientes estudiados.
 
-Las líneas perpendiculares a los lados del polígono dividen el biplot en megaambientes, cada uno de ellos tiene un cultivar de vértice, el de mayor rendimiento en todos los ambientes que se encuentran en él. Por un lado, se observa que OA93 y KE93 se encuentran en el mismo sector y que Zav es el mejor cultivar. Otro sector esta formado por el resto de los ambientes, siendo Fun el cultivar que se encuentra en el vertice de dicho sector. En los sectores con ena, kat y luc en los vértices no se observó ningun ambiente. Esto indica que estos cultivares fueron los menos rendidores en algunos o todos los ambientes considerados.
+Las perpendiculares a los lados del polígono dividen el biplot en megaambientes, en cada uno de ellos se encuentra un cultivar de vértice, el de mayor rendimiento en todos los ambientes que se encuentran en él. Por un lado, se observa que OA93 y KE93 se encuentran en el mismo sector y que Zav es el mejor cultivar. Otro sector esta formado por el resto de los ambientes, siendo Fun el que se encuentra en el vértice. En la sección con ena, kat y luc en los vértices no se observó ningún ambiente, lo cual indica que estos cultivares fueron los menos rendidores en algunos o todos los ambientes considerados.
 
-Se requieren dos criterios para sugerir la existencia de diferentes megaambientes (Gauch and Zobel, 1997). Primero, diferentes variedades superiores en los diferentes ambientes estudiados; en segundo lugar, la variación entre grupos debería ser significativamente mayor que la variación dentro del grupo.  Ambos criterios se cumplen en el presente caso (Figura \ref{fig:fig4125}). La sugerencia de dos megaambientes coincide con la distribución geográfica de los ambientes. La ubicación de OA (Ottawa) y KE (Kemptville) se extiende hacia el este de Ontario; BH (Bath) también pertenece al este de Ontario, pero es mucho más cálido que OA y KE. Los otros seis lugares pertenecen al oeste o sur de la provincia.
+Se requieren dos criterios para sugerir la existencia de diferentes megaambientes (Gauch and Zobel, 1997). Primero, diferentes variedades superiores en los diferentes ambientes estudiados; segundo, la variación entre grupos debería ser significativamente mayor que la variación dentro del grupo.  Ambos criterios se cumplen en el presente caso (Figura \ref{fig:fig4125}). La sugerencia de dos megaambientes coincide con la distribución geográfica de los ambientes. La ubicación de OA (Ottawa) y KE (Kemptville) se extiende hacia el este de Ontario; BH (Bath) también pertenece al este de Ontario, pero es mucho más cálido que OA y KE. Los otros seis lugares pertenecen al oeste o sur de la provincia.
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
