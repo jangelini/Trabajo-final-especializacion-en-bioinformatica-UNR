@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.6.25)  25 JUN 2020 12:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.6.25)  26 JUN 2020 16:26
 entering extended mode
 **./tesis.tex
 (tesis.tex
@@ -1158,34 +1158,7 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 203.
 
-[8] (tesis.lot
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-)
-\tf@lot=\write10
-\openout10 = `tesis.lot'.
-
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 208.
-
-[9
-
-
-] (tesis.tdo)
-\tf@tdo=\write11
-\openout11 = `tesis.tdo'.
-
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 218.
-
-[10
-
-
-]
+[8]
 \openout2 = `intro.aux'.
 
  (intro.tex
@@ -1203,7 +1176,7 @@ l.21
 
 
 ]
-<./Graficos/interac.png, id=314, 618.81187pt x 188.95593pt>
+<./Graficos/interac.png, id=303, 618.81187pt x 188.95593pt>
 File: ./Graficos/interac.png Graphic file (type png)
 <use ./Graficos/interac.png>
 Package pdftex.def Info: ./Graficos/interac.png  used on input line 25.
@@ -1261,7 +1234,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
 [15]
-<./Graficos/figura7.png, id=412, 234.1247pt x 134.00063pt>
+<./Graficos/figura7.png, id=402, 234.1247pt x 134.00063pt>
 File: ./Graficos/figura7.png Graphic file (type png)
 <use ./Graficos/figura7.png>
 Package pdftex.def Info: ./Graficos/figura7.png  used on input line 261.
@@ -1295,17 +1268,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--48
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 [20]
-Overfull \hbox (18.11523pt too wide) in paragraph at lines 85--86
+Overfull \hbox (18.11523pt too wide) in paragraph at lines 84--85
 []\OT1/cmr/m/n/12 La sen-ten-cia uti-li-za-da pa-ra ajus-tar el mo-de-lo GGE en
  el con-jun-to de da-tos \OT1/cmr/m/it/12 yan.winterwheat
  []
@@ -1314,42 +1287,42 @@ Overfull \hbox (18.11523pt too wide) in paragraph at lines 85--86
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-<./Graficos/GGE_BIPLOT.png, id=458, 433.62pt x 319.94531pt>
+<./Graficos/GGE_BIPLOT.png, id=446, 433.62pt x 319.94531pt>
 File: ./Graficos/GGE_BIPLOT.png Graphic file (type png)
 <use ./Graficos/GGE_BIPLOT.png>
-Package pdftex.def Info: ./Graficos/GGE_BIPLOT.png  used on input line 113.
+Package pdftex.def Info: ./Graficos/GGE_BIPLOT.png  used on input line 115.
 (pdftex.def)             Requested size: 270.30118pt x 199.44783pt.
-<./Graficos/SelectedEnvironment.png, id=460, 433.62pt x 319.94531pt>
+<./Graficos/SelectedEnvironment.png, id=448, 433.62pt x 319.94531pt>
 File: ./Graficos/SelectedEnvironment.png Graphic file (type png)
 <use ./Graficos/SelectedEnvironment.png>
 Package pdftex.def Info: ./Graficos/SelectedEnvironment.png  used on input line
- 134.
+ 136.
 (pdftex.def)             Requested size: 270.30118pt x 199.44783pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22 <./Graficos/GGE_BIPLOT.png (PNG copy)>]
-<./Graficos/SelectedGenotype.png, id=468, 433.62pt x 319.94531pt>
+<./Graficos/SelectedGenotype.png, id=457, 433.62pt x 319.94531pt>
 File: ./Graficos/SelectedGenotype.png Graphic file (type png)
 <use ./Graficos/SelectedGenotype.png>
 Package pdftex.def Info: ./Graficos/SelectedGenotype.png  used on input line 15
-4.
+6.
 (pdftex.def)             Requested size: 270.30118pt x 199.44783pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23 <./Graficos/SelectedEnvironment.png>]
-<./Graficos/ComparisonofGenotype.png, id=477, 433.62pt x 319.94531pt>
+<./Graficos/ComparisonofGenotype.png, id=466, 433.62pt x 319.94531pt>
 File: ./Graficos/ComparisonofGenotype.png Graphic file (type png)
 <use ./Graficos/ComparisonofGenotype.png>
 Package pdftex.def Info: ./Graficos/ComparisonofGenotype.png  used on input lin
-e 177.
+e 179.
 (pdftex.def)             Requested size: 270.30118pt x 199.44783pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24 <./Graficos/SelectedGenotype.png>]
-Overfull \hbox (1.18866pt too wide) in paragraph at lines 189--190
+Overfull \hbox (1.18866pt too wide) in paragraph at lines 191--192
 []\OT1/cmr/m/n/12 Se re-quie-ren dos cri-te-rios pa-ra su-ge-rir la exis-ten-ci
 a de di-fe-ren-tes me-ga-am-bien-tes (Gauch
  []
@@ -1358,189 +1331,180 @@ a de di-fe-ren-tes me-ga-am-bien-tes (Gauch
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25 <./Graficos/ComparisonofGenotype.png (PNG copy)>]
-<./Graficos/WhichWonWhereWhat.png, id=494, 433.62pt x 319.94531pt>
+<./Graficos/WhichWonWhereWhat.png, id=482, 433.62pt x 319.94531pt>
 File: ./Graficos/WhichWonWhereWhat.png Graphic file (type png)
 <use ./Graficos/WhichWonWhereWhat.png>
 Package pdftex.def Info: ./Graficos/WhichWonWhereWhat.png  used on input line 2
-03.
+05.
 (pdftex.def)             Requested size: 270.30118pt x 199.44783pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26 <./Graficos/WhichWonWhereWhat.png (PNG copy)>]
-<./Graficos/MeanvsStability.png, id=504, 433.62pt x 319.94531pt>
+<./Graficos/MeanvsStability.png, id=492, 433.62pt x 319.94531pt>
 File: ./Graficos/MeanvsStability.png Graphic file (type png)
 <use ./Graficos/MeanvsStability.png>
-Package pdftex.def Info: ./Graficos/MeanvsStability.png  used on input line 228
+Package pdftex.def Info: ./Graficos/MeanvsStability.png  used on input line 229
 .
 (pdftex.def)             Requested size: 270.30118pt x 199.44783pt.
-<./Graficos/RankingGenotypes.png, id=507, 433.62pt x 319.94531pt>
+<./Graficos/RankingGenotypes.png, id=494, 433.62pt x 319.94531pt>
 File: ./Graficos/RankingGenotypes.png Graphic file (type png)
 <use ./Graficos/RankingGenotypes.png>
 Package pdftex.def Info: ./Graficos/RankingGenotypes.png  used on input line 25
-1.
+0.
 (pdftex.def)             Requested size: 270.30118pt x 199.44783pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [27 <./Graficos/MeanvsStability.png (PNG copy)>]
-<./Graficos/RelationshipAmongEnvironments.png, id=516, 433.62pt x 319.94531pt>
+<./Graficos/RelationshipAmongEnvironments.png, id=505, 433.62pt x 319.94531pt>
 File: ./Graficos/RelationshipAmongEnvironments.png Graphic file (type png)
 <use ./Graficos/RelationshipAmongEnvironments.png>
 Package pdftex.def Info: ./Graficos/RelationshipAmongEnvironments.png  used on 
-input line 277.
+input line 275.
 (pdftex.def)             Requested size: 270.30118pt x 199.44783pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28 <./Graficos/RankingGenotypes.png (PNG copy)>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29 <./Graficos/RelationshipAmongEnvironments.png>]
-<./Graficos/RankingEnvironments.png, id=534, 433.62pt x 319.94531pt>
+<./Graficos/RankingEnvironments.png, id=515, 433.62pt x 319.94531pt>
 File: ./Graficos/RankingEnvironments.png Graphic file (type png)
 <use ./Graficos/RankingEnvironments.png>
 Package pdftex.def Info: ./Graficos/RankingEnvironments.png  used on input line
- 305.
+ 303.
 (pdftex.def)             Requested size: 270.30118pt x 199.44783pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
-
- []
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [29 <./Graficos/RelationshipAmongEnvironments.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [30 <./Graficos/RankingEnvironments.png>]
-<./Graficos/AMMI.png, id=543, 397.485pt x 397.485pt>
+<./Graficos/AMMI.png, id=532, 397.485pt x 397.485pt>
 File: ./Graficos/AMMI.png Graphic file (type png)
 <use ./Graficos/AMMI.png>
-Package pdftex.def Info: ./Graficos/AMMI.png  used on input line 338.
+Package pdftex.def Info: ./Graficos/AMMI.png  used on input line 334.
 (pdftex.def)             Requested size: 227.63019pt x 216.24596pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31 <./Graficos/AMMI.png (PNG copy)>] [32]
-<./Graficos/Exampledatasets_withoutrep.png, id=561, 912.40875pt x 489.32813pt>
+ [31 <./Graficos/AMMI.png (PNG copy)>]
+<./Graficos/Exampledatasets_withoutrep.png, id=541, 912.40875pt x 489.32813pt>
 File: ./Graficos/Exampledatasets_withoutrep.png Graphic file (type png)
 <use ./Graficos/Exampledatasets_withoutrep.png>
 Package pdftex.def Info: ./Graficos/Exampledatasets_withoutrep.png  used on inp
-ut line 392.
+ut line 371.
 (pdftex.def)             Requested size: 455.24408pt x 244.14825pt.
-<./Graficos/Exampledatasets_withrep.png, id=563, 910.90312pt x 493.845pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+<./Graficos/Exampledatasets_withrep.png, id=549, 910.90312pt x 493.845pt>
 File: ./Graficos/Exampledatasets_withrep.png Graphic file (type png)
 <use ./Graficos/Exampledatasets_withrep.png>
 Package pdftex.def Info: ./Graficos/Exampledatasets_withrep.png  used on input 
-line 400.
+line 379.
 (pdftex.def)             Requested size: 455.24408pt x 246.81639pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33 <./Graficos/Exampledatasets_withoutrep.png>]
-<./Graficos/data.png, id=571, 916.92563pt x 490.08093pt>
+[33 <./Graficos/Exampledatasets_withoutrep.png> <./Graficos/Exampledatasets_wit
+hrep.png>]
+<./Graficos/data.png, id=559, 916.92563pt x 490.08093pt>
 File: ./Graficos/data.png Graphic file (type png)
 <use ./Graficos/data.png>
-Package pdftex.def Info: ./Graficos/data.png  used on input line 415.
+Package pdftex.def Info: ./Graficos/data.png  used on input line 394.
 (pdftex.def)             Requested size: 455.24408pt x 243.31992pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[34 <./Graficos/Exampledatasets_withrep.png>]
-<./Graficos/Boxplot_environment.png, id=579, 767.86874pt x 491.58656pt>
+<./Graficos/Boxplot_environment.png, id=562, 767.86874pt x 491.58656pt>
 File: ./Graficos/Boxplot_environment.png Graphic file (type png)
 <use ./Graficos/Boxplot_environment.png>
 Package pdftex.def Info: ./Graficos/Boxplot_environment.png  used on input line
- 428.
+ 407.
 (pdftex.def)             Requested size: 455.24408pt x 291.45125pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35 <./Graficos/data.png>]
-<./Graficos/corr_gen.png, id=588, 755.07094pt x 455.45157pt>
+ [34 <./Graficos/data.png>]
+<./Graficos/corr_gen.png, id=571, 755.07094pt x 455.45157pt>
 File: ./Graficos/corr_gen.png Graphic file (type png)
 <use ./Graficos/corr_gen.png>
-Package pdftex.def Info: ./Graficos/corr_gen.png  used on input line 441.
+Package pdftex.def Info: ./Graficos/corr_gen.png  used on input line 418.
 (pdftex.def)             Requested size: 455.24408pt x 274.60042pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36 <./Graficos/Boxplot_environment.png>]
-<./Graficos/corr_matrix.png, id=594, 938.75719pt x 474.27188pt>
+ [35 <./Graficos/Boxplot_environment.png>]
+<./Graficos/corr_matrix.png, id=577, 938.75719pt x 474.27188pt>
 File: ./Graficos/corr_matrix.png Graphic file (type png)
 <use ./Graficos/corr_matrix.png>
-Package pdftex.def Info: ./Graficos/corr_matrix.png  used on input line 450.
+Package pdftex.def Info: ./Graficos/corr_matrix.png  used on input line 427.
 (pdftex.def)             Requested size: 455.24408pt x 229.99263pt.
 
 Underfull \vbox (badness 2293) has occurred while \output is active []
 
- [37 <./Graficos/corr_gen.png> <./Graficos/corr_matrix.png>]
-<./Graficos/int_plot.png, id=602, 772.38562pt x 462.22687pt>
+ [36 <./Graficos/corr_gen.png> <./Graficos/corr_matrix.png>]
+<./Graficos/int_plot.png, id=584, 772.38562pt x 462.22687pt>
 File: ./Graficos/int_plot.png Graphic file (type png)
 <use ./Graficos/int_plot.png>
-Package pdftex.def Info: ./Graficos/int_plot.png  used on input line 465.
+Package pdftex.def Info: ./Graficos/int_plot.png  used on input line 442.
 (pdftex.def)             Requested size: 455.24408pt x 272.43642pt.
- [38 <./Graficos/int_plot.png>]
-<./Graficos/ANOVA.png, id=609, 499.8675pt x 185.94469pt>
+ [37 <./Graficos/int_plot.png>]
+<./Graficos/ANOVA.png, id=591, 499.8675pt x 185.94469pt>
 File: ./Graficos/ANOVA.png Graphic file (type png)
 <use ./Graficos/ANOVA.png>
-Package pdftex.def Info: ./Graficos/ANOVA.png  used on input line 480.
+Package pdftex.def Info: ./Graficos/ANOVA.png  used on input line 457.
 (pdftex.def)             Requested size: 455.24408pt x 169.35178pt.
-<./Graficos/Normalidad.png, id=612, 502.87875pt x 492.33937pt>
+<./Graficos/Normalidad.png, id=593, 502.87875pt x 492.33937pt>
 File: ./Graficos/Normalidad.png Graphic file (type png)
 <use ./Graficos/Normalidad.png>
-Package pdftex.def Info: ./Graficos/Normalidad.png  used on input line 493.
+Package pdftex.def Info: ./Graficos/Normalidad.png  used on input line 470.
 (pdftex.def)             Requested size: 455.24408pt x 445.70064pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <./Graficos/ANOVA.png>]
-<./Graficos/Homocedasticidad.png, id=618, 516.42938pt x 269.50688pt>
+ [38 <./Graficos/ANOVA.png>]
+<./Graficos/Homocedasticidad.png, id=599, 516.42938pt x 269.50688pt>
 File: ./Graficos/Homocedasticidad.png Graphic file (type png)
 <use ./Graficos/Homocedasticidad.png>
-Package pdftex.def Info: ./Graficos/Homocedasticidad.png  used on input line 50
-4.
+Package pdftex.def Info: ./Graficos/Homocedasticidad.png  used on input line 48
+1.
 (pdftex.def)             Requested size: 455.24408pt x 237.58623pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40 <./Graficos/Normalidad.png>]
-<./Graficos/Outliers.png, id=624, 516.42938pt x 335.75438pt>
+ [39 <./Graficos/Normalidad.png>]
+<./Graficos/Outliers.png, id=606, 516.42938pt x 335.75438pt>
 File: ./Graficos/Outliers.png Graphic file (type png)
 <use ./Graficos/Outliers.png>
-Package pdftex.def Info: ./Graficos/Outliers.png  used on input line 514.
+Package pdftex.def Info: ./Graficos/Outliers.png  used on input line 491.
 (pdftex.def)             Requested size: 455.24408pt x 295.98732pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41 <./Graficos/Homocedasticidad.png>] [42 <./Graficos/Outliers.png>]
-<./Graficos/GGE.png, id=635, 1015.54407pt x 490.83376pt>
+ [40 <./Graficos/Homocedasticidad.png>]
+<./Graficos/GGE.png, id=613, 1015.54407pt x 490.83376pt>
 File: ./Graficos/GGE.png Graphic file (type png)
 <use ./Graficos/GGE.png>
-Package pdftex.def Info: ./Graficos/GGE.png  used on input line 531.
+Package pdftex.def Info: ./Graficos/GGE.png  used on input line 507.
 (pdftex.def)             Requested size: 455.24408pt x 220.02682pt.
-<./Graficos/AMMI_S.png, id=636, 1013.28563pt x 495.35063pt>
+ [41 <./Graficos/Outliers.png>]
+<./Graficos/AMMI_S.png, id=618, 1013.28563pt x 495.35063pt>
 File: ./Graficos/AMMI_S.png Graphic file (type png)
 <use ./Graficos/AMMI_S.png>
-Package pdftex.def Info: ./Graficos/AMMI_S.png  used on input line 540.
+Package pdftex.def Info: ./Graficos/AMMI_S.png  used on input line 516.
 (pdftex.def)             Requested size: 455.24408pt x 222.54292pt.
-) [43 <./Graficos/GGE.png> <./Graficos/AMMI_S.png>] [44]
+) [42 <./Graficos/GGE.png> <./Graficos/AMMI_S.png>]
 \openout2 = `conclu.aux'.
 
  (conclu.tex
 Cap\'{\i }tulo 5.
-) [45
+) [43
 
 
 
 ]
 \openout2 = `perspfuturo.aux'.
 
- (perspfuturo.tex) [46
+ (perspfuturo.tex) [44
 
 
 
-] (tesis.bbl) [47
+] (tesis.bbl) [45
 
 
 
@@ -1556,44 +1520,53 @@ LaTeX Info: Redefining \% on input line 27.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 245.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 245.
-Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 23FF6E52BF411C7D93C4014EBBD5D580;1887.
 
+
+Package rerunfilecheck Warning: File `tesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `tesis.out':
+(rerunfilecheck)             Before: EFEF0E5F1DFEF5361577ABD24DFEC625;1886
+(rerunfilecheck)             After:  041232FBDE69F3CBA9B007C57BDE39D5;1886.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 27635 strings out of 481556
- 528448 string characters out of 2913869
- 1096553 words of memory out of 3000000
- 42038 multiletter control sequences out of 15000+200000
+ 27626 strings out of 481556
+ 528259 string characters out of 2913869
+ 1101553 words of memory out of 3000000
+ 42042 multiletter control sequences out of 15000+200000
  550811 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,12n,83p,1735b,1771s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Julia\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
-tcrm1200.pk><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Julia/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Julia/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Ju
-lia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmmi8.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Julia/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Julia/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Julia/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Use
-rs/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsy8.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmti12.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Julia/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tesis.pdf (59 pages, 1072306 bytes).
+pdfTeX warning (dest): name{section*.9} has been referenced but does not exis
+t, replaced by a fixed one
+
+ <C:\Users\Julia\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tc
+rm1200.pk><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Julia/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Julia/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Juli
+a/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi12.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Julia/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Julia/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Julia/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
+/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb><C:/Users/Julia/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Julia/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on tesis.pdf (55 pages, 1067790 bytes).
 PDF statistics:
- 757 PDF objects out of 1000 (max. 8388607)
- 177 named destinations out of 1000 (max. 500000)
+ 735 PDF objects out of 1000 (max. 8388607)
+ 170 named destinations out of 1000 (max. 500000)
  455 words of extra memory for PDF output out of 10000 (max. 10000000)
 
