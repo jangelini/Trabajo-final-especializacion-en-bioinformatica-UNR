@@ -23,18 +23,18 @@ donde
 \item $\sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ es la sumatoria de componentes multiplicativas utilizadas para modelar la IGA. Siendo, $\lambda_k$ el valor singular para la  $k$-ésima componente principal (PC) $\alpha_{ik}$ y $\gamma_{jk}$ son los scores de las PC para el $i$-ésimo genotipo y el $j$-ésimo ambiente para la $k$-ésima componente, respectivamente.
 \end{itemize}
 
-En cambio, el modelo SREG (Cornelius et al., 1996; Crossa y Cornelius, 1997 y 2002) expresa el fenotipo de un genotipo en un ambiente en función del efecto ambiente aditivo y los efectos genotipo e interacción agrupados y en forma multiplicativa:
+En cambio, el modelo SREG (Cornelius et al., 1996; Crossa y Cornelius, 1997 y 2002) expresa el fenotipo observado en función del efecto ambiental en forma aditiva y del genotipo e interacción agrupados y en forma multiplicativa:
 \begin{center}
 $y_{ij}= \mu +  A_j + \sum_{k=1}^q \lambda_k \alpha_{ik} \gamma_{jk}$ \hspace{0.5cm} $ i=1,...,g$;\hspace{0.15cm} $ j=1,...,a$; \hspace{0.15cm} $q=min(g-1,a)$
 \end{center} 
 
-Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la Descomposición en Valores Singulares (DVS) de la matriz que contiene los residuos del modelo aditivo luego de ajustar por mínimos cuadrados el modelo de efectos principales. Generalmente los dos primeros términos multiplicativos son suficientes para explicar los patrones de la IGA o de G e IGA en forma conjunta; la variabilidad remanente se interpreta como ruido. 
+Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la Descomposición en Valores Singulares (DVS) de la matriz que contiene los residuos del modelo aditivo luego de ajustar por mínimos cuadrados el modelo de efectos principales. Generalmente los dos primeros términos multiplicativos son suficientes para explicar los patrones de la IGA, así como de G e IGA en forma conjunta; la variabilidad remanente se interpreta como ruido. 
+ 
+ Gabriel (1971) presentó el concepto del biplot que consiste en la representación de las filas (individuos) y las columnas (variables) de una matriz de datos en un mismo gráfico. Éstos biplots, son herramientas poderosas para el análisis e interpretación de la estructura de datos provenientes de ensayos multiambientales utilizados en los programas de mejoramiento (Ebdon y Gauch, 2002; Samonte et al., 2004; Yan et al., 2000; Zobel et al., 1988). Del modelo AMMI se obtiene el biplot GE (\emph{Genotipe-Environment}) (\textbf{CITA})  que permite interpretar la variación producida por los efectos de la IGA; mientras que, en el biplot GGE (\emph{Genotipe} plus \emph{Genotipe-Environment}) (Yan et al., 2000), derivado del modelo SREG, se analizan conjuntamente el efecto de G e IGA.
 
-Para visualizar el efecto de IGA o conjuntamente el de G e IGA se proponen los gráficos biplots GE (\emph{Genotipe-Environment}) (\textbf{CITA}) y GGE (\emph{Genotipe} plus \emph{Genotipe-Environment}) (Yan et al., 2000) respectivamente. El concepto del biplot fue presentado por Gabriel (1971), consiste en la representación de las filas (individuos) y las columnas (variables) de una matriz de datos en un mismo gráfico. Éstos biplots, son herramientas poderosas para el análisis e interpretación de la estructura de datos provenientes de ensayos multiambientales utilizados en los programas de mejoramiento (Ebdon y Gauch, 2002; Samonte et al., 2004; Yan et al., 2000; Zobel et al., 1988).
+Dado que para seleccionar cultivares, el efecto de G e IGA debe considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos EMA. El biplot GGE permite investigar la existencia de megaambientes (grupo de ambientes en donde los cultivares de mejor desempeño son los mismos) entre los ambientes en estudio, seleccionar cultivares superiores en un megaambiente dado y seleccionar los mejores ambientes de evaluación para analizar las causas de la IGA.
 
-El biplot GE ayuda a interpretar la variación producida por los efectos de la IGA; mientras que en el biplot GGE se analizan conjuntamente el efecto de G+IGA. Para seleccionar cultivares, el efecto de G e IGA debe considerarse simultáneamente. Por esta razón, el modelo SREG es superior a AMMI para visualizar patrones en datos MET. El biplot GGE permite investigar la existencia de megaambientes (grupo de ambientes en donde los cultivares de mejor desempeño son los mismos) entre los ambientes en estudio, seleccionar cultivares superiores en un megaambiente dado y seleccionar los mejores ambientes de evaluación para analizar las causas de la IGA.
-
-\textbf{Hablar un poco de los metodos de SVD del modelo SREG que da lugar a distintos graficos. Un oracion tipo dependiendo del escalado utilizado se pueden obtener distintas interpretaciones....}
+\textbf{Hablar un poco de los metodos de SVD del modelo SREG que da lugar a distintos graficos. Un oracion tipo dependiendo del escalado utilizado se pueden obtener distintas interpretaciones.... o no... no se... pero despues en resultados presentamos distintos escalados ... aunq pongo que vayan a leeer a tal autor nose... }
 
 \subsection{Modelo AMMI robusto}
 
@@ -42,13 +42,13 @@ El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el 
 
 Rodrigues et al. (2015) proponen una generalización robusta del modelo AMMI, que resulta de ajustar la regresión robusta basada en el estimador M-Huber (Huber, 1981) y luego utilizar un procedimiento DVS / PCA robusto. Consideraron varios métodos de DVS / PCA dando lugar a un total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
 
-El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes en los biplots puede dar como resultado un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (Gauch1997,Yanetal2000). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico (Rodrigues et al. (2015)).
+El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes puede resultar en un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (Gauch1997,Yanetal2000). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico (Rodrigues et al., 2015).
 
 
 \subsection{Métodos de imputación}
 
 
-Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el conjunto de datos este completo, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de la evaluaciones en las que se incorporan y se descartan genotipos debido a su pobre desempeño (Hill y Rosemberg, 1985)
+Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el fenotipo de todas las combinaciones de genotipos y ambientes se encuentre registrado, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de la evaluaciones en las que se incorporan y se descartan genotipos debido a su pobre desempeño (Hill y Rosemberg, 1985)
 
 Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
 
@@ -65,7 +65,7 @@ Se han propuesto numerosas metodologías para superar el problema de valores aus
 \item Gabriel Eigen: Arciniegas-Alarcón et al. (2010) propuso un método de imputación que combina regresión y aproximación de rango inferior usando DVS. 
 \end{itemize}
 \begin{itemize}
-\item WGabriel Eigen:
+\item WGabriel Eigen: 
 \end{itemize}
 
 
@@ -74,26 +74,64 @@ Se han propuesto numerosas metodologías para superar el problema de valores aus
 \section{Paquete de R}
 
 %https://oscarperpinan.github.io/R/Paquetes.html 
-En R, la unidad fundamental de código que se puede compartir es el paquete. Éste agrupa códigos, datos, documentación y pruebas, y es fácil de compartir con otros. Para crear uno de ellos, se deben seguir los siguientes pasos, teniendo en cuenta que en cada uno de ellos se debe probar la presencia de errores:
 
+
+Un paquete de R es la unidad básica para la distribución de código de R, que reúne de forma estructurada funciones, datos, archivos con documentación y testeos. 
+
+
+Un paquete es una carpeta de la computadora que cuenta con ciertos elementos obligatorios y otros opcionales. Para la creación del mismo se deben seguir ciertas convenciones. Los elementos que obligatoriamente deben estar presentes son:
 \begin{itemize}
-\item Crear la estructura del paquete.
-\item Incluir funciones y conjuntos de datos.
-\item Redactar la documentación.
-\item Pruebar el flujo de trabajo.
-\item Compilar e instalar.
-\item Publicar.
+	\item Archivo DESCRIPTION: describe el contenido del paquete y establece cómo el paquete se va a relacionar con otros.
 \end{itemize}
 
-\textbf{Quisiera poner algo como que no es un camino lineal, sino que cada cosa que se hace se debe chequear y se va a otro paso y se chequea nuevamente, etc... incluso en la parte de publicación, se crea el readme y se chequea}
+\begin{itemize}
+	\item Carpeta R: contiene el o los archivos de código de R con las funciones del paquete.
+\end{itemize}
 
-Para el desarrollo del mismo se utilizan numerosas funciones incluidas en el paquete \emph{devtools} \citep{Hadley2019} ya que facilita el proceso de creación del mismo, \emph{roxygen2} para redactar la documentación, \emph{testthat} a fin de probar el flujo de trabajo y \emph{knitr} para generación de informes dinámicos. Antes de comenzar, se debe contar con la última versión de R, con una versión reciente del IDE de RStudio y cargar los paquetes mencionados en la sesión de trabajo. 
+\begin{itemize}
+	\item Carpeta man: contiene archivos con la documentación del paquete, funciones y datasets.
+\end{itemize}
+
+\begin{itemize}
+	\item Archivo NAMESPACE: declara qué funciones nuestro paquete pone a disposición de los usuarios y de qué funciones de otros paquetes hace uso el nuestro, es decir, organiza las cosas para que R pueda encontrar todo lo que necesita cuando usa nuestro paquete.
+\end{itemize}
+
+
+Los elementos opcionales que se pueden agregar son por ejemplo:
+
+\begin{itemize}
+	\item Carpeta data: contiene objetos de R (por ejemplo, .Rdata) que contienen datos.
+\end{itemize}
+
+\begin{itemize}
+	\item Carpeta vignettes: contiene los tutoriales que muestran ejemplos de uso del paquete, generalmente escritos en Rmarkdown.
+\end{itemize}
+
+\begin{itemize}
+	\item Carpeta tests: incluye código para someter al paquete a diversos controles.
+\end{itemize}
 
 
 
-\subsection{Creación de la estructura}
+Para la creación del paquete, se deben instalar y cargar en la sesión de trabajo los paquetes: \emph{devtools}, \emph{usethis}, \emph{roxygen2}, \emph{ustestthat}, \emph{knitr}, \emph{available}. Además, en caso de utilizar el Windows se debe descargar e instalar Rtools .
 
-Para crear la estructura del paquete se utiliza la función \textcolor{blue}{create\_package}(). El principal y único argumento requerido por dicha función es el directorio donde el nuevo paquete se alojará. Por lo general, si el directorio se llama ``geneticae'', entonces el nombre del paquete también será ``geneticae'':
+
+\subsection{Creación del paquete}
+
+En primer lugar se debe elegir el nombre del paquete, el cual debe cumplir con ciertas reglas: solo puede contener letras, números o puntos; tener al menos dos caracteres y empezar con una letra y no terminar con un punto. Una vez elegido el nombre, se debe chequear si el mismo está disponible en los repositorios donde se alojan los paquetes. Para ello, se utiliza el paquete \emph{available}, que además indicará si el nombre elegido tiene algún significado especial que podemos desconocer (revisa las webs de Wikipedia, Wiktionary y Urban Dictionary). 
+
+\begin{lstlisting}
+	# Cargar la libreria devtools
+	library(available)
+	# Crear el paquete geneticae
+	create_package(``geneticae")
+\end{lstlisting}
+
+
+\textbf{PEGAR IMAGEN DE SALIDA ACA}
+
+
+Para la creación del paquete se utilizán  \emph{devtools} y  \emph{usethis} que incluyen funciones que simplifican la tarea. La función \textcolor{blue}{create\_package}("nombrepaquete") generará una carpeta con el nombre provisto en el directorio actual del trabajo. En caso de que se quiera generar en otra ubicación se debe indicar la ruta del mismo:
 
 
 \begin{lstlisting}
@@ -103,78 +141,108 @@ library(devtools)
 create_package(``C:/Users/Julia/Desktop/geneticae")
 \end{lstlisting}
 
-
-El resultado de ejecutar dicha función es un paquete con los siguientes componentes:
-\begin{itemize}
-\item Un directorio R/.
-\end{itemize}
-\begin{itemize}
-\item DESCRIPTION, un archivo simple cuyo objetivo es almacenar metadatos importantes sobre el paquete, epecifica el título, la versión del mismo, identifica al autor y brinda un mail de contacto, una breve descripción del paquete, la lista de los paquetes que el paquete creado necesita para funcionar, la licencia, entre otros.
-
-El contenido básico en un archivo DESCRIPTION es:
-\end{itemize}
-
-\begin{verbatim}
-Package: geneticae
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
-Encoding: UTF-8
-LazyData: true
-\end{verbatim}
+\textbf{PEGAR IMAGEN DE SALIDA ACA}
 
 
+\subsection{Archivos de código}
 
+Una vez creada la estructura del paquete se deben crear las funciones que el mismo contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. Para ello, se utiliza la función \textcolor{blue}{use\_r}() la cual crea y un script de la carpeta R/, donde el código de interés sera agregado. 
 
-\begin{itemize}
-\item Un archivo NAMESPACE
-\end{itemize}
+A medida que se va desarrollando el paquete, con funciones internas y otras que se exportan, con funciones que se llaman unas a otras, que dependen de otros paquetes, se deben ir realizando pruebas para asegurar que los códigos realicen lo que realmente se desea utilizando la función \textcolor{blue}{load\_all}() que simula el proceso de construcción, instalación y carga del paquete. 
 
-Los archivos y el directorio R/ se irán modificando a medida que el paquete se vaya creando. Además se crearán los siguientes archivos: geneticae.Rproj, proyecto de RStudio que hace que el paquete sea fácil de usar con RStudio; .Rbuildignore enumera los archivos que se necesitan, pero que no deben incluirse al compilar el paquete y .gitignore anticipa el uso de Git.
-
-
-
-
-\subsection{Inclusión de funciones y de conjuntos de datos}
-
-Una vez creada la estructura del paquete se deben incluir las funciones que el mismo contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. Para ello, se utiliza la función \textcolor{blue}{use\_r}() la cual crea y/o abre un script de la carpeta R/.
-
-Una vez creada una función, se realizan pruebas para asegurar que el código realice lo que realmente se desea utilizando la función \textcolor{blue}{load\_all}() que simula el proceso de construcción, instalación y conexión del paquete. Permite que las funciones creadas estén disponible rápidamente para uso interactivo, del mismo modo que si se hubiera construido e instalado el paquete y luego cargada en la sesión de R a través de la función \textcolor{blue}{library}(geneticae).
 
 Muy frecuentemente se utilizan funciones que se encuentran disponibles en otros paquetes. En algunos casos solo se utilizan unas pocas funciones de otro paquete, por lo tanto con la función \textcolor{blue}{use\_package}() se agrega el paquete de interés a la sección Imports del archivo DESCRIPTION, y luego para llamar a las mismas se utiliza paquete::función. Si las funciones de otro paquete son utilizadas reiteradamente resulta conveniente utilizar, @importFrom paquete función. Esto tiene un pequeño beneficio de rendimiento, ya que :: agrega mayor tiempo de evaluación a la función. Alternativamente, si está utilizando repetidamente muchas funciones de otro paquete, puede importarlas todas utilizando @import paquete. Esta es la solución menos recomendada porque hace que su código sea más difícil de leer (no se puede saber de dónde proviene una función), y si @import tiene muchos paquetes, aumenta la posibilidad de que entren en conflicto nombres de funciones.
 
-A menudo es útil incluir datos en un paquete a fin de proporcionar ejemplos de aplicaciones de las funciones incluidas en él. Ellos se almacenan en el directorio data/, siendo cada archivo un .RData que sólo contiene un objeto. Para esto, se utiliza la función \textcolor{blue}{usethis::use\_data}(). Notar que el archivo DESCRIPTION creado con la función \textcolor{blue}{create\_package}(), mencionada anteriormente, contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocupen memoria hasta que sean usados.
 
 \subsection{Documentación}
 
-Uno de los aspectos más importantes del paquete es la documentación ya que le indica a los usuarios cómo se deben usar las funciones incluidas. Existen múltiples formas de documentar un paquete, la forma estándar es escribir archivos con extensión .Rd, los cuales utilizan una sintaxis basada en LaTeX, en la carpeta man. Sin embargo, el paquete \emph{roxygen2}, utilizado en este trabajo, convierte los comentarios con formato especial en archivos .Rd. Esta última forma de documentación proporciona una serie de ventajas sobre la forma estándar entre las cuales se encuentra que el código y la documentación son adyacentes, de modo que cuando el código se modifique le exigirá que actualice la documentación. 
+Uno de los aspectos más importantes del paquete es la documentación, es decir describir cómo se usa cada función, para qué sirven los argumentos, aclarar qué tipo de resultado devuelve, proveer ejemplos para el uso, etc. El paquete \emph{roxygen2}, provee pautas para escribir comentarios con un formato especial que incluyan toda la información requerida justo antes de la definición de la función. El código y la documentación son adyacentes, de modo que cuando el código se modifique le exigirá que actualice la documentación. 
 
 El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} es el siguiente:
 
 \begin{itemize}
-\item Agregar comentarios a los archivos .R. Estos deben comenzar con \#', para distinguirlo de los comentarios regulares, y preceden a una función. La primera oración se convierte en el título y el segundo párrafo es una descripción de la función. Seguidamente se utilizan las siguientes etiquetas para completar la documentación:
+\item Agregar comentarios a los archivos .R. Estos deben comenzar con \#', para distinguirlo de los comentarios regulares, y preceden a una función. La primera oración se convierte en el título y el segundo párrafo es una descripción de la función. Para el resto de los campos de la documentación, se utilizan de etiquetas que comienzan con @, siendo las más importantes a incluir:
 
 \begin{itemize}
-\item @param describe los parámetros de la función, indica de que clase es el parámetro y para que sirve.
-\item @examples proporciona un código ejecutable que muestra cómo usar la función en la práctica. 
-\item @return describe el resultado de la función. 
+\item @param: se detalla para qué sirve cada parámetro de la función.
+\item @return: para explicar qué objeto devuelve la función.
+\item @details: agregar cualquier aclaración que se considere necesaria.
+\item @examples: incluir ejemplos de uso de la función.
+\item @export: indicar que esta función tiene que estar disponible cuando alguien cargue el paquete con library(). No es necesario exportar funciones auxiliares de utilidad interna.
 \end{itemize}
 
-\item Ejecutar devtools::document() para convertir los comentarios de roxygen en archivos .Rd. 
+\item Ejecutar devtools::document() para convertir los comentarios de roxygen en archivos .Rd que compondrán el manual y que deben ir guardados en la carpeta man.
 \end{itemize}
+
 
 \emph{Roxygen2} permite utilizar la descripción de los parámetros de otras funciones usando @inheritParams. Esta documentará los parámetros que no están documentados en la función actual, pero que si lo están en la función fuente. La fuente puede ser una función en el paquete actual, vía @inheritParams function, u otro paquete, vía @inheritParams package::function. Además \emph{Roxygen2} permite incluir referencias utilizando @references.
 
-A diferencia de las funciones que son documentadas directamente, para los objetos en data/, se debe crear un archivo y guardarlo en el directorio R/.\\
 
-\textbf{Viñetas}
+\subsection{Editar el archivo DESCRIPTION}
+
+El archivo description provee toda la metadata sobre el paquete que se esta creando. En este archivo hay algunos campos que tienen que estar presentes de forma obligatoria y otros que son opcionales. Los elementos obligatorios son:
+
+\begin{itemize}
+\item Package: nombre del paquete
+\item Title: título del paquete (hasta 65 caracteres, Escrito De Esta Forma).
+\item Version: número de la versión actual del paquete (por ejemplo, 0.2.1)
+\item Author, Maintainer o Authors@R: quiénes han participado en el paquete.
+\item Description: un párrafo que describa el paquete.
+\item License: nombre de la licencia bajo la cual se distribuye el paquete.
+\end{itemize}
+
+En cambio, los elementos no obligatorios:
+\begin{itemize}
+\item Date: fecha de publicación de esta versión del paquete.
+\item Imports, Depends, Suggests: ver detalles en la siguiente sección.
+\item URL: dirección de la página web del paquete.
+\item BugReports: dirección donde los usuarios puedan enviar avisos con los problemas que encuentren (muchas veces la página de Issues de GitHub).
+\end{itemize}
+
+El archivo DESCRIPTION del paquete geneticae luce de la siguiente forma: 
+
+PONER ARCHIVOO DESCRIPTION
+
+
+
+\subsection{Testeos}
+
+Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el código haga lo que realmente se desea. Existen pruebas informales como aquellas realizadas con la función \textcolor{blue}{load\_all}() que permite que las funciones creadas estén disponible rápidamente para uso interactivo. Sin embargo, las pruebas interactivas pueden convertirse en scripts reproducibles, los cuales resultan superiores debido a que se indica explícitamente cómo debería comportarse el código, provocando que los errores solucionados no vuelvan a ocurrir. Para ello, se utiliza la función \textcolor{blue}{usetestthat}() del paquete \emph{testthat} (Wickham,2011). Esta agrega testthat al campo Suggests en el archivo DESCRIPTION, crea un directorio tests/ para alojar cualquier tipo de unidad de testeo, una subcarpeta testthat donde se ubicaran los testeos escritos bajo este sistema y además, crea un archivo testthat.R, que se encarga de la ejecución de todos los testeos.  
+
+Los testeos se organizan en tres niveles:
+\begin{itemize}
+\item Archivo de tests: uno por cada archivo .R en la carpeta R/.
+\item Ejecutar pruebas automáticamente cada vez que algo cambie con la función \textcolor{blue}{autotest}(). Estas son útiles cuando las pruebas se ejecutan con frecuencia. Si se modifica un archivo de prueba, probará ese archivo; si se modifica un archivo de código, volverá a cargar ese archivo y volverá a ejecutar todas las pruebas.
+\item Expectation: es el nivel más desagregado, corre cierto código y se compara el resultado obtenido con el esperado.
+\end{itemize}
+
+La función \textcolor{blue}{use\_test}(), creará los archivos de prueba cuyo nombre tienen que ser test-nombre\_archivo\_de\_codigo.R  y los ubicará en la carpeta test/testthat. Una vez escritos estos archivos, podemos evaluar los resultados de los testeos con devtools::test(). Ante cada error encontrado, nos detenemos para corregirlo y repetimos este proceso hasta que todas las unit tests pasen la prueba.
+
+
+
+Una medida de la calidad de un paquete está dada por el porcentaje de su código que es evaluado durante los testeos.El paquete covr permite hacer ese cálculo, además de mostrar interactivamente qué partes del código fueron evaluadas y cuáles no.
+
+\begin{lstlisting}
+# Evaluar cobertura del archivo abierto actualmente
+devtools::test_coverage_file()
+# Evaluar cobertura de todo el paquete
+devtools::test_coverage()
+\end{lstlisting}
+
+
+PONER IMAGEN
+
+
+\subsection{Compilación e instalación}
+
+La función \textcolor{blue}{check}() o R CMD check ejecutado en el shell, es utilizado para verificar que un paquete R esta en pleno funcionamiento. La misma verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros. Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones ya que si se incorporan muchas y luego se verifican será difícil identificar y resolver los problemas. Una vez que se desarrollaron todos los elementos necesarios para el paquete y no se detectan errores, advertencias o notas, se ejecuta la función \textcolor{blue}{install}(), con el objetivo de instalar el paquete en la biblioteca.
+
+
+\subsection{Algunos elementos complementarios}
+
+Existen algunas componentes que no son obligatorias pero que ...... 
+
+\subsubsection{Viñetas}
 
 A diferencia de la documentación, en la cual se detalla como se utiliza cada una de las funciones del paquete, una viñeta es una descripción el problema que el paquete está diseñado para resolver y muestra al lector cómo resolverlo.
 
@@ -183,49 +251,99 @@ Muchos de los paquetes existentes tienen viñetas la cuales se pueden encontrar 
 Las Viñetas se pueden construir de diversas formas, en este trabajo se utiliza se utiliza \textcolor{blue}{usethis::use\_vignette}(``my-vignette''). La misma crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y redacta la viñeta. Las tres componentes fundamentales de la misma son las siguientes:
 
 \begin{itemize}
-\item El bloque inicial de metadatos, que contiene la siguiente información:
+	\item El bloque inicial de metadatos, que contiene la siguiente información:
 \end{itemize}
 
 \begin{verbatim}
----
-title: "Vignette Title"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Vignette Title}
-  %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
----
+	---
+	title: "Vignette Title"
+	output: rmarkdown::html_vignette
+	vignette: >
+	%\VignetteIndexEntry{Vignette Title}
+	%\VignetteEngine{knitr::rmarkdown}
+	\usepackage[utf8]{inputenc}
+	---
 \end{verbatim}
 
 \begin{itemize}
-\item Markdown para formatear texto.
-\item Knitr para interpretar texto, código y resultados.
-\end{itemize}
-
-\subsection{Pruebas del flujo de trabajo}
-
-Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el código haga lo que realmente se desea. Existen pruebas informales como aquellas realizadas con la función \textcolor{blue}{load\_all}() que permite que las funciones creadas estén disponible rápidamente para uso interactivo. Sin embargo, las pruebas interactivas pueden convertirse en scripts reproducibles, los cuales resultan superiores debido a que se indica explícitamente cómo debería comportarse el código, provocando que los errores solucionados no vuelvan a ocurrir.
-
-Por lo tanto, en lugar de \textcolor{blue}{load\_all}(), se utiliza la función \textcolor{blue}{usethis::usetestthat}() (Wickham,2011). Esta crea un directorio tests/testthat, agrega testthat al campo Suggests en el archivo DESCRIPTION y además, crea un archivo tests/testthat.R.  
-
-Las pruebas se organizan jerárquicamente: una expectativa describe el resultado esperado de un cálculo, cada prueba agrupa múltiples expectativas para probar la salida de una función y un archivo agrupa múltiples pruebas relacionadas.
-
-
-Existen tres formas de llevar a cabo las pruebas:
-\begin{itemize}
-\item Ejecutar todas las pruebas en un archivo o directorio \textcolor{blue}{test\_file}() o \textcolor{blue}{test\_dir}().
-\item Ejecutar pruebas automáticamente cada vez que algo cambie con la función \textcolor{blue}{autotest}(). Estas son útiles cuando las pruebas se ejecutan con frecuencia. Si se modifica un archivo de prueba, probará ese archivo; si se modifica un archivo de código, volverá a cargar ese archivo y volverá a ejecutar todas las pruebas.
-\item Hacer que R CMD check ejecute sus pruebas.
+	\item Markdown para formatear texto.
+	\item Knitr para interpretar texto, código y resultados.
 \end{itemize}
 
 
-\subsection{Compilación e instalación}
+\subsubsection{Archivo README}
 
-La función \textcolor{blue}{check}() o R CMD check ejecutado en el shell, es utilizado para verificar que un paquete R esta en pleno funcionamiento. La misma verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros. Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones ya que si se incorporan muchas y luego se verifican será dificil identificar y resolver los problemas. Una vez que no se detectan errores, advertencias o notas, se ejecuta la función \textcolor{blue}{install}(), con el objetivo de instalar el paquete en la biblioteca.
+Un archivo README es nua forma de documentacion de software. Usualmente es un archivo de texto plano que permite describir brevemente por qué y para qué alguien tendría que usar el paquete, a la vez que indicar cómo conseguirlo o instalarlo.
+
+Para generar el readme con R Markdown se utiliza la función \textcolor{blue}{use\_readme\_rmd}() la cual crea un archivo de Rmarkdown con una plantilla donde se escribirá el README y la agrega a .Rbuildignore. Luego, al compilarlo con knitr se obtendrá un archivo README.md, que será la cara visible de nuestro paquete si, por ejemplo, lo subimos a GitHub donde los README vienen a tener el rol de portada en cierta forma.
 
 
-\subsection{Publicación}
-%https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/paquetes/paquetes.html
+\subsubsection{Archivo NEWS}
+
+
+Mientras que el README apunta a ser leído por nuevos usuarios, el archivo NEWS es para la gente que ya usa el paquete.
+Este archivo se encarga de contar qué tenemos en cada versión nueva del paquete que publicamos: lo nuevo, lo que cambió y lo que se eliminó.
+Se sugiere usar markdown para escribir este archivo y colocar un título principal para cada versión, seguido por títulos secundarios que describen lo realizado (cambios principales, bugs arreglados, etc.).
+Si se trata de cambios impulsados por otras personas, por ejemplo, a través de sugerencias hechas en GitHub, se los menciona.
+Una buena práctica es ir escribiendo este archivo cada vez que se realiza algo nuevo en el paquete.
+La función que nos permite crear este archivo automáticamente es
+\textcolor{blue}{usethis::use\_news\_md}(). 
+
+
+\subsubsection{Agregar datasets}
+
+A menudo es útil incluir datos en un paquete a fin de proporcionar ejemplos de aplicaciones de las funciones incluidas en él. Ellos se almacenan en el directorio data/, siendo cada archivo un .RData que sólo contiene un objeto. Para esto, se utiliza la función \textcolor{blue}{usethis::use\_data}(). Notar que el archivo DESCRIPTION creado con la función \textcolor{blue}{create\_package}(), mencionada anteriormente, contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocupen memoria hasta que sean usados.
+
+Los objetos en la carpeta data siempre se exportan, por lo cual hay que agregar documentación para los mismos. A diferencia de las funciones que son documentadas directamente, para los objetos en data/, se debe crear un archivo y guardarlo en el directorio R/. Esto se puede hacer con roxygen en cualquier Rscript de la carpeta R, aunque se acostumbra juntar toda la documentación para todos los datasets en un único archivo llamado data.R.\\
+
+\subsubsection{Añadir badges}
+
+Las insignias o badges son unos íconos que señalan distintas características del paquete, como su nivel de maduración, el nivel de cobertura en el testeo, cantidad de descargas, número de versión, resultado de los controles de CRAN, etc.
+Son visualmente muy atractivas y se colocan el en archivo README.     El paquete usethis trae un conjunto de funciones que generan automáticamente el código a incluir en el README.Rmd para agregar los badges:
+
+
+\textcolor{blue}{use\_badge}(badge\_name, href, src)
+
+\textcolor{blue}{use\_cran\_badge}()
+
+\textcolor{blue}{use\_bioc\_badge}()
+
+\textcolor{blue}{use\_lifecycle\_badge}(stage)
+
+\textcolor{blue}{use\_binder\_badge}(sturlpath = NULL)
+
+
+\subsubsection{Diseñar un logo}
+
+Seguramente has notado la costumbre de que cada paquete de R tenga su logo con forma hexagonal, que generalmente termina en forma de sticker: los hexStickers.
+Bueno, para terminar de darle identidad a tu paquete y hacerlo más vistoso, podés diseñar tu logo.
+Por suerte, también hay un paquete que permite hacerlo sin demasiadas complicaciones: el paquete HexSticker.
+Una vez creado el logo, le podemos pasar su ubicación a la función use\_logo(), que se encargará de darle el tamaño adecuado, guardarlo en la carpeta man del paquete y producir el código de markdown para incluirlo en el README.
+
+
+
+\subsubsection{Crear una página web}
+
+
+Si llegaste hasta acá siguiendo todos los pasos anteriores, tenés en tu haber un montón de material muy bueno sobre tu paquete: páginas de ayuda, ejemplos, tutoriales, novedades sobre los cambios, logo, insignias, etc.
+Suficiente como para crear una página web y que tu paquete tenga presencia real en el más allá.
+No sé cuántas veces dije “por suerte” en este material, pero lo voy a decir una vez más.
+Por suerte existe un paquete que se encarga de tomar todo el material hecho anteriormente y convertirlo en una página web AUTOMÁTICAMENTE.
+Sumado a que GitHub nos da lugar para hospedar nuestras páginas de manera libre y gratuita, no hay excusas para no hacerlo.
+Claro que cuanto más quieras personalizar tu web, más vas a tener que explorar algunas opciones e incluso toquetear algo de código de html, pero esto no es necesario, ya que el aspecto logrado por default es muy satisfactorio.
+El paquete responsable de esto es pkgdown y lo único que hay que hacer es correr pkgdown::build\_site() desde el directorio de nuestro paquete cada vez que publiquemos una nueva versión.
+Más información y detalles en https://pkgdown.r-lib.org/index.html.
+
+
+
+\subsubsection{Publicación}
+
+
+
+
+
+
+
 Un repositorio es el lugar dónde se encuentran alojados los paquetes y desde el cuál los usuarios pueden descargarlos. Entre los repositorios más populares de paquetes R se encuentran:
 
 \begin{itemize}
@@ -246,9 +364,13 @@ install_github(``jangelini/geneticae")
 \end{lstlisting}
 
 
-Una vez que el paquete se carga en GitHub, resulta importante crear y modificar el archivo README.md ya que constituye la página de inicio del paquete. El objetivo principal de este archivo es responder a las siguientes preguntas sobre el paquete: ¿Por qué debería usarlo?, ¿Cómo lo uso? y ¿Cómo lo consigo?. En GitHub, README.md se representará como HTML y se mostrará en la página de inicio del repositorio. Para generar el readme con R Markdown se utiliza la función \textcolor{blue}{use\_readme\_rmd}() la cual crea una plantilla README.Rmdy la agrega a .Rbuildignore.
 
 Por otro lado, se crea también una página web\footnote{Para visitar la página web del paquete debe dirigirse a \url{https://...........}} para el paquete utilizando \emph{pkgdown}, mediante la función \textcolor{blue}{pkgdown::build\_site}(). En ella se podrá encontrar una breve descripción del paquete, las funciones que incluyen los mismos, la vignette, las distintas versiones del paquete, entre otras cosas.  
+
+
+
+
+
 
 
 \section{Shiny APP}
