@@ -76,12 +76,10 @@ Se han propuesto numerosas metodologías para superar el problema de valores aus
 %https://oscarperpinan.github.io/R/Paquetes.html 
 
 
-Un paquete de R es la unidad básica para la distribución de código de R, que reúne de forma estructurada funciones, datos, archivos con documentación y testeos. 
+Un paquete de R es la unidad básica para la distribución de código de R, que reúne de forma estructurada funciones, datos, archivos con documentación y testeos.  Para la creación del mismo se deben seguir ciertas convenciones, existiendo elementos obligatorios y otros opcionales, entre los primeros se encuentran:
 
-
-Un paquete es una carpeta de la computadora que cuenta con ciertos elementos obligatorios y otros opcionales. Para la creación del mismo se deben seguir ciertas convenciones. Los elementos que obligatoriamente deben estar presentes son:
 \begin{itemize}
-	\item Archivo DESCRIPTION: describe el contenido del paquete y establece cómo el paquete se va a relacionar con otros.
+	\item Archivo DESCRIPTION: describe el contenido del paquete y establece cómo se va a relacionar con otros.
 \end{itemize}
 
 \begin{itemize}
@@ -89,18 +87,18 @@ Un paquete es una carpeta de la computadora que cuenta con ciertos elementos obl
 \end{itemize}
 
 \begin{itemize}
-	\item Carpeta man: contiene archivos con la documentación del paquete, funciones y datasets.
+	\item Carpeta man: incluye archivos con la documentación del paquete, funciones y datasets.
 \end{itemize}
 
 \begin{itemize}
-	\item Archivo NAMESPACE: declara qué funciones nuestro paquete pone a disposición de los usuarios y de qué funciones de otros paquetes hace uso el nuestro, es decir, organiza las cosas para que R pueda encontrar todo lo que necesita cuando usa nuestro paquete.
+	\item Archivo NAMESPACE: declara las funciones del paquete que se ponen a disposición de los usuarios y de qué funciones de otros paquetes hace uso.
 \end{itemize}
 
 
 Los elementos opcionales que se pueden agregar son por ejemplo:
 
 \begin{itemize}
-	\item Carpeta data: contiene objetos de R (por ejemplo, .Rdata) que contienen datos.
+	\item Carpeta data: contiene objetos de R que contienen datos.
 \end{itemize}
 
 \begin{itemize}
@@ -108,55 +106,68 @@ Los elementos opcionales que se pueden agregar son por ejemplo:
 \end{itemize}
 
 \begin{itemize}
-	\item Carpeta tests: incluye código para someter al paquete a diversos controles.
+	\item Carpeta tests: incluye código que permiten someter al paquete a diversos controles.
 \end{itemize}
 
 
 
-Para la creación del paquete, se deben instalar y cargar en la sesión de trabajo los paquetes: \emph{devtools}, \emph{usethis}, \emph{roxygen2}, \emph{ustestthat}, \emph{knitr}, \emph{available}. Además, en caso de utilizar el Windows se debe descargar e instalar Rtools .
+Para la creación del paquete, se deben instalar y cargar en la sesión de trabajo los paquetes:
+ \emph{devtools}, \emph{usethis}, \emph{roxygen2}, \emph{ustestthat}, \emph{knitr}, \emph{available}. Además, en caso de utilizar el Windows se debe descargar e instalar Rtools .
 
 
 \subsection{Creación del paquete}
 
-En primer lugar se debe elegir el nombre del paquete, el cual debe cumplir con ciertas reglas: solo puede contener letras, números o puntos; tener al menos dos caracteres y empezar con una letra y no terminar con un punto. Una vez elegido el nombre, se debe chequear si el mismo está disponible en los repositorios donde se alojan los paquetes. Para ello, se utiliza el paquete \emph{available}, que además indicará si el nombre elegido tiene algún significado especial que podemos desconocer (revisa las webs de Wikipedia, Wiktionary y Urban Dictionary). 
+En primer lugar se debe elegir el nombre del paquete, el cual debe cumplir con ciertas reglas: solo puede contener letras, números o puntos; tener al menos dos caracteres y empezar con una letra y no terminar con un punto. Una vez elegido el nombre, se debe chequear si el mismo está disponible en los repositorios \emph{GitHub}, \emph{CRAN} y \emph{Bioconductor}, donde se alojan los paquetes. Para ello, se utiliza el paquete \emph{available}, que además indicará si el nombre elegido tiene algún significado especial que podemos desconocer (revisa las webs de Wikipedia, Wiktionary y Urban Dictionary) (Figura \ref{fig:fig31}). 
 
 \begin{lstlisting}
 	# Cargar la libreria devtools
 	library(available)
 	# Crear el paquete geneticae
-	create_package(``geneticae")
+	available(``geneticae")
 \end{lstlisting}
 
 
-\textbf{PEGAR IMAGEN DE SALIDA ACA}
+ \begin{figure}[H]
+\begin{center}
+	\includegraphics[width=9.5cm]{./Graficos/available.png}	
+\end{center}
+	\caption{Chequeo de disponibilidad del nombre elegido}
+\label{fig:fig31}
+\end{figure}
 
 
-Para la creación del paquete se utilizán  \emph{devtools} y  \emph{usethis} que incluyen funciones que simplifican la tarea. La función \textcolor{blue}{create\_package}("nombrepaquete") generará una carpeta con el nombre provisto en el directorio actual del trabajo. En caso de que se quiera generar en otra ubicación se debe indicar la ruta del mismo:
+Para la creación del paquete se utilizán  \emph{devtools} y  \emph{usethis} que incluyen funciones que simplifican la tarea. La función \textcolor{blue}{create\_package}("nombre\_paquete") generará una carpeta con el nombre provisto (Figura \ref{fig:fig32}). Si nose especifica una ubicación entonces se creará en el directorio actual.
 
 
 \begin{lstlisting}
 # Cargar la libreria devtools
 library(devtools)
 # Crear el paquete geneticae
-create_package(``C:/Users/Julia/Desktop/geneticae")
+create_package(``/home/julia-fedora/Escritorio/geneticae")
 \end{lstlisting}
 
-\textbf{PEGAR IMAGEN DE SALIDA ACA}
+
+ \begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=13cm]{./Graficos/creacion.png}	
+	\end{center}
+	\caption{Creación del paquete geneticae}
+	\label{fig:fig32}
+\end{figure}
 
 
 \subsection{Archivos de código}
 
-Una vez creada la estructura del paquete se deben crear las funciones que el mismo contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. Para ello, se utiliza la función \textcolor{blue}{use\_r}() la cual crea y un script de la carpeta R/, donde el código de interés sera agregado. 
+Una vez creada la estructura del paquete se deben programar las funciones que el mismo contendrá. Cada una de ellas debe ser guardada en un archivo de extensión .R, en el subdirectorio R/. Para ello, se utiliza la función \textcolor{blue}{use\_r}() la cual crea un script ubicado en la carpeta R/, donde el código de interés será agregado. 
 
-A medida que se va desarrollando el paquete, con funciones internas y otras que se exportan, con funciones que se llaman unas a otras, que dependen de otros paquetes, se deben ir realizando pruebas para asegurar que los códigos realicen lo que realmente se desea utilizando la función \textcolor{blue}{load\_all}() que simula el proceso de construcción, instalación y carga del paquete. 
+A medida que se va desarrollando el paquete, con funciones internas y otras que se exportan, con algunas que se relacionan entre si y que a su vez dependen de otros paquetes, se deben ir realizando pruebas para asegurarse que los creados códigos realizan lo que realmente se desea. Para ello, la función \textcolor{blue}{load\_all}() simula el proceso de construcción, instalación y carga del paquete, permitiendo probar la función de manera interactiva.
 
-
-Muy frecuentemente se utilizan funciones que se encuentran disponibles en otros paquetes. En algunos casos solo se utilizan unas pocas funciones de otro paquete, por lo tanto con la función \textcolor{blue}{use\_package}() se agrega el paquete de interés a la sección Imports del archivo DESCRIPTION, y luego para llamar a las mismas se utiliza paquete::función. Si las funciones de otro paquete son utilizadas reiteradamente resulta conveniente utilizar, @importFrom paquete función. Esto tiene un pequeño beneficio de rendimiento, ya que :: agrega mayor tiempo de evaluación a la función. Alternativamente, si está utilizando repetidamente muchas funciones de otro paquete, puede importarlas todas utilizando @import paquete. Esta es la solución menos recomendada porque hace que su código sea más difícil de leer (no se puede saber de dónde proviene una función), y si @import tiene muchos paquetes, aumenta la posibilidad de que entren en conflicto nombres de funciones.
+Muy frecuentemente se utilizan funciones que se encuentran disponibles en otros paquetes. La función \textcolor{blue}{use\_package}() agrega el paquete de interés a la sección Imports del archivo DESCRIPTION, y luego para llamar a las mismas dentro de una función se debe utilizar @importFrom paquete función. Alternativamente, si se utilizan repetidamente muchas funciones de otro paquete, es posible importarlas todas utilizando @import paquete. Sin embargo, esta es la solución menos recomendada porque hace que el código sea más difícil de leer, y si tiene muchos paquetes, aumenta la posibilidad de que entren en conflicto nombres de funciones.
 
 
 \subsection{Documentación}
 
-Uno de los aspectos más importantes del paquete es la documentación, es decir describir cómo se usa cada función, para qué sirven los argumentos, aclarar qué tipo de resultado devuelve, proveer ejemplos para el uso, etc. El paquete \emph{roxygen2}, provee pautas para escribir comentarios con un formato especial que incluyan toda la información requerida justo antes de la definición de la función. El código y la documentación son adyacentes, de modo que cuando el código se modifique le exigirá que actualice la documentación. 
+Uno de los aspectos más importantes del paquete es la documentación donde se describe cómo se usa cada función, para qué sirven los argumentos, aclarar qué tipo de resultado devuelve, proveer ejemplos para el uso, etc. El paquete \emph{roxygen2}, provee pautas para escribir comentarios con un formato especial que incluyan toda la información requerida justo antes de la definición de la función. El código y la documentación son adyacentes, de modo que cuando el código se modifique le exigirá que actualice la documentación. 
 
 El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} es el siguiente:
 
@@ -175,12 +186,12 @@ El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} 
 \end{itemize}
 
 
-\emph{Roxygen2} permite utilizar la descripción de los parámetros de otras funciones usando @inheritParams. Esta documentará los parámetros que no están documentados en la función actual, pero que si lo están en la función fuente. La fuente puede ser una función en el paquete actual, vía @inheritParams function, u otro paquete, vía @inheritParams package::function. Además \emph{Roxygen2} permite incluir referencias utilizando @references.
+\emph{Roxygen2} permite utilizar la descripción de los parámetros de otras funciones usando @inheritParams. Esta documentará los parámetros que no están documentados en la función actual, pero que si lo están en la función fuente. La fuente puede ser una función en el paquete actual, vía @inheritParams function, u otro paquete, vía @inheritParams package::function. Además \emph{Roxygen2} permite incluir referencias utilizando @references. En caso de importar paquetes, como se indicó en la sección anterior, se deben declarar usando @importFrom o @import, previo a la definición de la función.
 
 
 \subsection{Editar el archivo DESCRIPTION}
 
-El archivo description provee toda la metadata sobre el paquete que se esta creando. En este archivo hay algunos campos que tienen que estar presentes de forma obligatoria y otros que son opcionales. Los elementos obligatorios son:
+El archivo DESCRIPTION provee toda la metadata sobre el paquete que se esta creando. En este archivo hay algunos campos que tienen que estar presentes de forma obligatoria y otros que son opcionales. Los elementos obligatorios son:
 
 \begin{itemize}
 \item Package: nombre del paquete
@@ -188,22 +199,34 @@ El archivo description provee toda la metadata sobre el paquete que se esta crea
 \item Version: número de la versión actual del paquete (por ejemplo, 0.2.1)
 \item Author, Maintainer o Authors@R: quiénes han participado en el paquete.
 \item Description: un párrafo que describa el paquete.
-\item License: nombre de la licencia bajo la cual se distribuye el paquete.
+\item License: nombre de la licencia bajo la cual se distribuye el paquete. Si se pretende que cualquiera lo puede usar, entonces se debe recurrir a los tipos mas comunes de licencia para código abierto: CC0, MIT o GPL. Como se muestra en la Figura \ref{fig:fig33}, el paquete geneticae se encuentra bajo la licencia GPL-3. Para esto, se utilizó la función \textcolor{blue}{use\_gpl3\_license}() del paquete usethis, la cual agrega la información al archivo DESCRIPTION y además crea un archivo LICENSE al directorio del paquete.
 \end{itemize}
+
+
+
 
 En cambio, los elementos no obligatorios:
 \begin{itemize}
 \item Date: fecha de publicación de esta versión del paquete.
-\item Imports, Depends, Suggests: ver detalles en la siguiente sección.
+\item Imports, Depends, Suggests: es muy común que las funciones desarrolladas necesiten hacer uso de algunas que pertenecen a otros paquetes. Estos serán indicados en los campos Imports, Depends, Suggests del archivo DESCRIPTION. Como se muestra en la Figura \ref{fig:fig33}, en el campo Imports se indica que geneticae necesita los paquetes: stats, GGEBiplots, ggforce, ggplot2, etc. Mientras que los listados en Suggest indica que se podría hacer uso de los mismos, aunque no son indispensables. Por último, el paquete geneticae se puede utilizar en versiones de R iguales o superiores a la 2.12, como se establece en Depends.
 \item URL: dirección de la página web del paquete.
-\item BugReports: dirección donde los usuarios puedan enviar avisos con los problemas que encuentren (muchas veces la página de Issues de GitHub).
+\item BugReports: dirección donde los usuarios pueden enviar avisos con los problemas que encuentren al utilizar el paquete.
 \end{itemize}
 
-El archivo DESCRIPTION del paquete geneticae luce de la siguiente forma: 
+El archivo DESCRIPTION del paquete geneticae se muestra en la Figura \ref{fig:fig33}
 
-PONER ARCHIVOO DESCRIPTION
+ \begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=13cm]{./Graficos/DESCRIPTION.png}	
+	\end{center}
+	\caption{Archivo DESCRIPTION de geneticae}
+	\label{fig:fig33}
+\end{figure}
 
 
+\textbf{----------------------------------------------------
+	HASTA ACA
+-------------------------------------------------}
 
 \subsection{Testeos}
 
@@ -220,7 +243,8 @@ La función \textcolor{blue}{use\_test}(), creará los archivos de prueba cuyo n
 
 
 
-Una medida de la calidad de un paquete está dada por el porcentaje de su código que es evaluado durante los testeos.El paquete covr permite hacer ese cálculo, además de mostrar interactivamente qué partes del código fueron evaluadas y cuáles no.
+Una medida de la calidad de un paquete está dada por el porcentaje de su código que es evaluado durante los testeos.
+El paquete covr permite hacer ese cálculo, además de mostrar interactivamente qué partes del código fueron evaluadas y cuáles no.
 
 \begin{lstlisting}
 # Evaluar cobertura del archivo abierto actualmente

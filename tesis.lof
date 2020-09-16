@@ -3,26 +3,29 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Representaci\IeC {\'o}n gr\IeC {\'a}fica de tipos de IGA: (A)IGA crossover, (B) IGA no crossover y (C) no IGA}}{2}{figure.1.1}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Esquema interno de la aplicaci\IeC {\'o}n.}}{19}{figure.3.1}% 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Chequeo de disponibilidad del nombre elegido}}{11}{figure.3.1}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Creaci\IeC {\'o}n del paquete geneticae}}{11}{figure.3.2}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Archivo DESCRIPTION de geneticae}}{14}{figure.3.3}% 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Esquema interno de la aplicaci\IeC {\'o}n.}}{20}{figure.3.4}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Biplot b\IeC {\'a}sico obtenido de la funci\IeC {\'o}n \leavevmode {\color {blue}GGEPlot}()}}{24}{figure.4.1}% 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces A: Ranking de cultivares en el ambiente OA93. B: Ranking de ambientes para cultivar Kat}}{25}{figure.4.2}% 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparaci\IeC {\'o}n entre dos genotipos obtenido de la funci\IeC {\'o}n \leavevmode {\color {blue}GGEPlot}()}}{26}{figure.4.3}% 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Identificaci\IeC {\'o}n del mejor cultivar en cada ambiente a partir de la funci\IeC {\'o}n \leavevmode {\color {blue}GGEPlot}()}}{27}{figure.4.4}% 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces A: Evaluaci\IeC {\'o}n de los cultivares con base en el rendimiento promedio y la estabilidad. B: Clasificaci\IeC {\'o}n de genotipos con respecto al genotipo ideal}}{29}{figure.4.5}% 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces A:Relaci\IeC {\'o}n entre ambientes. B:Clasificaci\IeC {\'o}n de ambientes con respecto al ambiente ideal}}{31}{figure.4.6}% 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Biplot GE obtenido del modelo clasico AMMI}}{32}{figure.4.7}% 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces yanwinterwheat dataset disponible en Shiny Web App}}{34}{figure.4.8}% 
-\contentsline {figure}{\numberline {4.9}{\ignorespaces plrv dataset disponible en Shiny Web App}}{34}{figure.4.9}% 
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Importar conjunto de datos}}{35}{figure.4.10}% 
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Boxplot de ambientes a trav\IeC {\'e}s de los genotipos para el conjunto de datos Plrv}}{36}{figure.4.11}% 
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{37}{figure.4.12}% 
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{37}{figure.4.13}% 
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{38}{figure.4.14}% 
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{39}{figure.4.15}% 
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{40}{figure.4.16}% 
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{41}{figure.4.17}% 
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{42}{figure.4.18}% 
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{43}{figure.4.19}% 
-\contentsline {figure}{\numberline {4.20}{\ignorespaces AMMI}}{43}{figure.4.20}% 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Biplot b\IeC {\'a}sico obtenido de la funci\IeC {\'o}n \leavevmode {\color {blue}GGEPlot}()}}{26}{figure.4.1}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces A: Ranking de cultivares en el ambiente OA93. B: Ranking de ambientes para cultivar Kat}}{27}{figure.4.2}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparaci\IeC {\'o}n entre dos genotipos obtenido de la funci\IeC {\'o}n \leavevmode {\color {blue}GGEPlot}()}}{28}{figure.4.3}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Identificaci\IeC {\'o}n del mejor cultivar en cada ambiente a partir de la funci\IeC {\'o}n \leavevmode {\color {blue}GGEPlot}()}}{29}{figure.4.4}% 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces A: Evaluaci\IeC {\'o}n de los cultivares con base en el rendimiento promedio y la estabilidad. B: Clasificaci\IeC {\'o}n de genotipos con respecto al genotipo ideal}}{31}{figure.4.5}% 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces A:Relaci\IeC {\'o}n entre ambientes. B:Clasificaci\IeC {\'o}n de ambientes con respecto al ambiente ideal}}{33}{figure.4.6}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Biplot GE obtenido del modelo clasico AMMI}}{34}{figure.4.7}% 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces yanwinterwheat dataset disponible en Shiny Web App}}{36}{figure.4.8}% 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces plrv dataset disponible en Shiny Web App}}{36}{figure.4.9}% 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Importar conjunto de datos}}{37}{figure.4.10}% 
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Boxplot de ambientes a trav\IeC {\'e}s de los genotipos para el conjunto de datos Plrv}}{38}{figure.4.11}% 
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{39}{figure.4.12}% 
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{39}{figure.4.13}% 
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{40}{figure.4.14}% 
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{41}{figure.4.15}% 
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{42}{figure.4.16}% 
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{43}{figure.4.17}% 
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{44}{figure.4.18}% 
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Boxplot de genotipos a trav\IeC {\'e}s de los ambientes para el conjunto de datos Plrv}}{45}{figure.4.19}% 
+\contentsline {figure}{\numberline {4.20}{\ignorespaces AMMI}}{45}{figure.4.20}% 
 \addvspace {10\p@ }

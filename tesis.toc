@@ -13,28 +13,28 @@
 \contentsline {subsection}{\numberline {3.1.3}M\IeC {\'e}todos de imputaci\IeC {\'o}n}{9}{subsection.3.1.3}% 
 \contentsline {section}{\numberline {3.2}Paquete de R}{10}{section.3.2}% 
 \contentsline {subsection}{\numberline {3.2.1}Creaci\IeC {\'o}n del paquete}{10}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Archivos de c\IeC {\'o}digo}{11}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.2}Archivos de c\IeC {\'o}digo}{12}{subsection.3.2.2}% 
 \contentsline {subsection}{\numberline {3.2.3}Documentaci\IeC {\'o}n}{12}{subsection.3.2.3}% 
-\contentsline {subsection}{\numberline {3.2.4}Editar el archivo DESCRIPTION}{12}{subsection.3.2.4}% 
-\contentsline {subsection}{\numberline {3.2.5}Testeos}{13}{subsection.3.2.5}% 
-\contentsline {subsection}{\numberline {3.2.6}Compilaci\IeC {\'o}n e instalaci\IeC {\'o}n}{14}{subsection.3.2.6}% 
-\contentsline {subsection}{\numberline {3.2.7}Algunos elementos complementarios}{14}{subsection.3.2.7}% 
-\contentsline {subsubsection}{\numberline {3.2.7.1}Vi\IeC {\~n}etas}{14}{subsubsection.3.2.7.1}% 
-\contentsline {subsubsection}{\numberline {3.2.7.2}Archivo README}{15}{subsubsection.3.2.7.2}% 
-\contentsline {subsubsection}{\numberline {3.2.7.3}Archivo NEWS}{15}{subsubsection.3.2.7.3}% 
-\contentsline {subsubsection}{\numberline {3.2.7.4}Agregar datasets}{16}{subsubsection.3.2.7.4}% 
-\contentsline {subsubsection}{\numberline {3.2.7.5}A\IeC {\~n}adir badges}{16}{subsubsection.3.2.7.5}% 
-\contentsline {subsubsection}{\numberline {3.2.7.6}Dise\IeC {\~n}ar un logo}{17}{subsubsection.3.2.7.6}% 
-\contentsline {subsubsection}{\numberline {3.2.7.7}Crear una p\IeC {\'a}gina web}{17}{subsubsection.3.2.7.7}% 
-\contentsline {subsection}{\numberline {3.2.8}Publicaci\IeC {\'o}n}{17}{subsection.3.2.8}% 
-\contentsline {section}{\numberline {3.3}Shiny APP}{18}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Desarrollo de Shiny APP}{19}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Compartiendo una Shiny Web App}{20}{subsection.3.3.2}% 
-\contentsline {chapter}{\numberline {4}Resultados}{21}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Paquete de R \emph {geneticae}}{21}{section.4.1}% 
-\contentsline {subsection}{\numberline {4.1.1}Conjuntos de datos en geneticae}{21}{subsection.4.1.1}% 
-\contentsline {subsection}{\numberline {4.1.2}Aplicaci\IeC {\'o}n de las funciones incluidas en el paquete}{22}{subsection.4.1.2}% 
-\contentsline {section}{\numberline {4.2}Geneticae Shiny Web App}{33}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lisis de un caso}{35}{subsection.4.2.1}% 
-\contentsline {chapter}{\numberline {5}Conclusiones}{44}{chapter.5}% 
-\contentsline {chapter}{Bibliograf\'{\i }a}{46}{section*.8}% 
+\contentsline {subsection}{\numberline {3.2.4}Editar el archivo DESCRIPTION}{13}{subsection.3.2.4}% 
+\contentsline {subsection}{\numberline {3.2.5}Testeos}{15}{subsection.3.2.5}% 
+\contentsline {subsection}{\numberline {3.2.6}Compilaci\IeC {\'o}n e instalaci\IeC {\'o}n}{16}{subsection.3.2.6}% 
+\contentsline {subsection}{\numberline {3.2.7}Algunos elementos complementarios}{16}{subsection.3.2.7}% 
+\contentsline {subsubsection}{\numberline {3.2.7.1}Vi\IeC {\~n}etas}{16}{subsubsection.3.2.7.1}% 
+\contentsline {subsubsection}{\numberline {3.2.7.2}Archivo README}{17}{subsubsection.3.2.7.2}% 
+\contentsline {subsubsection}{\numberline {3.2.7.3}Archivo NEWS}{17}{subsubsection.3.2.7.3}% 
+\contentsline {subsubsection}{\numberline {3.2.7.4}Agregar datasets}{17}{subsubsection.3.2.7.4}% 
+\contentsline {subsubsection}{\numberline {3.2.7.5}A\IeC {\~n}adir badges}{18}{subsubsection.3.2.7.5}% 
+\contentsline {subsubsection}{\numberline {3.2.7.6}Dise\IeC {\~n}ar un logo}{18}{subsubsection.3.2.7.6}% 
+\contentsline {subsubsection}{\numberline {3.2.7.7}Crear una p\IeC {\'a}gina web}{18}{subsubsection.3.2.7.7}% 
+\contentsline {subsubsection}{\numberline {3.2.7.8}Publicaci\IeC {\'o}n}{19}{subsubsection.3.2.7.8}% 
+\contentsline {section}{\numberline {3.3}Shiny APP}{20}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Desarrollo de Shiny APP}{20}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Compartiendo una Shiny Web App}{22}{subsection.3.3.2}% 
+\contentsline {chapter}{\numberline {4}Resultados}{23}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Paquete de R \emph {geneticae}}{23}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Conjuntos de datos en geneticae}{23}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.2}Aplicaci\IeC {\'o}n de las funciones incluidas en el paquete}{24}{subsection.4.1.2}% 
+\contentsline {section}{\numberline {4.2}Geneticae Shiny Web App}{35}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lisis de un caso}{37}{subsection.4.2.1}% 
+\contentsline {chapter}{\numberline {5}Conclusiones}{46}{chapter.5}% 
+\contentsline {chapter}{Bibliograf\'{\i }a}{48}{section*.8}% 
