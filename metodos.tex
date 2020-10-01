@@ -224,13 +224,9 @@ El archivo DESCRIPTION del paquete geneticae se muestra en la Figura \ref{fig:fi
 \end{figure}
 
 
-\textbf{----------------------------------------------------
-	HASTA ACA
--------------------------------------------------}
-
 \subsection{Testeos}
 
-Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el código haga lo que realmente se desea. Existen pruebas informales como aquellas realizadas con la función \textcolor{blue}{load\_all}() que permite que las funciones creadas estén disponible rápidamente para uso interactivo. Sin embargo, las pruebas interactivas pueden convertirse en scripts reproducibles, los cuales resultan superiores debido a que se indica explícitamente cómo debería comportarse el código, provocando que los errores solucionados no vuelvan a ocurrir. Para ello, se utiliza la función \textcolor{blue}{usetestthat}() del paquete \emph{testthat} (Wickham,2011). Esta agrega testthat al campo Suggests en el archivo DESCRIPTION, crea un directorio tests/ para alojar cualquier tipo de unidad de testeo, una subcarpeta testthat donde se ubicaran los testeos escritos bajo este sistema y además, crea un archivo testthat.R, que se encarga de la ejecución de todos los testeos.  
+Las pruebas resultan fundamentales en el desarrollo de paquetes, asegura que el código haga lo que realmente se desea. Existen pruebas informales como aquellas realizadas con la función \textcolor{blue}{load\_all}() que permite que las funciones creadas estén disponible rápidamente para uso interactivo. Sin embargo, las pruebas interactivas pueden convertirse en scripts reproducibles, los cuales resultan superiores debido a que se indica explícitamente cómo debería comportarse el código, provocando que los errores solucionados no vuelvan a ocurrir. Para ello, se utiliza la función \textcolor{blue}{use\_testthat}() del paquete \emph{testthat} (Wickham,2011). Esta agrega testthat al campo Suggests en el archivo DESCRIPTION, crea un directorio tests/ para alojar cualquier tipo de unidad de testeo, una subcarpeta testthat donde se ubicaran los testeos escritos bajo este sistema y además, crea un archivo testthat.R, que se encarga de la ejecución de todos los testeos.  
 
 Los testeos se organizan en tres niveles:
 \begin{itemize}
@@ -239,176 +235,146 @@ Los testeos se organizan en tres niveles:
 \item Expectation: es el nivel más desagregado, corre cierto código y se compara el resultado obtenido con el esperado.
 \end{itemize}
 
-La función \textcolor{blue}{use\_test}(), creará los archivos de prueba cuyo nombre tienen que ser test-nombre\_archivo\_de\_codigo.R  y los ubicará en la carpeta test/testthat. Una vez escritos estos archivos, podemos evaluar los resultados de los testeos con devtools::test(). Ante cada error encontrado, nos detenemos para corregirlo y repetimos este proceso hasta que todas las unit tests pasen la prueba.
+La función \textcolor{blue}{use\_test}(), creará los archivos de prueba cuyo nombre tienen que ser test-nombre\_archivo\_de\_codigo.R  y los ubicará en la carpeta test/testthat. Una vez escritos estos archivos, podemos evaluar los resultados de los testeos con \textcolor{blue}{devtools::test()}. Ante cada error encontrado, nos detenemos para corregirlo y repetimos este proceso hasta que todas las unidades de testeo pasen la prueba. En la Figura \ref{fig:fig34} se muestra el resultado de correr los test creados para el paquete geneticae.
 
 
+ \begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=11cm]{./Graficos/Test.png}	
+	\end{center}
+	\caption{Resultado de correr los tests creados para geneticae}
+	\label{fig:fig34}
+\end{figure}
 
-Una medida de la calidad de un paquete está dada por el porcentaje de su código que es evaluado durante los testeos.
-El paquete covr permite hacer ese cálculo, además de mostrar interactivamente qué partes del código fueron evaluadas y cuáles no.
-
-\begin{lstlisting}
-# Evaluar cobertura del archivo abierto actualmente
-devtools::test_coverage_file()
-# Evaluar cobertura de todo el paquete
-devtools::test_coverage()
-\end{lstlisting}
+Una medida de la calidad de un paquete está dada por el porcentaje de su código que es evaluado durante los testeos. El paquete covr permite hacer ese cálculo, además de mostrar interactivamente qué partes del código fueron evaluadas y cuáles no. Por un lado puede evaluarse en cada archivo .R mediante \textcolor{blue}{devtools::test\_coverage\_file()}, o bien, la cobertura total usando \textcolor{blue}{devtools::test\_coverage()}. El paquete geneticae tiene un porcentaje total de cobertura de los test igual a 16.83\% (Figura \ref{fig:fig35}).
 
 
-PONER IMAGEN
+ \begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=14cm]{./Graficos/Cobertura.png}	
+	\end{center}
+	\caption{Análisis de cobertura de los tests de geneticae}
+	\label{fig:fig35}
+\end{figure}
+
+{\LARGE{\textbf{ampliar los test para tener mas cobertura}}}
+
 
 
 \subsection{Compilación e instalación}
 
-La función \textcolor{blue}{check}() o R CMD check ejecutado en el shell, es utilizado para verificar que un paquete R esta en pleno funcionamiento. La misma verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros. Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones ya que si se incorporan muchas y luego se verifican será difícil identificar y resolver los problemas. Una vez que se desarrollaron todos los elementos necesarios para el paquete y no se detectan errores, advertencias o notas, se ejecuta la función \textcolor{blue}{install}(), con el objetivo de instalar el paquete en la biblioteca.
+La función \textcolor{blue}{check}() o R CMD check ejecutado en el shell, es utilizado para verificar que un paquete R esta en pleno funcionamiento. La misma verificará que no haya errores de sintaxis o no se generen warnings. Está compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo descripción, namespace, el código de R, los datos, la documentación, entre otros.  La diferencia con los testeos realizados mediante \textcolor{blue}{use\_testthat}(), es que la última evalúa si las funciones desarrolladan realizan lo deseado, resultando propios de cada paquete. En cambio, lo realizado por R CMD check es común para todos los paquetes. 
+
+Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones ya que si se incorporan muchas y luego se verifican será difícil identificar y resolver los problemas. Una vez que se desarrollaron todos los elementos necesarios para el paquete y no se detectan errores, advertencias o notas, se ejecuta la función \textcolor{blue}{install}(), con el objetivo de instalar el paquete en la biblioteca.
 
 
 \subsection{Algunos elementos complementarios}
 
-Existen algunas componentes que no son obligatorias pero que ...... 
+Existen algunas componentes que no son obligatorias a la hora de desarrollar un paquete. 
 
 \subsubsection{Viñetas}
 
-A diferencia de la documentación, en la cual se detalla como se utiliza cada una de las funciones del paquete, una viñeta es una descripción el problema que el paquete está diseñado para resolver y muestra al lector cómo resolverlo.
+Una viñeta es un tipo especial de documentación que puede agregarse al paquete para dar más detalles y ejemplos sobre el uso del mismo. En ella se brinda es una descripción el problema que el paquete está diseñado para resolver y muestra al lector cómo resolverlo. Se diferencian de las páginas de ayuda en que su adición es opcional y no sigue una estructura fija, dándole la libertad al autor de enseñar de la forma que más le guste cómo usar su paquete.
 
 Muchos de los paquetes existentes tienen viñetas la cuales se pueden encontrar utilizando la función \textcolor{blue}{browseVignettes}(``packagename") si el mismo se encuentra instalado, sino deben consultarse en su página de CRAN, por ejemplo para el paquete \emph{dplyr}: \url{http://cran.r-project.org/web/packages/dplyr}. Cada viñeta proporciona el archivo fuente original, una página HTML o PDF y un archivo de código R. 
 
-Las Viñetas se pueden construir de diversas formas, en este trabajo se utiliza se utiliza \textcolor{blue}{usethis::use\_vignette}(``my-vignette''). La misma crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y redacta la viñeta. Las tres componentes fundamentales de la misma son las siguientes:
+Las Viñetas se pueden construir de diversas formas, en este trabajo se utiliza se utiliza \textcolor{blue}{usethis::use\_vignette}(``tutorial\_del\_paquete''). La misma crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y crea el archivo para redactar la viñeta. 
 
-\begin{itemize}
-	\item El bloque inicial de metadatos, que contiene la siguiente información:
-\end{itemize}
 
-\begin{verbatim}
-	---
-	title: "Vignette Title"
-	output: rmarkdown::html_vignette
-	vignette: >
-	%\VignetteIndexEntry{Vignette Title}
-	%\VignetteEngine{knitr::rmarkdown}
-	\usepackage[utf8]{inputenc}
-	---
-\end{verbatim}
+\subsubsection{Agregar datasets}
 
-\begin{itemize}
-	\item Markdown para formatear texto.
-	\item Knitr para interpretar texto, código y resultados.
-\end{itemize}
+A menudo es útil incluir datos en un paquete a fin de proporcionar ejemplos de las funciones incluidas en él. Esto es posible realizarlo con la función \textcolor{blue}{usethis::use\_data}() que crea un archivo .RData y lo almacena en el directorio data/.  Notar que el archivo DESCRIPTION contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocupen memoria hasta que sean usados.
 
+Los objetos en la carpeta data siempre se exportan, por lo cual hay que agregar documentación para los mismos. A diferencia de las funciones que son documentadas directamente, para los objetos en data/, se debe crear un archivo y guardarlo en el directorio R/. Esto se puede hacer con roxygen en cualquier Rscript de la carpeta R, aunque se acostumbra juntar toda la documentación para todos los datasets en un único archivo llamado data.R.\\
 
 \subsubsection{Archivo README}
 
-Un archivo README es nua forma de documentacion de software. Usualmente es un archivo de texto plano que permite describir brevemente por qué y para qué alguien tendría que usar el paquete, a la vez que indicar cómo conseguirlo o instalarlo.
+Un archivo README es una forma de documentación de software que contiene información acerca de otros archivos en una carpeta. Usualmente es un archivo de texto plano que permite describir brevemente por qué y para qué alguien tendría que usar el paquete, a la vez que indicar cómo conseguirlo o instalarlo. Se diferencian de la viñeta ya que sólo presenta una descripción breve del paquete.
 
-Para generar el readme con R Markdown se utiliza la función \textcolor{blue}{use\_readme\_rmd}() la cual crea un archivo de Rmarkdown con una plantilla donde se escribirá el README y la agrega a .Rbuildignore. Luego, al compilarlo con knitr se obtendrá un archivo README.md, que será la cara visible de nuestro paquete si, por ejemplo, lo subimos a GitHub donde los README vienen a tener el rol de portada en cierta forma.
+
+Para generar el README con R Markdown se utiliza la función \textcolor{blue}{use\_readme\_rmd}() la cual crea un archivo de Rmarkdown con una plantilla donde se escribirá el mismo y será además agregado a .Rbuildignore. Luego, al compilarlo con knitr se obtendrá un archivo README.md, que será la cara visible del paquete si, por ejemplo, en GitHub.
+
+\subsubsection{Añadir badges y diseñar un logo}
+
+Las insignias o badges son unos íconos que señalan distintas características del paquete, como su nivel de maduración, el nivel de cobertura en el testeo, cantidad de descargas, número de versión, resultado de los controles de CRAN, etc.
+Son visualmente muy atractivas y se colocan el en archivo README.     El paquete usethis trae un conjunto de funciones que generan automáticamente el código a incluir en el README.Rmd para agregar los badges: \textcolor{blue}{use\_badge}(badge\_name, href, src), \textcolor{blue}{use\_cran\_badge}(), \textcolor{blue}{use\_bioc\_badge}(), \textcolor{blue}{use\_lifecycle\_badge}(stage), 
+\textcolor{blue}{use\_binder\_badge}(sturlpath = NULL) .
+
+
+Muchos de los paquetes disponibles disponen de un logo con forma hexagonal, que generalmente termina en forma de sticker: los hexStickers. Estos permiten terminar de darle identidad a tu paquete y hacerlo más vistoso. Para crearlos existe el paquete HexSticker. Una vez creado el logo, le podemos pasar su ubicación a la función use\_logo(), que se encargará de darle el tamaño adecuado, guardarlo en la carpeta man del paquete y producir el código de Markdown para incluirlo en el README. 
+La Figura \ref{fig:fig36} presenta un fragmento GitHub del paquete geneticae, donde se muestra parte del contenido del archivo README, badges y logo.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=11cm]{./Graficos/badges.png}	
+	\end{center}
+	\caption{Fragmento de README de geneticae}
+	\label{fig:fig36}
+\end{figure}
+
+
 
 
 \subsubsection{Archivo NEWS}
 
 
-Mientras que el README apunta a ser leído por nuevos usuarios, el archivo NEWS es para la gente que ya usa el paquete.
-Este archivo se encarga de contar qué tenemos en cada versión nueva del paquete que publicamos: lo nuevo, lo que cambió y lo que se eliminó.
-Se sugiere usar markdown para escribir este archivo y colocar un título principal para cada versión, seguido por títulos secundarios que describen lo realizado (cambios principales, bugs arreglados, etc.).
+Mientras que el README apunta a ser leído por nuevos usuarios, el archivo NEWS es para aquellos que ya usan el paquete.
+Este archivo se encarga de contar los cambios presentes en cada versión nueva del paquete que publicamos.
+Se sugiere usar Markdown para escribir este archivo y colocar un título principal para cada versión, seguido por títulos secundarios que describen lo realizado (cambios principales, bugs arreglados, etc.).
 Si se trata de cambios impulsados por otras personas, por ejemplo, a través de sugerencias hechas en GitHub, se los menciona.
 Una buena práctica es ir escribiendo este archivo cada vez que se realiza algo nuevo en el paquete.
 La función que nos permite crear este archivo automáticamente es
-\textcolor{blue}{usethis::use\_news\_md}(). 
+\textcolor{blue}{usethis::use\_news\_md}(). Hasta el momento, del paquete geneticae solamente se cuenta con la versión de desarrollo (Figura \ref{fig:fig37}) 
 
 
-\subsubsection{Agregar datasets}
 
-A menudo es útil incluir datos en un paquete a fin de proporcionar ejemplos de aplicaciones de las funciones incluidas en él. Ellos se almacenan en el directorio data/, siendo cada archivo un .RData que sólo contiene un objeto. Para esto, se utiliza la función \textcolor{blue}{usethis::use\_data}(). Notar que el archivo DESCRIPTION creado con la función \textcolor{blue}{create\_package}(), mencionada anteriormente, contiene el campo LazyData: true, lo cual genera que los conjuntos de datos no ocupen memoria hasta que sean usados.
-
-Los objetos en la carpeta data siempre se exportan, por lo cual hay que agregar documentación para los mismos. A diferencia de las funciones que son documentadas directamente, para los objetos en data/, se debe crear un archivo y guardarlo en el directorio R/. Esto se puede hacer con roxygen en cualquier Rscript de la carpeta R, aunque se acostumbra juntar toda la documentación para todos los datasets en un único archivo llamado data.R.\\
-
-\subsubsection{Añadir badges}
-
-Las insignias o badges son unos íconos que señalan distintas características del paquete, como su nivel de maduración, el nivel de cobertura en el testeo, cantidad de descargas, número de versión, resultado de los controles de CRAN, etc.
-Son visualmente muy atractivas y se colocan el en archivo README.     El paquete usethis trae un conjunto de funciones que generan automáticamente el código a incluir en el README.Rmd para agregar los badges:
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=11cm]{./Graficos/News.png}	
+	\end{center}
+	\caption{Archivo NEWS de geneticae}
+	\label{fig:fig37}
+\end{figure}
 
 
-\textcolor{blue}{use\_badge}(badge\_name, href, src)
-
-\textcolor{blue}{use\_cran\_badge}()
-
-\textcolor{blue}{use\_bioc\_badge}()
-
-\textcolor{blue}{use\_lifecycle\_badge}(stage)
-
-\textcolor{blue}{use\_binder\_badge}(sturlpath = NULL)
-
-
-\subsubsection{Diseñar un logo}
-
-Seguramente has notado la costumbre de que cada paquete de R tenga su logo con forma hexagonal, que generalmente termina en forma de sticker: los hexStickers.
-Bueno, para terminar de darle identidad a tu paquete y hacerlo más vistoso, podés diseñar tu logo.
-Por suerte, también hay un paquete que permite hacerlo sin demasiadas complicaciones: el paquete HexSticker.
-Una vez creado el logo, le podemos pasar su ubicación a la función use\_logo(), que se encargará de darle el tamaño adecuado, guardarlo en la carpeta man del paquete y producir el código de markdown para incluirlo en el README.
 
 
 
 \subsubsection{Crear una página web}
 
+Para mayor visualización del paquete es posible crear una página web \footnote{Para visitar la página web de geneticae debe dirigirse a \url{https://...........}}. El paquete pkgdown está diseñado para la creación de un sitio web de manera rápida y sencilla. Utiliza todo lo creado hasta el momento y lo convierte automáticamente en una pagina web mediante la función \textcolor{blue}{pkgdown::build\_site()}.
 
-Si llegaste hasta acá siguiendo todos los pasos anteriores, tenés en tu haber un montón de material muy bueno sobre tu paquete: páginas de ayuda, ejemplos, tutoriales, novedades sobre los cambios, logo, insignias, etc.
-Suficiente como para crear una página web y que tu paquete tenga presencia real en el más allá.
-No sé cuántas veces dije “por suerte” en este material, pero lo voy a decir una vez más.
-Por suerte existe un paquete que se encarga de tomar todo el material hecho anteriormente y convertirlo en una página web AUTOMÁTICAMENTE.
-Sumado a que GitHub nos da lugar para hospedar nuestras páginas de manera libre y gratuita, no hay excusas para no hacerlo.
-Claro que cuanto más quieras personalizar tu web, más vas a tener que explorar algunas opciones e incluso toquetear algo de código de html, pero esto no es necesario, ya que el aspecto logrado por default es muy satisfactorio.
-El paquete responsable de esto es pkgdown y lo único que hay que hacer es correr pkgdown::build\_site() desde el directorio de nuestro paquete cada vez que publiquemos una nueva versión.
-Más información y detalles en https://pkgdown.r-lib.org/index.html.
-
+ {\LARGE{\textbf{No aparecen los badges en la pag web}}}
 
 
 \subsubsection{Publicación}
 
 
-
-
-
-
-
-Un repositorio es el lugar dónde se encuentran alojados los paquetes y desde el cuál los usuarios pueden descargarlos. Entre los repositorios más populares de paquetes R se encuentran:
-
-\begin{itemize}
-\item \textbf{CRAN}: es el principal repositorio de paquetes de R, está coordinado por la fundación R. Previa a la publicación en este repositorio el paquete debe pasar por diferentes pruebas para asegurar que cumple con las políticas de CRAN.
-
-\item \textbf{Bioconductor}: se trata de un repositorio específico para bioinformática. Del mismo modo que CRAN, tiene sus propias políticas de publicaciones y procesos de revisión.
-
-\item \textbf{GitHub}: a pesar que no es específico para R, github es con toda seguridad el repositorio más popular para la publicación de proyectos \emph{open source} (del inglés, código abierto). Su popularidad procede del espacio ilimitado que proporciona para el alojamiento de proyectos \emph{open source}, la integración con git (un software de control de versiones) y, la facilidad de compartir y colaborar con otras personas. Una de sus desventajas es que no proporciona procesos de control.
-
-\item \textbf{R-Forge} y \textbf{RForge}: son entornos de desarrollo de paquetes y repositorios. Eso significa que incluyen control de fuente, seguimiento de errores y otras características. Puede obtener versiones de desarrollo de paquetes de estos.
-\end{itemize}
-
-El paquete \emph{geneticae} se encuentra en GitHub, para instalar el mismo se deben seguir las siguientes instrucciones:
-
-\begin{lstlisting}
-library(devtools)
-install_github(``jangelini/geneticae") 
-\end{lstlisting}
-
-
-
-Por otro lado, se crea también una página web\footnote{Para visitar la página web del paquete debe dirigirse a \url{https://...........}} para el paquete utilizando \emph{pkgdown}, mediante la función \textcolor{blue}{pkgdown::build\_site}(). En ella se podrá encontrar una breve descripción del paquete, las funciones que incluyen los mismos, la vignette, las distintas versiones del paquete, entre otras cosas.  
-
-
-
-
-
+Por último, para que otros usuarios puedan utilizar el paquete es necesario compartirlo en alguno de los repositorios más populares de paquetes de R, entre los cuales se encuentran: CRAN, Bioconductor, GitHub, rOpenSci, R-Forge y RForge. El paquete \emph{geneticae} se encuentra en GitHub, por lo tanto, para instalar el mismo se debe utilizar \textcolor{blue}{devtools::install\_github(``jangelini/geneticae")}.
 
 
 \section{Shiny APP}
-Shiny es un paquete R para crear aplicaciones web interactivas sin necesidad de conocer en profundidad los lenguajes HTML / CSS / JavaScript . Estas aplicaciones constituyen una interfaz gráfica entre el usuario y R, que permiten realizar un análisis a través de un navegador web sin necesidad de programar.
+Shiny es un paquete R que permite construir aplicaciones web directamente desde RStudio sin necesidad de conocer en profundidad los lenguajes HTML / CSS / JavaScript . Estas aplicaciones constituyen una interfaz gráfica entre el usuario y R, que permiten realizar un análisis a través de un navegador web sin necesidad de programar.
 
-El esquema interno de una Shiny APP puede observarse en la Figura \ref{fig:fig321}. Las mismas están compuestas por la interfaz de usuario, ui (\emph{user interfaz}), que controla el diseño de la aplicación, recibe los inputs y muestra los outputs en el navegador; el server que contiene las funciones de R con las instrucciones neesarias para obtener los resultados de los análisis incluidos en la aplicación; y shinyApp es la función que crea objetos de aplicación Shiny a partir de ui / servidor. 
+Una característica importante de las aplicaciones web creadas mediante Shiny es que son dinámicas e interactivas. Para que shiny funcione correctamente, es necesario tener instalado R 3.0.2 o cualquier versión posterior.
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=7cm]{./Graficos/figura7}
-\end{center}
-\caption{Esquema interno de la aplicación.}
-\label{fig:fig321}
-\end{figure}
+\subsection{Estructura de Shiny APP}
+
+Las aplicaciones están compuestas por la interfaz de usuario, ui (\emph{user interfaz}), sección server y la función shinyApp(). 
+
+
+\textbf{Interfaz}
+
+La interfaz del usuario (user interface o ui, por sus siglas en inglés) controla el diseño de la aplicación, recibe los inputs y muestra los outputs en el navegador. En general, definir las características de la interfaz puede no resultar tan sencillo ya que muchas de sus herramientas están vinculadas a otros lenguajes de programación, por ejemplo HTML, CSS o JavaScript. Sin embargo, las funciones del paquete shiny facilitan la tarea sin necesidad de conocer en profundidad estos lenguajes.
+
+\textbf{Server}
+
+En la sección server se escribe el código de R que le indica a la app qué debe hacer y cómo debe funcionar, incluyendo la lectura y manipulación de datos, el armado de gráficos, el ajuste de modelos, etc. Para esto, se define una función que debe tener dos argumentos: input y output. Los mismos son listas que almacenan elementos de entrada (datos u opciones elegidas por el usuario a través de la ui) y elementos de salida para mostrar en la app (resultados, tablas, gráficos, mapas, etc.), respectivamente.
+
+
+\textbf{Ejecución}
+
+Por último, se llama a la función shinyApp(), cuyos dos argumentos principales son ui y server, es decir, cada uno de los elementos definidos anteriormente. Ejecutar esta función da como resultado el lanzamiento de la aplicación, la cual podremos utilizar dentro de RStudio o usando nuestro navegador (Google Chrome, Mozilla Firefox, Microsoft Edge, etc.). Es importante destacar que, al seguir estos pasos, la aplicación sólo funcionará mientras la sesión de RStudio desde la cual se lanzó siga vigente.
 
 
 \subsection{Desarrollo de Shiny APP}
@@ -422,7 +388,7 @@ server<- ...
 shinyApp(ui = ui, server = server)
 \end{lstlisting}
 
-En este archivo se carga el paquete shiny, se define la interfaz de usuario y la función server y por último, se ejecuta función que permite construir e iniciar una aplicación. Al ejecutar la aplicación la misma aparecerá, de manera predeterminada, en una ventana emergente. Sin embargo, otras dos opciones se pueden configurar desde el menú desplegable de \emph{Run App}. Una de ellas es la ejecución en el panel del visor que permite verla al mismo tiempo que ejecuta el código. La segunda opción es ejecutar en un navegador externo mostrando la aplicación como la mayoría de los usuarios la verán. Dado que la sesión de R estará monitoreando la aplicación y ejecutando las ordenes dadas por el usuario, no se podrá ejecutar ningún comando.
+En este archivo se carga el paquete shiny, se define la interfaz de usuario, la función server y por último, se ejecuta función que permite construir e iniciar una aplicación. Al ejecutar la aplicación la misma aparecerá, de manera predeterminada, en una ventana emergente. Sin embargo, otras dos opciones se pueden configurar desde el menú desplegable de \emph{Run App}. Una de ellas es la ejecución en el panel del visor que permite verla al mismo tiempo que ejecuta el código. La segunda opción es ejecutar en un navegador externo mostrando la aplicación como la mayoría de los usuarios la verán. Dado que la sesión de R estará monitoreando la aplicación y ejecutando las ordenes dadas por el usuario, no se podrá ejecutar ningún comando.
 
 En cualquier lenguaje de programación tener el código duplicado genera un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código. Cuando se programa en R, se utilizan dos técnicas para lidiar con el código duplicado: guardar un valor usando una variable o utilizar una función para almacenar un cálculo. Ninguno de estos enfoques son apropiados en una Shiny APP, sino que se utilizan expresiones reactivas. Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse. La programación reactiva es un estilo de programación que enfatiza valores que cambian con el tiempo, y cálculos y acciones que dependen de esos valores. Esto es importante para las aplicaciones Shiny porque son interactivas: los usuarios cambian los inputs, lo que hace que la lógica se ejecute en el servidor que finalmente resultan en actualización de los outputs/resultados.
 

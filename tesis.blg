@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: tesis.aux
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: tesis.aux
 The style file: ezspanish.bst
 A level-1 auxiliary file: titlepage.aux
 A level-1 auxiliary file: ddjj.aux
@@ -9,7 +11,48 @@ A level-1 auxiliary file: abstract.aux
 A level-1 auxiliary file: intro.aux
 A level-1 auxiliary file: objetivos.aux
 A level-1 auxiliary file: metodos.aux
-A level-1 auxiliary file: resultados.aux
+A level-1 auxiliary file: resultados2.aux
 A level-1 auxiliary file: conclu.aux
 A level-1 auxiliary file: perspfuturo.aux
 Database file #1: biblio.bib
+You've used 7 entries,
+            2833 wiz_defined-function locations,
+            651 strings with 5929 characters,
+and the built_in function-call counts, 3799 in all, are:
+= -- 295
+> -- 108
+< -- 6
++ -- 42
+- -- 33
+* -- 236
+:= -- 572
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 44
+chr.to.int$ -- 7
+cite$ -- 7
+duplicate$ -- 306
+empty$ -- 335
+format.name$ -- 50
+if$ -- 756
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 70
+newline$ -- 44
+num.names$ -- 28
+pop$ -- 149
+preamble$ -- 1
+purify$ -- 39
+quote$ -- 0
+skip$ -- 116
+stack$ -- 0
+substring$ -- 214
+swap$ -- 128
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 57
+warning$ -- 0
+while$ -- 29
+width$ -- 0
+write$ -- 97

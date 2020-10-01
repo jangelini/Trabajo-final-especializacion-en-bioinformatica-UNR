@@ -6,7 +6,10 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Chequeo de disponibilidad del nombre elegido}}{11}{figure.3.1}% 
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Creaci\IeC {\'o}n del paquete geneticae}}{11}{figure.3.2}% 
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Archivo DESCRIPTION de geneticae}}{14}{figure.3.3}% 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Esquema interno de la aplicaci\IeC {\'o}n.}}{20}{figure.3.4}% 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Resultado de correr los tests creados para geneticae}}{16}{figure.3.4}% 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces An\IeC {\'a}lisis de cobertura de los tests de geneticae}}{16}{figure.3.5}% 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Fragmento de README de geneticae}}{19}{figure.3.6}% 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Archivo NEWS de geneticae}}{19}{figure.3.7}% 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Biplot b\IeC {\'a}sico obtenido de la funci\IeC {\'o}n \leavevmode {\color {blue}GGEPlot}()}}{26}{figure.4.1}% 
 \contentsline {figure}{\numberline {4.2}{\ignorespaces A: Ranking de cultivares en el ambiente OA93. B: Ranking de ambientes para cultivar Kat}}{27}{figure.4.2}% 
