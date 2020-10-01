@@ -294,7 +294,7 @@ Un archivo README es una forma de documentación de software que contiene inform
 
 Para generar el README con R Markdown se utiliza la función \textcolor{blue}{use\_readme\_rmd}() la cual crea un archivo de Rmarkdown con una plantilla donde se escribirá el mismo y será además agregado a .Rbuildignore. Luego, al compilarlo con knitr se obtendrá un archivo README.md, que será la cara visible del paquete si, por ejemplo, en GitHub.
 
-\subsubsection{Añadir badges y diseñar un logo}
+\textbf{badges y logo}
 
 Las insignias o badges son unos íconos que señalan distintas características del paquete, como su nivel de maduración, el nivel de cobertura en el testeo, cantidad de descargas, número de versión, resultado de los controles de CRAN, etc.
 Son visualmente muy atractivas y se colocan el en archivo README.     El paquete usethis trae un conjunto de funciones que generan automáticamente el código a incluir en el README.Rmd para agregar los badges: \textcolor{blue}{use\_badge}(badge\_name, href, src), \textcolor{blue}{use\_cran\_badge}(), \textcolor{blue}{use\_bioc\_badge}(), \textcolor{blue}{use\_lifecycle\_badge}(stage), 

@@ -22,10 +22,9 @@
 \contentsline {subsubsection}{\numberline {3.2.7.1}Vi\IeC {\~n}etas}{17}{subsubsection.3.2.7.1}% 
 \contentsline {subsubsection}{\numberline {3.2.7.2}Agregar datasets}{18}{subsubsection.3.2.7.2}% 
 \contentsline {subsubsection}{\numberline {3.2.7.3}Archivo README}{18}{subsubsection.3.2.7.3}% 
-\contentsline {subsubsection}{\numberline {3.2.7.4}A\IeC {\~n}adir badges y dise\IeC {\~n}ar un logo}{18}{subsubsection.3.2.7.4}% 
-\contentsline {subsubsection}{\numberline {3.2.7.5}Archivo NEWS}{19}{subsubsection.3.2.7.5}% 
-\contentsline {subsubsection}{\numberline {3.2.7.6}Crear una p\IeC {\'a}gina web}{20}{subsubsection.3.2.7.6}% 
-\contentsline {subsubsection}{\numberline {3.2.7.7}Publicaci\IeC {\'o}n}{20}{subsubsection.3.2.7.7}% 
+\contentsline {subsubsection}{\numberline {3.2.7.4}Archivo NEWS}{19}{subsubsection.3.2.7.4}% 
+\contentsline {subsubsection}{\numberline {3.2.7.5}Crear una p\IeC {\'a}gina web}{20}{subsubsection.3.2.7.5}% 
+\contentsline {subsubsection}{\numberline {3.2.7.6}Publicaci\IeC {\'o}n}{20}{subsubsection.3.2.7.6}% 
 \contentsline {section}{\numberline {3.3}Shiny APP}{20}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}Estructura de Shiny APP}{20}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}Desarrollo de Shiny APP}{21}{subsection.3.3.2}% 
