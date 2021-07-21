@@ -3,28 +3,28 @@
 \hfill \textbf {Página} \par 
 \vspace {-2mm} \hspace {-7.5mm} \hrule \par 
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Objetivos}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Objetivo general}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Objetivos específicos}{6}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Métodos}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Métodos estadísticos}{7}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Modelo AMMI y SREG}{7}{subsection.3.1.1}%
+\contentsline {chapter}{\numberline {2}Objetivos}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Objetivo general}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Objetivos específicos}{5}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Métodos}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Métodos estadísticos}{6}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Modelo AMMI y SREG}{6}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Modelo AMMI robusto}{8}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Métodos de imputación}{9}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Paquete de R}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.1.3}Métodos de imputación}{8}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Paquete de R}{9}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Creación del paquete}{10}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Archivos de código}{12}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Archivos de código}{11}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Documentación}{12}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Editar el archivo DESCRIPTION}{13}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Testeos}{15}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Compilación e instalación}{17}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Algunos elementos complementarios}{17}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.5}Testeos}{14}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Compilación e instalación}{16}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Algunos elementos complementarios}{16}{subsection.3.2.7}%
 \contentsline {subsubsection}{\numberline {3.2.7.1}Viñetas}{17}{subsubsection.3.2.7.1}%
-\contentsline {subsubsection}{\numberline {3.2.7.2}Agregar datasets}{18}{subsubsection.3.2.7.2}%
-\contentsline {subsubsection}{\numberline {3.2.7.3}Archivo README}{18}{subsubsection.3.2.7.3}%
+\contentsline {subsubsection}{\numberline {3.2.7.2}Agregar datasets}{17}{subsubsection.3.2.7.2}%
+\contentsline {subsubsection}{\numberline {3.2.7.3}Archivo README}{17}{subsubsection.3.2.7.3}%
 \contentsline {subsubsection}{\numberline {3.2.7.4}Archivo NEWS}{19}{subsubsection.3.2.7.4}%
-\contentsline {subsubsection}{\numberline {3.2.7.5}Crear una página web}{20}{subsubsection.3.2.7.5}%
-\contentsline {subsubsection}{\numberline {3.2.7.6}Publicación}{20}{subsubsection.3.2.7.6}%
+\contentsline {subsubsection}{\numberline {3.2.7.5}Crear una página web}{19}{subsubsection.3.2.7.5}%
+\contentsline {subsubsection}{\numberline {3.2.7.6}Publicación}{19}{subsubsection.3.2.7.6}%
 \contentsline {section}{\numberline {3.3}Shiny APP}{20}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Estructura de Shiny APP}{20}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Desarrollo de Shiny APP}{21}{subsection.3.3.2}%
