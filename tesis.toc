@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {3.2.1}Creación del paquete}{10}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Archivos de código}{11}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Documentación}{12}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Editar el archivo DESCRIPTION}{13}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.4}Editar el archivo DESCRIPTION}{12}{subsection.3.2.4}%
 \contentsline {subsection}{\numberline {3.2.5}Testeos}{14}{subsection.3.2.5}%
 \contentsline {subsection}{\numberline {3.2.6}Compilación e instalación}{16}{subsection.3.2.6}%
 \contentsline {subsection}{\numberline {3.2.7}Algunos elementos complementarios}{16}{subsection.3.2.7}%

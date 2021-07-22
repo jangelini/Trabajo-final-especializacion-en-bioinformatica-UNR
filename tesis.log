@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  21 JUL 2021 14:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  22 JUL 2021 14:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -959,7 +959,13 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 ]
 \openout2 = `resumen.aux'.
 
- (./resumen.tex)
+ (./resumen.tex
+Overfull \hbox (1.45302pt too wide) in paragraph at lines 15--16
+[]\OT1/cmr/bx/sc/12 Palabras Cla-ve: an^^Sali-sis es-tad^^S^^Psti-co, en-sa-yos
+ mul-ti-am-bien-ta-les, in-ter-faz gr^^Safi-
+ []
+
+)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 186.
@@ -1100,27 +1106,25 @@ Cap\'{\i }tulo 3.
 
 
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7]
-[8] [9]
+] [7] [8] [9]
 <./Graficos/available.png, id=399, 500.87125pt x 278.03876pt>
 File: ./Graficos/available.png Graphic file (type png)
 <use ./Graficos/available.png>
-Package pdftex.def Info: ./Graficos/available.png  used on input line 144.
+Package pdftex.def Info: ./Graficos/available.png  used on input line 141.
 (pdftex.def)             Requested size: 270.30118pt x 150.05383pt.
- [10 <./Graficos/available.png>]
-<./Graficos/creacion.png, id=411, 651.43375pt x 459.7175pt>
+<./Graficos/creacion.png, id=401, 651.43375pt x 459.7175pt>
 File: ./Graficos/creacion.png Graphic file (type png)
 <use ./Graficos/creacion.png>
-Package pdftex.def Info: ./Graficos/creacion.png  used on input line 164.
+Package pdftex.def Info: ./Graficos/creacion.png  used on input line 161.
 (pdftex.def)             Requested size: 369.88582pt x 261.03859pt.
- [11 <./Graficos/creacion.png>] [12]
+
+Underfull \vbox (badness 7099) has occurred while \output is active []
+
+ [10 <./Graficos/available.png>] [11 <./Graficos/creacion.png>] [12]
 <./Graficos/DESCRIPTION.png, id=430, 689.57625pt x 722.7pt>
 File: ./Graficos/DESCRIPTION.png Graphic file (type png)
 <use ./Graficos/DESCRIPTION.png>
-Package pdftex.def Info: ./Graficos/DESCRIPTION.png  used on input line 232.
+Package pdftex.def Info: ./Graficos/DESCRIPTION.png  used on input line 229.
 (pdftex.def)             Requested size: 369.88582pt x 387.64969pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1130,12 +1134,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <./Graficos/Test.png, id=440, 632.3625pt x 390.45876pt>
 File: ./Graficos/Test.png Graphic file (type png)
 <use ./Graficos/Test.png>
-Package pdftex.def Info: ./Graficos/Test.png  used on input line 255.
+Package pdftex.def Info: ./Graficos/Test.png  used on input line 252.
 (pdftex.def)             Requested size: 312.9803pt x 193.25682pt.
 <./Graficos/Cobertura.png, id=442, 926.46124pt x 397.485pt>
 File: ./Graficos/Cobertura.png Graphic file (type png)
 <use ./Graficos/Cobertura.png>
-Package pdftex.def Info: ./Graficos/Cobertura.png  used on input line 266.
+Package pdftex.def Info: ./Graficos/Cobertura.png  used on input line 263.
 (pdftex.def)             Requested size: 398.33858pt x 170.90308pt.
 
 Underfull \vbox (badness 1237) has occurred while \output is active []
@@ -1144,7 +1148,7 @@ Underfull \vbox (badness 1237) has occurred while \output is active []
 Underfull \vbox (badness 1496) has occurred while \output is active []
 
  [16 <./Graficos/Cobertura.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
 
@@ -1152,7 +1156,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 300--301
 <./Graficos/badges.png, id=460, 1353.055pt x 606.265pt>
 File: ./Graficos/badges.png Graphic file (type png)
 <use ./Graficos/badges.png>
-Package pdftex.def Info: ./Graficos/badges.png  used on input line 321.
+Package pdftex.def Info: ./Graficos/badges.png  used on input line 318.
 (pdftex.def)             Requested size: 312.9803pt x 140.23358pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1161,16 +1165,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <./Graficos/News.png, id=466, 571.13374pt x 83.31125pt>
 File: ./Graficos/News.png Graphic file (type png)
 <use ./Graficos/News.png>
-Package pdftex.def Info: ./Graficos/News.png  used on input line 345.
+Package pdftex.def Info: ./Graficos/News.png  used on input line 342.
 (pdftex.def)             Requested size: 312.9803pt x 45.65479pt.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 357.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 354.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 357.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 354.
 
 
 Underfull \vbox (badness 1762) has occurred while \output is active []
@@ -1180,13 +1184,13 @@ Underfull \vbox (badness 1210) has occurred while \output is active []
 
  [20]
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
-98.
+95.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 398.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 395.
  [21]) [22]
 \openout2 = `resultados2.aux'.
 
@@ -1439,11 +1443,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  27697 strings out of 480623
  517947 string characters out of 5906691
- 1117149 words of memory out of 5000000
+ 1116149 words of memory out of 5000000
  42737 multiletter control sequences out of 15000+600000
  551752 words of font info for 95 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 59i,12n,83p,2223b,1849s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,12n,83p,2293b,1771s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -1462,7 +1466,7 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/cm-super/sfrm1200.pfb>
-Output written on tesis.pdf (58 pages, 1335876 bytes).
+Output written on tesis.pdf (58 pages, 1337283 bytes).
 PDF statistics:
  820 PDF objects out of 1000 (max. 8388607)
  682 compressed objects within 7 object streams

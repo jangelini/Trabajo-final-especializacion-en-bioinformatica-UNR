@@ -8,7 +8,7 @@
 %\setcounter{section}{1}
 \section{Métodos estadísticos}
 
-Este capítulo tiene como objetivo focalizar al lector en los aspectos fundamentales sobre los que se apoya este trabajo. Se compone de tres secciones, en la primera se presenta la metodología estadística que se incluirá en el paquete de R a desarrollar.  En la segunda y tercera sección, se presenta un flujo de trabajo reproducible para el desarrollo del paquete de R y la aplicación web Shiny, respectivamente.
+Este capítulo tiene como objetivo focalizar al lector en los aspectos fundamentales sobre los que se apoya este trabajo. Se compone de tres secciones, en la primera se presenta la metodología estadística que se incluirá en el paquete de R.  En la segunda y tercera sección, se presenta un flujo de trabajo reproducible para el desarrollo del paquete y la aplicación web Shiny, respectivamente.
 
 
 
@@ -33,20 +33,19 @@ donde
 \end{itemize}
 
 
-El resultado de los dos primeros términos multiplicativos de la SVD se presenta a menudo en un biplot llamado GE (\emph{Genotipe-Environment}) (\textbf{CITA}) en AMMI y GGE en SREG (Yan et al. 2000) y representan una aproximación de dos rangos de los efectos multiplicativos. 
-
-En un biplot, el i-ésimo genotipo se muestra como un punto definido por todos los valores $g_{ik} = \lambda_k^{s} \gamma_{ik}$, y el j-ésimo ambiente por $e_{kj} = \lambda_k^{1-s} \delta_{jk}$ ($k=1,2$ para un biplot bidimensional), donde $s$ es el factor de partición. Cuando $s=1$ se denomina escalamiento centrado en los genotipos, centrado en los ambientes si $s=0$ y simétrica cuando $s=0.5$. El último factor es el utilizado en el biplot GE y el más utilizado en GGE, aunque dependiendo de los intereses de la investigación, se pueden construir numerosos biplots derivados de SREG. Independientemente del método de partición en valores singulares utilizado, los biplots GGE revelan el mismo patrón \emph{which-won-where}. Sin embargo, difieren en diversos aspectos. El primero muestra la interrelación entre genotipos con mayor precisión que cualquier otro método, sin embargo, no es adecuado para estudiar a los ambientes, ya que solamente considera las coordenadas estándar de los mismos y por lo tanto no refleja la importancia relativa o los pesos de los dos ejes. La escala centrada en el ambiente es el método más informativo de las interrelaciones entre los ambientes. El método de escalado simétrico es intermedio en todos los aspectos entre el escalado centrado en el genotipo y en el ambiente, lo que permite visualizar la magnitud relativa tanto de la variación de los genotipos como de los ambientes. 
-
-
-Dado que para seleccionar cultivares, el efecto de G e IGA debe considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos MET permite, entre otras cosas, la visualización de tres aspectos importantes: 
+El resultado de los dos primeros términos multiplicativos de la SVD se presenta a menudo en un biplot llamado GE (\emph{Genotipe-Environment}) (\textbf{CITA}) en AMMI y GGE en SREG (Yan et al. 2000) y representan una aproximación de dos rangos de los efectos multiplicativos. Dado que para seleccionar cultivares, el efecto de G e IGA debe considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos MET permite, entre otras cosas, la visualización de tres aspectos importantes: 
 
 \begin{itemize}
 \item[(i)] las relaciones entre los genotipos y ambientes representadas por el patrón \emph{which-won-where}, que facilitan la investigación del megaambiente (Gauch y Zobel, 1997);
 
-\item[(ii)] las interrelaciones entre los ambientes de prueba al utilizar $s=0$, que permiten la identificación de mejores ambientes para la evaluación de cultivares (Cooper et al., 1997) y de ambientes redundantes que pueden ser descartados (Yan y Rajcan, 2002);
+\item[(ii)] las interrelaciones entre los ambientes de prueba que permiten la identificación de mejores para la evaluación de cultivares (Cooper et al., 1997) y de aquellos redundantes que pueden ser descartados (Yan y Rajcan, 2002);
 
-\item[(iii)] las interrelaciones entre genotipos considerando $s=1$, que posibilita la comparación entre genotipos y la clasificación de los mismos considerando tanto en el rendimiento medio como la estabilidad (Yan et al., 2001)
+\item[(iii)] las interrelaciones entre genotipos que posibilita la comparación entre ellos y la clasificación de los mismos considerando tanto en el rendimiento medio como la estabilidad (Yan et al., 2001)
 \end{itemize}
+
+En un biplot, el i-ésimo genotipo se muestra como un punto definido por todos los valores $g_{ik} = \lambda_k^{s} \gamma_{ik}$, y el j-ésimo ambiente por $e_{kj} = \lambda_k^{1-s} \delta_{jk}$ ($k=1,2$ para un biplot bidimensional), donde $s$ es el factor de partición. Cuando $s=1$ se denomina escalamiento centrado en los genotipos, centrado en los ambientes si $s=0$ y simétrica cuando $s=0.5$. El último factor es el utilizado en el biplot GE y el más utilizado en GGE, aunque dependiendo de los intereses de la investigación, se pueden construir numerosos biplots derivados de SREG. Independientemente del factor de partición utilizado, los biplots GGE revelan el mismo patrón \emph{which-won-where}. Sin embargo, difieren en diversos aspectos. El primero muestra la interrelación entre genotipos con mayor precisión que cualquier otro método, el centrado en el ambiente es el más informativo de las interrelaciones entre los ambientes, mientras que el simétrico permite visualizar la magnitud relativa tanto de la variación de los genotipos como de los ambientes. 
+
+
 
 \subsection{Modelo AMMI robusto}
 
@@ -60,7 +59,7 @@ El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil 
 \subsection{Métodos de imputación}
 
 
-Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el fenotipo de todas las combinaciones de genotipos y ambientes se encuentre registrado, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de la evaluaciones en las que se incorporan y se descartan genotipos debido a su pobre desempeño (Hill y Rosemberg, 1985.
+Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el fenotipo de todas las combinaciones de genotipos y ambientes se encuentre registrado, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de la evaluaciones en las que se incorporan y se descartan genotipos debido a su pobre desempeño (Hill y Rosemberg, 1985).
 
 Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
 
@@ -68,7 +67,7 @@ Se han propuesto numerosas metodologías para superar el problema de valores aus
 \item EM-AMMI: Gauch y Zobel (1990) desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza (EM, del inglés \emph{Expectation-Maximization}) incorporando el modelo AMMI. 
 \end{itemize}
 \begin{itemize}
-\item EM-SVD: Perry (2009a) propone un método de imputación que combina el algoritmo EM con DVS. 
+\item EM-SVD: Perry (2009) propone un método de imputación que combina el algoritmo EM con DVS. 
 \end{itemize}
 \begin{itemize}
 \item EM-PCA: Josse y Husson (2013) proponen imputar los valores faltantes de un conjunto de datos mediante un ACP.
@@ -88,7 +87,7 @@ Se han propuesto numerosas metodologías para superar el problema de valores aus
 %https://oscarperpinan.github.io/R/Paquetes.html 
 
 
-Un paquete de R es la unidad básica para la distribución de código de R, que reúne de forma estructurada funciones, datos, archivos con documentación y testeos.  Para la creación del mismo se deben seguir ciertas convenciones, existiendo elementos obligatorios y otros opcionales, entre los primeros se encuentran:
+Un paquete de R consisten en conjuntos de funciones desarrolladas con fines específicos que se distribuyen con un protocolo determinado, garantizando su correcto funcionamiento.  Para la creación del mismo se deben seguir ciertas convenciones, existiendo elementos obligatorios y otros opcionales. Entre los primeros se encuentran:
 
 \begin{itemize}
 	\item Archivo DESCRIPTION: describe el contenido del paquete y establece cómo se va a relacionar con otros.
@@ -120,8 +119,6 @@ Los elementos opcionales que se pueden agregar son por ejemplo:
 \begin{itemize}
 	\item Carpeta tests: incluye código que permiten someter al paquete a diversos controles.
 \end{itemize}
-
-
 
 Para la creación del paquete, se deben instalar y cargar en la sesión de trabajo los paquetes:
  \emph{devtools}, \emph{usethis}, \emph{roxygen2}, \emph{ustestthat}, \emph{knitr}, \emph{available}. Además, en caso de utilizar el Windows se debe descargar e instalar Rtools .
