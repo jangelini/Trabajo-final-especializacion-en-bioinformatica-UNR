@@ -13,7 +13,7 @@ Este capítulo tiene como objetivo focalizar al lector en los aspectos fundament
 
 
 \subsection{Modelo AMMI y SREG}
-El modelo AMMI (Zobel et al. 1988) y SREG (Cornelius et al. 1996; Crossa y Cornelius 1997 y 2002) son modelos multiplicativos que además de tener una componente  aditiva, poseen una multiplicativa. Ellos difieren en las componentes aditivas que se eliminan de la ecuación y que se incorporan en forma multiplicativa. Mientras que AMMI considera los ambientes (A) y el genotipo (G) como aditivos, SREG solo A. Por lo tanto, en el primero la IGA representa la parte multiplicativa y en el segundo G e IGA en forma conjunta. 
+El modelo AMMI (Zobel et al. 1988) y SREG (Cornelius et al. 1996; Crossa y Cornelius 1997 y 2002) son modelos lineales-bilineales que difieren en las componentes aditivas que se eliminan de la ecuación y se incorporan en forma multiplicativa. Mientras que AMMI considera los ambientes (A) y el genotipo (G) como aditivos, SREG solo A. Por lo tanto, en el primero la IGA representa la parte multiplicativa y en el segundo G e IGA en forma conjunta. 
 
 Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la Descomposición en Valores Singulares (DVS) de la matriz que contiene los residuos para cada combianción de genotipo y ambiente luego de ajustar por mínimos cuadrados el modelo de efectos principales. 
 
@@ -33,7 +33,7 @@ donde
 \end{itemize}
 
 
-El resultado de los dos primeros términos multiplicativos de la SVD se presenta a menudo en un biplot llamado GE (\emph{Genotipe-Environment}) (\textbf{CITA}) en AMMI y GGE en SREG (Yan et al. 2000) y representan una aproximación de dos rangos de los efectos multiplicativos. Dado que para seleccionar cultivares, el efecto de G e IGA debe considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos MET permite, entre otras cosas, la visualización de tres aspectos importantes: 
+El resultado de los dos primeros términos multiplicativos de la SVD se presenta a menudo en un biplot llamado GE (\emph{Genotipe-Environment}) (\textbf{CITA}) en AMMI y GGE en SREG (Yan et al. 2000) y representan una aproximación de dos rangos de los efectos multiplicativos. Dado que para seleccionar cultivares, el efecto de G e IGA debe considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos EMA permite, entre otras cosas, la visualización de tres aspectos importantes: 
 
 \begin{itemize}
 \item[(i)] las relaciones entre los genotipos y ambientes representadas por el patrón \emph{which-won-where}, que facilitan la investigación del megaambiente (Gauch y Zobel, 1997);
