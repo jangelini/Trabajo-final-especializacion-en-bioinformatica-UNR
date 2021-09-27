@@ -79,7 +79,7 @@ A fin de ilustrar la metodología incluida en el paquete se utiliza el conjunto 
 
 Para visualizar conjuntamente el efecto de G e IGA, Yan et al. (2000) propuso el biplot GGE con el cual se pueden abordar visualmente diversos aspectos relacionados con la evaluación de genotipos y ambientes. Para obtener dicho biplot en primer lugar se debe ajustar el modelo SREG mediante la función \textcolor{blue}{GGEmodel}(). 
 
-La función \textcolor{blue}{GGEmodel}() propuesta en este paquete, es menos restrictiva que las disponibles actualmente en R en cuanto al conjunto de datos de entrada. En particular, es una modificación de la función \textcolor{blue}{GGEModel}() de GGEBiplots \textbf{(CITA)} en la que el conjunto de datos de entrada los genotipos se encuentren en las filas y los ambientes en las columnas y por lo tanto, no admite replicas. A diferencia de esto, la función \textcolor{blue}{GGEmodel}() incluida en \emph{geneticae} requiere que los datos se encuentren en formato largo, es decir las observaciones en las filas y las variables en las columnas, lo cual es más ordenado a la hora de registrar la información \textbf{(CITA)}. Además, la base de datos puede contener otras variables que no serán utilizadas en el análisis ya que al ajustar el modelo se deben indicar en qué columnas se encuentra la información requerida por la técnica que se aplicará. Por otro lado, dado que el modelo requiere de una única observación para cada combinación de genotipo y ambiente, en caso de existir repeticiones el valor fenotípico promedio es calculado automáticamente por la función antes de ajustar el modelo. Los valores faltantes no están permitidos, en caso de haber, un mensaje de error saldrá en la consola de R.\\  
+La función \textcolor{blue}{GGEmodel}() propuesta en este paquete, es menos restrictiva que las disponibles actualmente en R en cuanto al conjunto de datos de entrada. En particular, es una modificación de la función \textcolor{blue}{GGEModel}() de GGEBiplots \textbf{(CITA)} en la que el conjunto de datos de entrada los genotipos se encuentren en las filas y los ambientes en las columnas y por lo tanto, no admite replicas. A diferencia de esto, la función \textcolor{blue}{GGEmodel}() incluida en \emph{geneticae} requiere que los datos se encuentren en formato largo, es decir las observaciones en las filas y las variables en las columnas, lo cual es más ordenado a la hora de registrar la información. Además, la base de datos puede contener otras variables que no serán utilizadas en el análisis ya que al ajustar el modelo se deben indicar en qué columnas se encuentra la información requerida por la técnica que se aplicará. Por otro lado, dado que el modelo requiere de una única observación para cada combinación de genotipo y ambiente, en caso de existir repeticiones el valor fenotípico promedio es calculado automáticamente por la función antes de ajustar el modelo. Los valores faltantes no están permitidos, en caso de haber, un mensaje de error saldrá en la consola de R.\\  
 
 La sentencia utilizada para ajustar el modelo GGE en el conjunto de datos \emph{yan.winterwheat} se muestra a continuación. El primer argumento de la misma consiste en el nombre del \emph{dataframe} y los restantes indican los nombres que reciben las columnas que contienen la información de los genotipos, ambientes y del rasgo fenotípico de interés. Por defecto, la función considera que no hay replicas en el conjunto de datos, sin embargo, si existieran la opción \emph{rep} en la cual se indica el nombre de la columna con dicha información debe ser adicionada. Otros argumentos de dicha función son el método de centrado, de SVD y de escalado. Por defecto los datos se centran por G y GE, dando lugar al modelo SREG, otra opción en dicho argumento dará lugar a un modelo diferente. La elección del método de SVD no altera las relaciones o interacciones relativas entre los genotipos y los ambientes, aunque la apariencia del biplot será diferente, se recomienda la lectura de Yan (2002). Por último, diferentes biplots se pueden generar dependiendo del método de escalado, mayor información se encuentra disponible en Yan and Kang (2003) y Yan and Tinker (2006). En el modelo ajustado a continuación tanto el centrado, como el método SVD y de escalado son los seteados por defecto en la función.
 
@@ -276,10 +276,6 @@ GGEPlot(GGE_Epartition, type = "Ranking Environments", footnote = F, titles = F)
 
 
 
-
-
-\textbf{Ver bien estas interpretaciones...Falta un grafico q es discriminacion vs representatividad q no se como se interpreta....}
-
 \textbf{Biplot GE}
 
 Para visualizar solamente el efecto de IGA se utiliza el biplot GE obtenido del modelo AMMI. Este gráfico es posible obtenerlo utilizando la función \textcolor{blue}{rAMMI}(), la cual no se encuentra disponible actualmente en R, y es una modificación de la publicación de Rodrigues et al. (2015). El formato del conjunto de datos de entrada es análogo al descripto en la función \textcolor{blue}{GGEmodel}(). 
@@ -326,6 +322,8 @@ Una limitación importante de los modelos presentados anteriormente es que requi
 imputation(yanwinterwheat, PC.nb = 2, genotype = "gen", environment = "env", response = "yield", type = "EM-AMMI")
 \end{lstlisting}
 \end{tcolorbox}
+
+
 \section{Geneticae Shiny Web App}
 
 Generalmente los mejoradores utilizan programas estadísticos que funcionan mediante una interfaz gráfica lo cual permite realizar el análisis de interés sin necesidad del manejo de un lenguaje de programación. \emph{Geneticae Shiny Web App}, es una aplicación web que permite a los usuarios realizar muchos de los análisis incluidos en el paquete geneticae, sin necesidad de conocer el lenguaje de programación R. 
@@ -333,22 +331,14 @@ Generalmente los mejoradores utilizan programas estadísticos que funcionan medi
 Al iniciar \emph{Geneticae Shiny Web App}, se muestra una pantalla en la cual se carga el conjunto de datos a analizar. Se admiten archivos con extensión .csv, delimitados por coma o punto y coma.
 Dado que esta aplicación se conecta con R y utiliza las funciones del paquete \emph{geneticae} se debe respetar el formato del conjunto de datos de entrada requerido por el mismo. Como se indicó anteriormente, la base de datos debe estar en formato largo, es decir que las observaciones se encuentran en las filas y las variables, genotipos, ambientes, repeticiones (en caso de que haya) y el fenotipo observado, en las columnas. Además puede incluir otras variables que no serán utilizadas en el análisis ya que al cargar el conjunto de datos se debe indicar que columna corresponde al genotipo, al ambiente, a las repeticiones y al valor fenotípico a analizar. La primera fila del conjunto de datos puede contener los nombres de las variables, y en ese caso se indicará al cargarlo en la aplicación. El número de repeticiones puede diferir con los genotipos y los ambientes.
 
-Dos conjuntos de datos de ejemplo, \emph{plrv} y \emph{yanwinterwheat}, incluidos en el paquete geneticae, se encuentran disponibles en la aplicación para ser descargados y probar la misma (Figura \ref{fig:fig431},\ref{fig:fig432}). La ruta para realizar esto es siguente: \emph{The data} $\rightarrow$ \emph{Example datasets}.
+Dos conjuntos de datos de ejemplo, \emph{plrv} y \emph{yanwinterwheat}, incluidos en el paquete geneticae, se encuentran disponibles en la aplicación para ser descargados y probar la misma (Figura \ref{fig:fig431}). La ruta para realizar esto es siguente: \emph{The data} $\rightarrow$ \emph{Example datasets}.
 
  \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/Exampledatasets_withoutrep.png}
+		\includegraphics[width=16cm]{./Graficos/exampledata.jpg}
 	\end{center}
 	\caption{yanwinterwheat dataset disponible en Shiny Web App}
 	\label{fig:fig431}
-\end{figure}
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/Exampledatasets_withrep.png}
-	\end{center}
-	\caption{plrv dataset disponible en Shiny Web App}
-	\label{fig:fig432}
 \end{figure}
 
 
@@ -373,7 +363,7 @@ El primer paso de cualquier estudio debe ser un análisis descriptivo del conjun
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/Boxplot_environment.png}
+		\includegraphics[width=16cm]{./Graficos/Boxplot.jpg}
 	\end{center}
 	\caption{Boxplot de ambientes a través de los genotipos para el conjunto de datos Plrv}
 	\label{fig:figdesc1}
@@ -414,56 +404,6 @@ En forma análoga al boxplot, éste es un gráfico interactivo, y por lo tanto, 
 	\label{fig:figdesc4}
 \end{figure}
 
-
-
-\textbf{Análisis de la variancia}
-
-
-La variación fenotípica se puede explicar a partir de los efectos ambientales, genotípicos y de la interacción entre los anteriores. Para probar la significancia de dichos efectos se realiza un ANOVA. Si únicamente los efectos de G y A resultan significativos (es decir, no hay efecto interacción), la interacción debe ser ignorada y los biplots carecen de sentido. En caso de no contar con repeticiones en el conjunto de datos, la interacción no podrá ser testeada y un mensaje aparecerá aclarando lo mencionado\textbf{ \emph{``The interaction effect can be tested since there are repetitions in the data set"}, VER}. Por lo tanto, en este caso que no se cuenta con repeticiones, únicamente se puede pruebar si existe efecto genotípicos y ambienteales (Figura \ref{fig:fig438})
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/ANOVA.png}
-	\end{center}
-	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig438}
-\end{figure}
-
-
-La validez de las conclusiones del ANOVA depende del cumplimiento de que los errores tengan distribución normal con media cero y variancia constante. Tres pestañas de la aplicación: \emph{Check normality}, \emph{Check homocedasticity} y \emph{Outliers} permiten verificar los supuestos mencionados.
-
-El supuesto de normalidad se puede verificar gráficamente mediante un histograma y un gráfico de probabilidad normal (Figura \ref{fig:fig439}), así como también con el test de shapiro-wilks.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/Normalidad.png}
-	\end{center}
-	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig439}
-\end{figure}
-
-
-El supuesto de variancia constante u homocedasticidad se puede probar con un gráfico de residuos vs. valores predichos, así como también con el test de levene (Figura \ref{fig:fig4310}). 
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/Homocedasticidad.png}
-	\end{center}
-	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig4310}
-\end{figure}
-
-Por último, el ANOVA no es robusto ante la presencia de observaciones atípicas, por lo tanto se incluyen gráficos para detectar la presencia de las mismas (Figura \ref{fig:fig4311}).
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/Outliers.png}
-	\end{center}
-	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:fig4311}
-\end{figure}
-
-Todos los gráficos mostrados para verificar los supuestos requeridos por la técnica ANOVA pueden ser descargados mediante el botón \emph{Download} de la pestaña correspondiente.
 
 \textbf{Biplots}
 

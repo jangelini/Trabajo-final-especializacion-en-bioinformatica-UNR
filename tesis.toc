@@ -34,6 +34,6 @@
 \contentsline {subsection}{\numberline {4.1.1}Conjuntos de datos en geneticae}{23}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Aplicación de las funciones incluidas en el paquete}{24}{subsection.4.1.2}%
 \contentsline {section}{\numberline {4.2}Geneticae Shiny Web App}{35}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Análisis de un caso}{37}{subsection.4.2.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{46}{chapter.5}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{48}{section*.8}%
+\contentsline {subsection}{\numberline {4.2.1}Análisis de un caso}{36}{subsection.4.2.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{42}{chapter.5}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{43}{section*.7}%

@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -7,10 +7,51 @@
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem[{Allard(1967)}]{Allard67}
-R.W. Allard.
-\newblock \emph{Principios de la mejora genética de las plantas}.
-\newblock Ediciones Omega, 1967.
+\bibitem[{Arciniegas-Alarcón et~al.(2010)Arciniegas-Alarcón, García-Peña,
+  Dias, y Krzanowski}]{Alarconetal2010}
+S.~Arciniegas-Alarcón, M.~García-Peña, C.T.S. Dias, y W.J. Krzanowski.
+\newblock An alternativemethodology for imputing missing data in trials with
+  genotype-by-environment interaction.
+\newblock \emph{Biometrical Letters}, 47:1--47, 2010.
+
+\bibitem[{Arciniegas-Alarcón et~al.(2014)Arciniegas-Alarcón, García-Peña,
+  Krzanowski, y Dias}]{Alarconetal2014}
+S.~Arciniegas-Alarcón, M.~García-Peña, W.J. Krzanowski, y C.T.S. Dias.
+\newblock An alternativemethodology for imputing missing data in trials with
+  genotype-byenvironment interaction: somenew aspects.
+\newblock \emph{Biometrical Letters}, 51:75--88, 2014.
+
+\bibitem[{Cooper et~al.(1997)Cooper, DeLacy, y Harch}]{Cooperetal1997}
+R.E. Cooper, M.and~Stucker, I.H. DeLacy, y B.D. Harch.
+\newblock Wheat breeding nurseries, target environments, and indirect selection
+  for grain yield.
+\newblock \emph{Crop Science}, 37:1168--1176, 1997.
+
+\bibitem[{Cornelius et~al.(1996)Cornelius, Crossa, y
+  Seyedsadr}]{Corneliusetal1996}
+P.L. Cornelius, J.~Crossa, y M.S. Seyedsadr.
+\newblock \emph{Genotype by Environment Interaction}, cap. Statistical test and
+  estimators of multiplicative models for genotype-by-environment
+  interaccition., p\'ags. 199--234.
+\newblock CRC Press, Boca Raton, 1996.
+
+\bibitem[{Cornelius et~al.(2002)Cornelius, Crossa, y Seyedsadr}]{YanHunt2002}
+P.L. Cornelius, J.~Crossa, y M.S. Seyedsadr.
+\newblock \emph{Quantitive Genetics, Genomics and Plant Breeding.}, cap. Biplot
+  analysis of Multi-environment trial data., p\'ags. 199--234.
+\newblock CABI Publishing, Wallingford, 2002.
+
+\bibitem[{Crossa y Cornelius(1997)}]{CrossaCornelius1997}
+J.~Crossa y P.~L. Cornelius.
+\newblock Sites regresion and shifted multiplicative model clustering of
+  cultivar trial sites under heterogeneity of error variances.
+\newblock \emph{Crop Science}, 37:406--415, 1997.
+
+\bibitem[{Crossa et~al.(2002)Crossa, Cornelius, y Yan}]{CrossaCorneliusYan2002}
+J.~Crossa, P.L. Cornelius, y W.~Yan.
+\newblock Biplots of linear-bilinear models for studying crossover
+  genotipe–environment interaction.
+\newblock \emph{Crop Science}, 42:619--633, 2002.
 
 \bibitem[{Crossa et~al.(1990)Crossa, Gauch, y Zobel}]{Crossaetal1990}
 J.~Crossa, H.G. Gauch, y R.W. Zobel.
@@ -34,16 +75,56 @@ H.G. Gauch y R.W. Zobel.
 \newblock Identifying mega-environments and targeting genotypes.
 \newblock \emph{Crop Science}, 37:311–--326, 1997.
 
+\bibitem[{Hill y Rosenberg(1985)}]{HillRosenberg1985}
+Jr.~R.R. Hill y J.L. Rosenberg.
+\newblock Models for combining data from germplasm evaluation trials.
+\newblock \emph{Crop Science}, 25:467--470, 1985.
+
+\bibitem[{Kang y Magari(1996)}]{KangMagari1996}
+M.S. Kang y R.~Magari.
+\newblock \emph{Genotype by Environment Interaction}, cap. New Developments in
+  Selecting for Phenotypic Stability in Crop Breeding., p\'ags. 201--213.
+\newblock Elsevier, New York, 1996.
+
 \bibitem[{Kempton(1984)}]{Kempton1984}
 R.~A. Kempton.
 \newblock The use of biplot in interpreting variety by environment
   interactions.
 \newblock \emph{Journal of Agricultural Science}, 122:335--342, 1984.
 
+\bibitem[{Rodrigues et~al.(2016)Rodrigues, Monteiro, , y
+  Lourenço}]{Rodriguesetal2016}
+P.C. Rodrigues, A.~Monteiro, , y V.M. Lourenço.
+\newblock A robust ammi model for the analysis of genotype-by-environment data.
+\newblock \emph{Bioinformatics}, 32:58--66, 2016.
+
+\bibitem[{Yan et~al.(2001)Yan, Cornelius, Crossa, y Hunt}]{Yanetal2001}
+W.~Yan, P.L. Cornelius, J.~Crossa, y L.A. Hunt.
+\newblock Two types of gge biplots for analyzing multi-environment trial data.
+\newblock \emph{Crop Science}, 41:656--663, 2001.
+
+\bibitem[{Yan y Hunt(2001)}]{YanHunt2001}
+W.~Yan y L.~A. Hunt.
+\newblock Genetic and environment causes of genotype by environment interaction
+  for winter wheat yield in ontario.
+\newblock \emph{Crop Science}, 41:19--25, 2001.
+
+\bibitem[{Yan et~al.(2000)Yan, Hunt, Sheng, y Szlavnics}]{Yanetal2000}
+W.~Yan, L.~A. Hunt, Q.~Sheng, y Z.~Szlavnics.
+\newblock Cultivar evaluation and mega-environment investigation based on the
+  {GGE} biplot.
+\newblock \emph{Crop Science}, 40:597–--605, 2000.
+
 \bibitem[{Yan y Kang(2003)}]{YanKang2003}
 W.~Yan y M.~Kang.
 \newblock \emph{GGE Biplot Analysis: A Graphical Tool for Breeders,
   Geneticists}.
 \newblock CRC Press, 2003.
+
+\bibitem[{Yan y Rajcan(2002)}]{YanRajcan2002}
+W.~Yan y I.~Rajcan.
+\newblock Biplot evaluation of test sites and traitrelations of soybean in
+  ontario.
+\newblock \emph{Crop Science}, 42:11–--20, 2002.
 
 \end{thebibliography}

@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2019)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: tesis.aux
 The style file: ezspanish.bst
 A level-1 auxiliary file: titlepage.aux
@@ -13,46 +13,49 @@ A level-1 auxiliary file: objetivos.aux
 A level-1 auxiliary file: metodos.aux
 A level-1 auxiliary file: resultados2.aux
 A level-1 auxiliary file: conclu.aux
-A level-1 auxiliary file: perspfuturo.aux
 Database file #1: biblio.bib
-You've used 7 entries,
+Warning--can't use both author and editor fields in Corneliusetal1996
+Warning--can't use both author and editor fields in YanHunt2002
+Warning--can't use both author and editor fields in KangMagari1996
+You've used 20 entries,
             2833 wiz_defined-function locations,
-            651 strings with 5929 characters,
-and the built_in function-call counts, 3799 in all, are:
-= -- 295
-> -- 108
-< -- 6
-+ -- 42
-- -- 33
-* -- 236
-:= -- 572
-add.period$ -- 21
-call.type$ -- 7
-change.case$ -- 44
-chr.to.int$ -- 7
-cite$ -- 7
-duplicate$ -- 306
-empty$ -- 335
-format.name$ -- 50
-if$ -- 756
+            738 strings with 8399 characters,
+and the built_in function-call counts, 12851 in all, are:
+= -- 988
+> -- 490
+< -- 16
++ -- 184
+- -- 156
+* -- 929
+:= -- 1856
+add.period$ -- 60
+call.type$ -- 20
+change.case$ -- 148
+chr.to.int$ -- 20
+cite$ -- 23
+duplicate$ -- 1003
+empty$ -- 1035
+format.name$ -- 224
+if$ -- 2574
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 70
-newline$ -- 44
-num.names$ -- 28
-pop$ -- 149
+missing$ -- 236
+newline$ -- 109
+num.names$ -- 80
+pop$ -- 497
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 132
 quote$ -- 0
-skip$ -- 116
+skip$ -- 349
 stack$ -- 0
-substring$ -- 214
-swap$ -- 128
-text.length$ -- 0
+substring$ -- 693
+swap$ -- 491
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 57
-warning$ -- 0
-while$ -- 29
+type$ -- 168
+warning$ -- 3
+while$ -- 91
 width$ -- 0
-write$ -- 97
+write$ -- 267
+(There were 3 warnings)

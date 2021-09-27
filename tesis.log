@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  2 AUG 2021 10:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  27 SEP 2021 19:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -797,7 +797,7 @@ LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
  (./ddjj.aux) (./gracias.aux) (./abrysimb.aux) (./resumen.aux) (./abstract.aux)
  (./intro.aux) (./objetivos.aux) (./metodos.aux)
-(./resultados2.aux) (./conclu.aux) (./perspfuturo.aux))
+(./resultados2.aux) (./conclu.aux))
 \openout1 = `tesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
@@ -929,7 +929,12 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 UNR.png>])
 \openout2 = `ddjj.aux'.
 
- (./ddjj.tex) [2
+ (./ddjj.tex)
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 182.
+
+[1
 
 
 ]
@@ -938,9 +943,9 @@ UNR.png>])
  (./gracias.tex)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 184.
+(Font)              using `OT1/cmr/m/sc' instead on input line 183.
 
-[1
+[2
 
 
 
@@ -950,9 +955,9 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
  (./abrysimb.tex)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 185.
+(Font)              using `OT1/cmr/m/sc' instead on input line 184.
 
-[2
+[3
 
 
 
@@ -968,9 +973,9 @@ Overfull \hbox (1.45302pt too wide) in paragraph at lines 15--16
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 186.
+(Font)              using `OT1/cmr/m/sc' instead on input line 185.
 
-[3
+[4
 
 
 
@@ -980,9 +985,9 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
  (./abstract.tex)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 187.
+(Font)              using `OT1/cmr/m/sc' instead on input line 186.
 
-[4
+[5
 
 
 
@@ -1016,7 +1021,7 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 27.
 
-[5
+[6
 
 
 ])
@@ -1026,20 +1031,20 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 200.
+(Font)              using `OT1/cmr/m/sc' instead on input line 199.
 
-[6] (./tesis.lof
+[7] (./tesis.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
-Underfull \vbox (badness 7558) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 25.
+(Font)              using `OT1/cmr/m/sc' instead on input line 24.
 
-[7
+[8
 
 
 ])
@@ -1049,14 +1054,14 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 203.
+(Font)              using `OT1/cmr/m/sc' instead on input line 202.
 
-[8]
+[9]
 \openout2 = `intro.aux'.
 
  (./intro.tex
 Cap\'{\i }tulo 1.
-<./Graficos/interac.png, id=339, 618.81187pt x 188.95593pt>
+<./Graficos/interac.png, id=329, 618.81187pt x 188.95593pt>
 File: ./Graficos/interac.png Graphic file (type png)
 <use ./Graficos/interac.png>
 Package pdftex.def Info: ./Graficos/interac.png  used on input line 19.
@@ -1079,15 +1084,10 @@ l.27
 ]
 Underfull \vbox (badness 5985) has occurred while \output is active []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.31 
-      [2 <./Graficos/interac.png>])
+ [2 <./Graficos/interac.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3]
+ [3])
 [4]
 \openout2 = `objetivos.aux'.
 
@@ -1107,12 +1107,12 @@ Cap\'{\i }tulo 3.
 
 
 ] [7] [8] [9]
-<./Graficos/available.png, id=399, 500.87125pt x 278.03876pt>
+<./Graficos/available.png, id=446, 500.87125pt x 278.03876pt>
 File: ./Graficos/available.png Graphic file (type png)
 <use ./Graficos/available.png>
 Package pdftex.def Info: ./Graficos/available.png  used on input line 141.
 (pdftex.def)             Requested size: 270.30118pt x 150.05383pt.
-<./Graficos/creacion.png, id=401, 651.43375pt x 459.7175pt>
+<./Graficos/creacion.png, id=448, 651.43375pt x 459.7175pt>
 File: ./Graficos/creacion.png Graphic file (type png)
 <use ./Graficos/creacion.png>
 Package pdftex.def Info: ./Graficos/creacion.png  used on input line 161.
@@ -1121,7 +1121,7 @@ Package pdftex.def Info: ./Graficos/creacion.png  used on input line 161.
 Underfull \vbox (badness 7099) has occurred while \output is active []
 
  [10 <./Graficos/available.png>] [11 <./Graficos/creacion.png>] [12]
-<./Graficos/DESCRIPTION.png, id=430, 689.57625pt x 722.7pt>
+<./Graficos/DESCRIPTION.png, id=478, 689.57625pt x 722.7pt>
 File: ./Graficos/DESCRIPTION.png Graphic file (type png)
 <use ./Graficos/DESCRIPTION.png>
 Package pdftex.def Info: ./Graficos/DESCRIPTION.png  used on input line 229.
@@ -1131,12 +1131,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
 [14 <./Graficos/DESCRIPTION.png>]
-<./Graficos/Test.png, id=440, 632.3625pt x 390.45876pt>
+<./Graficos/Test.png, id=488, 632.3625pt x 390.45876pt>
 File: ./Graficos/Test.png Graphic file (type png)
 <use ./Graficos/Test.png>
 Package pdftex.def Info: ./Graficos/Test.png  used on input line 252.
 (pdftex.def)             Requested size: 312.9803pt x 193.25682pt.
-<./Graficos/Cobertura.png, id=442, 926.46124pt x 397.485pt>
+<./Graficos/Cobertura.png, id=490, 926.46124pt x 397.485pt>
 File: ./Graficos/Cobertura.png Graphic file (type png)
 <use ./Graficos/Cobertura.png>
 Package pdftex.def Info: ./Graficos/Cobertura.png  used on input line 263.
@@ -1153,7 +1153,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--298
  []
 
 [17]
-<./Graficos/badges.png, id=460, 1353.055pt x 606.265pt>
+<./Graficos/badges.png, id=507, 1353.055pt x 606.265pt>
 File: ./Graficos/badges.png Graphic file (type png)
 <use ./Graficos/badges.png>
 Package pdftex.def Info: ./Graficos/badges.png  used on input line 318.
@@ -1162,7 +1162,7 @@ Package pdftex.def Info: ./Graficos/badges.png  used on input line 318.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18 <./Graficos/badges.png>]
-<./Graficos/News.png, id=466, 571.13374pt x 83.31125pt>
+<./Graficos/News.png, id=513, 571.13374pt x 83.31125pt>
 File: ./Graficos/News.png Graphic file (type png)
 <use ./Graficos/News.png>
 Package pdftex.def Info: ./Graficos/News.png  used on input line 342.
@@ -1229,7 +1229,7 @@ Overfull \hbox (18.11523pt too wide) in paragraph at lines 84--85
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
-<./Graficos/GGE_BIPLOT.png, id=519, 433.62pt x 319.94531pt>
+<./Graficos/GGE_BIPLOT.png, id=566, 433.62pt x 319.94531pt>
 File: ./Graficos/GGE_BIPLOT.png Graphic file (type png)
 <use ./Graficos/GGE_BIPLOT.png>
 Package pdftex.def Info: ./Graficos/GGE_BIPLOT.png  used on input line 118.
@@ -1238,7 +1238,7 @@ Package pdftex.def Info: ./Graficos/GGE_BIPLOT.png  used on input line 118.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26 <./Graficos/GGE_BIPLOT.png (PNG copy)>]
-<./Graficos/SelectedGyE.png, id=528, 511.15968pt x 223.58531pt>
+<./Graficos/SelectedGyE.png, id=576, 511.15968pt x 223.58531pt>
 File: ./Graficos/SelectedGyE.png Graphic file (type png)
 <use ./Graficos/SelectedGyE.png>
 Package pdftex.def Info: ./Graficos/SelectedGyE.png  used on input line 145.
@@ -1247,7 +1247,7 @@ Package pdftex.def Info: ./Graficos/SelectedGyE.png  used on input line 145.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [27 <./Graficos/SelectedGyE.png>]
-<./Graficos/ComparisonofGenotype.png, id=541, 433.62pt x 319.94531pt>
+<./Graficos/ComparisonofGenotype.png, id=589, 433.62pt x 319.94531pt>
 File: ./Graficos/ComparisonofGenotype.png Graphic file (type png)
 <use ./Graficos/ComparisonofGenotype.png>
 Package pdftex.def Info: ./Graficos/ComparisonofGenotype.png  used on input lin
@@ -1257,7 +1257,7 @@ e 168.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28 <./Graficos/ComparisonofGenotype.png (PNG copy)>]
-<./Graficos/WhichWonWhereWhat.png, id=550, 433.62pt x 319.94531pt>
+<./Graficos/WhichWonWhereWhat.png, id=598, 433.62pt x 319.94531pt>
 File: ./Graficos/WhichWonWhereWhat.png Graphic file (type png)
 <use ./Graficos/WhichWonWhereWhat.png>
 Package pdftex.def Info: ./Graficos/WhichWonWhereWhat.png  used on input line 1
@@ -1267,7 +1267,7 @@ Package pdftex.def Info: ./Graficos/WhichWonWhereWhat.png  used on input line 1
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29 <./Graficos/WhichWonWhereWhat.png (PNG copy)>]
-<./Graficos/MeanvsStability2.png, id=563, 526.96875pt x 225.84375pt>
+<./Graficos/MeanvsStability2.png, id=611, 526.96875pt x 225.84375pt>
 File: ./Graficos/MeanvsStability2.png Graphic file (type png)
 <use ./Graficos/MeanvsStability2.png>
 Package pdftex.def Info: ./Graficos/MeanvsStability2.png  used on input line 23
@@ -1280,7 +1280,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31 <./Graficos/MeanvsStability2.png>]
-<./Graficos/RelationshipEnvironments.png, id=588, 526.96875pt x 225.84375pt>
+<./Graficos/RelationshipEnvironments.png, id=635, 526.96875pt x 225.84375pt>
 File: ./Graficos/RelationshipEnvironments.png Graphic file (type png)
 <use ./Graficos/RelationshipEnvironments.png>
 Package pdftex.def Info: ./Graficos/RelationshipEnvironments.png  used on input
@@ -1293,148 +1293,100 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33 <./Graficos/RelationshipEnvironments.png>]
-<./Graficos/AMMI.png, id=608, 397.485pt x 397.485pt>
+<./Graficos/AMMI.png, id=655, 397.485pt x 397.485pt>
 File: ./Graficos/AMMI.png Graphic file (type png)
 <use ./Graficos/AMMI.png>
-Package pdftex.def Info: ./Graficos/AMMI.png  used on input line 303.
+Package pdftex.def Info: ./Graficos/AMMI.png  used on input line 299.
 (pdftex.def)             Requested size: 227.63019pt x 216.24596pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [34 <./Graficos/AMMI.png (PNG copy)>]
-<./Graficos/Exampledatasets_withoutrep.png, id=617, 912.40875pt x 489.32813pt>
-File: ./Graficos/Exampledatasets_withoutrep.png Graphic file (type png)
-<use ./Graficos/Exampledatasets_withoutrep.png>
-Package pdftex.def Info: ./Graficos/Exampledatasets_withoutrep.png  used on inp
-ut line 340.
-(pdftex.def)             Requested size: 455.24408pt x 244.14825pt.
+<./Graficos/exampledata.jpg, id=663, 956.07187pt x 208.52907pt>
+File: ./Graficos/exampledata.jpg Graphic file (type jpg)
+<use ./Graficos/exampledata.jpg>
+Package pdftex.def Info: ./Graficos/exampledata.jpg  used on input line 338.
+(pdftex.def)             Requested size: 455.24408pt x 99.29097pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [35]
-<./Graficos/Exampledatasets_withrep.png, id=625, 910.90312pt x 493.845pt>
-File: ./Graficos/Exampledatasets_withrep.png Graphic file (type png)
-<use ./Graficos/Exampledatasets_withrep.png>
-Package pdftex.def Info: ./Graficos/Exampledatasets_withrep.png  used on input 
-line 348.
-(pdftex.def)             Requested size: 455.24408pt x 246.81639pt.
-
-[36 <./Graficos/Exampledatasets_withoutrep.png> <./Graficos/Exampledatasets_wit
-hrep.png>]
-<./Graficos/data.png, id=634, 916.92563pt x 490.08093pt>
+<./Graficos/data.png, id=672, 1446.40375pt x 880.28876pt>
 File: ./Graficos/data.png Graphic file (type png)
 <use ./Graficos/data.png>
-Package pdftex.def Info: ./Graficos/data.png  used on input line 363.
-(pdftex.def)             Requested size: 455.24408pt x 243.31992pt.
-<./Graficos/Boxplot_environment.png, id=637, 767.86874pt x 491.58656pt>
-File: ./Graficos/Boxplot_environment.png Graphic file (type png)
-<use ./Graficos/Boxplot_environment.png>
-Package pdftex.def Info: ./Graficos/Boxplot_environment.png  used on input line
- 376.
-(pdftex.def)             Requested size: 455.24408pt x 291.45125pt.
- [37 <./Graficos/data.png>]
-<./Graficos/corr_gen.png, id=646, 755.07094pt x 455.45157pt>
+Package pdftex.def Info: ./Graficos/data.png  used on input line 353.
+(pdftex.def)             Requested size: 455.24408pt x 277.06407pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./Graficos/Boxplot.jpg, id=675, 957.5775pt x 301.8778pt>
+File: ./Graficos/Boxplot.jpg Graphic file (type jpg)
+<use ./Graficos/Boxplot.jpg>
+Package pdftex.def Info: ./Graficos/Boxplot.jpg  used on input line 366.
+(pdftex.def)             Requested size: 455.24408pt x 143.5178pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36 <./Graficos/exampledata.jpg>]
+<./Graficos/corr_gen.png, id=683, 755.07094pt x 455.45157pt>
 File: ./Graficos/corr_gen.png Graphic file (type png)
 <use ./Graficos/corr_gen.png>
-Package pdftex.def Info: ./Graficos/corr_gen.png  used on input line 387.
+Package pdftex.def Info: ./Graficos/corr_gen.png  used on input line 377.
 (pdftex.def)             Requested size: 455.24408pt x 274.60042pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38 <./Graficos/Boxplot_environment.png>]
-<./Graficos/corr_matrix.png, id=652, 938.75719pt x 474.27188pt>
+ [37 <./Graficos/data.png> <./Graficos/Boxplot.jpg>]
+<./Graficos/corr_matrix.png, id=689, 938.75719pt x 474.27188pt>
 File: ./Graficos/corr_matrix.png Graphic file (type png)
 <use ./Graficos/corr_matrix.png>
-Package pdftex.def Info: ./Graficos/corr_matrix.png  used on input line 396.
+Package pdftex.def Info: ./Graficos/corr_matrix.png  used on input line 386.
 (pdftex.def)             Requested size: 455.24408pt x 229.99263pt.
 
-Underfull \vbox (badness 2293) has occurred while \output is active []
-
- [39 <./Graficos/corr_gen.png> <./Graficos/corr_matrix.png>]
-<./Graficos/int_plot.png, id=660, 772.38562pt x 462.22687pt>
+[38 <./Graficos/corr_gen.png> <./Graficos/corr_matrix.png>]
+<./Graficos/int_plot.png, id=696, 772.38562pt x 462.22687pt>
 File: ./Graficos/int_plot.png Graphic file (type png)
 <use ./Graficos/int_plot.png>
-Package pdftex.def Info: ./Graficos/int_plot.png  used on input line 411.
+Package pdftex.def Info: ./Graficos/int_plot.png  used on input line 401.
 (pdftex.def)             Requested size: 455.24408pt x 272.43642pt.
- [40 <./Graficos/int_plot.png>]
-<./Graficos/ANOVA.png, id=667, 499.8675pt x 185.94469pt>
-File: ./Graficos/ANOVA.png Graphic file (type png)
-<use ./Graficos/ANOVA.png>
-Package pdftex.def Info: ./Graficos/ANOVA.png  used on input line 426.
-(pdftex.def)             Requested size: 455.24408pt x 169.35178pt.
-<./Graficos/Normalidad.png, id=669, 502.87875pt x 492.33937pt>
-File: ./Graficos/Normalidad.png Graphic file (type png)
-<use ./Graficos/Normalidad.png>
-Package pdftex.def Info: ./Graficos/Normalidad.png  used on input line 439.
-(pdftex.def)             Requested size: 455.24408pt x 445.70064pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41 <./Graficos/ANOVA.png>]
-<./Graficos/Homocedasticidad.png, id=675, 516.42938pt x 269.50688pt>
-File: ./Graficos/Homocedasticidad.png Graphic file (type png)
-<use ./Graficos/Homocedasticidad.png>
-Package pdftex.def Info: ./Graficos/Homocedasticidad.png  used on input line 45
-0.
-(pdftex.def)             Requested size: 455.24408pt x 237.58623pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42 <./Graficos/Normalidad.png>]
-<./Graficos/Outliers.png, id=681, 516.42938pt x 335.75438pt>
-File: ./Graficos/Outliers.png Graphic file (type png)
-<use ./Graficos/Outliers.png>
-Package pdftex.def Info: ./Graficos/Outliers.png  used on input line 460.
-(pdftex.def)             Requested size: 455.24408pt x 295.98732pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43 <./Graficos/Homocedasticidad.png>]
-<./Graficos/GGE.png, id=689, 1015.54407pt x 490.83376pt>
+ [39 <./Graficos/int_plot.png>]
+<./Graficos/GGE.png, id=706, 1015.54407pt x 490.83376pt>
 File: ./Graficos/GGE.png Graphic file (type png)
 <use ./Graficos/GGE.png>
-Package pdftex.def Info: ./Graficos/GGE.png  used on input line 476.
+Package pdftex.def Info: ./Graficos/GGE.png  used on input line 416.
 (pdftex.def)             Requested size: 455.24408pt x 220.02682pt.
- [44 <./Graficos/Outliers.png>]
-<./Graficos/AMMI_S.png, id=694, 1013.28563pt x 495.35063pt>
+<./Graficos/AMMI_S.png, id=707, 1013.28563pt x 495.35063pt>
 File: ./Graficos/AMMI_S.png Graphic file (type png)
 <use ./Graficos/AMMI_S.png>
-Package pdftex.def Info: ./Graficos/AMMI_S.png  used on input line 485.
+Package pdftex.def Info: ./Graficos/AMMI_S.png  used on input line 425.
 (pdftex.def)             Requested size: 455.24408pt x 222.54292pt.
-) [45 <./Graficos/GGE.png> <./Graficos/AMMI_S.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40 <./Graficos/GGE.png>]) [41 <./Graficos/AMMI_S.png>]
 \openout2 = `conclu.aux'.
 
  (./conclu.tex
 Cap\'{\i }tulo 5.
-) [46
+) [42
 
 
 
-]
-\openout2 = `perspfuturo.aux'.
-
- (./perspfuturo.tex) [47
+] (./tesis.bbl [43
 
 
 
-] (./tesis.bbl) [48
-
-
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
- (./tesis.aux
-(./titlepage.aux)
+]) [44]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 245.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 245.
+ (./tesis.aux (./titlepage.aux)
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
- (./ddjj.aux) (./gracias.aux) (./abrysimb.aux) (./resumen.aux) (./abstract.aux)
- (./intro.aux) (./objetivos.aux) (./metodos.aux)
-(./resultados2.aux) (./conclu.aux) (./perspfuturo.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
+ (./ddjj.aux)
+(./gracias.aux) (./abrysimb.aux) (./resumen.aux) (./abstract.aux) (./intro.aux)
+(./objetivos.aux) (./metodos.aux) (./resultados2.aux) (./conclu.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 245.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 245.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 76EBFC3A95AD27C8A4C60A4280881D16;2484.
+(rerunfilecheck)             Checksum: 674E7A38437FA51D48D142AC979823AE;2484.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1442,12 +1394,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  27697 strings out of 480623
- 517947 string characters out of 5906691
+ 517802 string characters out of 5906691
  1116149 words of memory out of 5000000
- 42737 multiletter control sequences out of 15000+600000
- 551752 words of font info for 95 fonts, out of 8000000 for 9000
+ 42744 multiletter control sequences out of 15000+600000
+ 551393 words of font info for 94 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 59i,12n,83p,2293b,1771s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,12n,83p,2438b,1771s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -1466,10 +1418,10 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/cm-super/sfrm1200.pfb>
-Output written on tesis.pdf (58 pages, 1337073 bytes).
+Output written on tesis.pdf (54 pages, 1288200 bytes).
 PDF statistics:
- 820 PDF objects out of 1000 (max. 8388607)
- 682 compressed objects within 7 object streams
- 193 named destinations out of 1000 (max. 500000)
- 534 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 835 PDF objects out of 1000 (max. 8388607)
+ 709 compressed objects within 8 object streams
+ 197 named destinations out of 1000 (max. 500000)
+ 509 words of extra memory for PDF output out of 10000 (max. 10000000)
 
