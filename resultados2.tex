@@ -7,19 +7,25 @@
 
 \chapter{Resultados}
 
+En esta sección se muestran ejemplos de uso tanto del paquete geneticae como de Geneticae Shiny Web APP. 
+
 \section{Paquete de R \emph{geneticae}}
 
-Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae). Información detallada sobre las funciones del paquete geneticae se puede obtener mediante \textcolor{blue}{help}(package = ``geneticae"). La ayuda para una función, por ejemplo \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). La función \textcolor{blue}{browseVignettes}(``geneticae") permite obtener la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver así como ejemplos de aplicación del mismo. 
+Para instalar la versión del paquete publicada en CRAN: \textcolor{blue}{install.packages}(``geneticae"), mientras que la versión en desarrollo se debe instalar desde el repositorio de Github: devtools::\textcolor{blue}{install\_github}(``jangelini/geneticae"). 
 
-Se encuentra disponible una página web del paquete (http://....) en la que se cuenta con una breve descripción del paquete, las funciones que se incluyen en él, la viñeta, un enlace de acceso a la shiny app, entre otra información.
+Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae). 
+
+Información detallada sobre las funciones del paquete geneticae se puede obtener mediante \textcolor{blue}{help}(package = ``geneticae"). La ayuda para una función, por ejemplo \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). La función \textcolor{blue}{browseVignettes}(``geneticae") permite obtener la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver así como ejemplos de aplicación del mismo. 
+
+Además, se encuentra disponible una página web (http://....) que contiene una breve descripción de la utilidad del paquete, las funciones que se incluyen en él, un tutorial de uso, un enlace de acceso a la shiny app, entre otra información.
 
 
 \subsection{Conjuntos de datos en geneticae}
 
-El paquete geneticae contiene dos conjuntos de datos que son usados a modo de ejemplo en las funciones incluidas para analizar los datos provenientes de EMA.
+El paquete geneticae proporciona dos conjuntos de datos que pueden utilizarse para ilustrar la metodología incluida para analizar los datos provenientes de EMA. 
 
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex, noitemsep,topsep=0pt]
-\item \emph{yan.winterwheat dataset} (Wright, 2018): rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente en el conjunto de datos, sólo el rendimiento medio para cada combinación de variedad y ambiente se encuentra disponible.
+\item \emph{yan.winterwheat dataset} (Wright, 2018): se cuenta con información sobre el rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente, sólo el rendimiento medio para cada combinación de variedad y ambiente se encuentra disponible.
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
@@ -44,7 +50,7 @@ head(yanwinterwheat)
 \end{verbatim}
 \end{tcolorbox}
 
-\item \emph{plrv dataset} (CITA AGRICOLAE): rendimiento, peso de planta y parcela de 28 genotipos en 6 ubicaciones en Perú, con el fin de estudiar la resistencia a PLRV (\emph{Patato Leaf Roll Virus}) causante del enrollamiento de la hoja. Cada clon fue evaluado tres veces en cada ambiente. \\
+\item \emph{plrv dataset} (CITA AGRICOLAE): se registró información sobre el rendimiento, el peso de planta y de la parcela de 28 genotipos en 6 localidades de Perú con el fin de estudiar la resistencia a PLRV (\emph{Patato Leaf Roll Virus}) causante del enrollamiento de la hoja. Cada clon fue evaluado tres veces en cada ambiente. \\
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -71,72 +77,124 @@ head(plrv)
 \end{tcolorbox} 
 \end{itemize}
   
-\subsection{Aplicación de las funciones incluidas en el paquete}
+  
+En las siguiente subsecciones se muestran las herramientas de análisis incluidas en el paquete utilizando el conjunto de datos \emph{yan.winterwheat}.  
+  
+\subsection{Modelo AMMI}
 
-A fin de ilustrar la metodología incluida en el paquete se utiliza el conjunto de datos \emph{yan.winterwheat}.\\
+Para visualizar el efecto de IGA se utiliza el biplot GE obtenido del modelo AMMI. Este gráfico es posible obtenerlo utilizando la función \textcolor{blue}{rAMMI}(). Esta función requiere datos en formato largo, es decir, cada fila corresponde a una observación y cada columna a una variable (genotipo, ambiente, repetición (si existe) y fenotipo observado). Si cada genotipo ha sido evaluado más de una vez en cada ambiente, la media fenotípica para cada combinación de genotipo y ambiente se calcula internamente y luego se estima el modelo. Las variables adicionales que no se utilizarán en el análisis pueden estar presentes en el conjunto de datos. No se permiten valores perdidos pero se pueden imputar como se indicará más adelante. 
 
-\textbf{Modelo SREG}
+El biplot clásico para el conjunto de datos \emph{yan.winterwheat} se muestra en la figura \ref{fig:fig41211} junto con la sentencia utlizada para obtener el mismo. El primer argumento es el conjunto de datos de entrada, luego se indican los nombres de las columnas en las cuales se encuentra la información necesaria para aplicar la técnica y además el biplot que se desea obtener que por defecto es el derivado del modelo AMMI clásico. Opcionalmente, el porcentaje de IGA explicado por el biplot se puede agregar como una nota al pie con el argumento \emph{footnote = T} así como un título con \emph{titles = T}. 
 
-Para visualizar conjuntamente el efecto de G e IGA, Yan et al. (2000) propuso el biplot GGE con el cual se pueden abordar visualmente diversos aspectos relacionados con la evaluación de genotipos y ambientes. Para obtener dicho biplot en primer lugar se debe ajustar el modelo SREG mediante la función \textcolor{blue}{GGEmodel}(). 
-
-La función \textcolor{blue}{GGEmodel}() propuesta en este paquete, es menos restrictiva que las disponibles actualmente en R en cuanto al conjunto de datos de entrada. En particular, es una modificación de la función \textcolor{blue}{GGEModel}() de GGEBiplots \textbf{(CITA)} en la que el conjunto de datos de entrada los genotipos se encuentren en las filas y los ambientes en las columnas y por lo tanto, no admite replicas. A diferencia de esto, la función \textcolor{blue}{GGEmodel}() incluida en \emph{geneticae} requiere que los datos se encuentren en formato largo, es decir las observaciones en las filas y las variables en las columnas, lo cual es más ordenado a la hora de registrar la información. Además, la base de datos puede contener otras variables que no serán utilizadas en el análisis ya que al ajustar el modelo se deben indicar en qué columnas se encuentra la información requerida por la técnica que se aplicará. Por otro lado, dado que el modelo requiere de una única observación para cada combinación de genotipo y ambiente, en caso de existir repeticiones el valor fenotípico promedio es calculado automáticamente por la función antes de ajustar el modelo. Los valores faltantes no están permitidos, en caso de haber, un mensaje de error saldrá en la consola de R.\\  
-
-La sentencia utilizada para ajustar el modelo GGE en el conjunto de datos \emph{yan.winterwheat} se muestra a continuación. El primer argumento de la misma consiste en el nombre del \emph{dataframe} y los restantes indican los nombres que reciben las columnas que contienen la información de los genotipos, ambientes y del rasgo fenotípico de interés. Por defecto, la función considera que no hay replicas en el conjunto de datos, sin embargo, si existieran la opción \emph{rep} en la cual se indica el nombre de la columna con dicha información debe ser adicionada. Otros argumentos de dicha función son el método de centrado, de SVD y de escalado. Por defecto los datos se centran por G y GE, dando lugar al modelo SREG, otra opción en dicho argumento dará lugar a un modelo diferente. La elección del método de SVD no altera las relaciones o interacciones relativas entre los genotipos y los ambientes, aunque la apariencia del biplot será diferente, se recomienda la lectura de Yan (2002). Por último, diferentes biplots se pueden generar dependiendo del método de escalado, mayor información se encuentra disponible en Yan and Kang (2003) y Yan and Tinker (2006). En el modelo ajustado a continuación tanto el centrado, como el método SVD y de escalado son los seteados por defecto en la función.
-
-\begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
-   				width=1\linewidth,
-    			height=0.1\linewidth,
-    			boxsep=-3mm]
-\begin{lstlisting}
-GGE1 <- GGEmodel(yanwinterwheat, genotype = ``gen", environment = ``env", response = ``yield")
-\end{lstlisting}
-\end{tcolorbox}
-
-
-\textbf{Biplot GGE}
-
-La salida de la función \textcolor{blue}{GGEmodel}() es una lista que contiene las coordenadas para los genotipos y ambientes de todas las componentes, el vector de valores propios de cada componente, la variancia total, el porcentaje de variancia explicada por cada componente, entre otros. Utilizando dicha información como entrada, la función \textcolor{blue}{GGEPlot}() construye el biplot GGE. En dichos gráficos los cultivares se muestran en minúscula, para diferenciarlos de los ambientes, que están en mayúsculas. La primer componente principal se usa como la abscisa y la segunda como ordenada. Además, es posible adicionar el método de centrado, escalado y de SVD utilizado, así como también el porcentaje G + GE explicado por los dos ejes como una nota al pie del biplot con la opción \emph{footnote=T}, así como también el título del gráfico con \emph{titles = T}. 
-
-
-\textbf{Comparaciones simples utilizando GGE biplot}
-
-Dependiendo del objetivo del fitomejorador mejorador, diversos tipos de biplots GGE se pueden construir utilizando la función \textcolor{blue}{GGEPlot}(). Utilizando la opción \emph{Biplot} en el argumento \emph{type} se obtiene un biplot básico como se muestra en la figura \ref{fig:fig4121}. Se observa que explica el 78\% de la variabilidad total de G + GE. Para interpretar este gráfico se consideran los ángulos entre los vectores de los genotipos y los ambientes. Así se ve, por ejemplo, que el genotipo kat presenta un rendimiento por debajo del promedio en todos los ambientes, al tener un ángulo mayor a $90^{\circ}$ con todos los ambientes. Por otro lado, fun presenta un rendimiento por encima de la media en todos las localidades salvo en OA93 y en KE93, ya que los ángulos son agudos. La longitud de los vectores ambientales dan una medida de la capacidad del medio ambiente para discriminar entre los cultivos. 
-
+En este ejemplo, BH93, KE93 y OA93 son los ambientes que más contribuyen a la interacción ya que sus vectores son los de mayor magnitud. Los cultivares m12 y Kat presentan patrones de interacción similares (sus marcadores están próximos entre sí) y son muy diferentes de Ann y Aug, por ejemplo. La cercanía entre el cultivar Dia y el ambiente BH93 indica una fuerte asociación positiva entre ellos, lo que significa que BH93 es un ambiente extremadamente favorable para ese genotipo. Como los marcadores OA93 y Luc son opuestos, este entorno es considerablemente desfavorable para ese genotipo. Por último, Cas y Reb están cerca del origen, lo que significa que se adaptan por igual a todos los entornos. Por último, se observa que los genotipos Cas y Reb están próximos al origen, lo que quiere decir que se adaptan en igual medida a todos los ambientes.
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
-    height=0.65\linewidth,
+    height=0.82\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
-GGEPlot(GGE1, type = "Biplot", footnote = F, titles = F)
+rAMMI(yan.winterwheat, genotype = ``gen", environment = ``env", 
+      response = ``"yield", type = ``AMMI", footnote = F, titles = F)
 \end{lstlisting}
 \tcblower\vskip-\baselineskip
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=9.5cm]{./Graficos/GGE_BIPLOT.png}
+		\includegraphics[width=0.80\textwidth]{./Graficos/AMMI_biplot.png}
 	\end{center}
-	\caption{Biplot básico obtenido de la función \textcolor{blue}{GGEPlot}()}
-	\label{fig:fig4121}
+	\caption{Biplot GE obtenido del modelo AMMI clásico basado en los datos de rendimiento de trigo de invierno obtenidos en Ontario en 1993. El 71,66\% de la variabilidad de la IGA se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en letras minúsculas y los ambientes en mayúsculas. }
+	\label{fig:fig41211}
 \end{figure}
-\end{tcolorbox} 
+\end{tcolorbox}
 
-Los mejoradores en general están interesados en identificar los cultivares más adaptados a su área, lo cual es posible a través del biplot GGE. Para esto, Yan y Hunt (2002) sugieren constituir un eje del ambiente de interés, por ejemplo OA93, trazando una recta que una el identificador del ambiente y el origen de coordenadas. Los genotipos se  clasifican en función del rendimiento en dicho ambiente de acuerdo con sus proyecciones, en la dirección indicada por el eje OA93 (Figura \ref{fig:fig4122}). Para ello, se indica la opción \emph{Selected Environment} en el argumento \emph{type} de la función y además el ambiente a evaluar en el argumento  \emph{selectedE}. Se observa en este caso que el cultivar de mayor rendimiento fue es Zav seguido por Aug, Ham, y así sucesivamente hasta llegar al genotipo Luc, que es el de menor rendimiento en ese ambiente. El eje perpendicular al del ambiente de interés, separa los genotipos con rendimiento mayor al promedio, de Zav a Cas, de aquellos con valores inferior a la media, de Ema a Luc, en OA93.
- 
-En forma similar, el ambiente más adecuado para un cultivar es posible determinarlo graficando una línea que una el origen de coordenadas y el marcador del genotipo de interés, por ejemplo Kat (Figura \ref{fig:fig4122}) (Yan y Hunt (2002)). Los ambientes se clasifican a lo largo del eje del genotipo en la dirección indicada por la flecha. Para obtener este gráfico la opción  \emph{Selected Genotype} debe indicarse en el argumento \emph{type}, y el genotipo de interés en  \emph{selectedG}. El eje perpendicular al del genotipo separa los ambientes en los que Kat presentó un rendimiento por debajo de su promedio, en todos los ambientes estudiados.
+
+El modelo AMMI, en su forma estándar, asume que no hay valores atípicos presentes en los datos. Para superar el problema de la contaminación de datos con \emph{outliers}, \citet{Rodriguesetal2016} propuso cinco modelos AMMI robustos, los cuales no se encuentran disponible en R hasta el momento. 
+
+Todos los biplots robustos propuestos por \citet{Rodriguesetal2016} se puede obtener usando \textcolor{blue}{rAMMI}(), indicando en el argumento \emph{type} cuál de ellos se desea ajustar: ``rAMMI", ``hAMMI", ``gAMMI", ``lAMMI", ``ppAMMI".
+
+Dado que el conjunto de datos de muestra \emph{yan.winterwheat} no presenta valores atípicos, las conclusiones obtenidas con biplots robustos no diferirán de las obtenidas con el biplot clásico \citep{Rodriguesetal2016}. Por lo tanto, no se presenta ninguna interpretación de los biplots robustos. \\
+
+
+\subsection{Modelo de Regersión por Sitio}
+
+Para visualizar conjuntamente el efecto de G e IGA \citet{Yanetal2000} propuso el biplot GGE mediante el cual se pueden abordar diversos aspectos relacionados con la evaluación de genotipos y ambientes. Para obtener dicho biplot en primer lugar se debe ajustar el modelo SREG mediante la función \textcolor{blue}{GGEmodel}(). 
+
+La función \textcolor{blue}{GGEmodel}() propuesta en este paquete es un \emph{wrapper} de \textcolor{blue}{GGEModel}() del paquete GGEBiplots \citep{Dumble2017}. Como en el caso de \textcolor{blue}{rAMMI}(), los datos deben presentarse en un formato largo y se permiten repeticiones o variables adicionales en el conjunto de datos. El rasgo fenotípico para cada combinación de genotipo y ambiente debe estar registrado. 
+
+La sentencia utilizada para ajustar el modelo GGE en el conjunto de datos \emph{yan.winterwheat} se muestra a continuación. El primer argumento de la misma consiste en el nombre del conjunto de datos y en los siguientes indican los nombres que reciben las columnas que contienen la información de los genotipos, ambientes y del rasgo fenotípico de interés. Por defecto, la función considera que no hay réplicas en el conjunto de datos, sin embargo, si existieran en el parámetro \emph{rep} se debe indicar el nombre de la columna con dicha información. Otros argumentos de dicha función son el método de centrado, SVD y escalado. Por defecto los datos se centran utilizando la opción \emph{centering=``tester"} lo cual resulta en el modelo SREG, otro valor dará lugar a un modelo diferente. La elección del método de SVD no altera las relaciones o interacciones relativas entre los genotipos y los ambientes, aunque la apariencia del biplot será diferente (Yan 2002). El centrado respecto a los genotipos (\emph{SVP=``row"}) muestra la interrelación entre genotipos con mayor precisión, el de los ambientes (\emph{SVP=``column"}) es el más informativo de las interrelaciones entre los ambientes, mientras que el simétrico (\emph{SVP=``symmetrical"}) permite visualizar la magnitud relativa tanto de la variación de los genotipos como de los ambientes, por lo que se utiliza por defecto. Por último, se indica que los datos no se deben escalar con el parámetro \emph{scaling=``none"}. 
+
+\begin{tcolorbox}[colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
+   				width=1\linewidth,
+    			height=0.12\linewidth,
+    			boxsep=-3mm]
+\begin{lstlisting}
+GGE1 <- GGEmodel(yan.winterwheat, genotype = ``gen", environment = ``env", 
+                 response = ``yield", rep = NULL,  centering = ``tester",
+  				 scaling = ``none",  SVP = ``symmetrical")
+\end{lstlisting}
+\end{tcolorbox}
+
+
+La salida de GGEmodel () es una lista con los siguientes elementos:
+\begin{itemize}
+\item coordgenotype: coordenadas para los genotipos en cada componente.
+\item coordenviroment: coordenadas para los ambientes en cada componente.
+\item eigenvalues: vector de autovalores para cada componente.
+\item vartotal: varianza general.
+\item varexpl: porcentaje de varianza explicado por cada componente.
+\item labelgen: nombres de genotipos.
+\item labelenv: nombres de entorno.
+\item axes: etiquetas de eje.
+\item Data: datos de entrada escalados y centrados.
+\item centering: método de centrado.
+\item scaling: método de escala.
+\item SVP: método SVP. 
+\end{itemize}
+
+
+Utilizando la salida de \textcolor{blue}{GGEmodel}(), la función 
+\textcolor{blue}{GGEPlot}() crea numerosas vistas de biplots de GGE que permiten dar respuesta a distintos objetivos de los fitomejoradores. En estos gráficos los cultivares se muestran en minúsculas y los ambientes en mayúsculas. El método de centrado, escalado y SVD se muestran en una nota al pie junto con el porcentaje de G + IGA explicado por los dos ejes al agregar el argumento \emph{footnote = T} y un título con \emph{titles = T}. \\
+
+\textbf{Comparaciones simples utilizando GGE biplot}
+
+El biplot básico se obtiene con el parámetro \emph{type = ``Biplot"} (Figura \ref{fig:fig4121}). En este ejemplo, el 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los ángulos entre los marcadores de genotipos y entre los vectores ambientales son utilizados para interpretar el gráfico. Así, por ejemplo, Kat tiene un rendimiento por debajo de la media en todos los ambientes debido a su ángulo superior a $90^{\circ}$ con todos ellos. Por otro lado, Fun presenta un rendimiento superior a la media en todas las localidades excepto OA93 y KE93, como lo indican los ángulos agudos. La longitud de los vectores ambientales es una medida de la capacidad del ambiente para discriminar entre cultivos. 
+
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
-    height=0.78\linewidth,
+    height=0.82\linewidth,
+    boxsep=-3mm]
+\begin{lstlisting}
+GGEPlot(GGE1, type = ``Biplot", footnote = F, titles = F)
+\end{lstlisting}
+\tcblower\vskip-\baselineskip
+\tcblower
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.80\textwidth]{./Graficos/GGE_biplot.png}
+	\end{center}
+	\caption{Biplot GGE basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de escala utilizado es la partición simétrica de valores singulares (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }
+	\label{fig:fig4121}
+\end{figure}
+\end{tcolorbox} 
+
+Los mejoradores quieren identificar los cultivares más adaptados a su área, es decir a un ambiente particular, por ejemplo OA93. Para esto, \citet{YanHunt2002} sugieren constituir un eje del ambiente de interés (OA93), trazando una recta que una el identificador del ambiente y el origen de coordenadas, que puede denominarse eje OA93. Los genotipos se  clasifican en función del rendimiento en dicho ambiente de acuerdo con sus proyecciones, en la dirección indicada por el eje OA93 (Figura \ref{fig:fig4122}). Para ello, se indica la opción \emph{Selected Environment} en el argumento \emph{type} de la función y además el ambiente a evaluar en el argumento  \emph{selectedE}. Se observa en este caso que el cultivar de mayor rendimiento fue es Zav seguido por Aug, Ham, y así sucesivamente hasta llegar al genotipo Luc, que es el de menor rendimiento en ese ambiente. El eje perpendicular al del ambiente de interés, separa los genotipos con rendimiento mayor al promedio, de Zav a Cas, de aquellos con valores inferior a la media, de Ema a Luc, en OA93.
+ 
+En forma similar, el ambiente más adecuado para un cultivar es posible determinarlo graficando una línea que una el origen de coordenadas y el marcador del genotipo de interés, por ejemplo Kat, como se muestra en la figura \ref{fig:fig4122} \citep{YanHunt2002}. Los ambientes se clasifican a lo largo del eje del genotipo en la dirección indicada por la flecha. Para obtener este gráfico la opción  \emph{Selected Genotype} debe indicarse en el argumento \emph{type}, y el genotipo de interés en \emph{selectedG}. El eje perpendicular al del genotipo separa los ambientes en los que Kat presentó un rendimiento por debajo de su promedio, en todos los ambientes estudiados. En este ejemplo, Kat presentó un desempeño por debajo de la media en todos los entornos estudiados. 
+
+\begin{tcolorbox}[skin=bicolor,
+    colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
+    width=1\linewidth,
+    height=0.92\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
 # Ranking de cultivares en el ambiente OA93
-GGEPlot(GGE1, type = "Selected Environment", selectedE = "OA93", footnote = F, titles = F)
+GGEPlot(GGE1, type = ``Selected Environment", selectedE = ``OA93", footnote = F, titles = F)
 
 # Ranking de ambientes para cultivar Kat
-GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat", footnote = F, titles = F)
+GGEPlot(GGE1, type = ``Selected Genotype", selectedG = ``Kat", footnote = F, titles = F)
 \end{lstlisting}
 \tcblower\vskip-\baselineskip
 \tcblower
@@ -144,30 +202,30 @@ GGEPlot(GGE1, type = "Selected Genotype", selectedG = "Kat", footnote = F, title
 	\begin{center}
 		\includegraphics[width=14cm]{./Graficos/SelectedGyE.png}
 	\end{center}
-	\caption{A: Ranking de cultivares en el ambiente OA93. B: Ranking de ambientes para cultivar Kat}
+	\caption{A: Ranking de cultivares en el ambiente OA93. B: Ranking de ambientes para cultivar Kat, basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de escala utilizado es la partición simétrica de valores singulares (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}
 	\label{fig:fig4122}
 \end{figure}
 \end{tcolorbox} 
 
 
-Para comparar dos cultivares, por ejemplo Kat y Cas, una linea recta que una a los genotipos a comparar se debe trazar y luego una perpendicular a la anterior (figura \ref{fig:fig4124}). Este biplot te obtiene colocando \emph{Comparison of Genotype} en el argumento \emph{type} y los genotipos de interés en \emph{selectedG1} y \emph{selectedG2}. Se observa que todos las localidades se encuentran del mismo lado de la línea perpendicular que Cas, indicando que fue más rendidor que Kat en todos los ambientes.
-
+También es posible comparar dos cultivares, es decir, Kat y Cas, vinculándolos con una línea y una perpendicular a la anterior (figura \ref{fig:fig4124}). Este biplot te obtiene colocando \emph{Comparison of Genotype} en el argumento \emph{type} y los genotipos a comparar en \emph{selectedG1} y \emph{selectedG2}. Se observa que 
+Cas fue más rendidor que Kat en todos los ambientes, ya que todos están en el mismo lado de la línea perpendicular que Cas. 
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
-    height=0.65\linewidth,
+    height=0.82\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
-GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = "Cas", footnote = F, titles = F)
+GGEPlot(GGE1, type = ``Comparison of Genotype", selectedG1 = ``Kat", selectedG2 = ``Cas", footnote = F, titles = F)
 \end{lstlisting}
 \tcblower\vskip-\baselineskip
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=9.5cm]{./Graficos/ComparisonofGenotype.png}
+		\includegraphics[width=0.80\textwidth]{./Graficos/GGE_comparisonG1yG2.png}
 	\end{center}
-	\caption{Comparación entre dos genotipos obtenido de la función \textcolor{blue}{GGEPlot}()}
+	\caption{comparación de los cultivares Kat y Cas. El método de escala utilizado es la partición simétrica de valores singulares (por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }
 	\label{fig:fig4124}
 \end{figure}
 \end{tcolorbox}
@@ -175,54 +233,60 @@ GGEPlot(GGE1, type = "Comparison of Genotype", selectedG1 = "Kat", selectedG2 = 
 
 \textbf{Identificación de mega-ambientes con GGE biplot}
 
-La vista poligonal del biplot GGE, obtenida al indicar \emph{Which Won Where/What} en el argumento \emph{type}, proporciona un medio eficaz de visualización del patrón ``quíen ganó dónde" de un conjunto de datos EMA (Figura \ref{fig:fig4125}).  El polígono se obtiene uniendo los cultivares (fun, zav, ena, kat y luc) que se encuentran más alejados del origen de coordenadas, de modo que todos los restantes se encuentren contenidos en el polígono. La distancia de los cultivares respecto del origen de coordenadas, en sus respectivas direcciones, es una medida de la capacidad de respuesta a los ambientes. Los ubicados en los vértices son los más alejados, por lo tanto son los cultivares que más responden, mientras que los que se encuentran en el origen de coordenadas no responden en absoluto a los ambientes estudiados.
+La vista poligonal del biplot GGE, obtenida al indicar \emph{Which Won Where/What} en el argumento \emph{type}, proporciona un medio eficaz de visualización del patrón ``quíen ganó dónde"  de un conjunto de datos EMA (Figura \ref{fig:fig4125}).  El polígono se obtiene uniendo los cultivares (fun, zav, ena, kat y luc) que se encuentran más alejados del origen de coordenadas, de modo que todos los restantes se encuentren contenidos en el polígono. La distancia de los cultivares respecto del origen de coordenadas, en sus respectivas direcciones, es una medida de la capacidad de respuesta a los ambientes. Los ubicados en los vértices son los más alejados, por lo tanto son los cultivares que más responden, mientras que los que se encuentran en el origen de coordenadas no responden en absoluto a los ambientes estudiados.
 
 Las perpendiculares a los lados del polígono dividen al biplot en mega-ambientes, siendo el cultivar de mayor rendimiento en todos los ambientes que se encuentran en él aquel que se encuentra en el vértice de dicho sector. Por un lado, se observa que OA93 y KE93 conforman un mega-ambiente y que Zav es el mejor cultivar. Otro está formado por el resto de los ambientes, al cual llamaremos ME1 en futuros análisis, siendo Fun el que se encuentra en el vértice. En el sector con ena, kat y luc en los vértices del polígono no se observó ningún ambiente, lo cual indica que estos cultivares fueron los menos rendidores en algunos o todos los ambientes considerados.
-
-Se requieren dos criterios para sugerir la existencia de diferentes mega-ambientes (Gauch and Zobel, 1997). Primero, diferentes variedades superiores en los diferentes ambientes estudiados; segundo, la variación entre grupos debería ser significativamente mayor que la variación dentro del grupo.  Ambos criterios se cumplen en el presente caso (Figura \ref{fig:fig4125}). La sugerencia de dos mega-ambientes coincide con la distribución geográfica de los ambientes. La ubicación de OA (Ottawa) y KE (Kemptville) se extiende hacia el este de Ontario; BH (Bath) a pesar de pertenecer a la misma zona, tiene un clima mucho más cálido que las otras dos localidades. Las otras seis localidades consideradas se ubican al oeste o sur de la provincia.
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
-    height=0.65\linewidth,
+    height=0.82\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
-GGEPlot(GGE1, type = "Which Won Where/What", footnote = F, titles = F)
+GGEPlot(GGE1, type = ``Which Won Where/What", footnote = F, titles = F)
 \end{lstlisting}
 \tcblower\vskip-\baselineskip
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=9.5cm]{./Graficos/WhichWonWhereWhat.png}
+		\includegraphics[width=0.80\textwidth]{./Graficos/GGE_whichwonwhere.png}
 	\end{center}
-	\caption{Identificación del mejor cultivar en cada ambiente a partir de la función \textcolor{blue}{GGEPlot}()}
+	\caption{Vista poligonal del biplot GGE, que muestra qué cultivares presentaron mayor rendimiento en cada ambiente/mega-ambiente. El método de escala utilizado es la partición simétrica de valores singulares (por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}
 	\label{fig:fig4125}
 \end{figure}
 \end{tcolorbox}
 
 \textbf{Evaluación de los cultivos dentro de un mega-ambientes con GGE biplot}
 
-Una vez identificado los mega-ambientes, el siguiente paso es seleccionar cultivares dentro de cada uno de ellos. De acuerdo con la figura  \ref{fig:fig4125}, zav es el mejor cultivar para los ambientes en uno de los mega-ambiente y fun para el otro. Sin embargo, los fitomejoradores no seleccionarán un único cultivar en cada mega-ambiente, sino que es necesario evaluar todos los cultivares con el fin de conocer su desempeño (rendimiento y estabilidad).
+Una vez identificado los mega-ambientes, el siguiente paso es seleccionar cultivares dentro de cada uno de ellos. De acuerdo con la figura  \ref{fig:fig4125}, zav es el mejor cultivar para los ambientes en uno de los mega-ambiente y fun para el otro. Sin embargo, los fitomejoradores no seleccionarán un único cultivar en cada mega-ambiente, sino que es necesario evaluar todos los cultivares con el fin de conocer su desempeño (rendimiento y estabilidad). Esto se debe a que la unidad de ambos ejes para los genotipos es la unidad original de los datos. 
 
-El biplot GGE, particularmente enfocando la SVD en los genotipos, es decir utilizando el argumento \emph{SVP=row} en la función \textcolor{blue}{GGEmodel}(), proporciona un medio superior para visualizar tanto el rendimiento medio como la estabilidad de los genotipos (Figura \ref{fig:fig4126}). La visualización del rendimiento medio y la estabilidad de los genotipos a partir de un eje promedio de cada uno de los mega-ambientes formados (AEC, average environment coordinate), por ejemplo ME1, se logra indicando \emph{Mean vs. Stability} en el argumento \emph{type} (Figura \ref{fig:fig4126}). Mientras que la abscisa representa el efecto de G la ordenada el de la IGA, que es una medida de la variabilidad o inestabilidad, asociada con cada genotipo. Una mayor proyección sobre la ordenada AEC, independientemente de la dirección, significa mayor inestabilidad. Por lo tanto, rub y dia son más variables y menos estables que otros cultivares (Figura \ref{fig:fig4126}). El ambiente BH93 está ubicado en el este de Ontario caracterizado por inviernos más fríos, mientras que RN93 en el sur de Ontario caracterizado por un clima cálido y húmedo en la mayoría de los años. Esto justifica la inestabilidad de rub y dia, ya que el primero es temprano y tiene una poca resistencia al invierno por lo que se desempeñó bien en RN93 y mal en BH93, y el segundo, con un comportamiento contrario al anterior cultivar debido a que es tardío y alto. Los cultivares próximos al eje de las abscisas, cas, zav, reb, del, ari y kar, son más estables que el resto. 
+El biplot GGE, particularmente enfocando la SVD en los genotipos, es decir utilizando el argumento \emph{SVP=``row"} en la función \textcolor{blue}{GGEmodel}(), proporciona un medio superior para visualizar tanto el rendimiento medio como la estabilidad de los genotipos (Figura \ref{fig:fig4126}). Además, dado que los ambientes no son de interés cuando se evaluan los cultivares dentro de un mega-ambiente, se indica con el argumento \emph{sizeEnv = 0} de la función \textcolor{blue}{GGEPlot}() que no los muestre en el gráfico.
 
-Además, usando el mismo enfoque en SVD, para cada uno de los mega-ambientes identificados, es posible visualizar  el rendimiento medio y la estabilidad de los genotipos en una única medida. Un cultivar ideal es definido y a pesar de que rara vez exista, se utiliza como referencia para la evaluación de los cultivares. La distancia entre los cultivares con respecto al ideal, ubicado en el centro del conjunto de círculos concéntricos, se puede utilizar como una medida de su conveniencia. Es posible realizarlo con la función \textcolor{blue}{GGEPlot}() indicando \emph{Ranking Genotypes} en el argumento \emph{type} (Figura \ref{fig:fig4126}). Para el ME1, el cultivar fun es el más próximo al ideal, y por lo tanto, el más deseable de todos los estudiados, seguido por cas y heno, que a su vez son seguidos por ron, ham, rub, zav, del y reb, etc. (figura \ref{fig:fig4126}).
 
+La visualización del rendimiento medio y la estabilidad de los genotipos se logra dibujando una coordenada ambiental promedio (AEC). Por ejemplo, la Figura \ref{fig:fig4126}  muestra el AEC para el megaambiente ME1 compuesto por los entornos BH93, EA93, HW93, ID93, NN93, RN93, WP93. Mientras que la abscisa representa el efecto de G la ordenada el de la IGA, que es una medida de la variabilidad o inestabilidad, asociada con cada genotipo. Una mayor proyección sobre la ordenada AEC, independientemente de la dirección, significa mayor inestabilidad. Fun fue claramente el cultivar de mayor rendimiento, en promedio, en este megaambiente, seguido por Cas y Har, y Kat fue el más pobre. Mientras que Rub y Dia son más variables y menos estables que otros cultivares, por el contrario, Cas, Zav, Reb, Del, Ari y Kar, fueron más estables. 
+
+La Figura \ref{fig:fig4126} compara los cultivares con el ``ideal” que es el más rendidor y con estabilidad absoluta. Este cultivar ideal se usa como referencia, ya que rara vez existe. La distancia entre cultivares y el ideal se puede utilizar como medida de conveniencia. Los círculos concéntricos ayudan a visualizar estas distancias. En el ejemplo, para el ME1, Fun es el más cercano al cultivo ideal, y por tanto el más deseable, seguido de Cas y Hay, que a su vez son seguidos por Rum, Ham, Rub, Zav, Del y Reb, etc. 
+
+\textbf{FALTAEL SIGNO \$ EN LA PRIMER LINEA DEL CODIGO QUE SIGUE...PERO ME TIRA ERROR O PONERLO CON FILTER???}
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
-    height=0.85\linewidth,
+    height=1.1\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
+
+ME1 <- yan.winterwheat[yan.winterwheat env %in% c(``BH93", ``EA93",``HW93", ``ID93",``NN93", ``RN93", ``WP93"), ]
+                                                   
 # Modelo SREG enfocando SVD en los genotipos
-GGE_Gpartition <- GGEmodel(ME1, genotype="gen", environment="env", response="yield", SVP="row")
+GGE_Gpartition <- GGEmodel(ME1, genotype = ``gen", environment = ``env", response = ``yield", SVP = ``row")
 
 # Visualizacion del rendimiento medio y la estabilidad
-GGEPlot(GGE_Gpartition, type = "Mean vs. Stability", footnote = F, titles = F)
+GGEPlot(GGE_Gpartition, type = ``Mean vs. Stability", footnote = F, titles = F, sizeEnv = 0)
 
 # Ranking de los genotipos respecto a uno ideal
-GGEPlot(GGE_Gpartition, type = "Ranking Genotypes", footnote = F, titles = F)
+GGEPlot(GGE_Gpartition, type = ``Ranking Genotypes", footnote = F, titles = F, sizeEnv = 0)
+
 \end{lstlisting}
 \tcblower\vskip-\baselineskip
 \tcblower
@@ -230,7 +294,7 @@ GGEPlot(GGE_Gpartition, type = "Ranking Genotypes", footnote = F, titles = F)
 	\begin{center}
 		\includegraphics[width=14cm]{./Graficos/MeanvsStability2.png}
 	\end{center}
-	\caption{A: Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad. B: Clasificación de genotipos con respecto al genotipo ideal}
+	\caption{A: Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad y B: Clasificación de genotipos con respecto al genotipo ideal, basado en el escalado centrado en los genotipos.}
 	\label{fig:fig4126}
 \end{figure}
 \end{tcolorbox}
@@ -238,15 +302,15 @@ GGEPlot(GGE_Gpartition, type = "Ranking Genotypes", footnote = F, titles = F)
 
 \textbf{Evaluación de los ambientes con GGE biplot}
 
-A pesar de que el objetivo principal de los EMA es seleccionar cultivares también es posible evaluar los ambientes,  enfocando la SVD en los ambientes. Puede resultar de interés determinar si la región objetivo pertenece a uno o varios mega-ambientes; identificar mejores ambientes de prueba; establecer ambientes redundantes que no brindan información adicional sobre los cultivares asi como determinar ambientes que pueden usarse para la selección indirecta.
+A pesar de que el objetivo principal de los EMA es seleccionar cultivares también es posible evaluar los ambientes,  enfocando la SVD en los ambientes al ajustar el modelo SREG (\emph{SVP = ``column"} en la función \textcolor{blue}{GGEmodel}()). Esto incluye varios aspectos: (i) evaluar si la región objetivo pertenece a uno o más megaambientes; (ii) identificar mejores entornos de prueba; (iii) detectar ambientes redundantes que no brindan información adicional sobre cultivares; y (iv) determinar los ambientes que se pueden utilizar para la selección indirecta. 
 
-En la figura \ref{fig:fig4128} se observa que los ambientes están conectados con el origen de coordenadas a través de vectores, permitiendo comprender las interrelaciones entre los distintos ambientes del oeste y sur de Ontario que forman el mega-ambiente.  Esta visualización del biplot GGE se obtiene enfocando la SVD en los ambientes con la opción \emph{column} del argumento \emph{SVP} en \textcolor{blue}{GGEmodel}() y luego, indicando en \textcolor{blue}{GGEPlot}() \emph{Relationship Among Environments} (Figura \ref{fig:fig4128}). El coseno del ángulo entre los vectores de dos ambientes se aproxima al coeficiente de correlación entre ellos. Por ejemplo, NN93 y WP93 tienen un ángulo de aproximadamente $10^{\circ}$ entre sus vectores; por lo tanto, se encuentran estrechamente relacionados; por le contrario RN93 y OA93 presentan una correlación leve y negativa ya que el ángulo que forman sus vectores supera los $90^{\circ}$.  Por lo tanto, la Figura \ref{fig:fig4128} ayuda a identificar ambientes redundantes. Si algunos de los ambientes tienen ángulos pequeños y, por lo tanto, están altamente correlacionados, la información sobre los genotipos obtenidos de estos ambientes debe ser similar. Si esta similitud es repetible a través de los años, estos ambientes son redundantes y por lo tanto, uno solo debería ser suficiente. Obtener la misma o mejor información utilizando menos ambientes reducirá el costo y aumentará la eficiencia de producción.
+En la figura \ref{fig:fig4128} los ambientes están conectados con el origen de coordenadas a través de vectores, permitiendo comprender las interrelaciones entre ellos.  Esta visualización del biplot GGE se obtiene indicando \emph{Relationship Among Environments} (Figura \ref{fig:fig4128}). El coeficiente de correlación entre dos ambientes es aproximadamente el coseno del ángulo entre sus vectores. 
+En este ejemplo se considera la relación entre los ambientes de ME1. El ángulo entre los vectores para los entornos NN93 y WP93 es de aproximadamente $10^{\circ}$ entre sus vectores; por lo tanto, están estrechamente relacionados; mientras que RN93 y OA93 presentan una correlación negativa débil ya que el ángulo es levemente mayor a $90^{\circ}$. El coseno de los ángulos no se traduce precisamente en coeficientes de correlación, ya que el biplot no explica toda la variabilidad en el conjunto de datos. Sin embargo, son lo suficientemente informativos como para comprender la interrelación entre los entornos de prueba. 
+
+Si algunos de los ambientes tienen ángulos pequeños y, por lo tanto, están altamente correlacionados, la información sobre los genotipos obtenidos de estos ambientes debe ser similar. Si esta similitud es repetible a través de los años, estos ambientes son redundantes y por lo tanto, uno solo debería ser suficiente. Obtener la misma o mejor información utilizando menos ambientes reducirá el costo y aumentará la eficiencia de producción.
 
 
-La capacidad de discriminación así como la representatividad respecto del ambiente objetivo, son medidas fundamentales para un ambiente. Si no tiene capacidad de discriminación, no proporciona información sobre los cultivares y, por lo tanto, carece de utilidad. A su vez, si no es representativo no sólo que carece de utilidad sino que también puede proporcionar información sesgada sobre los cultivares evaluados. Para visualizar estas medidas, se define un ambiente promedio (AEC mencionado anteriormente) y el ambiente ideal como el centro de un conjunto de círculos concéntricos (Figura \ref{fig:fig4128}). Para obtener este biplot, se debe enfocar la SVD en los ambientes, como se indicó con anterioridad, y luego, \emph{Ranking Environments} en (\textcolor{blue}{GGEPlot}() (Figura \ref{fig:fig4128}). El ángulo entre el vector de un ambiente y el eje proporciona una medida de la representatividad. Por lo tanto, EA93 e ID93 son los más representativos, mientras que RN93 y BH93 son los menos representativos del ambiente promedio, cuando se analiza el mega-ambiente que no contiene a OA93 y a KE93 \ref{fig:fig4128}. Por otro lado, para ser discriminativo debe estar cercano al ambiente ideal. HW93 es el ambiente más cercano al ideal y, por lo tanto, es el más deseable del ME1, seguido por EA93 e ID93, que a su vez son seguidos por WP93 y NN93. RN93 y BH93 fueron los ambientes de prueba menos deseable de dicho megamabiente.
-
-
-
+La capacidad de discriminación así como la representatividad respecto del ambiente objetivo, son medidas fundamentales para un ambiente. Si no tiene capacidad de discriminación, no proporciona información sobre los cultivares y, por lo tanto, carece de utilidad. A su vez, si no es representativo no sólo que carece de utilidad sino que también puede proporcionar información sesgada sobre los cultivares evaluados. Para visualizar estas medidas, se define un ambiente promedio (AEC mencionado anteriormente) y el ambiente ideal como el centro de un conjunto de círculos concéntricos (Figura \ref{fig:fig4128}). Para obtener este biplot se debe indicar \emph{Ranking Environments} en el argumento \emph{type} de \textcolor{blue}{GGEPlot}() (Figura \ref{fig:fig4128}). El ángulo entre el vector de un ambiente y el eje proporciona una medida de la representatividad. Por lo tanto, EA93 e ID93 son los más representativos, mientras que RN93 y BH93 son los menos representativos del ambiente promedio, cuando se analiza ME1 \ref{fig:fig4128}. Por otro lado, para ser discriminativo debe estar cercano al ambiente ideal. HW93 es el ambiente más cercano al ideal y, por lo tanto, es el más deseable del ME1, seguido por EA93 e ID93. Por el contrario, RN93 y BH93 fueron los ambientes de prueba menos deseables de ME1. 
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -255,13 +319,13 @@ La capacidad de discriminación así como la representatividad respecto del ambi
     boxsep=-3mm]
 \begin{lstlisting}
 # Modelo SREG enfocando SVD en los ambientes
-GGE_Epartition <- GGEmodel(ME, genotype="gen", environment="env", response="yield", SVP="column")
+GGE_Epartition <- GGEmodel(ME1, genotype=``gen", environment=``env", response=``yield", SVP=``column")
 
 # Relacion entre ambientes
-GGEPlot(GGE_Epartition, type = "Relationship Among Environments", footnote = F, titles = F)
+GGEPlot(GGE_Epartition, type = ``Relationship Among Environments", footnote = F, titles = F)
 
 # Clasificacion de ambientes con respecto al ambiente ideal
-GGEPlot(GGE_Epartition, type = "Ranking Environments", footnote = F, titles = F)
+GGEPlot(GGE_Epartition, type = ``Ranking Environments", footnote = F, titles = F)
 \end{lstlisting}
 \tcblower\vskip-\baselineskip
 \tcblower
@@ -269,49 +333,32 @@ GGEPlot(GGE_Epartition, type = "Ranking Environments", footnote = F, titles = F)
 	\begin{center}
 		\includegraphics[width=14cm]{./Graficos/RelationshipEnvironments.png}
 	\end{center}
-	\caption{A:Relación entre ambientes. B:Clasificación de ambientes con respecto al ambiente ideal}
+	\caption{A: Relación entre ambientes y B: Clasificación de ambientes con respecto al ambiente ideal, basado en el escalado centrado en los genotipos.}
 	\label{fig:fig4128}
 \end{figure}
 \end{tcolorbox}
 
 
+\subsection{Métodos de imputación}
 
-\textbf{Biplot GE}
+Una limitación importante de los modelos presentados anteriormente es que requieren una que el conjunto de datos este completo, es decir que todos los genotipos sean evaluados en todos los ambientes. Por lo tanto, en el paquete se incluyen una serie de metodologías recientemente publicadas, algunas de las cuales no se encuentran disponible en R, para superar el problema de las observaciones perdidas. Entre los métodos incluidos se encuentran: ``EM-AMMI", ``EM-SVD", ``Gabriel",``WGabriel" y ``EM-PCA", los cuales se indican en la opción \emph{type} de la función \textcolor{blue}{imputation}(). El formato requerido para el conjunto de datos de entrada es análogo al indicado en las otras funciones incluidas en el paquete. 
 
-Para visualizar solamente el efecto de IGA se utiliza el biplot GE obtenido del modelo AMMI. Este gráfico es posible obtenerlo utilizando la función \textcolor{blue}{rAMMI}(), la cual no se encuentra disponible actualmente en R, y es una modificación de la publicación de Rodrigues et al. (2015). El formato del conjunto de datos de entrada es análogo al descripto en la función \textcolor{blue}{GGEmodel}(). 
-
-El biplot clásico para el conjunto de datos \emph{yan.winterwheat} se muestra en la figura \ref{fig:fig41211} junto con la sentencia utlizada para obtener el mismo. El primer argumento es el conjunto de datos de entrada, luego se indican los nombres de las columnas en las cuales se encuentra la información necesaria para aplicar la técnica y además el biplot que se desea obtener. Se observa que la magnitud de los vectores de los ambientes BH93, KE93 y OA93 es mayor a la de los demás ambientes, es decir que son los que más contribuyen a la interacción. La cercanía de los marcadores de los genotipos m12 y Kat indica que esos genotipos tienen patrones de interacción similares, y a la vez, muy distintos a los de los genotipos Ann y Aug. Del biplot también se destacan las cercanías entre el genotipo dia y el ambiente BH93 lo que indica, debido a la gran distancia al origen, una fuerte asociación positiva entre el genotipos y el ambientes, es decir, es un ambiente muy favorable para ese genotipo.
-Entre las altas asociaciones negativas se puede mencionar a la del ambiente OA93 con el genotipo Luc (marcadores opuestos en el biplot) y se interpreta que ese ambiente es considerablemente desfavorable para ese genotipo. También se observa que los genotipos Cas y Reb están próximos al origen, lo que quiere decir que se adaptan en igual medida a todos los ambientes.
-
+Para presentar un ejemplo, se eliminan algunas observaciones del yan.winterwheat completo:
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
-    height=0.7\linewidth,
+    height=0.15\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
-rAMMI(yanwinterwheat, genotype = "gen", environment = "env", response = "yield", type = "AMMI")
+# Generando datos faltantes
+yan.winterwheat [1,3] <- NA
+yan.winterwheat [3,3] <- NA
+yan.winterwheat [2,3] <- NA
 \end{lstlisting}
-\tcblower\vskip-\baselineskip
-\tcblower
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=8cm, height=7.6cm]{./Graficos/AMMI.png}
-	\end{center}
-	\caption{Biplot GE obtenido del modelo clasico AMMI}
-	\label{fig:fig41211}
-\end{figure}
 \end{tcolorbox}
 
-En caso de contar con observaciones atípicas se debe recurrir al biplot que resulta de algunos de los cinco modelos AMMI robustos propuestos por Rodrigues et al. (2015). Para ello se debe indicar en el argumento \emph{type} cuál de ellos se desea ajustar: ``rAMMI", ``hAMMI", ``gAMMI", ``lAMMI", ``ppAMMI".
-
-Dado que el conjunto de datos \emph{yan.winterwheat} no presentan atípicas, las conclusiones obtenidas con los biplots robustos no serán muy diferentes de las realizadas con el biplot clásico (Rodrigues et al., 2015) y por lo tanto carece de sentido interpretar dichos biplots en este ejemplo. 
-
-
-
-\textbf{Métodos de imputación}
-
-Una limitación importante de los modelos presentados anteriormente es que requieren una que el conjunto de datos este completo, es decir que todos los genotipos sean evaluados en todos los ambientes. Por lo tanto, en el paquete se incluyen una serie de metodologías propuestas, algunas de las cuales no se encuentran disponible en R, para superar el problema de las observaciones perdidas. Entre los métodos incluidos se encuentran: ``EM-AMMI", ``EM-SVD", ``Gabriel",``WGabriel" y ``EM-PCA", los cuales se indican en la opción \emph{type} de la función \textcolor{blue}{imputation}(). El formato requerido para el conjunto de datos de entrada es análogo al indicado en las otras funciones incluidas en el paquete.
+La imputación de valores perdidos con el método ``EM-AMMI" se puede realizar de la siguiente manera:
 
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
@@ -319,106 +366,129 @@ Una limitación importante de los modelos presentados anteriormente es que requi
     height=0.1\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
-imputation(yanwinterwheat, PC.nb = 2, genotype = "gen", environment = "env", response = "yield", type = "EM-AMMI")
+imputation(yanwinterwheat, PC.nb = 2, genotype = ``gen", environment = ``env", response = ``yield", type = ``EM-AMMI")
 \end{lstlisting}
 \end{tcolorbox}
+
+El resultado es la matriz con datos imputados en aquellas celdas vacías. 
 
 
 \section{Geneticae Shiny Web App}
 
-Generalmente los mejoradores utilizan programas estadísticos que funcionan mediante una interfaz gráfica lo cual permite realizar el análisis de interés sin necesidad del manejo de un lenguaje de programación. \emph{Geneticae Shiny Web App}, es una aplicación web que permite a los usuarios realizar muchos de los análisis incluidos en el paquete geneticae, sin necesidad de conocer el lenguaje de programación R. 
+El objetivo de Geneticae Shiny Web APP es proporcionar una interfaz gráfica de usuario para el paquete geneticae de R descripto anteriormente, de modo que pueda ser utilizado por fitomejoradores y analistas sin experiencia previa en programación R. 
 
-Al iniciar \emph{Geneticae Shiny Web App}, se muestra una pantalla en la cual se carga el conjunto de datos a analizar. Se admiten archivos con extensión .csv, delimitados por coma o punto y coma.
-Dado que esta aplicación se conecta con R y utiliza las funciones del paquete \emph{geneticae} se debe respetar el formato del conjunto de datos de entrada requerido por el mismo. Como se indicó anteriormente, la base de datos debe estar en formato largo, es decir que las observaciones se encuentran en las filas y las variables, genotipos, ambientes, repeticiones (en caso de que haya) y el fenotipo observado, en las columnas. Además puede incluir otras variables que no serán utilizadas en el análisis ya que al cargar el conjunto de datos se debe indicar que columna corresponde al genotipo, al ambiente, a las repeticiones y al valor fenotípico a analizar. La primera fila del conjunto de datos puede contener los nombres de las variables, y en ese caso se indicará al cargarlo en la aplicación. El número de repeticiones puede diferir con los genotipos y los ambientes.
+Es un software interactivo, no comercial y de código abierto, que ofrece una alternativa gratuita al software comercial disponible para analizar MET. Se encuentra disponible en un servidor gratiuto \url{https://geneticae.shinyapps.io/geneticae-shiny-web-app/} el cual tiene límite en el tiempo de uso, sin embargo, la APP será ubicada en el servidor de CONICET. Además, se puede acceder a la misma desde la página web del instituto CEFOBI de CONICET \url{https://www.cefobi-conicet.gov.ar/bases-de-datos-y-programas/}.
 
-Dos conjuntos de datos de ejemplo, \emph{plrv} y \emph{yanwinterwheat}, incluidos en el paquete geneticae, se encuentran disponibles en la aplicación para ser descargados y probar la misma (Figura \ref{fig:fig431}). La ruta para realizar esto es siguente: \emph{The data} $\rightarrow$ \emph{Example datasets}.
+
+
+\subsection{Preparación de un archivo de datos para la aplicación Geneticae}
+
+La APP requiere datos en formato .csv, delimitados por comas o punto y coma, y permite que los nombres de las columnas se encuentren en la primera fila del archivo (\emph{heading}). Se requieren datos en formato largo, es decir, cada fila corresponde a una observación y cada columna a una variable (genotipo, ambiente, repetición (si existe) y fenotipo observado). Si cada genotipo ha sido evaluado más de una vez en cada ambiente, la media fenotípica requerida por el modelo SREG y AMMI para cada combinación de genotipo y ambiente se calcula internamente y luego se estima el modelo. Las variables adicionales que no se utilizarán en el análisis pueden estar presentes en el conjunto de datos. No se permiten valores perdidos.
+
+Dos conjuntos de datos están disponibles en la APP:
+
+\begin{itemize}
+\item \emph{plrv} (de Mendiburu, 2020): estudio sobre la resistencia al PLRV (Patato Leaf Roll Virus) que provoca el enrollamiento de las hojas. Se experimentaron 28 genotipos en 6 localidades del Perú. Cada clon se evaluó tres veces en cada ambiente y se registró el rendimiento, el peso de la planta y la parcela.
+\item \emph{yanwinterwheat} (Wright, 2020): rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. Aunque en el experimento se realizaron cuatro bloques o réplicas en cada ambiente, solo se dispuso de la media del rendimiento para cada combinación de variedad y ambiente. Este conjunto de datos se utilizará para ilustrar la metodología incluida en Geneticae APP para analizar datos MET.
+\end{itemize}
+
+
+Ellos se están disponibles en la pestaña \emph{Data $->$ Example datasets} y se pueden descargar en formato .csv (Figura ). El conjunto de datos \emph{yanwinterwheat} no tiene repeticiones, mientras que \emph{plrv} sí. 
 
  \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/exampledata.jpg}
+		\includegraphics[width=16cm]{./Graficos/www/exampledata.jpg}
 	\end{center}
-	\caption{yanwinterwheat dataset disponible en Shiny Web App}
+	\caption{(A) Plrv dataset (B) yanwinterwheat dataset }
 	\label{fig:fig431}
 \end{figure}
 
 
-A fin de ilustrar los diferentes análisis que se pueden realizar con esta aplicación, se utiliza el conjunto de datos \emph{yanwinterwheat} (Figura \ref{fig:fig431}). Como se dijo anteriormente, cuenta con información sobre el rendimiento medio de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993.
+\textbf{Cargando un conjunto de datos en la APP}
 
+El conjunto de datos que se analizará debe cargarse en la pestaña \emph{Data $->$ Upload data}. Por ejemplo, para importar el conjunto de datos \emph{yanwinterwheat}, se debe cargar el archivo .csv, lo que indica que está delimitado por comas, que la primera fila contiene los nombres de cada variable (\emph{heading}) y los nombres de las columnas que continen la información del genotipo, ambiente y rasgo fenotípico (gen, env y rendimiento en este caso). Si hay repeticiones disponibles, se debe especificar el nombre de la columna con dicha información; de lo contrario, no indique nada. 
 
-\subsection{Análisis de un caso}
-En primer lugar se debe importar el conjunto de datos, indicando que el archivo .csv se encuentra delimitado por punto y coma, que la primera fila contiene los nombres de cada variable y además, el nombre de la columna que contiene la información de los genotipos, ambientes y valores fenotípicos de interés (Figura \ref{fig:fig433}). Como en este caso no se cuenta con repeticiones dicho casillero quedará sin ninguna marca. 
-
-\begin{figure}[h]
+ \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/data.png}
+		\includegraphics[width=16cm]{./Graficos/www/Data.png}
 	\end{center}
-	\caption{Importar conjunto de datos}
-	\label{fig:fig433}
+	\caption{Cargando el conjunto de datos \emph{yanwinterwheat} en Geneticae APP}
+	\label{fig:fig431}
 \end{figure}
 
 
-\textbf{Análisis descriptivo}
+\subsection{Análisis descriptivo}
 
-El primer paso de cualquier estudio debe ser un análisis descriptivo del conjunto de datos. La pestaña \emph{Descriptive analysis} brinda diversas herramientas para llevar a cabo dicho análisis. Una de ellas es un boxplot que compara el caracter cuantitativo de interés a través de los ambientes (Figura \ref{fig:figdesc1}) o a través de los genotipos. Este gráfico es interactivo, al posicionarse sobre cada una de las cajas se muestran las medidas resumen utilizadas para la construcción del mismo. Además los mismos se pueden descargar en formato interactivo (.HTML) al hacer click en \emph{Download} así como también en formato .png al hacer click en la cámara que aparece encima del gráfico (Figura \ref{fig:figdesc1}). Algunos aspectos estilísticos, como el color de las cajas y los nombres de los ejes, pueden ser personalizados por el usuario. 
+Cualquier estudio debe comenzar con un análisis descriptivo del conjunto de datos. La pestaña \emph{Descriptive Analysis} proporciona algunas herramientas para esto. Se pueden obtener diagramas de caja, diagramas y matriz de correlación así como también gráficos de interacción.
+
+Una gráfica de caja que compara el rasgo cuantitativo entre ambientes o genotipos (Figura \ref{fig:figdesc1}) puede ser de interés. Las medidas de resumen utilizadas para su construcción se muestran de forma interactiva moviendo el mouse dentro del panel de la figura. Además, se puede descargar como un archivo interactivo (.html) así como un archivo .png, haciendo clic en el botón Descargar o en la cámara que aparece en la figura, respectivamente (Figura \ref{fig:figdesc1}). El usuario puede personalizar algunos aspectos del gráfico, como el color del cuadro y los nombres de los ejes. 
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=16cm]{./Graficos/Boxplot.jpg}
 	\end{center}
-	\caption{Boxplot de ambientes a través de los genotipos para el conjunto de datos Plrv}
+	\caption{Diagrama de caja de (A) genotipos y (B) ambientes para el conjunto de datos \emph{yanwinterwheat}.}
 	\label{fig:figdesc1}
 \end{figure}
 
-Otro análisis de interés puede ser estudiar la correlación entre los genotipos o entre los ambientes, para ello tanto el correlograma o gráfico de correlación como la matriz de correlación se pueden realizar (Figura \ref{fig:figdesc2} y \ref{fig:figdesc3}). En ambos casos, se pueden estimar las correlaciones de Pearson o de Spearman. En el correlograma las correlaciones positivas se muestran en azul y las negativas en rojo y la intensidad del color y el tamaño del círculo son proporcionales a los coeficientes de correlación (Figura \ref{fig:figdesc2}). Dicho gráfico puede ser descargado.
-
+Los coeficientes de correlación de Pearson o Spearman entre genotipos se pueden mostrar como un gráfico o una matriz (Figura \ref{fig:figdesc2}). Las correlaciones positivas se muestran en azul y las negativas en rojo, mientras que la intensidad del color y el tamaño del círculo son proporcionales a los coeficientes de correlación. La gráfica de correlación se puede descargar en formato .png. Se observan altas correlaciones entre el rendimiento de los genotipos estudiados. 
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=16cm]{./Graficos/corr_gen.png}
 	\end{center}
-	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
+	\caption{Gráfico de correlación (A) y matriz (B) entre genotipos yanwinterwheat dataset }
 	\label{fig:figdesc2}
 \end{figure}
 
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/corr_matrix.png}
-	\end{center}
-	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
-	\label{fig:figdesc3}
-\end{figure}
-
-
-
-Por último, dado que inconsistencias en el rendimiento de los genotipo en diferentes ambientes complican la tarea de los fitomejoradores ya que no existe un genotipo superior en todos los ambientes estudiados y que las técnicas de principal interés de la aplicación carecen de sentido cuando dicho efecto no esta presente en el conjunto de datos, es posible realizar un gráfico de interacción. En la figura \ref{fig:figdesc4} se observa el cambio en el efecto genotípico a través de los ambientes, sin embargo es posible también mostrar el cambio en el efecto ambiental a través de los genotipos.
-En forma análoga al boxplot, éste es un gráfico interactivo, y por lo tanto, es posible descargarlo en formato interactivo (.HTML) a partir del boton \emph{Download}, así como también en formato .png al hacer click en la cámara (Figura \ref{fig:figdesc4}). A su vez, los nombres de los ejes pueden ser personalizados por el usuario. 
-
+Dado que IGA genera respuestas genotípicas diferenciales en diferentes ambientes, lo que complica selección de los mejores cultivares, una gráfico de interacción puede ser de interés. El cambio en el efecto genotípico a través de los ambientes se muestra en la Figura \ref{fig:figdesc4}, mientras que el cambio en el efecto ambiental a través de los genotipos en la Figura \ref{fig:figdesc4}. Del mismo modo que el diagrama de caja es un gráfico interactivo, por lo que es posible descargarla en formatos .HTML o .png con el botón Descargar o haciendo clic en la cámara, respectivamente. Además, el usuario puede personalizar los nombres de los ejes. En este ejemplo se pueden ver inconsistencias en el desempeño de genotipos en diferentes ambientes. 
 
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=16cm]{./Graficos/int_plot.png}
 	\end{center}
-	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
+	\caption{Gráfico de interacción para (A) ambientes a través de genotipos y (B) genotipos a través de entornos del conjunto de datos de \emph{yanwinterwheat}.}
 	\label{fig:figdesc4}
 \end{figure}
 
 
-\textbf{Biplots}
+\subsection{Modelo de regresión por sitio}
 
-\emph{Geneticae Shiny Web App} permite obtener tanto el biplot GGE (Figura \ref{fig:fig4312}) como el GE (Figura \ref{fig:fig4313}) . Ciertos atributos estilísticos de dichos gráficos se pueden personalizar y además pueden ser descargados.
+\emph{Geneticae Shiny Web App} permite realizar todos los biplots GGE mostrados en el paquete geneticae.Ciertos atributos estilísticos de dichos gráficos se pueden personalizar y además pueden ser descargados.
 
-Dada la importancia del biplot GGE, se incluyen aquellos más utilizados en el análisis de datos provenientes de EMA. Entre ellos, el biplot básico y aquellos que permiten estudiar la relación entre los ambientes (\emph{Relationship Among Environments}), la identificación del mejor cultivar en cada ambiente (\emph{Which Won Where/What}), Discrimination vs. representativeness ( \textbf{Este es el q me falta interpretar en el paquete} ), clasificación de los ambientes con respecto al ambiente ideal (\emph{Ranking Environments}), evaluación de los cultivares con base en el rendimiento promedio y la estabilidad (\emph{Mean vs. Stability}) y  clasificación de genotipos con respecto al genotipo ideal (\emph{Ranking Genotypes}). A la hora de indicar el biplot que se desea realizar se debe especificar el método de SVD, centrado y escalado correspondiente.
+La pestaña \emph{GGE Biplot} genera las vistas de biplots GGE presentadas anteriormente, en las que los cultivares se muestran en minúsculas y los entornos en mayúsculas. Dado que el modelo requiere una única observación para cada combinación de genotipo y ambiente, si hay repeticiones, el valor promedio fenotípico se calcula automáticamente antes de ajustar el modelo. No se permiten valores perdidos.
+
+Se debe seleccionar el método SVD, sin embargo, esta elección no altera las relaciones o interacciones relativas entre genotipos y ambientes, aunque la apariencia del biplot será diferente (Yan, 2002). La opción simétrica permite la comparación tanto de genotipos como de ambientes (opción por \emph{default}); \emph{Genotype-Focused} muestra la interrelación entre genotipos con mayor precisión que cualquier otro método, y \emph{Environment-Focused} es el que más informa sobre las interrelaciones entre ambientes. Una nota a pie de página que indica que el método de centrado, que será \emph{tester-center} para obtener el bioplot GGE, que no se aplica ninguna escala a los datos, el método SVD seleccionado por el usuario y el porcentaje de variación G + GEI explicado por los dos ejes puede ser agregado. A su vez, el título del gráfico, los ejes y los nombres de los ejes se pueden configurar para que aparezcan o no. Por último, el usuario puede personalizar el color y el tamaño del marcador de genotipo y entornos. 
+
+El biplot básico, aquel que muestra los cultivares más adecuados para un ambiente particular (OA93), los ambientes más adecuados para un genotipo (Kat), la comparación de dos genotipos (Cas y Kat) y la vista del poligono se pueden obtener como se indica en la figura \ref{fig:fig4312}, donde el escalado es el simétrico (\emph{SVP type $->$ symmetrical}) y las opciones de \emph{plot type} son \emph{Biplot,
+Selected Environment, Selected Genotype, Comparison of Genotype} y \emph{Which Won Where/What}, respectivamente. Al indicar \emph{Selected Environment} el ambiente de interés se debe especificar, de igual modo cuando se utiliza \emph{Selected Genotype} y 
+\emph{Comparison of Genotype} se debe señalar cuál es el genotipo a analizar.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/GGE.png}
+		\includegraphics[width=16cm]{./Graficos/www/biplot_GGE.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
 	\label{fig:fig4312}
 \end{figure}
 
+La selección de cultivares dentro de cada megaambiente se realiza con el escalado centrado en los genotypos (\emph{SVP type $->$ genotype-focused}), y los tipos de gráficos 
+\emph{Mean vs. Stability} que permite la visualización de la media y estabilidad de genotipos y \emph{Ranking Genotypes} que compara las cultivares con el ``ideal". Dado que estos análisis son propios de cada megaambiente, al indicar alguno de esos tipos de gráficos se tendrá que señalar cuales son los ambientes que forman el megaambiente de interés. 
+
+
+Por último para el análisis de los ambientes de cada megaambiente se utiliza el escalado centrado en los ambientes (\emph{SVP type $->$ environment-focused}). Para comprender las interrelaciones entre ellos el tipo de gráfico \emph{Relationship Among Environments} se debe seleccionar y para visualizar la dapacidad de discriminación y representatividad 
+\emph{Ranking Environments}. Dado que estos análisis son propios de cada megaambiente, al indicar alguno de esos tipos de gráficos se tendrá que señalar cuales son los ambientes que forman el megaambiente de interés. 
+
+
+\subsection{modelo AMMI}
+
+La pestaña \emph{AMMI Biplot} crea el biplot GE, en el que los cultivares se muestran en minúsculas y los entornos en mayúsculas. Dado que las alternativas clásica y robusta requieren una única observación para cada combinación de genotipo y ambiente, si hay repeticiones, el valor promedio fenotípico se calcula automáticamente antes de ajustar el modelo. No se permiten valores perdidos. Al igual que en el biplot de GGE, una nota a pie de página que indica que el porcentaje de variación de IGA explicado por los dos ejes, el gráfico de título, los ejes y los nombres de los ejes se pueden configurar para que aparezcan o no. Además, el color y tamaño del marcador de genotipos y ambientes pueden ser personalizados por el usuario. Los biplots pueden ser descargados.
+
+Por ejemplo, para obtener el biplot GE derivado del modelo AMMI clásico se debe indicar
+AMMI en \emph{plot type} (Figura ...)., en caso de contar con \emph{outliers} alguna de las alternativas robustas (rAMMI, hAMMI, gAMMI, lAMMI o ppAMMI) se debe especificar.
+ 
 
 \begin{figure}[H]
 	\begin{center}
@@ -429,7 +499,6 @@ Dada la importancia del biplot GGE, se incluyen aquellos más utilizados en el a
 \end{figure}
 
 
+\subsection{Ayuda}
 
-\textbf{Ayuda}
-
-Información general, ejemplos y un video tutorial de cómo utilizar la aplicación se encuentran disponibled en la última pestaña de la misma.
+En la pestaña \emph{Help} se presenta información general, un tutorial y un video sobre  cómo utilizar la APP.

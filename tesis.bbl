@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -64,6 +64,12 @@ R.~Cruz~Medina.
 \newblock Some exact conditional tests for the multiplicative models to explain
   genotype-environment interaction.
 \newblock \emph{Heredity}, 69:128–--132, 1992.
+
+\bibitem[{Dumble(2017)}]{Dumble2017}
+S.~Dumble.
+\newblock \emph{GGEBiplots: GGE Biplots with 'ggplot2'}, 2017.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=GGEBiplots}.
+\newblock R package version 0.1.1.
 
 \bibitem[{Gauch(1988)}]{Gauch1988}
 H.~G. Gauch.
