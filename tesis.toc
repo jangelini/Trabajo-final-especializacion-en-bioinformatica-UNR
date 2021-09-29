@@ -39,7 +39,7 @@
 \contentsline {subsection}{\numberline {4.2.1}Preparación de un archivo de datos}{37}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Análisis descriptivo}{39}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Modelo de regresión por sitio}{41}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}modelo AMMI}{44}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Ayuda}{44}{subsection.4.2.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{45}{chapter.5}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{46}{section*.7}%
+\contentsline {subsection}{\numberline {4.2.4}modelo AMMI}{43}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Ayuda}{45}{subsection.4.2.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{46}{chapter.5}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{47}{section*.7}%
