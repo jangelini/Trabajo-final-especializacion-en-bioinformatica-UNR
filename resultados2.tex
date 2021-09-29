@@ -102,7 +102,7 @@ rAMMI(yan.winterwheat, genotype = ``gen", environment = ``env",
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.80\textwidth]{./Graficos/AMMI_biplot.png}
+		\includegraphics[width=0.50\textwidth]{./Graficos/AMMI_biplot.png}
 	\end{center}
 	\caption{Biplot GE obtenido del modelo AMMI clásico basado en los datos de rendimiento de trigo de invierno obtenidos en Ontario en 1993. El 71,66\% de la variabilidad de la IGA se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en letras minúsculas y los ambientes en mayúsculas. }
 	\label{fig:ammibip}
@@ -170,7 +170,7 @@ GGEPlot(GGE1, type = ``Biplot", footnote = F, titles = F)
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.80\textwidth]{./Graficos/GGE_biplot.png}
+		\includegraphics[width=0.50\textwidth]{./Graficos/GGE_biplot.png}
 	\end{center}
 	\caption{Biplot GGE basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }
 	\label{fig:ggebip}
@@ -197,7 +197,7 @@ GGEPlot(GGE1, type = ``Selected Genotype", selectedG = ``Kat", footnote = F, tit
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/SelectedGyE.png}
+		\includegraphics[width=0.90\textwidth]{./Graficos/SelectedGyE.png}
 	\end{center}
 	\caption{A: Ranking de cultivares en el ambiente OA93. B: Ranking de ambientes para cultivar Kat, basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}
 	\label{fig:selectEyG}
@@ -219,7 +219,7 @@ GGEPlot(GGE1, type = ``Comparison of Genotype", selectedG1 = ``Kat", selectedG2 
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.80\textwidth]{./Graficos/GGE_comparisonG1yG2.png}
+		\includegraphics[width=0.50\textwidth]{./Graficos/GGE_comparisonG1yG2.png}
 	\end{center}
 	\caption{comparación de los cultivares Kat y Cas. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }
 	\label{fig:comp2G}
@@ -245,7 +245,7 @@ GGEPlot(GGE1, type = ``Which Won Where/What", footnote = F, titles = F)
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.80\textwidth]{./Graficos/GGE_whichwonwhere.png}
+		\includegraphics[width=0.48\textwidth]{./Graficos/GGE_whichwonwhere.png}
 	\end{center}
 	\caption{Vista poligonal del biplot GGE, que muestra qué cultivares presentaron mayor rendimiento en cada ambiente/mega-ambiente. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}
 	\label{fig:poligono}
@@ -288,7 +288,7 @@ GGEPlot(GGE_Gpartition, type = ``Ranking Genotypes", footnote = F, titles = F, s
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/MeanvsStability2.png}
+		\includegraphics[width=0.75\textwidth]{./Graficos/MeanvsStability2.png}
 	\end{center}
 	\caption{A: Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad y B: Clasificación de genotipos con respecto al genotipo ideal, basado en el método de patición de la descomposición en valores singulares enfocado en los genotipos.}
 	\label{fig:evaluacionG}
@@ -327,7 +327,7 @@ GGEPlot(GGE_Epartition, type = ``Ranking Environments", footnote = F, titles = F
 \tcblower
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{./Graficos/RelationshipEnvironments.png}
+		\includegraphics[width=0.75\textwidth]{./Graficos/RelationshipEnvironments.png}
 	\end{center}
 	\caption{A: Relación entre ambientes y B: Clasificación de ambientes con respecto al ambiente ideal, basado en el escalado centrado en los genotipos.}
 	\label{fig:evaluacionE}
@@ -385,9 +385,11 @@ La APP requiere que los datos de entrada se encuentren en formato .csv, delimita
 
 Los dos conjuntos de datos \emph{plrv} y \emph{yanwinterwheat} descriptos en la subsección \ref{subsec:datosejemplos} están disponibles en la pestaña \emph{Data $->$ Example datasets} y se pueden descargar en formato .csv (Figura \ref{fig:dataexample}) para poder seguir el tutorial de uso de la APP. El conjunto de datos \emph{yanwinterwheat} no tiene repeticiones, mientras que \emph{plrv} sí. 
 
+\textbf{SE VE HORRIBLE, CAMBIAR CAPTURA}
+
  \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{./Graficos/www/exampledata.jpg}
+		\includegraphics[width=0.95\textwidth]{./Graficos/www/exampledata.png}
 	\end{center}
 	\caption{(A) Plrv dataset (B) yanwinterwheat dataset }
 	\label{fig:dataexample}
@@ -401,7 +403,7 @@ El conjunto de datos que se analizará debe cargarse en la pestaña \emph{Data $
 
  \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/www/Data.png}
+		\includegraphics[width=0.95\textwidth]{./Graficos/www/Data.png}
 	\end{center}
 	\caption{Cargando el conjunto de datos \emph{yanwinterwheat} en Geneticae APP}
 	\label{fig:fig431}
@@ -416,7 +418,7 @@ Un \emph{boxplot} que compara el rasgo cuantitativo entre ambientes o genotipos 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/Boxplot.jpg}
+		\includegraphics[width=0.95\textwidth]{./Graficos/Boxplot.jpg}
 	\end{center}
 	\caption{Diagrama de caja de (A) genotipos y (B) ambientes para el conjunto de datos \emph{yanwinterwheat}.}
 	\label{fig:figdesc1}
@@ -426,7 +428,7 @@ Los coeficientes de correlación de Pearson o Spearman entre genotipos se pueden
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/correlacion.jpg}
+		\includegraphics[width=0.95\textwidth]{./Graficos/correlacion.jpg}
 	\end{center}
 	\caption{Gráfico de correlación (A) y matriz (B) entre genotipos yanwinterwheat dataset }
 	\label{fig:figdesc2}
@@ -438,7 +440,7 @@ Dado que IGA genera respuestas genotípicas diferenciales en diferentes ambiente
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/interaction.jpg}
+		\includegraphics[width=0.95\textwidth]{./Graficos/interaction.jpg}
 	\end{center}
 	\caption{Gráfico de interacción para (A) ambientes a través de genotipos y (B) genotipos a través de entornos del conjunto de datos de \emph{yanwinterwheat}.}
 	\label{fig:figdesc3}
@@ -457,7 +459,7 @@ Selected Environment, Selected Genotype, Comparison of Genotype} y \emph{Which W
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/www/GGE_biplotAPP1.png}
+		\includegraphics[width=0.95\textwidth]{./Graficos/www/GGE_biplotAPP1.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
 	\label{fig:ggebip1}
@@ -468,7 +470,7 @@ La selección de cultivares dentro de cada megaambiente se realiza con la partic
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/www/GGE_biplotAPP2.png}
+		\includegraphics[width=0.95\textwidth]{./Graficos/www/GGE_biplotAPP2.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
 	\label{fig:ggebip2}
@@ -480,7 +482,7 @@ Por último, para el análisis de los ambientes de cada megaambiente se utiliza 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/www/GGE_biplotAPP3.png}
+		\includegraphics[width=0.95\textwidth]{./Graficos/www/GGE_biplotAPP3.png}
 	\end{center}
 	\caption{Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}
 	\label{fig:ggebip3}
@@ -497,7 +499,7 @@ AMMI en \emph{plot type} (Figura ...). En caso de contar con \emph{outliers} alg
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{./Graficos/AMMI_GE.png}
+		\includegraphics[width=0.70\textwidth]{./Graficos/AMMI_GE.png}
 	\end{center}
 	\caption{AMMI}
 	\label{fig:fig4313}
