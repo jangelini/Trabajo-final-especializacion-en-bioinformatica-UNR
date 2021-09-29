@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {4.1.3}Modelo de Regersión por Sitio}{27}{subsection.4.1.3}%
 \contentsline {subsection}{\numberline {4.1.4}Métodos de imputación}{36}{subsection.4.1.4}%
 \contentsline {section}{\numberline {4.2}Geneticae Shiny Web App}{37}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Preparación de un archivo de datos para la aplicación Geneticae}{37}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.1}Preparación de un archivo de datos}{37}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Análisis descriptivo}{39}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Modelo de regresión por sitio}{41}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}modelo AMMI}{44}{subsection.4.2.4}%

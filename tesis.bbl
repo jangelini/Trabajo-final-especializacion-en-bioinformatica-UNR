@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{23}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -65,6 +65,13 @@ R.~Cruz~Medina.
   genotype-environment interaction.
 \newblock \emph{Heredity}, 69:128–--132, 1992.
 
+\bibitem[{{de Mendiburu}(2020)}]{deMendiburu2020}
+F.~{de Mendiburu}.
+\newblock \emph{agricolae: Statistical Procedures for Agricultural Research},
+  2020.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=agricolae}.
+\newblock R package version 1.3-3.
+
 \bibitem[{Dumble(2017)}]{Dumble2017}
 S.~Dumble.
 \newblock \emph{GGEBiplots: GGE Biplots with 'ggplot2'}, 2017.
@@ -103,6 +110,12 @@ R.~A. Kempton.
 P.C. Rodrigues, A.~Monteiro, , y V.M. Lourenço.
 \newblock A robust ammi model for the analysis of genotype-by-environment data.
 \newblock \emph{Bioinformatics}, 32:58--66, 2016.
+
+\bibitem[{Wright(2020)}]{Wright2020}
+K.~Wright.
+\newblock \emph{agridat: Agricultural Datasets}, 2020.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=agridat}.
+\newblock R package version 1.17.
 
 \bibitem[{Yan et~al.(2001)Yan, Cornelius, Crossa, y Hunt}]{Yanetal2001}
 W.~Yan, P.L. Cornelius, J.~Crossa, y L.A. Hunt.
