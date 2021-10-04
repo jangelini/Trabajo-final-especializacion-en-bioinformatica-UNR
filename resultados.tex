@@ -13,7 +13,7 @@ Para instalar la versión del paquete publicada en CRAN: \textcolor{blue}{instal
 
 Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae). Información detallada sobre las funciones del paquete geneticae se puede obtener mediante \textcolor{blue}{help}(package = ``geneticae"). La ayuda para una función, por ejemplo \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). La función \textcolor{blue}{browseVignettes}(``geneticae") permite obtener la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver así como ejemplos de aplicación del mismo. 
 
-Se encuentra disponible una página web del paquete (http://....) en la que se cuenta con una breve descripción del paquete, las funciones que se incluyen en él, la viñeta, un enlace de acceso a la shiny app, entre otra información.
+Se encuentra disponible una página web del paquete (\url{https://jangelini.github.io/geneticae}) en la que se cuenta con una breve descripción del paquete, las funciones que se incluyen en él, la viñeta, un enlace de acceso a la Shiny Web APP, entre otra información.
 
 
 \subsection{Conjuntos de datos en geneticae}
@@ -357,20 +357,20 @@ Una limitación importante de los modelos presentados anteriormente es que requi
 imputation(yanwinterwheat, PC.nb = 2, genotype = "gen", environment = "env", response = "yield", type = "EM-AMMI")
 \end{lstlisting}
 \end{tcolorbox}
-\section{Geneticae Shiny Web App}
+\section{Geneticae Shiny Web APP}
 
-Generalmente los mejoradores utilizan programas estadísticos que funcionan mediante una interfaz gráfica lo cual permite realizar el análisis de interés sin necesidad del manejo de un lenguaje de programación. \emph{Geneticae Shiny Web App}, es una aplicación web que permite a los usuarios realizar muchos de los análisis incluidos en el paquete geneticae, sin necesidad de conocer el lenguaje de programación R. 
+Generalmente los mejoradores utilizan programas estadísticos que funcionan mediante una interfaz gráfica lo cual permite realizar el análisis de interés sin necesidad del manejo de un lenguaje de programación. \emph{Geneticae Shiny Web APP}, es una aplicación web que permite a los usuarios realizar muchos de los análisis incluidos en el paquete geneticae, sin necesidad de conocer el lenguaje de programación R. 
 
-Al iniciar \emph{Geneticae Shiny Web App}, se muestra una pantalla en la cual se carga el conjunto de datos a analizar. Se admiten archivos con extensión .csv, delimitados por coma o punto y coma.
+Al iniciar \emph{Geneticae Shiny Web APP}, se muestra una pantalla en la cual se carga el conjunto de datos a analizar. Se admiten archivos con extensión .csv, delimitados por coma o punto y coma.
 Dado que esta aplicación se conecta con R y utiliza las funciones del paquete \emph{geneticae} se debe respetar el formato del conjunto de datos de entrada requerido por el mismo. Como se indicó anteriormente, la base de datos debe estar en formato largo, es decir que las observaciones se encuentran en las filas y las variables, genotipos, ambientes, repeticiones (en caso de que haya) y el fenotipo observado, en las columnas. Además puede incluir otras variables que no serán utilizadas en el análisis ya que al cargar el conjunto de datos se debe indicar que columna corresponde al genotipo, al ambiente, a las repeticiones y al valor fenotípico a analizar. La primera fila del conjunto de datos puede contener los nombres de las variables, y en ese caso se indicará al cargarlo en la aplicación. El número de repeticiones puede diferir con los genotipos y los ambientes.
 
 Dos conjuntos de datos de ejemplo, \emph{plrv} y \emph{yanwinterwheat}, incluidos en el paquete geneticae, se encuentran disponibles en la aplicación para ser descargados y probar la misma (Figura \ref{fig:fig431},\ref{fig:fig432}). La ruta para realizar esto es siguente: \emph{The data} $\rightarrow$ \emph{Example datasets}.
 
- \begin{figure}[H]
+ \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=16cm]{./Graficos/Exampledatasets_withoutrep.png}
 	\end{center}
-	\caption{yanwinterwheat dataset disponible en Shiny Web App}
+	\caption{yanwinterwheat dataset disponible en Shiny Web APP}
 	\label{fig:fig431}
 \end{figure}
 
@@ -378,7 +378,7 @@ Dos conjuntos de datos de ejemplo, \emph{plrv} y \emph{yanwinterwheat}, incluido
 	\begin{center}
 		\includegraphics[width=16cm]{./Graficos/Exampledatasets_withrep.png}
 	\end{center}
-	\caption{plrv dataset disponible en Shiny Web App}
+	\caption{plrv dataset disponible en Shiny Web APP}
 	\label{fig:fig432}
 \end{figure}
 
@@ -498,7 +498,7 @@ Todos los gráficos mostrados para verificar los supuestos requeridos por la té
 
 \textbf{Biplots}
 
-\emph{Geneticae Shiny Web App} permite obtener tanto el biplot GGE (Figura \ref{fig:fig4312}) como el GE (Figura \ref{fig:fig4313}) . Ciertos atributos estilísticos de dichos gráficos se pueden personalizar y además pueden ser descargados.
+\emph{Geneticae Shiny Web APP} permite obtener tanto el biplot GGE (Figura \ref{fig:fig4312}) como el GE (Figura \ref{fig:fig4313}) . Ciertos atributos estilísticos de dichos gráficos se pueden personalizar y además pueden ser descargados.
 
 Dada la importancia del biplot GGE, se incluyen aquellos más utilizados en el análisis de datos provenientes de EMA. Entre ellos, el biplot básico y aquellos que permiten estudiar la relación entre los ambientes (\emph{Relationship Among Environments}), la identificación del mejor cultivar en cada ambiente (\emph{Which Won Where/What}), Discrimination vs. representativeness ( \textbf{Este es el q me falta interpretar en el paquete} ), clasificación de los ambientes con respecto al ambiente ideal (\emph{Ranking Environments}), evaluación de los cultivares con base en el rendimiento promedio y la estabilidad (\emph{Mean vs. Stability}) y  clasificación de genotipos con respecto al genotipo ideal (\emph{Ranking Genotypes}). A la hora de indicar el biplot que se desea realizar se debe especificar el método de SVD, centrado y escalado correspondiente.
 

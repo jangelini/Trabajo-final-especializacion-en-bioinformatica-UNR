@@ -13,9 +13,9 @@ Este capítulo tiene como objetivo focalizar al lector en los aspectos fundament
 
 
 \subsection{Modelo AMMI y SREG}
-El modelo AMMI (Zobel et al. 1988) y SREG \citep{Corneliusetal1996, CrossaCornelius1997, CrossaCorneliusYan2002} son modelos lineales-bilineales que difieren en las componentes aditivas que se eliminan de la ecuación y se incorporan en forma multiplicativa. Mientras que AMMI considera los ambientes (A) y el genotipo (G) como aditivos, SREG solo A. Por lo tanto, en el primero la IGA representa la parte multiplicativa y en el segundo G e IGA en forma conjunta. 
+El modelo AMMI (\textbf{Zobel et al., 1988}) y SREG \citep{Corneliusetal1996, CrossaCornelius1997, CrossaCorneliusYan2002} son modelos lineales-bilineales que difieren en las componentes aditivas que se eliminan de la ecuación y se incorporan en forma multiplicativa. Mientras que AMMI considera los ambientes (A) y el genotipo (G) como aditivos, SREG sólo A. Por lo tanto, en el primero la IGA representa la parte multiplicativa y en el segundo G e IGA en forma conjunta. 
 
-Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la Descomposición en Valores Singulares (DVS) de la matriz que contiene los residuos para cada combianción de genotipo y ambiente luego de ajustar por mínimos cuadrados el modelo de efectos principales. 
+Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la DVS de la matriz que contiene los residuos para cada combianción de genotipo y ambiente luego de ajustar por mínimos cuadrados el modelo de efectos principales. 
 
 Las ecuaciones de los distintos modelos son:
 
@@ -33,17 +33,17 @@ donde
 \end{itemize}
 
 
-El resultado de los dos primeros términos multiplicativos de la SVD se presenta a menudo en un biplot llamado GE (\emph{Genotipe-Environment}) (\textbf{CITA}) en AMMI y GGE en SREG \citep{Yanetal2000} y representan una aproximación de dos rangos de los efectos multiplicativos. Dado que para seleccionar cultivares, el efecto de G e IGA debe considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos EMA permite, entre otras cosas, la visualización de tres aspectos importantes: 
+El resultado de los dos primeros términos multiplicativos de la SVD se presenta a menudo en un biplot llamado GE en AMMI (\textbf{CITA}) y GGE en SREG \citep{Yanetal2000} y representan una aproximación de dos rangos de los efectos multiplicativos. Dado que para seleccionar cultivares, el efecto de G e IGA debe considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos EMA permite, entre otras cosas, la visualización de tres aspectos importantes: 
 
 \begin{itemize}
-\item[(i)] las relaciones entre los genotipos y ambientes representadas por el patrón \emph{which-won-where}, que facilitan la investigación del megaambiente \citep{GauchZobel1997};
+\item[(i)] las relaciones entre los genotipos y ambientes representadas por el patrón \emph{which-won-where}, que facilitan la investigación de megaambientes \citep{GauchZobel1997};
 
-\item[(ii)] las interrelaciones entre los ambientes de prueba que permiten la identificación de mejores para la evaluación de cultivares \citep{Cooperetal1997} y de aquellos redundantes que pueden ser descartados \citep{YanRajcan2002};
+\item[(ii)] las interrelaciones entre los ambientes de prueba, que facilitan la identificación de mejores ambientes para la evaluación de cultivares \citep{Cooperetal1997} y de aquellos que son redundantes y pueden descartarse \citep{YanRajcan2002};
 
 \item[(iii)] las interrelaciones entre genotipos que posibilita la comparación entre ellos y la clasificación de los mismos considerando tanto en el rendimiento medio como la estabilidad \citep{Yanetal2001}.
 \end{itemize}
 
-En un biplot, el i-ésimo genotipo se muestra como un punto definido por todos los valores $g_{ik} = \lambda_k^{s} \gamma_{ik}$, y el j-ésimo ambiente por $e_{kj} = \lambda_k^{1-s} \delta_{jk}$ ($k=1,2$ para un biplot bidimensional), donde $s$ es el factor de partición. Cuando $s=1$ se denomina escalamiento centrado en los genotipos, centrado en los ambientes si $s=0$ y simétrica cuando $s=0.5$. El último factor es el utilizado en el biplot GE y el más utilizado en GGE, aunque dependiendo de los intereses de la investigación, se pueden construir numerosos biplots derivados de SREG. Independientemente del factor de partición utilizado, los biplots GGE revelan el mismo patrón \emph{which-won-where}. Sin embargo, difieren en diversos aspectos. El primero muestra la interrelación entre genotipos con mayor precisión que cualquier otro método, el centrado en el ambiente es el más informativo de las interrelaciones entre los ambientes, mientras que el simétrico permite visualizar la magnitud relativa tanto de la variación de los genotipos como de los ambientes. 
+En un biplot, el i-ésimo genotipo se muestra como un punto definido por todos los valores $g_{ik} = \lambda_k^{s} \alpha_{ik}$, y el j-ésimo ambiente por $e_{kj} = \lambda_k^{1-s} \gamma_{jk}$ ($k=1,2$ para un biplot bidimensional), donde $s$ es el factor de partición. Cuando $s=1$ la partición en valores singulares se enfoca en los genotipos (\emph{Genotype-focused scaling}), si $s=0$ se centra en los ambientes (\emph{Environment-focused scaling}) y la partición es simétrica cuando $s=0.5$ (\emph{Symmetrical scaling}). El último factor es el utilizado en el biplot GE y el más utilizado en GGE, aunque dependiendo de los intereses de la investigación, se pueden construir numerosas vistas del biplot GGE derivado de SREG. Independientemente del factor de partición utilizado, los biplots GGE revelan el mismo patrón \emph{which-won-where}. Sin embargo, difieren en diversos aspectos. El primero muestra la interrelación entre genotipos con mayor precisión que cualquier otro método, el centrado en el ambiente es el más informativo de las interrelaciones entre los ambientes, mientras que el simétrico permite visualizar la magnitud relativa tanto de la variación de los genotipos como de los ambientes. 
 
 
 
@@ -51,32 +51,32 @@ En un biplot, el i-ésimo genotipo se muestra como un punto definido por todos l
 
 El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. Sin embargo, la presencia de \emph{outliers} es más una regla que una excepción cuando se consideran datos agronómicos debido características inherentes a los genotipos que se evalúan, errores de medición o el efecto inesperado de plagas o enfermedades que pueden afecta el rendimiento de algunos genotipos.
 
-\citet{Rodriguesetal2016} proponen una generalización robusta del modelo AMMI, que resulta de ajustar la regresión robusta basada en el estimador M-Huber (Huber, 1981) y luego utilizar un procedimiento DVS / PCA robusto. Consideraron varios métodos de DVS / ACP dando lugar a un total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
+\citet{Rodriguesetal2016} proponen una generalización robusta del modelo AMMI, que resulta de ajustar la regresión robusta basada en el estimador M-Huber (\textbf{Huber, 1981}) y luego utilizar un procedimiento DVS o de análisis de componentes principales (ACP) robusto. Consideraron varios métodos de DVS / ACP dando lugar a un total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
 
-El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes puede resultar en un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (Gauch1997, Yan et al. 2000). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico \citep{Rodriguesetal2016}.
+El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes puede resultar en un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (\textbf{Gauch1997, Yan et al. 2000}). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico \citep{Rodriguesetal2016}.
 
 
 \subsection{Métodos de imputación}
 
 
-Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el fenotipo de todas las combinaciones de genotipos y ambientes se encuentre registrado, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de la evaluaciones en las que se incorporan y se descartan genotipos debido a su pobre desempeño \citep{HillRosenberg1985}.
+Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el fenotipo bajo estudio se encuentre registrado para todas las combinaciones de genotipos y ambientes, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de la evaluaciones en las que se incorporan y se descartan genotipos debido a su pobre desempeño \citep{HillRosenberg1985}.
 
 Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
 
 \begin{itemize}
-\item EM-AMMI: Gauch y Zobel (1990) desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza (EM, del inglés \emph{Expectation-Maximization}) incorporando el modelo AMMI. 
+\item EM-AMMI: \textbf{Gauch y Zobel (1990)} desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza incorporando el modelo AMMI. 
 \end{itemize}
 \begin{itemize}
-\item EM-SVD: Perry (2009) propone un método de imputación que combina el algoritmo EM con DVS. 
+\item EM-SVD: \textbf{Perry (2009)} propone un método de imputación que combina el algoritmo EM con DVS. 
 \end{itemize}
 \begin{itemize}
-\item EM-PCA: Josse y Husson (2013) proponen imputar los valores faltantes de un conjunto de datos mediante un ACP.
+\item EM-PCA: \textbf{Josse y Husson (2013)} proponen imputar los valores faltantes de un conjunto de datos mediante un ACP.
 \end{itemize}
 \begin{itemize}
-\item Gabriel Eigen: \citet{Alarconetal2010} presentan un método de imputación que combina regresión y aproximación de rango inferior usando DVS. 
+\item GabrielEigen: \citet{Alarconetal2010} presentan un método de imputación que combina regresión y aproximación de rango inferior usando DVS. 
 \end{itemize}
 \begin{itemize}
-\item WGabriel Eigen: \citet{Alarconetal2014} plantean una extensión ponderada del método Gabriel Eigen.
+\item WGabriel Eigen: \citet{Alarconetal2014} plantean una extensión ponderada del método GabrielEigen.
 \end{itemize}
 
 
@@ -204,15 +204,12 @@ El archivo DESCRIPTION provee toda la metadata sobre el paquete que se esta crea
 
 \begin{itemize}
 \item Package: nombre del paquete
-\item Title: título del paquete (hasta 65 caracteres, Escrito De Esta Forma).
-\item Version: número de la versión actual del paquete (por ejemplo, 0.2.1)
+\item Title: título del paquete (hasta 65 caracteres).
+\item Version: número de la versión actual del paquete (por ejemplo, 0.0.9000)
 \item Author, Maintainer o Authors@R: quiénes han participado en el paquete.
 \item Description: un párrafo que describa el paquete.
-\item License: nombre de la licencia bajo la cual se distribuye el paquete. Si se pretende que cualquiera lo puede usar, entonces se debe recurrir a los tipos mas comunes de licencia para código abierto: CC0, MIT o GPL. Como se muestra en la Figura \ref{fig:fig33}, el paquete geneticae se encuentra bajo la licencia GPL-3. Para esto, se utilizó la función \textcolor{blue}{use\_gpl3\_license}() del paquete usethis, la cual agrega la información al archivo DESCRIPTION y además crea un archivo LICENSE al directorio del paquete.
+\item License: nombre de la licencia bajo la cual se distribuye el paquete. Si se pretende que cualquiera lo puede usar, entonces se debe recurrir a los tipos mas comunes de licencia para código abierto: CC0, MIT o GPL. Como se muestra en la Figura \ref{fig:fig33},\textbf{ el paquete geneticae se encuentra bajo la licencia GPL-3. Para esto, se utilizó la función \textcolor{blue}{use\_gpl3\_license}() del paquete usethis, la cual agrega la información al archivo DESCRIPTION y además crea un archivo LICENSE al directorio del paquete. ???????}
 \end{itemize}
-
-
-
 
 En cambio, los elementos no obligatorios:
 \begin{itemize}
@@ -224,7 +221,7 @@ En cambio, los elementos no obligatorios:
 
 El archivo DESCRIPTION del paquete geneticae se muestra en la Figura \ref{fig:fig33}
 
- \begin{figure}[H]
+ \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=13cm]{./Graficos/DESCRIPTION.png}	
 	\end{center}
@@ -247,7 +244,7 @@ Los testeos se organizan en tres niveles:
 La función \textcolor{blue}{use\_test}(), creará los archivos de prueba cuyo nombre tienen que ser test-nombre\_archivo\_de\_codigo.R  y los ubicará en la carpeta test/testthat. Una vez escritos estos archivos, podemos evaluar los resultados de los testeos con \textcolor{blue}{devtools::test()}. Ante cada error encontrado, nos detenemos para corregirlo y repetimos este proceso hasta que todas las unidades de testeo pasen la prueba. En la Figura \ref{fig:fig34} se muestra el resultado de correr los test creados para el paquete geneticae.
 
 
- \begin{figure}[H]
+ \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=11cm]{./Graficos/Test.png}	
 	\end{center}
@@ -257,17 +254,13 @@ La función \textcolor{blue}{use\_test}(), creará los archivos de prueba cuyo n
 
 Una medida de la calidad de un paquete está dada por el porcentaje de su código que es evaluado durante los testeos. El paquete covr permite hacer ese cálculo, además de mostrar interactivamente qué partes del código fueron evaluadas y cuáles no. Por un lado puede evaluarse en cada archivo .R mediante \textcolor{blue}{devtools::test\_coverage\_file()}, o bien, la cobertura total usando \textcolor{blue}{devtools::test\_coverage()}. El paquete geneticae tiene un porcentaje total de cobertura de los test igual a 16.83\% (Figura \ref{fig:fig35}).
 
-
- \begin{figure}[H]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=14cm]{./Graficos/Cobertura.png}	
 	\end{center}
 	\caption{Análisis de cobertura de los tests de geneticae}
 	\label{fig:fig35}
 \end{figure}
-
-{\LARGE{\textbf{ampliar los test para tener mas cobertura}}}
-
 
 
 \subsection{Compilación e instalación}
@@ -306,9 +299,8 @@ Para generar el README con R Markdown se utiliza la función \textcolor{blue}{us
 \textbf{badges y logo}
 
 Las insignias o badges son unos íconos que señalan distintas características del paquete, como su nivel de maduración, el nivel de cobertura en el testeo, cantidad de descargas, número de versión, resultado de los controles de CRAN, etc.
-Son visualmente muy atractivas y se colocan el en archivo README.     El paquete usethis trae un conjunto de funciones que generan automáticamente el código a incluir en el README.Rmd para agregar los badges: \textcolor{blue}{use\_badge}(badge\_name, href, src), \textcolor{blue}{use\_cran\_badge}(), \textcolor{blue}{use\_bioc\_badge}(), \textcolor{blue}{use\_lifecycle\_badge}(stage), 
-\textcolor{blue}{use\_binder\_badge}(sturlpath = NULL) .
-
+Son visualmente muy atractivas y se colocan el en archivo README. \textbf{El paquete usethis trae un conjunto de funciones que generan automáticamente el código a incluir en el README.Rmd para agregar los badges: \textcolor{blue}{use\_badge}(badge\_name, href, src), \textcolor{blue}{use\_cran\_badge}(), \textcolor{blue}{use\_bioc\_badge}(), \textcolor{blue}{use\_lifecycle\_badge}(stage), 
+\textcolor{blue}{use\_binder\_badge}(sturlpath = NULL) . YA NO ME ACUERDO DE ESTO... LO SACAMOS CREO}
 
 Muchos de los paquetes disponibles disponen de un logo con forma hexagonal, que generalmente termina en forma de sticker: los hexStickers. Estos permiten terminar de darle identidad a tu paquete y hacerlo más vistoso. Para crearlos existe el paquete HexSticker. Una vez creado el logo, le podemos pasar su ubicación a la función use\_logo(), que se encargará de darle el tamaño adecuado, guardarlo en la carpeta man del paquete y producir el código de Markdown para incluirlo en el README. 
 La Figura \ref{fig:fig36} presenta un fragmento GitHub del paquete geneticae, donde se muestra parte del contenido del archivo README, badges y logo.
@@ -321,7 +313,7 @@ La Figura \ref{fig:fig36} presenta un fragmento GitHub del paquete geneticae, do
 	\label{fig:fig36}
 \end{figure}
 
-
+\textbf{cambiar figura pq no tengo todos esos badges en el readme}
 
 
 \subsubsection{Archivo NEWS}
@@ -333,11 +325,9 @@ Se sugiere usar Markdown para escribir este archivo y colocar un título princip
 Si se trata de cambios impulsados por otras personas, por ejemplo, a través de sugerencias hechas en GitHub, se los menciona.
 Una buena práctica es ir escribiendo este archivo cada vez que se realiza algo nuevo en el paquete.
 La función que nos permite crear este archivo automáticamente es
-\textcolor{blue}{usethis::use\_news\_md}(). Hasta el momento, del paquete geneticae solamente se cuenta con la versión de desarrollo (Figura \ref{fig:fig37}) 
+\textcolor{blue}{usethis::use\_news\_md}(). Hasta el momento, el paquete \emph{geneticae} tiene la primer versión de desarrollo, la presentación en CRAN y la actual versión de desarrollo Figura \ref{fig:fig37}) 
 
-
-
-\begin{figure}[H]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=11cm]{./Graficos/News.png}	
 	\end{center}
@@ -345,29 +335,29 @@ La función que nos permite crear este archivo automáticamente es
 	\label{fig:fig37}
 \end{figure}
 
-
+\textbf{actualizar figura de NEWS}
 
 
 
 \subsubsection{Crear una página web}
 
-Para mayor visualización del paquete es posible crear una página web \footnote{Para visitar la página web de geneticae debe dirigirse a \url{https://...........}}. El paquete pkgdown está diseñado para la creación de un sitio web de manera rápida y sencilla. Utiliza todo lo creado hasta el momento y lo convierte automáticamente en una pagina web mediante la función \textcolor{blue}{pkgdown::build\_site()}.
-
- {\LARGE{\textbf{No aparecen los badges en la pag web}}}
+Para mayor visualización del paquete es posible crear una página web\footnote{Para visitar la página web de \emph{geneticae} debe dirigirse a \url{https://jangelini.github.io/geneticae}}. El paquete pkgdown está diseñado para la creación de un sitio web de manera rápida y sencilla. Utiliza todo lo creado hasta el momento y lo convierte automáticamente en una pagina web mediante la función \textcolor{blue}{pkgdown::build\_site()}.
 
 
 \subsubsection{Publicación}
 
 
-Por último, para que otros usuarios puedan utilizar el paquete es necesario compartirlo en alguno de los repositorios más populares de paquetes de R, entre los cuales se encuentran: CRAN, Bioconductor, GitHub, rOpenSci, R-Forge y RForge. El paquete \emph{geneticae} se encuentra en GitHub, por lo tanto, para instalar el mismo se debe utilizar \textcolor{blue}{devtools::install\_github(``jangelini/geneticae")}.
+Por último, para que otros usuarios puedan utilizar el paquete es necesario compartirlo en alguno de los repositorios más populares de paquetes de R, entre los cuales se encuentran: CRAN, Bioconductor, GitHub, rOpenSci, R-Forge y RForge. El paquete \emph{geneticae} se encuentra disponible tanto en CRAN como en GitHub.
 
 
-\section{Shiny APP}
+\section{Shiny Web APP}
+{\LARGE{\textbf{que opinas... uso Shiny Web APP o aplicación web Shiny??}}}
+
 Shiny es un paquete R que permite construir aplicaciones web directamente desde RStudio sin necesidad de conocer en profundidad los lenguajes HTML / CSS / JavaScript . Estas aplicaciones constituyen una interfaz gráfica entre el usuario y R, que permiten realizar un análisis a través de un navegador web sin necesidad de programar.
 
 Una característica importante de las aplicaciones web creadas mediante Shiny es que son dinámicas e interactivas. Para que shiny funcione correctamente, es necesario tener instalado R 3.0.2 o cualquier versión posterior.
 
-\subsection{Estructura de Shiny APP}
+\subsection{Estructura de Shiny Web APP}
 
 Las aplicaciones están compuestas por la interfaz de usuario, ui (\emph{user interfaz}), sección server y la función shinyApp(). 
 
@@ -386,7 +376,7 @@ En la sección server se escribe el código de R que le indica a la app qué deb
 Por último, se llama a la función shinyApp(), cuyos dos argumentos principales son ui y server, es decir, cada uno de los elementos definidos anteriormente. Ejecutar esta función da como resultado el lanzamiento de la aplicación, la cual podremos utilizar dentro de RStudio o usando nuestro navegador (Google Chrome, Mozilla Firefox, Microsoft Edge, etc.). Es importante destacar que, al seguir estos pasos, la aplicación sólo funcionará mientras la sesión de RStudio desde la cual se lanzó siga vigente.
 
 
-\subsection{Desarrollo de Shiny APP}
+\subsection{Desarrollo de Shiny Web APP}
 
 Una forma de desarrollar una  aplicación es a partir de un nuevo directorio con un sólo archivo llamado app.R, como se muestra a continuación. 
 
@@ -406,6 +396,6 @@ Entre los problemas que pueden surgir al crear una Shiny app se encuentran los e
 Al modificar la aplicación, se la ejecuta para poder ver los cambios realizados, por lo tanto resulta esencial reducir la velocidad de iteración. La primera forma acelerar el proceso consiste en escribir el código, utilizar el atajo del teclado Cmd/Ctrl+ Shift+ Enter en lugar del botón ``Ejecutar aplicación'', experimentar interactivamente con la aplicación y cerrar la aplicación, repitiendo este proceso al realizar cualquier cambio. Otra forma de reducir aún más la velocidad de iteración es activar la recarga automática (options(shiny.autoreload = TRUE)) y luego ejecutar la aplicación en un trabajo en segundo plano. Con este flujo de trabajo cuando se guarde un archivo, su aplicación se reiniciará: no es necesario cerrarla y reiniciarla, lo cual conduce a un flujo de trabajo aún más rápido. La principal desventaja de esta técnica es que debido a que la aplicación se ejecuta en un proceso separado, es considerablemente más difícil de depurar.
 
 
-\subsection{Compartiendo una Shiny Web App}
+\subsection{Compartiendo una Shiny Web APP}
 
-Una vez creada la aplicación se la publica para su libre uso. En este caso la Shiny Web App encuentra disponible en el servidor de CONICET \url{www.cefobi.com}. Además el proyecto se encuentra en GitHub \url{https://github.com/jangelini/shinyAPP_geneticae}. 
+Una vez creada la aplicación se la publica para su libre uso. En este caso Geneticae Shiny Web APP encuentra disponible momentaneamente en un servidor gratuito de uso limitado \url{https://geneticae.shinyapps.io/geneticae-shiny-web-app/}, sin embargo será instalado en el servidor de CONICET para su libre uso. También se puede acceder desde la página de CEFOBI-CONICET \url{https://www.cefobi-conicet.gov.ar/bases-de-datos-y-programas/} y desde Github \url{https://github.com/jangelini/Geneticae-Shiny-Web-APP} al código fuente.
