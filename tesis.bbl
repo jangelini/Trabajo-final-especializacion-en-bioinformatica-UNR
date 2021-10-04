@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -83,6 +83,11 @@ H.~G. Gauch.
 \newblock Model selection and validation for yield trials.
 \newblock \emph{Theoretical and Applied Genetics}, 80:153--160, 1988.
 
+\bibitem[{Gauch y Zobel(1990)}]{GauchZobel1990}
+H.G. Gauch y R.W. Zobel.
+\newblock Imputing missing yield trial data.
+\newblock \emph{Theoretical and Applied Genetics}, 79:753–761, 1990.
+
 \bibitem[{Gauch y Zobel(1997)}]{GauchZobel1997}
 H.G. Gauch y R.W. Zobel.
 \newblock Identifying mega-environments and targeting genotypes.
@@ -92,6 +97,18 @@ H.G. Gauch y R.W. Zobel.
 Jr.~R.R. Hill y J.L. Rosenberg.
 \newblock Models for combining data from germplasm evaluation trials.
 \newblock \emph{Crop Science}, 25:467--470, 1985.
+
+\bibitem[{Huber(1981)}]{Huber1981}
+P.~J. Huber.
+\newblock \emph{Robust Statistics}.
+\newblock John Wiley and Sons, 1981.
+
+\bibitem[{Josse y Husson(2016)}]{JosseHusson2016}
+J.~Josse y F.~Husson.
+\newblock {missMDA}: A package for handling missing values in multivariate data
+  analysis.
+\newblock \emph{Journal of Statistical Software}, 70(1):1--31, 2016.
+\newblock \doi{10.18637/jss.v070.i01}.
 
 \bibitem[{Kang y Magari(1996)}]{KangMagari1996}
 M.S. Kang y R.~Magari.
@@ -145,5 +162,10 @@ W.~Yan y I.~Rajcan.
 \newblock Biplot evaluation of test sites and traitrelations of soybean in
   ontario.
 \newblock \emph{Crop Science}, 42:11–--20, 2002.
+
+\bibitem[{Zobel et~al.(1988)Zobel, Wright, y Gauch}]{Zobel1988}
+R.W. Zobel, M.W. Wright, y H.G. Gauch.
+\newblock Statistical analysis of a yield trial.
+\newblock \emph{Agronomy Journal}, 80:88--393, 1988.
 
 \end{thebibliography}

@@ -13,7 +13,7 @@ Este capítulo tiene como objetivo focalizar al lector en los aspectos fundament
 
 
 \subsection{Modelo AMMI y SREG}
-El modelo AMMI (\textbf{Zobel et al., 1988}) y SREG \citep{Corneliusetal1996, CrossaCornelius1997, CrossaCorneliusYan2002} son modelos lineales-bilineales que difieren en las componentes aditivas que se eliminan de la ecuación y se incorporan en forma multiplicativa. Mientras que AMMI considera los ambientes (A) y el genotipo (G) como aditivos, SREG sólo A. Por lo tanto, en el primero la IGA representa la parte multiplicativa y en el segundo G e IGA en forma conjunta. 
+El modelo AMMI \citep{Zobel1988} y SREG \citep{Corneliusetal1996, CrossaCornelius1997, CrossaCorneliusYan2002} son modelos lineales-bilineales que difieren en las componentes aditivas que se eliminan de la ecuación y se incorporan en forma multiplicativa. Mientras que AMMI considera los ambientes (A) y el genotipo (G) como aditivos, SREG sólo A. Por lo tanto, en el primero la IGA representa la parte multiplicativa y en el segundo G e IGA en forma conjunta. 
 
 Los parámetros multiplicativos, tanto en el modelo AMMI como en el SREG, se estiman por medio de la DVS de la matriz que contiene los residuos para cada combianción de genotipo y ambiente luego de ajustar por mínimos cuadrados el modelo de efectos principales. 
 
@@ -51,9 +51,9 @@ En un biplot, el i-ésimo genotipo se muestra como un punto definido por todos l
 
 El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. Sin embargo, la presencia de \emph{outliers} es más una regla que una excepción cuando se consideran datos agronómicos debido características inherentes a los genotipos que se evalúan, errores de medición o el efecto inesperado de plagas o enfermedades que pueden afecta el rendimiento de algunos genotipos.
 
-\citet{Rodriguesetal2016} proponen una generalización robusta del modelo AMMI, que resulta de ajustar la regresión robusta basada en el estimador M-Huber (\textbf{Huber, 1981}) y luego utilizar un procedimiento DVS o de análisis de componentes principales (ACP) robusto. Consideraron varios métodos de DVS / ACP dando lugar a un total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
+\citet{Rodriguesetal2016} proponen una generalización robusta del modelo AMMI, que resulta de ajustar la regresión robusta basada en el estimador M-Huber \citep{Huber1981} y luego utilizar un procedimiento DVS o de análisis de componentes principales (ACP) robusto. Consideraron varios métodos de DVS / ACP dando lugar a un total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
 
-El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes puede resultar en un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes (\textbf{Gauch1997, Yan et al. 2000}). A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico \citep{Rodriguesetal2016}.
+El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes puede resultar en un mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes \citep{GauchZobel1997, Yanetal2000}. A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico \citep{Rodriguesetal2016}.
 
 
 \subsection{Métodos de imputación}
@@ -64,13 +64,13 @@ Una limitación importante que presentan los modelos multiplicativos descriptos 
 Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
 
 \begin{itemize}
-\item EM-AMMI: \textbf{Gauch y Zobel (1990)} desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza incorporando el modelo AMMI. 
+\item EM-AMMI: \citet{GauchZobel1990} desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza incorporando el modelo AMMI. 
 \end{itemize}
 \begin{itemize}
 \item EM-SVD: \textbf{Perry (2009)} propone un método de imputación que combina el algoritmo EM con DVS. 
 \end{itemize}
 \begin{itemize}
-\item EM-PCA: \textbf{Josse y Husson (2013)} proponen imputar los valores faltantes de un conjunto de datos mediante un ACP.
+\item EM-PCA: \citet{JosseHusson2016} proponen imputar los valores faltantes de un conjunto de datos mediante un ACP.
 \end{itemize}
 \begin{itemize}
 \item GabrielEigen: \citet{Alarconetal2010} presentan un método de imputación que combina regresión y aproximación de rango inferior usando DVS. 
