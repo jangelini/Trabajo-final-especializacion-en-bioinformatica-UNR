@@ -3,28 +3,30 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Representación gráfica de tipos de interacción genotipo - ambiente: (A) \emph {crossover}, (B) \emph {no crossover} y (C) sin interacción.}}{2}{figure.1.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Chequeo de disponibilidad del nombre elegido}}{10}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Creación del paquete geneticae}}{11}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Archivo DESCRIPTION de geneticae}}{14}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Resultado de correr los tests creados para geneticae}}{15}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Análisis de cobertura de los tests de geneticae}}{16}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Fragmento de README de geneticae}}{18}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Archivo NEWS de geneticae}}{19}{figure.3.7}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Chequeo de disponibilidad del nombre elegido para el paquete.}}{11}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Creación del paquete \emph {geneticae}}}{12}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Archivo DESCRIPTION de \emph {geneticae}}}{14}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Fragmento de README de \emph {geneticae}}}{15}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Fragmento de README de \emph {geneticae}}}{16}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Resultado de correr los tests creados para \emph {geneticae}}}{18}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Análisis de cobertura de los tests de \emph {geneticae}}}{18}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Fragmento de README de \emph {geneticae}}}{20}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Archivo NEWS de \emph {geneticae}}}{21}{figure.3.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Biplot GE obtenido del modelo AMMI clásico basado en los datos de rendimiento de trigo de invierno obtenidos en Ontario en 1993. El 71,66\% de la variabilidad de la IGA se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en letras minúsculas y los ambientes en mayúsculas. }}{26}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Biplot GGE basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }}{29}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A: Ranking de cultivares en el ambiente OA93. B: Ranking de ambientes para cultivar Kat, basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}}{30}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces comparación de los cultivares Kat y Cas. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }}{31}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Vista poligonal del biplot GGE, que muestra qué cultivares presentaron mayor rendimiento en cada ambiente/mega-ambiente. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}}{32}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces A: Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad y B: Clasificación de genotipos con respecto al genotipo ideal, basado en el método de patición de la descomposición en valores singulares enfocado en los genotipos.}}{34}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces A: Relación entre ambientes y B: Clasificación de ambientes con respecto al ambiente ideal, basado en el escalado centrado en los genotipos.}}{36}{figure.4.7}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces (A) Plrv dataset (B) yanwinterwheat dataset }}{38}{figure.4.8}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Cargando el conjunto de datos \emph {yanwinterwheat} en Geneticae APP}}{39}{figure.4.9}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Diagrama de caja de (A) genotipos y (B) ambientes para el conjunto de datos \emph {yanwinterwheat}.}}{40}{figure.4.10}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Gráfico de correlación (A) y matriz (B) entre genotipos yanwinterwheat dataset }}{40}{figure.4.11}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Gráfico de interacción para (A) ambientes a través de genotipos y (B) genotipos a través de entornos del conjunto de datos de \emph {yanwinterwheat}.}}{41}{figure.4.12}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}}{42}{figure.4.13}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}}{43}{figure.4.14}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}}{43}{figure.4.15}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces AMMI}}{44}{figure.4.16}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Biplot GE obtenido del modelo AMMI clásico basado en los datos de rendimiento de trigo de invierno obtenidos en Ontario en 1993. El 71,66\% de la variabilidad de la IGA se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en letras minúsculas y los ambientes en mayúsculas. }}{29}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Biplot GGE basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }}{32}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A: Ranking de cultivares en el ambiente OA93. B: Ranking de ambientes para cultivar Kat, basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}}{33}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces comparación de los cultivares Kat y Cas. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }}{34}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Vista poligonal del biplot GGE, que muestra qué cultivares presentaron mayor rendimiento en cada ambiente/mega-ambiente. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}}{35}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces A: Evaluación de los cultivares con base en el rendimiento promedio y la estabilidad y B: Clasificación de genotipos con respecto al genotipo ideal, basado en el método de patición de la descomposición en valores singulares enfocado en los genotipos.}}{37}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces A: Relación entre ambientes y B: Clasificación de ambientes con respecto al ambiente ideal, basado en el escalado centrado en los genotipos.}}{39}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces (A) Plrv dataset (B) yanwinterwheat dataset }}{41}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Cargando el conjunto de datos \emph {yanwinterwheat} en Geneticae APP}}{42}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Diagrama de caja de (A) genotipos y (B) ambientes para el conjunto de datos \emph {yanwinterwheat}.}}{43}{figure.4.10}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Gráfico de correlación (A) y matriz (B) entre genotipos yanwinterwheat dataset }}{43}{figure.4.11}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Gráfico de interacción para (A) ambientes a través de genotipos y (B) genotipos a través de entornos del conjunto de datos de \emph {yanwinterwheat}.}}{44}{figure.4.12}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}}{45}{figure.4.13}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}}{46}{figure.4.14}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Boxplot de genotipos a través de los ambientes para el conjunto de datos Plrv}}{46}{figure.4.15}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces AMMI}}{47}{figure.4.16}%
 \addvspace {10\p@ }

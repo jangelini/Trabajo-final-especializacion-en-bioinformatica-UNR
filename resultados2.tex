@@ -7,7 +7,7 @@
 
 \chapter{Resultados}
 
-En esta sección se muestran ejemplos de uso tanto del paquete geneticae como de Geneticae Shiny Web APP. 
+En esta sección se muestran ejemplos de uso tanto del paquete \emph{geneticae} como de Geneticae Shiny Web APP. 
 
 \section{Paquete de R \emph{geneticae}}
 
@@ -15,14 +15,14 @@ Para instalar la versión del paquete publicada en CRAN: \textcolor{blue}{instal
 
 Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{blue}{library}(geneticae). 
 
-Información detallada sobre las funciones del paquete geneticae se puede obtener mediante \textcolor{blue}{help}(package = ``geneticae"). La ayuda para una función, por ejemplo \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). La función \textcolor{blue}{browseVignettes}(``geneticae") permite obtener la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver así como ejemplos de aplicación del mismo. 
+Información detallada sobre las funciones del paquete \emph{geneticae} se puede obtener mediante \textcolor{blue}{help}(package = ``geneticae"). La ayuda para una función, por ejemplo \textcolor{blue}{imputation}(), en una sesión R se puede obtener usando \emph{?imputation} o \textcolor{blue}{help}(imputation). La función \textcolor{blue}{browseVignettes}(``geneticae") permite obtener la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver así como ejemplos de aplicación del mismo. 
 
 Además, se encuentra disponible una página web (http://....) que contiene una breve descripción de la utilidad del paquete, las funciones que se incluyen en él, un tutorial de uso, un enlace de acceso a la shiny app, entre otra información.
 
 
-\subsection{Conjuntos de datos en geneticae}
+\subsection{Conjuntos de datos en \emph{geneticae}}
 \label{subsec:datosejemplos}
-El paquete geneticae proporciona dos conjuntos de datos que pueden utilizarse para ilustrar la metodología incluida para analizar los datos provenientes de EMA. 
+El paquete \emph{geneticae} proporciona dos conjuntos de datos que pueden utilizarse para ilustrar la metodología incluida para analizar los datos provenientes de EMA. 
 
 \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 1ex, noitemsep,topsep=0pt]
 \item \emph{yan.winterwheat dataset} \citep{Wright2020}: se cuenta con información sobre el rendimiento de 18 variedades de trigo de invierno cultivadas en nueve ambientes en Ontario en 1993. A pesar de que el experimento contaba con cuatro bloques o réplicas en cada ambiente, sólo el rendimiento medio para cada combinación de variedad y ambiente se encuentra disponible.\\
@@ -229,7 +229,7 @@ GGEPlot(GGE1, type = ``Comparison of Genotype", selectedG1 = ``Kat", selectedG2 
 
 \textbf{Identificación de mega-ambientes con GGE biplot}
 
-La vista poligonal del biplot GGE, obtenida al indicar \emph{Which Won Where/What} en el argumento \emph{type}, proporciona un medio eficaz de visualización del patrón ``quíen ganó dónde"  de un conjunto de datos EMA (Figura \ref{fig:poligono}).  El polígono se obtiene uniendo los cultivares (fun, zav, ena, kat y luc) que se encuentran más alejados del origen de coordenadas, de modo que todos los restantes se encuentren contenidos en el polígono. La distancia de los cultivares respecto del origen de coordenadas, en sus respectivas direcciones, es una medida de la capacidad de respuesta a los ambientes. Los ubicados en los vértices son los más alejados, por lo tanto son los cultivares que más responden, mientras que los que se encuentran en el origen de coordenadas no responden en absoluto a los ambientes estudiados.
+La vista poligonal del biplot GGE, obtenida al indicar \emph{Which Won Where/What} en el argumento \emph{type}, proporciona un medio eficaz de visualización del patrón ``quíen ganó dónde"  de un conjunto de datos provenientes de EMA (Figura \ref{fig:poligono}).  El polígono se obtiene uniendo los cultivares (fun, zav, ena, kat y luc) que se encuentran más alejados del origen de coordenadas, de modo que todos los restantes se encuentren contenidos en el polígono. La distancia de los cultivares respecto del origen de coordenadas, en sus respectivas direcciones, es una medida de la capacidad de respuesta a los ambientes. Los ubicados en los vértices son los más alejados, por lo tanto son los cultivares que más responden, mientras que los que se encuentran en el origen de coordenadas no responden en absoluto a los ambientes estudiados.
 
 Las perpendiculares a los lados del polígono dividen al biplot en mega-ambientes, siendo el cultivar de mayor rendimiento en todos los ambientes que se encuentran en él aquel que se encuentra en el vértice de dicho sector. Por un lado, se observa que OA93 y KE93 conforman un mega-ambiente y que Zav es el mejor cultivar. Otro está formado por el resto de los ambientes, al cual llamaremos ME1 en futuros análisis, siendo Fun el que se encuentra en el vértice. En el sector con ena, kat y luc en los vértices del polígono no se observó ningún ambiente, lo cual indica que estos cultivares fueron los menos rendidores en algunos o todos los ambientes considerados.\\
 
@@ -372,7 +372,7 @@ El resultado es la matriz con datos imputados en aquellas celdas vacías.
 
 \section{Geneticae Shiny Web App}
 
-El objetivo de Geneticae Shiny Web APP es proporcionar una interfaz gráfica de usuario para el paquete geneticae de R descripto anteriormente, de modo que pueda ser utilizado por fitomejoradores y analistas sin experiencia previa en programación R. 
+El objetivo de Geneticae Shiny Web APP es proporcionar una interfaz gráfica de usuario para el paquete \emph{geneticae} de R descripto anteriormente, de modo que pueda ser utilizado por fitomejoradores y analistas sin experiencia previa en programación R. 
 
 Es un software interactivo, no comercial y de código abierto, que ofrece una alternativa gratuita al software comercial disponible para analizar datos provenientes de ensayos multiambientales. Se encuentra disponible en un servidor gratiuto \url{https://geneticae.shinyapps.io/geneticae-shiny-web-app/} el cual tiene límite en el tiempo de uso, sin embargo, la APP será ubicada en el servidor de CONICET para su libre navegación. Además, se puede acceder a la misma desde la página web del instituto CEFOBI de CONICET \url{https://www.cefobi-conicet.gov.ar/bases-de-datos-y-programas/}.
 
@@ -449,7 +449,7 @@ Dado que IGA genera respuestas genotípicas diferenciales en diferentes ambiente
 
 \subsection{Modelo de regresión por sitio}
 
-\emph{Geneticae Shiny Web App} permite generar las vistas del biplot GGE presentados en la subsección \ref{subsec:SREGpaquete} mediante la pestaña \emph{GGE Biplot}. Del mismo modo que en el paquete geneticae, los cultivares se presentan en minúsculas y los ambientes en mayúsculas. Dado que el modelo SREG requiere una única observación para cada combinación de genotipo y ambiente, si hay repeticiones, el valor fenotípico promedio se calcula automáticamente antes de ajustar el modelo. No se permiten valores perdidos. 
+\emph{Geneticae Shiny Web App} permite generar las vistas del biplot GGE presentados en la subsección \ref{subsec:SREGpaquete} mediante la pestaña \emph{GGE Biplot}. Del mismo modo que en el paquete \emph{geneticae}, los cultivares se presentan en minúsculas y los ambientes en mayúsculas. Dado que el modelo SREG requiere una única observación para cada combinación de genotipo y ambiente, si hay repeticiones, el valor fenotípico promedio se calcula automáticamente antes de ajustar el modelo. No se permiten valores perdidos. 
 
 Se debe seleccionar el método de partición de los valores singulares (\emph{SVP type}) sin embargo, como se mencionó anteriormente esta elección no altera las relaciones o interacciones relativas entre genotipos y ambientes, aunque la apariencia del biplot será diferente (Yan, 2002). La opción simétrica permite la comparación tanto de genotipos como de ambientes (opción por \emph{default}); \emph{Genotype-Focused} muestra la interrelación entre genotipos con mayor precisión que cualquier otro método, y \emph{Environment-Focused} es la que más informa sobre las interrelaciones entre ambientes. Una nota a pie del gráfico que indica que el método de centrado, que será siempre \emph{tester-center} para obtener el biplot GGE, que no se aplica ninguna escala a los datos, el método SVP seleccionado por el usuario y el porcentaje de variación de G e IGA explicado por los dos ejes puede ser agregado. A su vez, el título del gráfico, los ejes y los nombres de los mismos se pueden configurar para que aparezcan o no. Por último, ciertos atributos estilísticos de dichos gráficos se pueden personalizar como el color y tamaño de los marcadores de genotipos y ambientes, y además los gráficos pueden ser descargados.  
 

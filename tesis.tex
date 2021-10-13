@@ -31,8 +31,8 @@
     urlcolor=black
 }
 
-
-\definecolor{blue}{rgb}{0.0, 0.22, 0.66}
+\definecolor{fandango}{rgb}{0.71, 0.2, 0.54}
+\definecolor{darkraspberry}{rgb}{0.53, 0.15, 0.34}
 \definecolor{YellowGreen}{rgb}{0.31, 0.49, 0.16}
 \definecolor{ForestGreen}{rgb}{0.31, 0.49, 0.16}
 \definecolor{RoyalBlue}{rgb}{0.58,0,0.82}
@@ -91,8 +91,14 @@ commentstyle=\color{YellowGreen}   % comment style
 }
 
 
- 
+\usepackage{tocbasic}
 
+\DeclareTOCStyleEntry[
+  entrynumberformat=\entrynumberwithprefix{\figurename},
+  dynnumwidth,
+  numsep=0.25em
+]{tocline}{figure}
+\newcommand\entrynumberwithprefix[2]{#1\enspace#2:\hfill}
 
 
 %% # Opciones disponibles para el documento #
@@ -144,7 +150,7 @@ commentstyle=\color{YellowGreen}   % comment style
 %% La letra n con tilde es: \~n.
 
 \author{JULIA ANGELINI}
-\title{Paquete de R y aplicación Web para el análisis de datos provenientes de ensayos multiambientales}
+\title{Paquete de R y aplicación Web Shiny para el análisis de datos provenientes de ensayos multiambientales}
 \degree{TRABAJO FINAL PARA OPTAR AL TÍTULO DE ESPECIALISTA EN BIOINFORMÁTICA}
 \supervisor{DIRECTOR: Dr. Gerardo Cervigni \\
 			CO-DIRECTOR: Mgs. Marcos Prunello}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{33}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -41,12 +41,6 @@ P.L. Cornelius, J.~Crossa, y M.S. Seyedsadr.
   analysis of Multi-environment trial data., p\'ags. 199--234.
 \newblock CABI Publishing, Wallingford, 2002.
 
-\bibitem[{Crossa y Cornelius(1997)}]{CrossaCornelius1997}
-J.~Crossa y P.~L. Cornelius.
-\newblock Sites regresion and shifted multiplicative model clustering of
-  cultivar trial sites under heterogeneity of error variances.
-\newblock \emph{Crop Science}, 37:406--415, 1997.
-
 \bibitem[{Crossa et~al.(2002)Crossa, Cornelius, y Yan}]{CrossaCorneliusYan2002}
 J.~Crossa, P.L. Cornelius, y W.~Yan.
 \newblock Biplots of linear-bilinear models for studying crossover
@@ -78,6 +72,14 @@ S.~Dumble.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=GGEBiplots}.
 \newblock R package version 0.1.1.
 
+\bibitem[{Ganz et~al.(2019)Ganz, Csárdi, Hester, Lewis, y
+  Tatman}]{Ganzetal2019}
+C.~Ganz, G.~Csárdi, J.~Hester, M.~Lewis, y R.~Tatman.
+\newblock \emph{available: Check if the Title of a Package is Available,
+  Appropriate and Interesting}, 2019.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=available}.
+\newblock R package version 1.0.4.
+
 \bibitem[{Gauch(1988)}]{Gauch1988}
 H.~G. Gauch.
 \newblock Model selection and validation for yield trials.
@@ -92,6 +94,12 @@ H.G. Gauch y R.W. Zobel.
 H.G. Gauch y R.W. Zobel.
 \newblock Identifying mega-environments and targeting genotypes.
 \newblock \emph{Crop Science}, 37:311–--326, 1997.
+
+\bibitem[{Hester(2020)}]{Hester2020}
+J.~Hester.
+\newblock \emph{covr: Test Coverage for Packages}, 2020.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=covr}.
+\newblock R package version 3.5.0.
 
 \bibitem[{Hill y Rosenberg(1985)}]{HillRosenberg1985}
 Jr.~R.R. Hill y J.L. Rosenberg.
@@ -122,11 +130,42 @@ R.~A. Kempton.
   interactions.
 \newblock \emph{Journal of Agricultural Science}, 122:335--342, 1984.
 
+\bibitem[{Perry(2015)}]{Perry2015}
+P.O. Perry.
+\newblock \emph{bcv: Cross-Validation for the SVD (Bi-Cross-Validation)}, 2015.
+\newblock R package version 1.0.1.
+
 \bibitem[{Rodrigues et~al.(2016)Rodrigues, Monteiro, , y
   Lourenço}]{Rodriguesetal2016}
 P.C. Rodrigues, A.~Monteiro, , y V.M. Lourenço.
 \newblock A robust ammi model for the analysis of genotype-by-environment data.
 \newblock \emph{Bioinformatics}, 32:58--66, 2016.
+
+\bibitem[{Wickham(2011)}]{Wickham2011}
+H.~Wickham.
+\newblock testthat: Get started with testing.
+\newblock \emph{The R Journal}, 3:5--10, 2011.
+\newblock
+  \urlprefix\url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}.
+
+\bibitem[{Wickham y Bryan(2021)}]{WickhamBryan2021}
+H.~Wickham y J.~Bryan.
+\newblock \emph{usethis: Automate Package and Project Setup}, 2021.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=usethis}.
+\newblock R package version 2.0.1.
+
+\bibitem[{Wickham et~al.(2020)Wickham, Danenberg, Csárdi, y
+  Eugster}]{Wickhametal2020}
+H.~Wickham, P.~Danenberg, G.~Csárdi, y M.~Eugster.
+\newblock \emph{roxygen2: In-Line Documentation for R}, 2020.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=roxygen2}.
+\newblock R package version 7.1.1.
+
+\bibitem[{Wickham et~al.(2021)Wickham, Hester, y Chang}]{Wickhametal2021}
+H.~Wickham, J.~Hester, y W.~Chang.
+\newblock \emph{devtools: Tools to Make Developing R Packages Easier}, 2021.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=devtools}.
+\newblock R package version 2.4.2.
 
 \bibitem[{Wright(2020)}]{Wright2020}
 K.~Wright.

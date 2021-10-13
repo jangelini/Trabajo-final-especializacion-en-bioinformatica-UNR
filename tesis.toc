@@ -10,36 +10,36 @@
 \contentsline {section}{\numberline {3.1}Métodos estadísticos}{6}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Modelo AMMI y SREG}{6}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Modelo AMMI robusto}{8}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Métodos de imputación}{8}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Paquete de R}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Creación del paquete}{10}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Archivos de código}{11}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Documentación}{12}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Editar el archivo DESCRIPTION}{12}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Testeos}{13}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Compilación e instalación}{15}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Algunos elementos complementarios}{16}{subsection.3.2.7}%
-\contentsline {subsubsection}{\numberline {3.2.7.1}Viñetas}{16}{subsubsection.3.2.7.1}%
-\contentsline {subsubsection}{\numberline {3.2.7.2}Agregar datasets}{17}{subsubsection.3.2.7.2}%
-\contentsline {subsubsection}{\numberline {3.2.7.3}Archivo README}{17}{subsubsection.3.2.7.3}%
-\contentsline {subsubsection}{\numberline {3.2.7.4}Archivo NEWS}{18}{subsubsection.3.2.7.4}%
-\contentsline {subsubsection}{\numberline {3.2.7.5}Crear una página web}{19}{subsubsection.3.2.7.5}%
-\contentsline {subsubsection}{\numberline {3.2.7.6}Publicación}{19}{subsubsection.3.2.7.6}%
-\contentsline {section}{\numberline {3.3}Shiny Web APP}{19}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Estructura de Shiny Web APP}{20}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Desarrollo de Shiny Web APP}{20}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Compartiendo una Shiny Web APP}{22}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Resultados}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Paquete de R \emph {geneticae}}{23}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Conjuntos de datos en geneticae}{23}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Modelo AMMI}{24}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Modelo de Regersión por Sitio}{27}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Métodos de imputación}{36}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2}Geneticae Shiny Web App}{37}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Preparación de un archivo de datos}{37}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Análisis descriptivo}{39}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Modelo de regresión por sitio}{41}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}modelo AMMI}{43}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Ayuda}{44}{subsection.4.2.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{45}{chapter.5}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{46}{section*.7}%
+\contentsline {subsection}{\numberline {3.1.3}Métodos de imputación}{9}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Creación de un paquete de R}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}\emph {geneticae}}{10}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Estructura general del paquete}{11}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Archivo DESCRIPTION}{12}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Archivos de código}{15}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Documentación}{15}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Uso de funciones de otros paquetes}{17}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Testeos}{17}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Datasets}{19}{subsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.2.9}Archivo README}{19}{subsection.3.2.9}%
+\contentsline {subsection}{\numberline {3.2.10}Archivo NEWS}{20}{subsection.3.2.10}%
+\contentsline {subsection}{\numberline {3.2.11}Viñetas}{20}{subsection.3.2.11}%
+\contentsline {subsection}{\numberline {3.2.12}R CMD check e instalación}{21}{subsection.3.2.12}%
+\contentsline {subsection}{\numberline {3.2.13}Publicación y difusión}{22}{subsection.3.2.13}%
+\contentsline {section}{\numberline {3.3}Aplicación web Shiny}{22}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Estructura de la aplicación web Shiny}{23}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Desarrollo de la aplicación web Shiny}{23}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Compartiendo una aplicación web Shiny}{25}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Resultados}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Paquete de R \emph {geneticae}}{26}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Conjuntos de datos en \emph {geneticae}}{26}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Modelo AMMI}{27}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Modelo de Regersión por Sitio}{30}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Métodos de imputación}{39}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Geneticae Shiny Web App}{40}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Preparación de un archivo de datos}{40}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Análisis descriptivo}{42}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Modelo de regresión por sitio}{44}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}modelo AMMI}{46}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Ayuda}{47}{subsection.4.2.5}%
+\contentsline {chapter}{\numberline {5}Conclusión}{48}{chapter.5}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{49}{section*.7}%
