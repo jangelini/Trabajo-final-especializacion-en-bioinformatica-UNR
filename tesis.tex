@@ -22,13 +22,14 @@
 \usepackage{varwidth}
 \usepackage{lipsum}
 
+
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
     citecolor=black,
     filecolor=black,
     linkcolor=black,
-    urlcolor=black
+    urlcolor=blue
 }
 
 \definecolor{fandango}{rgb}{0.71, 0.2, 0.54}
@@ -67,8 +68,8 @@
 }
 \makeatother
 
-
 \lstset{
+language=R,
 basicstyle=\footnotesize,
 keywordstyle=\bfseries,
 showstringspaces=false,
@@ -80,12 +81,12 @@ captionpos=b,                   % sets the caption-position to bottom
 breaklines=true,                % sets automatic line breaking
 mathescape = true,
 breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
-language=R,
 linewidth=0.95\columnwidth,
 xleftmargin=0.5cm,
 %frame = single,  
 framexleftmargin=15pt,
-keywordstyle=\color{blue},      % keyword style
+keywords={},
+keywordstyle=\color{fandango},      % keyword style
 commentstyle=\color{YellowGreen}   % comment style
 %stringstyle=\color{ForestGreen}      % string literal style
 }
@@ -99,6 +100,7 @@ commentstyle=\color{YellowGreen}   % comment style
   numsep=0.25em
 ]{tocline}{figure}
 \newcommand\entrynumberwithprefix[2]{#1\enspace#2:\hfill}
+
 
 
 %% # Opciones disponibles para el documento #
