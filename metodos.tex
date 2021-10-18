@@ -6,8 +6,8 @@
 
 \chapter{Métodos}
 %\setcounter{section}{1}
-Este capítulo tiene como objetivo focalizar al lector en los aspectos fundamentales sobre los que se apoya este trabajo. Se compone de tres secciones, en la primera se presenta la metodología estadística que se incluirá en el paquete de R.  En la segunda y tercera sección, se presenta un flujo de trabajo reproducible para el desarrollo del paquete y la aplicación web Shiny, respectivamente.
 
+La primera parte de este capítulo presenta la metodología estadística para el análisis de datos provenientes de EMA incluída en el paquete de R y que puede ser empleada interactivamente mediante la aplicación web Shiny. En la segunda y tercera sección, se presenta un flujo de trabajo reproducible para el desarrollo del paquete de R y una descripción de las etapas para la creación de la aplicación web Shiny.
 
 
 \section{Métodos estadísticos}
@@ -319,57 +319,36 @@ Se aconseja realizar verificaciones completas de que todo funciona a medida que 
 
 \subsection{Publicación y difusión}
 
-Por último para que otros usuarios puedan utilizar el paquete desarrollado es necesario publicarlo en algún sitio de cual pueda ser descargado e instalado. Esto se logra subiéndolo a un proyecto personal público en GitHub o enviándolo a repositorios oficiales como CRAN. Para ser aceptado en CRAN, el paquete además de atravesar con éxito los rigurosos controles de R CMD check debe superar una serie de políticas que son comprobadas manualmente por revisores. 
-
-El paquete \emph{geneticae} se encuentra disponible tanto en CRAN (\url{https://cran.r-project.org/web/packages/geneticae/index.html}) como en GitHub (\url{https://github.com/jangelini/geneticae}). 
+Por último para que otros usuarios puedan utilizar el paquete desarrollado es necesario publicarlo en algún sitio de cual pueda ser descargado e instalado. Esto se logra subiéndolo a un proyecto público en GitHub o enviándolo a repositorios oficiales como CRAN. Para ser aceptado en CRAN, el paquete además de atravesar con éxito los rigurosos controles de R CMD check debe superar una serie de políticas que son comprobadas manualmente por revisores. 
 
 Con el fin de favorecer a la difusión del paquete una vez que el mismo es finalizado, es conveniente publicarlo en una página web. Esta es una tarea realtivamente sencilla gracias a dos factores. En primer lugar, la función \textcolor{fandango}{build\_site()} del paquete \emph{pkgdown} toma todo el material creado para el paquete (documentación, README, tutoriales, NEWS, etc.) y crea automáticamente en un sitio web que pude ser posteriormente personalizado. En segundo lugar, GitHub ofrece un servicio gratuito de \emph{web-hosting} que posibilita la publicación del sitio en internet (\url{https://jangelini.github.io/geneticae/}).
 
 \section{Aplicación web Shiny}
 
-Shiny es un paquete R que permite construir aplicaciones web directamente desde RStudio sin necesidad de conocer en profundidad los lenguajes HTML / CSS / JavaScript . Estas aplicaciones constituyen una interfaz gráfica entre el usuario y R, que permiten realizar un análisis a través de un navegador web sin necesidad de programar.
-
-Una característica importante de las aplicaciones web creadas mediante Shiny es que son dinámicas e interactivas. Para que shiny funcione correctamente, es necesario tener instalado R 3.0.2 o cualquier versión posterior.
-
-\subsection{Estructura de la aplicación web Shiny}
-
-Las aplicaciones están compuestas por la interfaz de usuario, ui (\emph{user interfaz}), sección server y la función shinyApp(). 
+El paquete \emph{shiny} de R permite construir aplicaciones web directamente desde RStudio sin necesidad de conocer en profundidad los lenguajes HTML / CSS / JavaScript. Estas aplicaciones constituyen una interfaz gráfica entre el usuario y R, que permiten realizar diversos análisis a través de un navegador web sin necesidad de programar.
 
 
-\textbf{Interfaz del usuario}
+\subsection{Programación de una aplicación web Shiny}
 
-La interfaz del usuario (user interface o ui, por sus siglas en inglés) controla el diseño de la aplicación, recibe los inputs y muestra los outputs en el navegador. En general, definir las características de la interfaz puede no resultar tan sencillo ya que muchas de sus herramientas están vinculadas a otros lenguajes de programación, por ejemplo HTML, CSS o JavaScript. Sin embargo, las funciones del paquete shiny facilitan la tarea sin necesidad de conocer en profundidad estos lenguajes.
+El desarrollo de una aplicación web Shiny consiste en programar en lenguaje R dos componentes, la interfaz de usuario y las evaluaciones a ejecutar por el servidor que aloje a la aplicación.
 
-\textbf{Server}
+La interfaz de usuario (conocida como ui por sus siglas en inglés, \emph{user interface}) controla el diseño de la aplicación y se encarga de establecer cuáles son los argumentos de entrada (\emph{inputs}) que el usario provee al hacer uso de la aplicación y las salidas (\emph{outputs}) que el servidor debe mostrar luego de procesar los \emph{inputs}. En general, definir las características de la interfaz de usuario puede no resultar tan sencillo ya que muchas de sus herramientas están vinculadas a otros lenguajes de programación, por ejemplo HTML, CSS o JavaScript. Sin embargo, las funciones del paquete \emph{shiny}, junto con las de otros paquetes auxiliares como \emph{shinyWidgets} \citep{Perrieretal2020} \emph{shinythemes} \citep{Chang2018} y \emph{shinyhelper} \citep{Mason2019}, facilitan la tarea, al proveer código en lenguaje R para administrar el contenido y apariencia de la página web.
 
-En la sección server se escribe el código de R que le indica a la app qué debe hacer y cómo debe funcionar, incluyendo la lectura y manipulación de datos, el armado de gráficos, el ajuste de modelos, etc. Para esto, se define una función que debe tener dos argumentos: input y output. Los mismos son listas que almacenan elementos de entrada (datos u opciones elegidas por el usuario a través de la ui) y elementos de salida para mostrar en la app (resultados, tablas, gráficos, mapas, etc.), respectivamente.
+El segundo elemento a programar recibe el nombre de \emph{server} e incluye el código de R que le indica a la aplicación qué debe hacer y cómo debe funcionar, incluyendo la lectura y manipulación de datos, el armado de gráficos, el ajuste de modelos, etc. En la programación del \emph{server} se debe prestar especial atención a los \emph{inputs} (datos u opciones elegidas por el usuario a través de la ui) y \emph{outputs} (resultados, tablas, gráficos, mapas, etc.), que se almacenan como objetos de R de tipo lista.
 
+El código para la generación de una aplicación web Shiny debe finalizar con una llamada a la función \textcolor{fandango}{shinyApp()} que se encarga de la ejecución y lanzamiento de la aplicación.
 
-\textbf{Ejecución}
+Existen diversas formas para que un usuario pueda utilizar una aplicación Shiny:
 
-Por último, se llama a la función shinyApp(), cuyos dos argumentos principales son ui y server, es decir, cada uno de los elementos definidos anteriormente. Ejecutar esta función da como resultado el lanzamiento de la aplicación, la cual podremos utilizar dentro de RStudio o usando nuestro navegador (Google Chrome, Mozilla Firefox, Microsoft Edge, etc.). Es importante destacar que, al seguir estos pasos, la aplicación sólo funcionará mientras la sesión de RStudio desde la cual se lanzó siga vigente.
+\begin{itemize}
 
+\item En formal local, desde RStudio. Si se dispone del código fuente de forma local, se puede lanzar a correr la aplicación con la función \textcolor{fandango}{shinyApp()}. Si el código está disponible en un repositorio público de GitHub, se lo puede correr con la función \textcolor{fandango}{runGitHub()}. En ambos casos, se habilita el uso de la aplicación dentro del mismo RStudio o en algún navegador web como Gogole Chorme.
 
-\subsection{Desarrollo de la aplicación web Shiny}
+\item En forma remota, accediendo a algún servidor donde la aplicación esté alojada. En este caso, se debe contar con conexión a internet para acceder a la web del servidor y poder hacer uso de la aplicación online.
 
-Una forma de desarrollar una  aplicación es a partir de un nuevo directorio con un sólo archivo llamado app.R, como se muestra a continuación. 
-
-\begin{lstlisting}
-library(shiny)
-ui<- ...
-server<- ...
-shinyApp(ui = ui, server = server)
-\end{lstlisting}
-
-En este archivo se carga el paquete shiny, se define la interfaz de usuario, la función server y por último, se ejecuta función que permite construir e iniciar una aplicación. Al ejecutar la aplicación la misma aparecerá, de manera predeterminada, en una ventana emergente. Sin embargo, otras dos opciones se pueden configurar desde el menú desplegable de \emph{Run App}. Una de ellas es la ejecución en el panel del visor que permite verla al mismo tiempo que ejecuta el código. La segunda opción es ejecutar en un navegador externo mostrando la aplicación como la mayoría de los usuarios la verán. Dado que la sesión de R estará monitoreando la aplicación y ejecutando las ordenes dadas por el usuario, no se podrá ejecutar ningún comando.
-
-En cualquier lenguaje de programación tener el código duplicado genera un desperdicio computacional y, lo que es más importante, aumenta la dificultad de mantener o depurar el código. Cuando se programa en R, se utilizan dos técnicas para lidiar con el código duplicado: guardar un valor usando una variable o utilizar una función para almacenar un cálculo. Ninguno de estos enfoques son apropiados en una aplicación web Shiny, sino que se utilizan expresiones reactivas. Una expresión reactiva tiene una diferencia importante con una variable: sólo se ejecuta la primera vez que se llama y luego almacena en caché el resultado de la misma hasta que necesite actualizarse. La programación reactiva es un estilo de programación que enfatiza valores que cambian con el tiempo, y cálculos y acciones que dependen de esos valores. Esto es importante para las aplicación web Shiny porque son interactivas: los usuarios cambian los inputs, lo que hace que la lógica se ejecute en el servidor que finalmente resultan en actualización de los outputs/resultados.
-
-Entre los problemas que pueden surgir al crear una aplicación web Shiny se encuentran los errores inesperados, no se obtiene ningún error pero el valor obtenido es incorrecto, o bien todos los resultados son correctos, pero no se actualizan cuando se deben. Una vez localizada la fuente del error, la herramienta más poderosa es el depurador interactivo, éste detiene la ejecución y brinda una consola interactiva donde puede se ejecutar cualquier código para descubrir el error. Para iniciar el mismo, se puede agregar la función browser() en el código fuente, o bien agregar un punto de interrupción RStudio haciendo clic a la izquierda del número de línea.
-
-Al modificar la aplicación, se la ejecuta para poder ver los cambios realizados, por lo tanto resulta esencial reducir la velocidad de iteración. La primera forma acelerar el proceso consiste en escribir el código, utilizar el atajo del teclado Cmd/Ctrl+ Shift+ Enter en lugar del botón ``Ejecutar aplicación'', experimentar interactivamente con la aplicación y cerrar la aplicación, repitiendo este proceso al realizar cualquier cambio. Otra forma de reducir aún más la velocidad de iteración es activar la recarga automática (options(shiny.autoreload = TRUE)) y luego ejecutar la aplicación en un trabajo en segundo plano. Con este flujo de trabajo cuando se guarde un archivo, su aplicación se reiniciará: no es necesario cerrarla y reiniciarla, lo cual conduce a un flujo de trabajo aún más rápido. La principal desventaja de esta técnica es que debido a que la aplicación se ejecuta en un proceso separado, es considerablemente más difícil de depurar.
+\end{itemize}
 
 
-\subsection{Compartiendo una aplicación web Shiny}
 
-Una vez creada la aplicación se la publica para su libre uso. En este caso Geneticae Shiny Web APP encuentra disponible momentaneamente en un servidor gratuito de uso limitado \url{https://geneticae.shinyapps.io/geneticae-shiny-web-app/}, sin embargo será instalado en el servidor de CONICET para su libre uso. También se puede acceder desde la página de CEFOBI-CONICET \url{https://www.cefobi-conicet.gov.ar/bases-de-datos-y-programas/} y desde GitHub \url{https://github.com/jangelini/Geneticae-Shiny-Web-APP} al código fuente.
+
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  16 OCT 2021 18:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  18 OCT 2021 18:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -661,6 +661,14 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@loff=\dimen261
 \@vwid@roff=\dimen262
 )
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip64
+\fb@frw=\dimen263
+\fb@frh=\dimen264
+\FrameRule=\dimen265
+\FrameSep=\dimen266
+)
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
 
@@ -692,7 +700,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen263
+\@linkdim=\dimen267
 \Hy@linkcounter=\count303
 \Hy@pagecounter=\count304
 
@@ -722,7 +730,7 @@ Package hyperref Info: Bookmarks ON on input line 4800.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen264
+\XeTeXLinkMargin=\dimen268
 
 (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -732,8 +740,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count307
-\Field@Width=\dimen265
-\Fld@charsize=\dimen266
+\Field@Width=\dimen269
+\Fld@charsize=\dimen270
 Package hyperref Info: Hyper figures OFF on input line 6430.
 Package hyperref Info: Link nesting OFF on input line 6435.
 Package hyperref Info: Hyper index ON on input line 6438.
@@ -767,21 +775,21 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip64
+\Hy@SectionHShift=\skip65
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box75
-\beforetitleunit=\skip65
-\aftertitleunit=\skip66
-\ttl@plus=\dimen267
-\ttl@minus=\dimen268
+\beforetitleunit=\skip66
+\aftertitleunit=\skip67
+\ttl@plus=\dimen271
+\ttl@minus=\dimen272
 \ttl@toksa=\toks44
-\titlewidth=\dimen269
-\titlewidthlast=\dimen270
-\titlewidthfirst=\dimen271
+\titlewidth=\dimen273
+\titlewidthlast=\dimen274
+\titlewidthfirst=\dimen275
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -802,10 +810,10 @@ basics and keyval usage)
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2020/04/19 v3.30 KOMA-Script package (loading files)
 ))
-\scr@dte@tocline@numberwidth=\skip67
+\scr@dte@tocline@numberwidth=\skip68
 \scr@dte@tocline@numbox=\box76
 )
-\scr@dte@figure@maxnumwidth=\skip68
+\scr@dte@figure@maxnumwidth=\skip69
 
 (./tesis.aux (./titlepage.aux)
 LaTeX Info: Redefining \. on input line 27.
@@ -815,24 +823,24 @@ LaTeX Info: Redefining \% on input line 27.
 ) (./resultados2.aux) (./conclu.aux))
 \openout1 = `tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Info: Redefining \. on input line 174.
-LaTeX Info: Redefining \% on input line 174.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Info: Redefining \. on input line 175.
+LaTeX Info: Redefining \% on input line 175.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -871,13 +879,13 @@ LaTeX Info: Redefining \% on input line 174.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count313
-\scratchdimen=\dimen272
+\scratchdimen=\dimen276
 \scratchbox=\box77
 \nofMPsegments=\count314
 \nofMParguments=\count315
 \everyMPshowfont=\toks45
 \MPscratchCnt=\count316
-\MPscratchDim=\dimen273
+\MPscratchDim=\dimen277
 \MPnumerator=\count317
 \makeMPintoPDFobject=\count318
 \everyMPtoPDFconversion=\toks46
@@ -902,9 +910,9 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
 most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 174.
+loading the todonotes package. on input line 175.
 
-Package hyperref Info: Link coloring ON on input line 174.
+Package hyperref Info: Link coloring ON on input line 175.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -916,9 +924,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 174.
-LaTeX Info: Redefining \pageref on input line 174.
-LaTeX Info: Redefining \nameref on input line 174.
+LaTeX Info: Redefining \ref on input line 175.
+LaTeX Info: Redefining \pageref on input line 175.
+LaTeX Info: Redefining \nameref on input line 175.
 
 (./tesis.out) (./tesis.out)
 \@outlinefile=\write7
@@ -927,7 +935,7 @@ LaTeX Info: Redefining \nameref on input line 174.
 \openout2 = `titlepage.aux'.
 
  (./titlepage.tex
-<./Graficos/UNR.png, id=195, 443.40656pt x 411.78844pt>
+<./Graficos/UNR.png, id=187, 443.40656pt x 411.78844pt>
 File: ./Graficos/UNR.png Graphic file (type png)
 <use ./Graficos/UNR.png>
 Package pdftex.def Info: ./Graficos/UNR.png  used on input line 48.
@@ -947,7 +955,7 @@ UNR.png>])
  (./ddjj.tex)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 190.
+(Font)              using `OT1/cmr/m/sc' instead on input line 191.
 
 [1
 
@@ -958,7 +966,7 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
  (./gracias.tex)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 191.
+(Font)              using `OT1/cmr/m/sc' instead on input line 192.
 
 [2
 
@@ -968,16 +976,16 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 \openout2 = `abrysimb.aux'.
 
  (./abrysimb.tex
-Overfull \hbox (3.28026pt too wide) in paragraph at lines 29--30
-[]\OT1/cmr/bx/sc/12 GGE\OT1/cmr/m/n/12 : ge-no-ti-po m^^Sas Genotipo-ambiente, 
-del ingl^^Ses \OT1/cmr/m/it/12 Ge-noty-pe plus Genotype-Environment\OT1/cmr/m/n
-/12 . 
+Overfull \hbox (13.56071pt too wide) in paragraph at lines 29--30
+[]\OT1/cmr/bx/sc/12 GGE\OT1/cmr/m/n/12 : ge-no-ti-po m^^Sas Genotipo-ambiente (
+del ingl^^Ses, \OT1/cmr/m/it/12 Ge-noty-pe plus Genotype-Environment\OT1/cmr/m/
+n/12 ). 
  []
 
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 192.
+(Font)              using `OT1/cmr/m/sc' instead on input line 193.
 
 [3
 
@@ -989,7 +997,7 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
  (./resumen.tex)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 193.
+(Font)              using `OT1/cmr/m/sc' instead on input line 194.
 
 [4
 
@@ -1001,7 +1009,7 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
  (./abstract.tex)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 194.
+(Font)              using `OT1/cmr/m/sc' instead on input line 195.
 
 [5
 
@@ -1047,7 +1055,7 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 207.
+(Font)              using `OT1/cmr/m/sc' instead on input line 208.
 
 [7] (./tesis.lof
 LaTeX Info: Redefining \. on input line 1.
@@ -1118,14 +1126,14 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 31.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 210.
+(Font)              using `OT1/cmr/m/sc' instead on input line 211.
 
 [10]
 \openout2 = `intro.aux'.
 
  (./intro.tex
 Cap\'{\i }tulo 1.
-<./Graficos/interac.png, id=406, 618.81187pt x 188.95593pt>
+<./Graficos/interac.png, id=399, 618.81187pt x 188.95593pt>
 File: ./Graficos/interac.png Graphic file (type png)
 <use ./Graficos/interac.png>
 Package pdftex.def Info: ./Graficos/interac.png  used on input line 19.
@@ -1175,19 +1183,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
 [10]
-<./Graficos/available.png, id=574, 500.87125pt x 278.03876pt>
+<./Graficos/available.png, id=567, 500.87125pt x 278.03876pt>
 File: ./Graficos/available.png Graphic file (type png)
 <use ./Graficos/available.png>
 Package pdftex.def Info: ./Graficos/available.png  used on input line 103.
 (pdftex.def)             Requested size: 227.62206pt x 126.35509pt.
  [11 <./Graficos/available.png>]
-<./Graficos/creacion.png, id=580, 651.43375pt x 459.7175pt>
+<./Graficos/creacion.png, id=573, 651.43375pt x 459.7175pt>
 File: ./Graficos/creacion.png Graphic file (type png)
 <use ./Graficos/creacion.png>
 Package pdftex.def Info: ./Graficos/creacion.png  used on input line 134.
 (pdftex.def)             Requested size: 227.62206pt x 160.62996pt.
  [12 <./Graficos/creacion.png>]
-<./Graficos/DESCRIPTION.png, id=586, 565.11125pt x 883.3pt>
+<./Graficos/DESCRIPTION.png, id=579, 565.11125pt x 883.3pt>
 File: ./Graficos/DESCRIPTION.png Graphic file (type png)
 <use ./Graficos/DESCRIPTION.png>
 Package pdftex.def Info: ./Graficos/DESCRIPTION.png  used on input line 173.
@@ -1196,14 +1204,14 @@ Package pdftex.def Info: ./Graficos/DESCRIPTION.png  used on input line 173.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./Graficos/GGEMODELFUNCTION.png, id=588, 1075.01625pt x 426.59375pt>
+<./Graficos/GGEMODELFUNCTION.png, id=581, 1075.01625pt x 426.59375pt>
 File: ./Graficos/GGEMODELFUNCTION.png Graphic file (type png)
 <use ./Graficos/GGEMODELFUNCTION.png>
 Package pdftex.def Info: ./Graficos/GGEMODELFUNCTION.png  used on input line 18
 6.
 (pdftex.def)             Requested size: 273.14923pt x 108.39265pt.
 [13 <./Graficos/GGEMODELFUNCTION.png>] [14 <./Graficos/DESCRIPTION.png>]
-<./Graficos/COMENTARIOSROXYGEN.png, id=600, 744.7825pt x 387.4475pt>
+<./Graficos/COMENTARIOSROXYGEN.png, id=593, 744.7825pt x 387.4475pt>
 File: ./Graficos/COMENTARIOSROXYGEN.png Graphic file (type png)
 <use ./Graficos/COMENTARIOSROXYGEN.png>
 Package pdftex.def Info: ./Graficos/COMENTARIOSROXYGEN.png  used on input line 
@@ -1214,18 +1222,18 @@ Package pdftex.def Info: ./Graficos/COMENTARIOSROXYGEN.png  used on input line
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [15] [16 <./Graficos/COMENTARIOSROXYGEN.png>]
-<./Graficos/Test.png, id=613, 749.80125pt x 209.78375pt>
+<./Graficos/Test.png, id=606, 749.80125pt x 209.78375pt>
 File: ./Graficos/Test.png Graphic file (type png)
 <use ./Graficos/Test.png>
 Package pdftex.def Info: ./Graficos/Test.png  used on input line 246.
 (pdftex.def)             Requested size: 312.9803pt x 87.56758pt.
-<./Graficos/Cobertura.png, id=617, 762.85pt x 402.50375pt>
+<./Graficos/Cobertura.png, id=610, 762.85pt x 402.50375pt>
 File: ./Graficos/Cobertura.png Graphic file (type png)
 <use ./Graficos/Cobertura.png>
 Package pdftex.def Info: ./Graficos/Cobertura.png  used on input line 256.
 (pdftex.def)             Requested size: 284.52756pt x 150.12169pt.
  [17 <./Graficos/Test.png> <./Graficos/Cobertura.png>]
-<./Graficos/README.png, id=624, 1297.84875pt x 855.195pt>
+<./Graficos/README.png, id=617, 1297.84875pt x 855.195pt>
 File: ./Graficos/README.png Graphic file (type png)
 <use ./Graficos/README.png>
 Package pdftex.def Info: ./Graficos/README.png  used on input line 280.
@@ -1234,7 +1242,7 @@ Package pdftex.def Info: ./Graficos/README.png  used on input line 280.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./Graficos/News.png, id=626, 775.89874pt x 320.19624pt>
+<./Graficos/News.png, id=619, 775.89874pt x 320.19624pt>
 File: ./Graficos/News.png Graphic file (type png)
 <use ./Graficos/News.png>
 Package pdftex.def Info: ./Graficos/News.png  used on input line 297.
@@ -1243,225 +1251,220 @@ Package pdftex.def Info: ./Graficos/News.png  used on input line 297.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [18] [19 <./Graficos/README.png> <./Graficos/News.png>]
-Overfull \hbox (17.11887pt too wide) in paragraph at lines 324--325
-[]\OT1/cmr/m/n/12 El pa-que-te \OT1/cmr/m/it/12 ge-ne-ti-cae \OT1/cmr/m/n/12 se
- en-cuen-tra dis-po-ni-ble tan-to en CRAN ([][]$\OT1/cmtt/m/n/12 https : / / cr
-an . r-[]project .
- []
+Underfull \vbox (badness 3536) has occurred while \output is active []
 
-[20] [21]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
-59.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 359.
- [22])
-[23]
+ [20]
+[21]) [22]
 \openout2 = `resultados2.aux'.
 
  (./resultados2.tex
 Cap\'{\i }tulo 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
-
-[24
+ [23
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
 
-Underfull \vbox (badness 1132) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
- [25]
-<./Graficos/AMMI_biplot.png, id=698, 890.32625pt x 868.24374pt>
+ []
+
+
+Underfull \vbox (badness 1194) has occurred while \output is active []
+
+ [24]
+<./Graficos/AMMI_biplot.png, id=680, 890.32625pt x 868.24374pt>
 File: ./Graficos/AMMI_biplot.png Graphic file (type png)
 <use ./Graficos/AMMI_biplot.png>
-Package pdftex.def Info: ./Graficos/AMMI_biplot.png  used on input line 97.
+Package pdftex.def Info: ./Graficos/AMMI_biplot.png  used on input line 99.
 (pdftex.def)             Requested size: 223.35416pt x 217.81555pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+ [25]
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27 <./Graficos/AMMI_biplot.png>]
-Overfull \hbox (18.11523pt too wide) in paragraph at lines 114--115
-[]\OT1/cmr/m/n/12 La sen-ten-cia uti-li-za-da pa-ra ajus-tar el mo-de-lo GGE en
- el con-jun-to de da-tos \OT1/cmr/m/it/12 yan.winterwheat
- []
+ [26 <./Graficos/AMMI_biplot.png>]
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 1
+24.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 124.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
-<./Graficos/GGE_biplot.png, id=729, 889.3225pt x 868.24374pt>
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+
+ []
+
+<./Graficos/GGE_biplot.png, id=716, 889.3225pt x 868.24374pt>
 File: ./Graficos/GGE_biplot.png Graphic file (type png)
 <use ./Graficos/GGE_biplot.png>
-Package pdftex.def Info: ./Graficos/GGE_biplot.png  used on input line 166.
+Package pdftex.def Info: ./Graficos/GGE_biplot.png  used on input line 169.
 (pdftex.def)             Requested size: 223.35416pt x 218.05402pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+ [28]
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30 <./Graficos/GGE_biplot.png>]
-<./Graficos/SelectedGyE.png, id=747, 1370.11874pt x 650.43pt>
+ [29 <./Graficos/GGE_biplot.png>]
+<./Graficos/SelectedGyE.png, id=733, 1370.11874pt x 650.43pt>
 File: ./Graficos/SelectedGyE.png Graphic file (type png)
 <use ./Graficos/SelectedGyE.png>
-Package pdftex.def Info: ./Graficos/SelectedGyE.png  used on input line 193.
+Package pdftex.def Info: ./Graficos/SelectedGyE.png  used on input line 196.
 (pdftex.def)             Requested size: 402.03474pt x 190.85294pt.
-<./Graficos/GGE_comparisonG1yG2.png, id=749, 866.23625pt x 867.24pt>
+<./Graficos/GGE_comparisonG1yG2.png, id=735, 866.23625pt x 867.24pt>
 File: ./Graficos/GGE_comparisonG1yG2.png Graphic file (type png)
 <use ./Graficos/GGE_comparisonG1yG2.png>
 Package pdftex.def Info: ./Graficos/GGE_comparisonG1yG2.png  used on input line
- 215.
+ 218.
 (pdftex.def)             Requested size: 223.35416pt x 223.61124pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31 <./Graficos/SelectedGyE.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+ [30 <./Graficos/SelectedGyE.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32 <./Graficos/GGE_comparisonG1yG2.png>]
-<./Graficos/GGE_whichwonwhere.png, id=768, 865.2325pt x 868.24374pt>
+ [31 <./Graficos/GGE_comparisonG1yG2.png>]
+<./Graficos/GGE_whichwonwhere.png, id=753, 865.2325pt x 868.24374pt>
 File: ./Graficos/GGE_whichwonwhere.png Graphic file (type png)
 <use ./Graficos/GGE_whichwonwhere.png>
 Package pdftex.def Info: ./Graficos/GGE_whichwonwhere.png  used on input line 2
-41.
+44.
 (pdftex.def)             Requested size: 214.41808pt x 215.1659pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33 <./Graficos/GGE_whichwonwhere.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
+ [32 <./Graficos/GGE_whichwonwhere.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 268.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 270.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 268.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 270.
 
-<./Graficos/MeanvsStability2.png, id=779, 1299.35437pt x 647.41875pt>
+<./Graficos/MeanvsStability2.png, id=765, 1299.35437pt x 647.41875pt>
 File: ./Graficos/MeanvsStability2.png Graphic file (type png)
 <use ./Graficos/MeanvsStability2.png>
 Package pdftex.def Info: ./Graficos/MeanvsStability2.png  used on input line 28
-4.
+7.
 (pdftex.def)             Requested size: 335.03123pt x 166.93199pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
+ [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35 <./Graficos/MeanvsStability2.png>]
-<./Graficos/RelationshipEnvironments.png, id=805, 1297.84875pt x 647.41875pt>
+ [34 <./Graficos/MeanvsStability2.png>]
+<./Graficos/RelationshipEnvironments.png, id=790, 1297.84875pt x 647.41875pt>
 File: ./Graficos/RelationshipEnvironments.png Graphic file (type png)
 <use ./Graficos/RelationshipEnvironments.png>
 Package pdftex.def Info: ./Graficos/RelationshipEnvironments.png  used on input
- line 323.
+ line 326.
 (pdftex.def)             Requested size: 335.03123pt x 167.11969pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
-Underfull \vbox (badness 1308) has occurred while \output is active []
-
- [37 <./Graficos/RelationshipEnvironments.png>] [38]
-<./Graficos/www/exampledata.png, id=841, 485.56406pt x 396.7322pt>
+ [35]
+[36 <./Graficos/RelationshipEnvironments.png>] [37]
+<./Graficos/www/exampledata.png, id=825, 485.56406pt x 396.7322pt>
 File: ./Graficos/www/exampledata.png Graphic file (type png)
 <use ./Graficos/www/exampledata.png>
-Package pdftex.def Info: ./Graficos/www/exampledata.png  used on input line 385
+Package pdftex.def Info: ./Graficos/www/exampledata.png  used on input line 389
 .
 (pdftex.def)             Requested size: 432.48051pt x 353.35689pt.
- [39 <./Graficos/www/exampledata.png>]
-<./Graficos/www/Data.png, id=846, 1446.40375pt x 880.28876pt>
+ [38 <./Graficos/www/exampledata.png>]
+<./Graficos/www/Data.png, id=831, 1446.40375pt x 880.28876pt>
 File: ./Graficos/www/Data.png Graphic file (type png)
 <use ./Graficos/www/Data.png>
-Package pdftex.def Info: ./Graficos/www/Data.png  used on input line 399.
+Package pdftex.def Info: ./Graficos/www/Data.png  used on input line 404.
 (pdftex.def)             Requested size: 432.48051pt x 263.20215pt.
-<./Graficos/Boxplot.jpg, id=848, 957.5775pt x 301.8778pt>
+ [39 <./Graficos/www/Data.png>]
+<./Graficos/Boxplot.jpg, id=837, 957.5775pt x 301.8778pt>
 File: ./Graficos/Boxplot.jpg Graphic file (type jpg)
 <use ./Graficos/Boxplot.jpg>
-Package pdftex.def Info: ./Graficos/Boxplot.jpg  used on input line 414.
+Package pdftex.def Info: ./Graficos/Boxplot.jpg  used on input line 419.
 (pdftex.def)             Requested size: 432.48051pt x 136.34123pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [40 <./Graficos/www/Data.png>]
-<./Graficos/correlacion.jpg, id=854, 957.5775pt x 362.10281pt>
+<./Graficos/correlacion.jpg, id=839, 957.5775pt x 362.10281pt>
 File: ./Graficos/correlacion.jpg Graphic file (type jpg)
 <use ./Graficos/correlacion.jpg>
-Package pdftex.def Info: ./Graficos/correlacion.jpg  used on input line 424.
+Package pdftex.def Info: ./Graficos/correlacion.jpg  used on input line 429.
 (pdftex.def)             Requested size: 432.48051pt x 163.54147pt.
- [41 <./Graficos/Boxplot.jpg> <./Graficos/correlacion.jpg>]
-<./Graficos/interaction.jpg, id=862, 954.56625pt x 283.81032pt>
+ [40 <./Graficos/Boxplot.jpg> <./Graficos/correlacion.jpg>]
+<./Graficos/interaction.jpg, id=847, 954.56625pt x 283.81032pt>
 File: ./Graficos/interaction.jpg Graphic file (type jpg)
 <use ./Graficos/interaction.jpg>
-Package pdftex.def Info: ./Graficos/interaction.jpg  used on input line 436.
+Package pdftex.def Info: ./Graficos/interaction.jpg  used on input line 441.
 (pdftex.def)             Requested size: 432.48051pt x 128.58391pt.
-[42 <./Graficos/interaction.jpg>]
-<./Graficos/www/GGE_biplotAPP1.png, id=869, 1719.42375pt x 1276.77pt>
+ [41 <./Graficos/interaction.jpg>]
+<./Graficos/www/GGE_biplotAPP1.png, id=854, 1719.42375pt x 1276.77pt>
 File: ./Graficos/www/GGE_biplotAPP1.png Graphic file (type png)
 <use ./Graficos/www/GGE_biplotAPP1.png>
 Package pdftex.def Info: ./Graficos/www/GGE_biplotAPP1.png  used on input line 
-455.
+460.
 (pdftex.def)             Requested size: 432.48051pt x 321.13991pt.
- [43 <./Graficos/www/GGE_biplotAPP1.png>]
-<./Graficos/www/GGE_biplotAPP2.png, id=875, 1704.3675pt x 409.53pt>
+
+Underfull \vbox (badness 1117) has occurred while \output is active []
+
+ [42 <./Graficos/www/GGE_biplotAPP1.png>]
+<./Graficos/www/GGE_biplotAPP2.png, id=860, 1704.3675pt x 409.53pt>
 File: ./Graficos/www/GGE_biplotAPP2.png Graphic file (type png)
 <use ./Graficos/www/GGE_biplotAPP2.png>
 Package pdftex.def Info: ./Graficos/www/GGE_biplotAPP2.png  used on input line 
-466.
+471.
 (pdftex.def)             Requested size: 432.48051pt x 103.91322pt.
-<./Graficos/www/GGE_biplotAPP3.png, id=877, 1704.3675pt x 394.47375pt>
+<./Graficos/www/GGE_biplotAPP3.png, id=862, 1704.3675pt x 394.47375pt>
 File: ./Graficos/www/GGE_biplotAPP3.png Graphic file (type png)
 <use ./Graficos/www/GGE_biplotAPP3.png>
 Package pdftex.def Info: ./Graficos/www/GGE_biplotAPP3.png  used on input line 
-478.
+483.
 (pdftex.def)             Requested size: 432.48051pt x 100.09288pt.
 
-[44 <./Graficos/www/GGE_biplotAPP2.png> <./Graficos/www/GGE_biplotAPP3.png>]
-<./Graficos/AMMI_GE.png, id=883, 1153.30875pt x 971.63pt>
+Underfull \vbox (badness 2158) has occurred while \output is active []
+
+ [43 <./Graficos/www/GGE_biplotAPP2.png> <./Graficos/www/GGE_biplotAPP3.png>]
+<./Graficos/AMMI_GE.png, id=868, 1153.30875pt x 971.63pt>
 File: ./Graficos/AMMI_GE.png Graphic file (type png)
 <use ./Graficos/AMMI_GE.png>
-Package pdftex.def Info: ./Graficos/AMMI_GE.png  used on input line 495.
+Package pdftex.def Info: ./Graficos/AMMI_GE.png  used on input line 500.
 (pdftex.def)             Requested size: 318.66948pt x 268.46669pt.
 )
-[45 <./Graficos/AMMI_GE.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44 <./Graficos/AMMI_GE.png>] [45]
 \openout2 = `conclu.aux'.
 
  (./conclu.tex
@@ -1475,8 +1478,8 @@ Cap\'{\i }tulo 5.
 
 
 ] [48] [49]) [50]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
  (./tesis.aux (./titlepage.aux)
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
@@ -1484,23 +1487,23 @@ LaTeX Info: Redefining \% on input line 27.
 (./ddjj.aux) (./gracias.aux) (./abrysimb.aux) (./resumen.aux) (./abstract.aux)
 (./intro.aux) (./objetivos.aux) (./metodos.aux) (./resultados2.aux)
 (./conclu.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: EC9D2A77496085EF9E30CEFEEB00058D;2918.
+(rerunfilecheck)             Checksum: 018A7D644A8004AEDFE43CBDE444F9E3;2990.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 27933 strings out of 480623
- 529148 string characters out of 5906691
- 1137330 words of memory out of 5000000
- 42931 multiletter control sequences out of 15000+600000
- 551150 words of font info for 93 fonts, out of 8000000 for 9000
+ 27983 strings out of 480623
+ 529846 string characters out of 5906691
+ 1138858 words of memory out of 5000000
+ 42982 multiletter control sequences out of 15000+600000
+ 551168 words of font info for 93 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 59i,12n,83p,2651b,1459s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,12n,83p,2651b,1578s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -1516,12 +1519,11 @@ msfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on tesis.pdf (61 pages, 2523739 bytes).
+e/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on tesis.pdf (61 pages, 2515517 bytes).
 PDF statistics:
- 1035 PDF objects out of 1200 (max. 8388607)
- 901 compressed objects within 10 object streams
- 232 named destinations out of 1000 (max. 500000)
- 572 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1024 PDF objects out of 1200 (max. 8388607)
+ 892 compressed objects within 9 object streams
+ 228 named destinations out of 1000 (max. 500000)
+ 556 words of extra memory for PDF output out of 10000 (max. 10000000)
 

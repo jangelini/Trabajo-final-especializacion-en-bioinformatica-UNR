@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{42}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -35,6 +35,12 @@ S.~Arciniegas-Alarcón, M.~García-Peña, y P.~C. Rodrigues.
   schemes.
 \newblock \emph{Computers and Electronics in Agriculture}, 176, 2020.
 
+\bibitem[{Chang(2018)}]{Chang2018}
+W.~Chang.
+\newblock \emph{shinythemes: Themes for Shiny}, 2018.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=shinythemes}.
+\newblock R package version 1.1.2.
+
 \bibitem[{Cooper et~al.(1997)Cooper, DeLacy, y Harch}]{Cooperetal1997}
 R.E. Cooper, M.and~Stucker, I.H. DeLacy, y B.D. Harch.
 \newblock Wheat breeding nurseries, target environments, and indirect selection
@@ -48,12 +54,6 @@ P.L. Cornelius, J.~Crossa, y M.S. Seyedsadr.
   estimators of multiplicative models for genotype-by-environment
   interaccition., p\'ags. 199--234.
 \newblock CRC Press, Boca Raton, 1996.
-
-\bibitem[{Cornelius et~al.(2002)Cornelius, Crossa, y Seyedsadr}]{YanHunt2002}
-P.L. Cornelius, J.~Crossa, y M.S. Seyedsadr.
-\newblock \emph{Quantitive Genetics, Genomics and Plant Breeding.}, cap. Biplot
-  analysis of Multi-environment trial data., p\'ags. 199--234.
-\newblock CABI Publishing, Wallingford, 2002.
 
 \bibitem[{Crossa y Cornelius(1997)}]{CrossaCornelius1997}
 J.~Crossa y P.~L. Cornelius.
@@ -166,6 +166,19 @@ R.~A. Kempton.
   interactions.
 \newblock \emph{Journal of Agricultural Science}, 122:335--342, 1984.
 
+\bibitem[{Mason-Thom(2019)}]{Mason2019}
+C.~Mason-Thom.
+\newblock \emph{shinyhelper: Easily Add Markdown Help Files to 'shiny' App
+  Elements}, 2019.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=shinyhelper}.
+\newblock R package version 0.3.2.
+
+\bibitem[{Perrier et~al.(2020)Perrier, Meyer, y Granjon}]{Perrieretal2020}
+V.~Perrier, F.~Meyer, y D.~Granjon.
+\newblock \emph{shinyWidgets: Custom Inputs Widgets for Shiny}, 2020.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=shinyWidgets}.
+\newblock R package version 0.5.3.
+
 \bibitem[{Perry(2015)}]{Perry2015}
 P.O. Perry.
 \newblock \emph{bcv: Cross-Validation for the SVD (Bi-Cross-Validation)}, 2015.
@@ -222,6 +235,12 @@ K.~Wright.
 \newblock \emph{agridat: Agricultural Datasets}, 2020.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=agridat}.
 \newblock R package version 1.17.
+
+\bibitem[{Yan(2002)}]{Yan2002}
+W.~Yan.
+\newblock Singular-value partitioning in biplot analysis of multienvironment
+  trial data.
+\newblock \emph{Agronomy Journal}, 94:990, 2002.
 
 \bibitem[{Yan et~al.(2001)Yan, Cornelius, Crossa, y Hunt}]{Yanetal2001}
 W.~Yan, P.L. Cornelius, J.~Crossa, y L.A. Hunt.

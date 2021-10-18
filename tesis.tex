@@ -21,7 +21,7 @@
 \tcbuselibrary{skins,xparse}
 \usepackage{varwidth}
 \usepackage{lipsum}
-
+\usepackage{framed} 
 
 \usepackage{hyperref}
 \hypersetup{
@@ -70,6 +70,7 @@
 
 \lstset{
 language=R,
+escapeinside={(*@}{@*)},
 basicstyle=\footnotesize,
 keywordstyle=\bfseries,
 showstringspaces=false,
