@@ -17,45 +17,45 @@ Database file #1: biblio.bib
 Warning--can't use both author and editor fields in Corneliusetal1996
 Warning--can't use both author and editor fields in KangMagari1996
 Warning--can't use both author and editor fields in Peto1982
-You've used 42 entries,
+You've used 45 entries,
             2833 wiz_defined-function locations,
-            883 strings with 12080 characters,
-and the built_in function-call counts, 24476 in all, are:
-= -- 1866
-> -- 980
+            895 strings with 12536 characters,
+and the built_in function-call counts, 26553 in all, are:
+= -- 1985
+> -- 1122
 < -- 30
-+ -- 367
-- -- 315
-* -- 1692
-:= -- 3672
-add.period$ -- 139
-call.type$ -- 42
-change.case$ -- 310
-chr.to.int$ -- 42
-cite$ -- 45
-duplicate$ -- 1945
-empty$ -- 1914
-format.name$ -- 433
-if$ -- 4820
++ -- 416
+- -- 363
+* -- 1864
+:= -- 3992
+add.period$ -- 148
+call.type$ -- 45
+change.case$ -- 340
+chr.to.int$ -- 45
+cite$ -- 48
+duplicate$ -- 2098
+empty$ -- 2057
+format.name$ -- 494
+if$ -- 5241
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 446
-newline$ -- 232
-num.names$ -- 168
-pop$ -- 973
+missing$ -- 486
+newline$ -- 247
+num.names$ -- 180
+pop$ -- 1066
 preamble$ -- 1
-purify$ -- 273
+purify$ -- 301
 quote$ -- 0
-skip$ -- 696
+skip$ -- 744
 stack$ -- 0
-substring$ -- 1070
-swap$ -- 901
+substring$ -- 1093
+swap$ -- 980
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 363
+type$ -- 387
 warning$ -- 3
-while$ -- 164
+while$ -- 166
 width$ -- 0
-write$ -- 566
+write$ -- 603
 (There were 3 warnings)
