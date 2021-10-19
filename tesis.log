@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  19 OCT 2021 11:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  19 OCT 2021 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -976,8 +976,8 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 \openout2 = `abrysimb.aux'.
 
  (./abrysimb.tex
-Overfull \hbox (13.56071pt too wide) in paragraph at lines 35--36
-[]\OT1/cmr/bx/sc/12 GGE\OT1/cmr/m/n/12 : ge-no-ti-po m^^Sas Genotipo-ambiente (
+Overfull \hbox (10.2163pt too wide) in paragraph at lines 35--36
+[]\OT1/cmr/bx/sc/12 GGE\OT1/cmr/m/n/12 : ge-no-ti-po m^^Sas genotipo-ambiente (
 del ingl^^Ses, \OT1/cmr/m/it/12 Ge-noty-pe plus Genotype-Environment\OT1/cmr/m/
 n/12 ). 
  []
@@ -1182,71 +1182,60 @@ Cap\'{\i }tulo 3.
 Underfull \vbox (badness 1817) has occurred while \output is active []
 
  [7]
-[8] [9]
-<./Graficos/available.png, id=564, 500.87125pt x 278.03876pt>
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+[10]
+<./Graficos/available.png, id=575, 500.87125pt x 278.03876pt>
 File: ./Graficos/available.png Graphic file (type png)
 <use ./Graficos/available.png>
 Package pdftex.def Info: ./Graficos/available.png  used on input line 102.
 (pdftex.def)             Requested size: 227.62206pt x 126.35509pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 3168) has occurred while \output is active []
-
- [10]
-<./Graficos/creacion.png, id=577, 651.43375pt x 459.7175pt>
+ [11 <./Graficos/available.png>]
+<./Graficos/creacion.png, id=581, 651.43375pt x 459.7175pt>
 File: ./Graficos/creacion.png Graphic file (type png)
 <use ./Graficos/creacion.png>
 Package pdftex.def Info: ./Graficos/creacion.png  used on input line 133.
 (pdftex.def)             Requested size: 227.62206pt x 160.62996pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11 <./Graficos/available.png>] [12 <./Graficos/creacion.png>]
+ [12 <./Graficos/creacion.png>]
 <./Graficos/DESCRIPTION.png, id=587, 565.11125pt x 883.3pt>
 File: ./Graficos/DESCRIPTION.png Graphic file (type png)
 <use ./Graficos/DESCRIPTION.png>
 Package pdftex.def Info: ./Graficos/DESCRIPTION.png  used on input line 172.
 (pdftex.def)             Requested size: 227.62206pt x 355.78023pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <./Graficos/DESCRIPTION.png>]
-<./Graficos/GGEMODELFUNCTION.png, id=594, 1075.01625pt x 426.59375pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./Graficos/GGEMODELFUNCTION.png, id=589, 1075.01625pt x 426.59375pt>
 File: ./Graficos/GGEMODELFUNCTION.png Graphic file (type png)
 <use ./Graficos/GGEMODELFUNCTION.png>
 Package pdftex.def Info: ./Graficos/GGEMODELFUNCTION.png  used on input line 18
 5.
 (pdftex.def)             Requested size: 273.14923pt x 108.39265pt.
- [14 <./Graficos/GGEMODELFUNCTION.png>]
+[13 <./Graficos/GGEMODELFUNCTION.png>] [14 <./Graficos/DESCRIPTION.png>]
 <./Graficos/COMENTARIOSROXYGEN.png, id=601, 744.7825pt x 387.4475pt>
 File: ./Graficos/COMENTARIOSROXYGEN.png Graphic file (type png)
 <use ./Graficos/COMENTARIOSROXYGEN.png>
 Package pdftex.def Info: ./Graficos/COMENTARIOSROXYGEN.png  used on input line 
 223.
 (pdftex.def)             Requested size: 312.9803pt x 162.82143pt.
- [15 <./Graficos/COMENTARIOSROXYGEN.png>]
-<./Graficos/Test.png, id=610, 749.80125pt x 209.78375pt>
-File: ./Graficos/Test.png Graphic file (type png)
-<use ./Graficos/Test.png>
-Package pdftex.def Info: ./Graficos/Test.png  used on input line 245.
-(pdftex.def)             Requested size: 312.9803pt x 87.56758pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16]
+[15] [16 <./Graficos/COMENTARIOSROXYGEN.png>]
+<./Graficos/Test.png, id=614, 749.80125pt x 209.78375pt>
+File: ./Graficos/Test.png Graphic file (type png)
+<use ./Graficos/Test.png>
+Package pdftex.def Info: ./Graficos/Test.png  used on input line 245.
+(pdftex.def)             Requested size: 312.9803pt x 87.56758pt.
 <./Graficos/Cobertura.png, id=618, 762.85pt x 402.50375pt>
 File: ./Graficos/Cobertura.png Graphic file (type png)
 <use ./Graficos/Cobertura.png>
 Package pdftex.def Info: ./Graficos/Cobertura.png  used on input line 255.
 (pdftex.def)             Requested size: 284.52756pt x 150.12169pt.
-
-Underfull \vbox (badness 5119) has occurred while \output is active []
-
  [17 <./Graficos/Test.png> <./Graficos/Cobertura.png>]
 <./Graficos/README.png, id=625, 1297.84875pt x 855.195pt>
 File: ./Graficos/README.png Graphic file (type png)
@@ -1254,15 +1243,18 @@ File: ./Graficos/README.png Graphic file (type png)
 Package pdftex.def Info: ./Graficos/README.png  used on input line 279.
 (pdftex.def)             Requested size: 312.9803pt x 206.22969pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18 <./Graficos/README.png>]
-<./Graficos/News.png, id=631, 775.89874pt x 320.19624pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./Graficos/News.png, id=627, 775.89874pt x 320.19624pt>
 File: ./Graficos/News.png Graphic file (type png)
 <use ./Graficos/News.png>
 Package pdftex.def Info: ./Graficos/News.png  used on input line 296.
 (pdftex.def)             Requested size: 312.9803pt x 129.16086pt.
- [19 <./Graficos/News.png>] [20] [21]) [22]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18] [19 <./Graficos/README.png> <./Graficos/News.png>] [20] [21]) [22]
 \openout2 = `resultados2.aux'.
 
 
@@ -1532,7 +1524,7 @@ Here is how much of TeX's memory you used:
  42992 multiletter control sequences out of 15000+600000
  551168 words of font info for 93 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 59i,12n,83p,2692b,1578s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,12n,83p,2742b,1578s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -1549,7 +1541,7 @@ msfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on tesis.pdf (61 pages, 2516458 bytes).
+Output written on tesis.pdf (61 pages, 2516697 bytes).
 PDF statistics:
  1038 PDF objects out of 1200 (max. 8388607)
  905 compressed objects within 10 object streams
