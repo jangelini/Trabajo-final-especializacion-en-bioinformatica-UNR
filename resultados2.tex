@@ -147,7 +147,7 @@ La salida de \textcolor{fandango}{GGEModel()} es una lista con los siguientes ob
 
 
 Utilizando la salida de \textcolor{fandango}{GGEmodel()}, la función 
-\textcolor{fandango}{GGEPlot()} crea numerosas vistas del biplot GGE que permiten dar respuesta a distintos objetivos de los fitomejoradores. En estos gráficos los cultivares se muestran en minúsculas y los ambientes en mayúsculas. El método de centrado, escalado y SVP se muestran en una nota al pie junto con el porcentaje de G + IGA explicado por los dos ejes al agregar el argumento \emph{footnote = T} y un título con \emph{titles = T}. \\
+\textcolor{fandango}{GGEPlot()} crea numerosas vistas del biplot GGE que permiten dar respuesta a distintos objetivos de los fitomejoradores. En estos gráficos los cultivares se muestran en minúsculas y los ambientes en mayúsculas. El método de centrado, escalado y SVP se muestran en una nota al pie junto con el porcentaje de G e IGA explicado por los dos ejes al agregar el argumento \emph{footnote = T} y un título con \emph{titles = T}. \\
 
 \textbf{Comparaciones simples utilizando GGE biplot}
 
@@ -168,7 +168,7 @@ GGEPlot(GGE1, type = ``Biplot", footnote = F, titles = F)
 	\begin{center}
 		\includegraphics[width=0.50\textwidth]{./Graficos/GGE_biplot.png}
 	\end{center}
-	\caption{Biplot GGE basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }
+	\caption{Biplot GGE basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G e IGA se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }
 	\label{fig:ggebip}
 \end{figure}
 \end{tcolorbox} 
@@ -180,7 +180,7 @@ En forma similar, es posible determinar el ambiente más adecuado para un cultiv
 \begin{tcolorbox}[skin=bicolor,
     colframe=aurometalsaurus,colback=backcolour,colbacklower=white,
     width=1\linewidth,
-    height=0.92\linewidth,
+    height=0.96\linewidth,
     boxsep=-3mm]
 \begin{lstlisting}
 # Ranking de cultivares en el ambiente OA93
@@ -195,7 +195,7 @@ GGEPlot(GGE1, type = ``Selected Genotype", selectedG = ``Kat", footnote = F, tit
 	\begin{center}
 		\includegraphics[width=0.90\textwidth]{./Graficos/SelectedGyE.png}
 	\end{center}
-	\caption{ Ranking de (A) cultivares en el ambiente OA93 y (B) ambientes para cultivar Kat, basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}
+	\caption{ Ranking de (A) cultivares en el ambiente OA93 y (B) ambientes para cultivar Kat, basado en datos de rendimiento de trigo de invierno obtenido de Ontario en 1993. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G e IGA se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}
 	\label{fig:selectEyG}
 \end{figure}
 \end{tcolorbox} 
@@ -217,7 +217,7 @@ GGEPlot(GGE1, type = ``Comparison of Genotype", selectedG1 = ``Kat", selectedG2 
 	\begin{center}
 		\includegraphics[width=0.50\textwidth]{./Graficos/GGE_comparisonG1yG2.png}
 	\end{center}
-	\caption{comparación de los cultivares Kat y Cas. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }
+	\caption{comparación de los cultivares Kat y Cas. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G e IGA se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas. }
 	\label{fig:comp2G}
 \end{figure}
 \end{tcolorbox}
@@ -243,7 +243,7 @@ GGEPlot(GGE1, type = ``Which Won Where/What", footnote = F, titles = F)
 	\begin{center}
 		\includegraphics[width=0.48\textwidth]{./Graficos/GGE_whichwonwhere.png}
 	\end{center}
-	\caption{Vista poligonal del biplot GGE, que muestra qué cultivares presentaron mayor rendimiento en cada ambiente/mega-ambiente. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G + GE se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}
+	\caption{Vista poligonal del biplot GGE, que muestra qué cultivares presentaron mayor rendimiento en cada mega-ambiente. El método de partición de valores singulares utilizado es el simétrico (opción por defecto). El 78\% de la variabilidad de G e IGA se explica por los dos primeros términos multiplicativos. Los cultivares se muestran en minúsculas y los entornos en mayúsculas.}
 	\label{fig:poligono}
 \end{figure}
 \end{tcolorbox}
@@ -335,7 +335,7 @@ GGEPlot(GGE_Epartition, type = ``Ranking Environments", footnote = F, titles = F
 \subsection{Uso del paquete para imputar matrices de datos incompletas}
 \label{subsec:metimp}
 
-Una limitación importante de los modelos presentados anteriormente es que requieren que el conjunto de datos este completo, es decir que todos los genotipos sean evaluados en todos los ambientes. Por lo tanto, en el paquete se incluyen una serie de metodologías de imputación desarrolladas específicamente para datos genotipo-ambiente recientemente publicadas, algunas de las cuales no se encuentran disponible en R, para superar el problema de las observaciones perdidas. Entre los métodos incluidos se encuentran: ``EM-AMMI", ``EM-SVD", ``Gabriel",``WGabie''  y ``EM-PCA", los cuales se indican en la opción \emph{type} de la función \textcolor{fandango}{imputation()}. El formato requerido para el conjunto de datos de entrada es análogo al indicado en las otras funciones incluidas en el paquete. 
+Una limitación importante de los modelos presentados anteriormente es que requieren que el conjunto de datos este completo, es decir que todos los genotipos sean evaluados en todos los ambientes. Por lo tanto, en el paquete se incluyen una serie de metodologías de imputación desarrolladas específicamente para datos genotipo-ambiente recientemente publicadas, algunas de las cuales no se encuentran disponible en R, para superar el problema de las observaciones perdidas. Entre los métodos incluidos se encuentran: ``EM-AMMI", ``EM-SVD", ``Gabriel",``WGabiel''  y ``EM-PCA", los cuales se indican en la opción \emph{type} de la función \textcolor{fandango}{imputation()}. El formato requerido para el conjunto de datos de entrada es análogo al indicado en las otras funciones incluidas en el paquete. 
 
 Para presentar un ejemplo, se eliminan algunas observaciones del conjunto de datos \emph{yan.winterwheat} ya que contaba con todos los registros completos:
 
@@ -371,7 +371,7 @@ El resultado es la matriz con datos imputados en aquellas celdas vacías.
 
 El objetivo de aplicación web \emph{Geneticae} es proporcionar una interfaz gráfica de usuario para el paquete \emph{geneticae} de R descripto anteriormente, de modo que pueda ser utilizado por fitomejoradores y analistas sin experiencia previa en programación R. 
 
-Es un software interactivo, no comercial y de código abierto, que ofrece una alternativa gratuita al software comercial disponible para analizar datos provenientes de ensayos multiambientales. Se encuentra disponible en un servidor gratiuto \url{https://geneticae.shinyapps.io/geneticae-shiny-web-app/} el cual tiene límite en el tiempo de uso, sin embargo, la APP será ubicada en el servidor de CONICET para su libre navegación. Además, se puede acceder a la misma desde la página web del instituto CEFOBI de CONICET \url{https://www.cefobi-conicet.gov.ar/bases-de-datos-y-programas/}.
+Es un software interactivo, no comercial y de código abierto, que ofrece una alternativa gratuita al software comercial disponible para analizar datos provenientes de ensayos multiambientales. Se encuentra disponible en un servidor gratiuto \url{https://geneticae.shinyapps.io/geneticae-shiny-web-app/} el cual tiene límite en el tiempo de uso, sin embargo, la aplicación será ubicada en el servidor del Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET) para su libre navegación. Además, se puede acceder a la misma desde la página web del Centro de Estudios Fotosintéticos y Bioquímicos de CONICET \url{https://www.cefobi-conicet.gov.ar/bases-de-datos-y-programas/}.
 
 En las subsecciones siguientes se presentará un ejemplo de cómo cargar y analizar datos con la aplicación web \emph{Geneticae}.
 
@@ -449,7 +449,7 @@ Dado que IGA genera respuestas genotípicas diferenciales en diferentes ambiente
 
 La aplicación web \emph{Geneticae} permite generar las vistas del biplot GGE presentados en la subsección \ref{subsec:SREGpaquete} mediante la pestaña \emph{GGE Biplot}. Del mismo modo que en el paquete \emph{geneticae}, los cultivares se presentan en minúsculas y los ambientes en mayúsculas. Dado que el modelo SREG requiere una única observación para cada combinación de genotipo y ambiente, si hay repeticiones, el valor fenotípico promedio se calcula automáticamente antes de ajustar el modelo. No se permiten valores perdidos. 
 
-Se debe seleccionar el método de partición de los valores singulares (\emph{SVP type}) sin embargo, como se mencionó anteriormente esta elección no altera las relaciones o interacciones relativas entre genotipos y ambientes, aunque la apariencia del biplot será diferente (Yan, 2002). La opción simétrica permite la comparación tanto de genotipos como de ambientes (opción por \emph{default}); \emph{Genotype-Focused} muestra la interrelación entre genotipos con mayor precisión que cualquier otro método, y \emph{Environment-Focused} es la que más informa sobre las interrelaciones entre ambientes. Una nota a pie del gráfico que indica que el método de centrado, que será siempre \emph{tester-center} para obtener el biplot GGE, que no se aplica ninguna escala a los datos, el método SVP seleccionado por el usuario y el porcentaje de variación de G e IGA explicado por los dos ejes puede ser agregado. A su vez, el título del gráfico, los ejes y los nombres de los mismos se pueden configurar para que aparezcan o no. Por último, ciertos atributos estilísticos de dichos gráficos se pueden personalizar como el color y tamaño de los marcadores de genotipos y ambientes, y además los gráficos pueden ser descargados.  
+Se debe seleccionar el método de partición de los valores singulares (\emph{SVP type}) sin embargo, como se mencionó anteriormente esta elección no altera las relaciones o interacciones relativas entre genotipos y ambientes, aunque la apariencia del biplot será diferente (Yan, 2002). La opción simétrica permite la comparación tanto de genotipos como de ambientes (opción por defecto); \emph{Genotype-Focused} muestra la interrelación entre genotipos con mayor precisión que cualquier otro método, y \emph{Environment-Focused} es la que más informa sobre las interrelaciones entre ambientes. Una nota a pie del gráfico que indica que el método de centrado, que será siempre \emph{tester-center} para obtener el biplot GGE, que no se aplica ninguna escala a los datos, el método SVP seleccionado por el usuario y el porcentaje de variación de G e IGA explicado por los dos ejes puede ser agregado. A su vez, el título del gráfico, los ejes y los nombres de los mismos se pueden configurar para que aparezcan o no. Por último, ciertos atributos estilísticos de dichos gráficos se pueden personalizar como el color y tamaño de los marcadores de genotipos y ambientes, y además los gráficos pueden ser descargados.  
 
 El biplot básico, la vista del biplot GGE que muestra los cultivares más adecuados para un ambiente particular (OA93), los ambientes más adecuados para un genotipo (Kat), la comparación de dos genotipos (Cas y Kat) y la vista del poligono se pueden obtener como se indica en la figura \ref{fig:ggebip1}, donde el escalado es el simétrico (\emph{SVP type $->$ symmetrical}) y las opciones de \emph{plot type} son \emph{Biplot,
 Selected Environment, Selected Genotype, Comparison of Genotype} y \emph{Which Won Where/What}, respectivamente. Al indicar \emph{Selected Environment} el ambiente de interés se debe especificar, de igual modo cuando se utiliza \emph{Selected Genotype} y 
