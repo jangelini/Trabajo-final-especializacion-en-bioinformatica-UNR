@@ -8,80 +8,80 @@
   \urlstyle{rm}\Url}\fi
 
 \bibitem[{Aguate et~al.(2019)Aguate, Crossa, y Balzarini}]{Aguate2019}
-F.~Aguate, J.~Crossa, y M.~Balzarini.
+Aguate, F., Crossa, J., y Balzarini, M.
 \newblock Effect of missing values on variance component estimates in
   multienvironment trials.
 \newblock \emph{Crop Science}, 59:508--517, 2019.
 
 \bibitem[{Arciniegas-Alarcón et~al.(2010)Arciniegas-Alarcón, García-Peña,
   Dias, y Krzanowski}]{Alarconetal2010}
-S.~Arciniegas-Alarcón, M.~García-Peña, C.T.S. Dias, y W.J. Krzanowski.
+Arciniegas-Alarcón, S., García-Peña, M., Dias, C., y Krzanowski, W.
 \newblock An alternativemethodology for imputing missing data in trials with
   genotype-by-environment interaction.
 \newblock \emph{Biometrical Letters}, 47:1--47, 2010.
 
 \bibitem[{Arciniegas-Alarcón et~al.(2014)Arciniegas-Alarcón, García-Peña,
   Krzanowski, y Dias}]{Alarconetal2014}
-S.~Arciniegas-Alarcón, M.~García-Peña, W.J. Krzanowski, y C.T.S. Dias.
+Arciniegas-Alarcón, S., García-Peña, M., Krzanowski, W., y Dias, C.
 \newblock An alternativemethodology for imputing missing data in trials with
   genotype-byenvironment interaction: some new aspects.
 \newblock \emph{Biometrical Letters}, 51:75--88, 2014.
 
 \bibitem[{Arciniegas-Alarcón et~al.(2020)Arciniegas-Alarcón, García-Peña, y
   Rodrigues}]{Alarconetal2020}
-S.~Arciniegas-Alarcón, M.~García-Peña, y P.~C. Rodrigues.
+Arciniegas-Alarcón, S., García-Peña, M., y Rodrigues, P.~C.
 \newblock New multiple imputation methods for genotype-by-environment data that
   combine singular value decomposition and jackknife resampling or weighting
   schemes.
 \newblock \emph{Computers and Electronics in Agriculture}, 176:105617, 2020.
 
 \bibitem[{Chang(2018)}]{Chang2018}
-W.~Chang.
+Chang, W.
 \newblock \emph{shinythemes: Themes for Shiny}, 2018.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=shinythemes}.
 \newblock R package version 1.1.2.
 
 \bibitem[{Chang et~al.(2020)Chang, Cheng, Allaire, Xie, y
   McPherson}]{Changetal2020}
-W.~Chang, J.~Cheng, J.J. Allaire, J.~Xie, y J.~McPherson.
+Chang, W., Cheng, J., Allaire, J., Xie, J., y McPherson, J.
 \newblock \emph{shiny: Web Application Framework for R}, 2020.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=shiny}.
 \newblock R package version 1.5.0.
 
 \bibitem[{Cooper et~al.(1997)Cooper, DeLacy, y Harch}]{Cooperetal1997}
-R.E. Cooper, M.and~Stucker, I.H. DeLacy, y B.D. Harch.
+Cooper, R., M.and~Stucker, DeLacy, I., y Harch, B.
 \newblock Wheat breeding nurseries, target environments, and indirect selection
   for grain yield.
 \newblock \emph{Crop Science}, 37:1168--1176, 1997.
 
 \bibitem[{Cornelius et~al.(1996)Cornelius, Crossa, y
   Seyedsadr}]{Corneliusetal1996}
-P.L. Cornelius, J.~Crossa, y M.S. Seyedsadr.
+Cornelius, P., Crossa, J., y Seyedsadr, M.
 \newblock \emph{Genotype by Environment Interaction}, cap. Statistical test and
   estimators of multiplicative models for genotype-by-environment
   interaccition., p\'ags. 199--234.
 \newblock CRC Press, Boca Raton, 1996.
 
 \bibitem[{Crossa y Cornelius(1997)}]{CrossaCornelius1997}
-J.~Crossa y P.~L. Cornelius.
+Crossa, J. y Cornelius, P.~L.
 \newblock Sites regresion and shifted multiplicative model clustering of
   cultivar trial sites under heterogeneity of error variances.
 \newblock \emph{Crop Science}, 37:406--415, 1997.
 
 \bibitem[{Crossa et~al.(1990)Crossa, Gauch, y Zobel}]{Crossaetal1990}
-J.~Crossa, H.G. Gauch, y R.W. Zobel.
+Crossa, J., Gauch, H., y Zobel, R.
 \newblock Additive main effects and multiplicative interaction analysis of two
   international maize cultivar trials.
 \newblock \emph{Crop Science}, 30:493--500, 1990.
 
 \bibitem[{Cruz~Medina(1992)}]{CruzMedina1992}
-R.~Cruz~Medina.
+Cruz~Medina, R.
 \newblock Some exact conditional tests for the multiplicative models to explain
   genotype-environment interaction.
 \newblock \emph{Heredity}, 69:128--132, 1992.
 
 \bibitem[{{de Mendiburu}(2020)}]{deMendiburu2020}
-F.~{de Mendiburu}.
+{de Mendiburu}, F.
 \newblock \emph{agricolae: Statistical Procedures for Agricultural Research},
   2020.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=agricolae}.
@@ -89,202 +89,202 @@ F.~{de Mendiburu}.
 
 \bibitem[{de~Oliveira et~al.(2016)de~Oliveira, da~Silva, Nuvunga, da~Silva, y
   Balestre}]{deOliveira2016}
-L.~A. de~Oliveira, C.~P. da~Silva, J.~J. Nuvunga, A.~Q. da~Silva, y
-  M.~Balestre.
+de~Oliveira, L.~A., da~Silva, C.~P., Nuvunga, J.~J., da~Silva, A.~Q., y
+  Balestre, M.
 \newblock Bayesian gge biplot models applied to maize multi-environments
   trials.
 \newblock \emph{Genetics and Molecular Research}, 15, 2016.
 
 \bibitem[{Dumble(2017)}]{Dumble2017}
-S.~Dumble.
+Dumble, S.
 \newblock \emph{GGEBiplots: GGE Biplots with 'ggplot2'}, 2017.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=GGEBiplots}.
 \newblock R package version 0.1.1.
 
 \bibitem[{Ganz et~al.(2019)Ganz, Csárdi, Hester, Lewis, y
   Tatman}]{Ganzetal2019}
-C.~Ganz, G.~Csárdi, J.~Hester, M.~Lewis, y R.~Tatman.
+Ganz, C., Csárdi, G., Hester, J., Lewis, M., y Tatman, R.
 \newblock \emph{available: Check if the Title of a Package is Available,
   Appropriate and Interesting}, 2019.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=available}.
 \newblock R package version 1.0.4.
 
 \bibitem[{Gauch(1988)}]{Gauch1988}
-H.~G. Gauch.
+Gauch, H.~G.
 \newblock Model selection and validation for yield trials.
 \newblock \emph{Theoretical and Applied Genetics}, 80:153--160, 1988.
 
 \bibitem[{Gauch(1992)}]{Gauch1992}
-H.~G. Gauch.
+Gauch, H.~G.
 \newblock \emph{Statistical analysis of regional yield trials:AMMI analysis of
   factorial designs}.
 \newblock Elsevier, 1992.
 
 \bibitem[{Gauch y Zobel(1990)}]{GauchZobel1990}
-H.G. Gauch y R.W. Zobel.
+Gauch, H. y Zobel, R.
 \newblock Imputing missing yield trial data.
 \newblock \emph{Theoretical and Applied Genetics}, 79:753--761, 1990.
 
 \bibitem[{Gauch y Zobel(1997)}]{GauchZobel1997}
-H.G. Gauch y R.W. Zobel.
+Gauch, H. y Zobel, R.
 \newblock Identifying mega-environments and targeting genotypes.
 \newblock \emph{Crop Science}, 37:311--326, 1997.
 
 \bibitem[{Hadasch et~al.(2018)Hadasch, Forkman, Malik, y
   Piepho}]{Hadaschetal2018}
-S.~Hadasch, J.~Forkman, W.A. Malik, y H.P. Piepho.
+Hadasch, S., Forkman, J., Malik, W., y Piepho, H.
 \newblock Weighted estimation of ammi and gge models.
 \newblock \emph{Journal of Agricultural, Biological and Environmental
   Statistics}, 23:255--275, 2018.
 
 \bibitem[{Hester(2020)}]{Hester2020}
-J.~Hester.
+Hester, J.
 \newblock \emph{covr: Test Coverage for Packages}, 2020.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=covr}.
 \newblock R package version 3.5.0.
 
 \bibitem[{Hill y Rosenberg(1985)}]{HillRosenberg1985}
-Jr.~R.R. Hill y J.L. Rosenberg.
+Hill, J.~R. y Rosenberg, J.
 \newblock Models for combining data from germplasm evaluation trials.
 \newblock \emph{Crop Science}, 25:467--470, 1985.
 
 \bibitem[{Huber(1981)}]{Huber1981}
-P.~J. Huber.
+Huber, P.~J.
 \newblock \emph{Robust Statistics}.
 \newblock John Wiley and Sons, 1981.
 
 \bibitem[{Jarquín et~al.(2016)Jarquín, Pérez-Elizalde, Burgueño, y
   Crossa}]{Jarquin2016}
-D.~Jarquín, S.~Pérez-Elizalde, J.~Burgueño, y J.~Crossa.
+Jarquín, D., Pérez-Elizalde, S., Burgueño, J., y Crossa, J.
 \newblock A hierarchical bayesian estimation model for multi-environment plant
   breeding trials in successive years.
 \newblock \emph{Crop Science}, 56:2260--2276, 2016.
 
 \bibitem[{Josse y Husson(2016)}]{JosseHusson2016}
-J.~Josse y F.~Husson.
+Josse, J. y Husson, F.
 \newblock {missMDA}: A package for handling missing values in multivariate data
   analysis.
 \newblock \emph{Journal of Statistical Software}, 70:1--31, 2016.
 
 \bibitem[{Kang y Magari(1996)}]{KangMagari1996}
-M.S. Kang y R.~Magari.
+Kang, M. y Magari, R.
 \newblock \emph{Genotype by Environment Interaction}, cap. New Developments in
   Selecting for Phenotypic Stability in Crop Breeding., p\'ags. 201--213.
 \newblock Elsevier, New York, 1996.
 
 \bibitem[{Mason-Thom(2019)}]{Mason2019}
-C.~Mason-Thom.
+Mason-Thom, C.
 \newblock \emph{shinyhelper: Easily Add Markdown Help Files to 'shiny' App
   Elements}, 2019.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=shinyhelper}.
 \newblock R package version 0.3.2.
 
 \bibitem[{Perrier et~al.(2020)Perrier, Meyer, y Granjon}]{Perrieretal2020}
-V.~Perrier, F.~Meyer, y D.~Granjon.
+Perrier, V., Meyer, F., y Granjon, D.
 \newblock \emph{shinyWidgets: Custom Inputs Widgets for Shiny}, 2020.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=shinyWidgets}.
 \newblock R package version 0.5.3.
 
 \bibitem[{Peto(1982)}]{Peto1982}
-R.~c. Peto.
+Peto, R.~c.
 \newblock \emph{Treatment of cancer}, cap. Statistical aspects of cancer
   trials, p\'ags. 867--871.
 \newblock Chapman and hall, London, 1982.
 
 \bibitem[{Rodrigues et~al.(2016)Rodrigues, Monteiro, y
   Lourenço}]{Rodriguesetal2016}
-P.C. Rodrigues, A.~Monteiro, y V.M. Lourenço.
+Rodrigues, P., Monteiro, A., y Lourenço, V.
 \newblock A robust ammi model for the analysis of genotype-by-environment data.
 \newblock \emph{Bioinformatics}, 32:58--66, 2016.
 
 \bibitem[{Troyanskaya et~al.(2001)Troyanskaya, Cantor, Sherlock, Brown, Hastie,
   Tibshirani, Botstein, y Altman}]{Troyanskayaetal2001}
-O.~Troyanskaya, M.~Cantor, G.~Sherlock, P.~Brown, T.~Hastie, R.~Tibshirani,
-  D.~Botstein, y R.B. Altman.
+Troyanskaya, O., Cantor, M., Sherlock, G., Brown, P., Hastie, T., Tibshirani,
+  R., Botstein, D., y Altman, R.
 \newblock Missing value estimation methods for dna microarrays.
 \newblock \emph{Bioinformatics}, 17:520–525, 2001.
 
 \bibitem[{Wickham(2011)}]{Wickham2011}
-H.~Wickham.
+Wickham, H.
 \newblock testthat: Get started with testing.
 \newblock \emph{The R Journal}, 3:5--10, 2011.
 
 \bibitem[{Wickham y Bryan(2021)}]{WickhamBryan2021}
-H.~Wickham y J.~Bryan.
+Wickham, H. y Bryan, J.
 \newblock \emph{usethis: Automate Package and Project Setup}, 2021.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=usethis}.
 \newblock R package version 2.0.1.
 
 \bibitem[{Wickham et~al.(2020)Wickham, Danenberg, Csárdi, y
   Eugster}]{Wickhametal2020}
-H.~Wickham, P.~Danenberg, G.~Csárdi, y M.~Eugster.
+Wickham, H., Danenberg, P., Csárdi, G., y Eugster, M.
 \newblock \emph{roxygen2: In-Line Documentation for R}, 2020.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=roxygen2}.
 \newblock R package version 7.1.1.
 
 \bibitem[{Wickham y Hesselberth(2020)}]{HadleyHesselberth2020}
-H.~Wickham y J.~Hesselberth.
+Wickham, H. y Hesselberth, J.
 \newblock \emph{pkgdown: Make Static HTML Documentation for a Package}, 2020.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=pkgdown}.
 \newblock R package version 1.6.1.
 
 \bibitem[{Wickham et~al.(2021)Wickham, Hester, y Chang}]{Wickhametal2021}
-H.~Wickham, J.~Hester, y W.~Chang.
+Wickham, H., Hester, J., y Chang, W.
 \newblock \emph{devtools: Tools to Make Developing R Packages Easier}, 2021.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=devtools}.
 \newblock R package version 2.4.2.
 
 \bibitem[{Woyann et~al.(2017)Woyann, Benin, Storck, Trevizan, Meneguzzi,
   Marchioro, Tonnatto, y Madureira}]{Woyann2017}
-L.~G. Woyann, G.~Benin, L.~Storck, D.~M. Trevizan, C.~Meneguzzi, V.~S.
-  Marchioro, M.~Tonnatto, y A.~Madureira.
+Woyann, L.~G., Benin, G., Storck, L., Trevizan, D.~M., Meneguzzi, C.,
+  Marchioro, V.~S., Tonnatto, M., y Madureira, A.
 \newblock Estimation of missing values affects important aspects of gge biplot
   analysis.
 \newblock \emph{Crop Science}, 57:40--52, 2017.
 
 \bibitem[{Wright(2020)}]{Wright2020}
-K.~Wright.
+Wright, K.
 \newblock \emph{agridat: Agricultural Datasets}, 2020.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=agridat}.
 \newblock R package version 1.17.
 
 \bibitem[{Yan(2002)}]{Yan2002}
-W.~Yan.
+Yan, W.
 \newblock Singular-value partitioning in biplot analysis of multienvironment
   trial data.
 \newblock \emph{Agronomy Journal}, 94:990--996, 2002.
 
 \bibitem[{Yan et~al.(2001)Yan, Cornelius, Crossa, y Hunt}]{Yanetal2001}
-W.~Yan, P.L. Cornelius, J.~Crossa, y L.A. Hunt.
+Yan, W., Cornelius, P., Crossa, J., y Hunt, L.
 \newblock Two types of gge biplots for analyzing multi-environment trial data.
 \newblock \emph{Crop Science}, 41:656--663, 2001.
 
 \bibitem[{Yan y Hunt(2001)}]{YanHunt2001}
-W.~Yan y L.~A. Hunt.
+Yan, W. y Hunt, L.~A.
 \newblock Genetic and environment causes of genotype by environment interaction
   for winter wheat yield in ontario.
 \newblock \emph{Crop Science}, 41:19--25, 2001.
 
 \bibitem[{Yan et~al.(2000)Yan, Hunt, Sheng, y Szlavnics}]{Yanetal2000}
-W.~Yan, L.~A. Hunt, Q.~Sheng, y Z.~Szlavnics.
+Yan, W., Hunt, L.~A., Sheng, Q., y Szlavnics, Z.
 \newblock Cultivar evaluation and mega-environment investigation based on the
   {GGE} biplot.
 \newblock \emph{Crop Science}, 40:597--605, 2000.
 
 \bibitem[{Yan y Kang(2003)}]{YanKang2003}
-W.~Yan y M.~Kang.
+Yan, W. y Kang, M.
 \newblock \emph{GGE Biplot Analysis: A Graphical Tool for Breeders,
   Geneticists}.
 \newblock CRC Press, 2003.
 
 \bibitem[{Yan y Rajcan(2002)}]{YanRajcan2002}
-W.~Yan y I.~Rajcan.
+Yan, W. y Rajcan, I.
 \newblock Biplot evaluation of test sites and traitrelations of soybean in
   ontario.
 \newblock \emph{Crop Science}, 42:11--20, 2002.
 
 \bibitem[{Zobel et~al.(1988)Zobel, Wright, y Gauch}]{Zobel1988}
-R.W. Zobel, M.W. Wright, y H.G. Gauch.
+Zobel, R., Wright, M., y Gauch, H.
 \newblock Statistical analysis of a yield trial.
 \newblock \emph{Agronomy Journal}, 80:88--393, 1988.
 

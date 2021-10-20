@@ -35,9 +35,9 @@
 \contentsline {subsection}{\numberline {4.1.4}Uso del paquete para imputar matrices de datos incompletas}{37}{subsection.4.1.4}%
 \contentsline {section}{\numberline {4.2}Aplicación web \emph {Geneticae}}{38}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Lectura de un archivo de datos para el uso de la aplicación web \emph {Geneticae}}{39}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Uso de la aplicación web \emph {Geneticae} para análisis descriptivo}{40}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.2}Uso de la aplicación web \emph {Geneticae} para análisis descriptivo}{41}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Uso de la aplicación web \emph {Geneticae} para ajustar el modelo SREG}{43}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Uso de la aplicación web \emph {Geneticae} para ajustar el modelo AMMI}{46}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Ayuda}{47}{subsection.4.2.5}%
-\contentsline {chapter}{\numberline {5}Conclusión}{48}{chapter.5}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{50}{section*.7}%
+\contentsline {subsection}{\numberline {4.2.4}Uso de la aplicación web \emph {Geneticae} para ajustar el modelo AMMI}{45}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Ayuda}{46}{subsection.4.2.5}%
+\contentsline {chapter}{\numberline {5}Conclusión}{47}{chapter.5}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{49}{section*.7}%

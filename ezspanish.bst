@@ -387,7 +387,8 @@ FUNCTION {format.names}
   numnames 'namesleft :=
     { namesleft #0 > }
     { s nameptr
-      "{ff~}{vv~}{ll}{, jj}"
+      "{vv~}{ll}{, f.}{, jj}"
+      %"{ff~}{vv~}{ll}{, jj}" asi me pone primero la inicial por eso lo cambie
       format.name$
       bibinfo bibinfo.check
       't :=

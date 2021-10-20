@@ -22,6 +22,8 @@
 \usepackage{varwidth}
 \usepackage{lipsum}
 \usepackage{framed} 
+\usepackage{url}
+
 
 \usepackage{hyperref}
 \hypersetup{
@@ -31,6 +33,9 @@
     linkcolor=black,
     urlcolor=blue
 }
+
+\usepackage{breakurl}
+
 
 \definecolor{fandango}{rgb}{0.71, 0.2, 0.54}
 \definecolor{darkraspberry}{rgb}{0.53, 0.15, 0.34}
@@ -102,8 +107,6 @@ commentstyle=\color{YellowGreen}   % comment style
 ]{tocline}{figure}
 \newcommand\entrynumberwithprefix[2]{#1\enspace#2:\hfill}
 
-
-
 %% # Opciones disponibles para el documento #
 %%
 %% Las opciones con un (*) son las opciones predeterminadas.
@@ -167,7 +170,7 @@ commentstyle=\color{YellowGreen}   % comment style
 
 \geometry{top=30mm,bottom=30mm,inner=30mm,outer=20mm}
 
- 
+
 %% El siguiente comando agrega ligas activas en el documento para las
 %% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
 %% instrucci'on antes de \begin{document}.
