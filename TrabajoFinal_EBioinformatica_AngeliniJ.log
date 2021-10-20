@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  20 OCT 2021 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  20 OCT 2021 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1326,7 +1326,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: ./Graficos/SelectedGyE3.png Graphic file (type png)
 <use ./Graficos/SelectedGyE3.png>
 Package pdftex.def Info: ./Graficos/SelectedGyE3.png  used on input line 196.
-(pdftex.def)             Requested size: 417.14305pt x 184.12535pt.
+(pdftex.def)             Requested size: 440.31924pt x 194.3603pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 204--205
 
@@ -1369,7 +1369,7 @@ File: ./Graficos/MeanvsStability3.png Graphic file (type png)
 <use ./Graficos/MeanvsStability3.png>
 Package pdftex.def Info: ./Graficos/MeanvsStability3.png  used on input line 28
 8.
-(pdftex.def)             Requested size: 347.62157pt x 152.35365pt.
+(pdftex.def)             Requested size: 417.14305pt x 182.82181pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1386,7 +1386,7 @@ File: ./Graficos/RelationshipAmongEnvironments2.png Graphic file (type png)
 <use ./Graficos/RelationshipAmongEnvironments2.png>
 Package pdftex.def Info: ./Graficos/RelationshipAmongEnvironments2.png  used on
  input line 327.
-(pdftex.def)             Requested size: 347.62157pt x 155.61256pt.
+(pdftex.def)             Requested size: 417.14305pt x 186.73244pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1410,19 +1410,19 @@ Package pdftex.def Info: ./Graficos/www/exampledata2.png  used on input line 38
 File: ./Graficos/www/Data.png Graphic file (type png)
 <use ./Graficos/www/Data.png>
 Package pdftex.def Info: ./Graficos/www/Data.png  used on input line 397.
-(pdftex.def)             Requested size: 330.42041pt x 201.09207pt.
- [40 <./Graficos/www/Data.png>]
-<./Graficos/www/boxplot.png, id=856, 1520.68124pt x 475.7775pt>
+(pdftex.def)             Requested size: 306.81741pt x 186.73315pt.
+<./Graficos/www/boxplot.png, id=852, 1520.68124pt x 475.7775pt>
 File: ./Graficos/www/boxplot.png Graphic file (type png)
 <use ./Graficos/www/boxplot.png>
 Package pdftex.def Info: ./Graficos/www/boxplot.png  used on input line 413.
-(pdftex.def)             Requested size: 448.42822pt x 140.29506pt.
+(pdftex.def)             Requested size: 424.82523pt x 132.91187pt.
+ [40 <./Graficos/www/Data.png>]
 <./Graficos/www/correlacion.png, id=858, 941.76843pt x 229.60782pt>
 File: ./Graficos/www/correlacion.png Graphic file (type png)
 <use ./Graficos/www/correlacion.png>
 Package pdftex.def Info: ./Graficos/www/correlacion.png  used on input line 423
 .
-(pdftex.def)             Requested size: 448.42822pt x 109.3276pt.
+(pdftex.def)             Requested size: 424.82523pt x 103.57481pt.
 
 [41 <./Graficos/www/boxplot.png> <./Graficos/www/correlacion.png>]
 <./Graficos/www/interaction.png, id=866, 1271.75125pt x 402.50375pt>
@@ -1430,7 +1430,7 @@ File: ./Graficos/www/interaction.png Graphic file (type png)
 <use ./Graficos/www/interaction.png>
 Package pdftex.def Info: ./Graficos/www/interaction.png  used on input line 435
 .
-(pdftex.def)             Requested size: 448.42822pt x 141.92865pt.
+(pdftex.def)             Requested size: 424.82523pt x 134.4542pt.
  [42 <./Graficos/www/interaction.png>]
 <./Graficos/www/GGE_biplotAPP1.png, id=873, 2292.565pt x 1576.89125pt>
 File: ./Graficos/www/GGE_biplotAPP1.png Graphic file (type png)
@@ -1438,6 +1438,9 @@ File: ./Graficos/www/GGE_biplotAPP1.png Graphic file (type png)
 Package pdftex.def Info: ./Graficos/www/GGE_biplotAPP1.png  used on input line 
 454.
 (pdftex.def)             Requested size: 424.82523pt x 292.20154pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [43 <./Graficos/www/GGE_biplotAPP1.png>]
 <./Graficos/www/GGE_biplotAPP2.png, id=880, 1704.3675pt x 409.53pt>
 File: ./Graficos/www/GGE_biplotAPP2.png Graphic file (type png)
@@ -1534,7 +1537,7 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on TrabajoFinal_EBioinformatica_AngeliniJ.pdf (64 pages, 2558356
+Output written on TrabajoFinal_EBioinformatica_AngeliniJ.pdf (64 pages, 2558374
  bytes).
 PDF statistics:
  1054 PDF objects out of 1200 (max. 8388607)
