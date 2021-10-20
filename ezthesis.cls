@@ -168,11 +168,12 @@
 
 %% Bibliography - natbib
 \if@natbib
-  \if@bibnumbers
-    \RequirePackage[authoryear]{natbib}
-  \else
-    \RequirePackage[sort&compress,round,authoryear]{natbib}
-  \fi
+  %\if@bibnumbers
+   % \RequirePackage[authoryear]{natbib}
+  %\else
+   % \RequirePackage[sort&compress,round,authoryear]{natbib}
+  %\fi
+  \RequirePackage[authoryear]{natbib}
   \if@spanish
     \bibliographystyle{ezspanish}
   \else
