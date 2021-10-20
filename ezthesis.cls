@@ -50,7 +50,7 @@
 \DeclareOption{nonatbib}{\@natbibfalse}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 
-\ExecuteOptions{final,twoside,a4paper,onehalfspace,12pt,authoryear}
+\ExecuteOptions{final,twoside,letterpaper,onehalfspace,12pt,authoryear}
 \ProcessOptions\relax
 \select@fontsz
 \LoadClass{report}
@@ -117,8 +117,8 @@
 
 %% margins
 \RequirePackage[
-  top     = 30mm, bottom     = 30mm,
-  outer   = 20mm, inner      = 30mm,
+  top     = 40mm, bottom     = 33mm,
+  outer   = 25mm, inner      = 40mm,
   headsep = 10mm, headheight = 15pt,
   marginparwidth = 15mm ]{geometry}
 
@@ -154,7 +154,7 @@
   \renewcommand{\headrulewidth}{0pt}
   \fancyfoot[C]{\draftmark}}
 
-% setting page style should be done *after* geometry
+  % setting page style should be done *after* geometry
   \AtBeginDocument{\pagestyle{fancy}}
 \else
   \AtBeginDocument{\pagestyle{headings}}
@@ -168,17 +168,16 @@
 
 %% Bibliography - natbib
 \if@natbib
-  %\if@bibnumbers
-   % \RequirePackage[sort&compress,square,numbers]{natbib}
-  % \else
-    % \RequirePackage[sort&compress,round,authoryear]{natbib}
-     \RequirePackage[authoryear]{natbib}
-  % \fi
+  \if@bibnumbers
+    \RequirePackage[authoryear]{natbib}
+  \else
+    \RequirePackage[sort&compress,round,authoryear]{natbib}
+  \fi
   \if@spanish
-   \bibliographystyle{ezspanish}
-   \else
-     \bibliographystyle{plainnat}
-   \fi
+    \bibliographystyle{ezspanish}
+  \else
+    \bibliographystyle{plainnat}
+  \fi
   \let\cite\citep
 \fi
 

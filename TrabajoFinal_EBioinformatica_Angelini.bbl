@@ -1,0 +1,279 @@
+\begin{thebibliography}{xx}
+
+\harvarditem[Aguate et~al.]{Aguate, Crossa \harvardand\
+  Balzarini}{2019}{Aguate2019}
+Aguate, F., Crossa, J. \harvardand\ Balzarini, M.  \harvardyearleft
+  2019\harvardyearright , `Effect of missing values on variance component
+  estimates in multienvironment trials.', {\em Crop Science} {\bf
+  59},~508--517.
+
+\harvarditem[Arciniegas-Alarcón et~al.]{Arciniegas-Alarcón, García-Peña,
+  Dias \harvardand\ Krzanowski}{2010}{Alarconetal2010}
+Arciniegas-Alarcón, S., García-Peña, M., Dias, C. \harvardand\ Krzanowski,
+  W.  \harvardyearleft 2010\harvardyearright , `An alternativemethodology for
+  imputing missing data in trials with genotype-by-environment interaction.',
+  {\em Biometrical Letters} {\bf 47},~1--47.
+
+\harvarditem[Arciniegas-Alarcón et~al.]{Arciniegas-Alarcón, García-Peña,
+  Krzanowski \harvardand\ Dias}{2014}{Alarconetal2014}
+Arciniegas-Alarcón, S., García-Peña, M., Krzanowski, W. \harvardand\ Dias,
+  C.  \harvardyearleft 2014\harvardyearright , `An alternativemethodology for
+  imputing missing data in trials with genotype-byenvironment interaction: some
+  new aspects.', {\em Biometrical Letters} {\bf 51},~75--88.
+
+\harvarditem[Arciniegas-Alarcón et~al.]{Arciniegas-Alarcón, García-Peña
+  \harvardand\ Rodrigues}{2020}{Alarconetal2020}
+Arciniegas-Alarcón, S., García-Peña, M. \harvardand\ Rodrigues, P.~C.
+  \harvardyearleft 2020\harvardyearright , `New multiple imputation methods for
+  genotype-by-environment data that combine singular value decomposition and
+  jackknife resampling or weighting schemes.', {\em Computers and Electronics
+  in Agriculture} {\bf 176},~105617.
+
+\harvarditem{Chang}{2018}{Chang2018}
+Chang, W.  \harvardyearleft 2018\harvardyearright , {\em shinythemes: Themes
+  for Shiny}.
+\newblock R package version 1.1.2.
+\newline\harvardurl{https://CRAN.R-project.org/package=shinythemes}
+
+\harvarditem[Chang et~al.]{Chang, Cheng, Allaire, Xie \harvardand\
+  McPherson}{2020}{Changetal2020}
+Chang, W., Cheng, J., Allaire, J., Xie, J. \harvardand\ McPherson, J.
+  \harvardyearleft 2020\harvardyearright , {\em shiny: Web Application
+  Framework for R}.
+\newblock R package version 1.5.0.
+\newline\harvardurl{https://CRAN.R-project.org/package=shiny}
+
+\harvarditem[Cooper et~al.]{Cooper, DeLacy \harvardand\
+  Harch}{1997}{Cooperetal1997}
+Cooper, M.and~Stucker, R., DeLacy, I. \harvardand\ Harch, B.  \harvardyearleft
+  1997\harvardyearright , `Wheat breeding nurseries, target environments, and
+  indirect selection for grain yield.', {\em Crop Science} {\bf
+  37},~1168--1176.
+
+\harvarditem[Cornelius et~al.]{Cornelius, Crossa \harvardand\
+  Seyedsadr}{1996}{Corneliusetal1996}
+Cornelius, P., Crossa, J. \harvardand\ Seyedsadr, M.  \harvardyearleft
+  1996\harvardyearright , {\em Genotype by Environment Interaction}, CRC Press,
+  Boca Raton, chapter Statistical test and estimators of multiplicative models
+  for genotype-by-environment interaccition., pp.~199--234.
+
+\harvarditem{Crossa \harvardand\ Cornelius}{1997}{CrossaCornelius1997}
+Crossa, J. \harvardand\ Cornelius, P.~L.  \harvardyearleft
+  1997\harvardyearright , `Sites regresion and shifted multiplicative model
+  clustering of cultivar trial sites under heterogeneity of error variances.',
+  {\em Crop Science} {\bf 37},~406--415.
+
+\harvarditem[Crossa et~al.]{Crossa, Gauch \harvardand\
+  Zobel}{1990}{Crossaetal1990}
+Crossa, J., Gauch, H. \harvardand\ Zobel, R.  \harvardyearleft
+  1990\harvardyearright , `Additive main effects and multiplicative interaction
+  analysis of two international maize cultivar trials.', {\em Crop Science}
+  {\bf 30},~493--500.
+
+\harvarditem{Cruz~Medina}{1992}{CruzMedina1992}
+Cruz~Medina, R.  \harvardyearleft 1992\harvardyearright , `Some exact
+  conditional tests for the multiplicative models to explain
+  genotype-environment interaction.', {\em Heredity} {\bf 69},~128--132.
+
+\harvarditem{{de Mendiburu}}{2020}{deMendiburu2020}
+{de Mendiburu}, F.  \harvardyearleft 2020\harvardyearright , {\em agricolae:
+  Statistical Procedures for Agricultural Research}.
+\newblock R package version 1.3-3.
+\newline\harvardurl{https://CRAN.R-project.org/package=agricolae}
+
+\harvarditem[de~Oliveira et~al.]{de~Oliveira, da~Silva, Nuvunga, da~Silva
+  \harvardand\ Balestre}{2016}{deOliveira2016}
+de~Oliveira, L.~A., da~Silva, C.~P., Nuvunga, J.~J., da~Silva, A.~Q.
+  \harvardand\ Balestre, M.  \harvardyearleft 2016\harvardyearright , `Bayesian
+  gge biplot models applied to maize multi-environments trials.', {\em Genetics
+  and Molecular Research} {\bf 15}.
+
+\harvarditem{Dumble}{2017}{Dumble2017}
+Dumble, S.  \harvardyearleft 2017\harvardyearright , {\em GGEBiplots: GGE
+  Biplots with 'ggplot2'}.
+\newblock R package version 0.1.1.
+\newline\harvardurl{https://CRAN.R-project.org/package=GGEBiplots}
+
+\harvarditem[Ganz et~al.]{Ganz, Csárdi, Hester, Lewis \harvardand\
+  Tatman}{2019}{Ganzetal2019}
+Ganz, C., Csárdi, G., Hester, J., Lewis, M. \harvardand\ Tatman, R.
+  \harvardyearleft 2019\harvardyearright , {\em available: Check if the Title
+  of a Package is Available, Appropriate and Interesting}.
+\newblock R package version 1.0.4.
+\newline\harvardurl{https://CRAN.R-project.org/package=available}
+
+\harvarditem{Gauch}{1988}{Gauch1988}
+Gauch, H.~G.  \harvardyearleft 1988\harvardyearright , `Model selection and
+  validation for yield trials.', {\em Theoretical and Applied Genetics} {\bf
+  80},~153--160.
+
+\harvarditem{Gauch}{1992}{Gauch1992}
+Gauch, H.~G.  \harvardyearleft 1992\harvardyearright , {\em Statistical
+  analysis of regional yield trials:AMMI analysis of factorial designs},
+  Elsevier.
+
+\harvarditem{Gauch \harvardand\ Zobel}{1990}{GauchZobel1990}
+Gauch, H. \harvardand\ Zobel, R.  \harvardyearleft 1990\harvardyearright ,
+  `Imputing missing yield trial data.', {\em Theoretical and Applied Genetics}
+  {\bf 79},~753--761.
+
+\harvarditem{Gauch \harvardand\ Zobel}{1997}{GauchZobel1997}
+Gauch, H. \harvardand\ Zobel, R.  \harvardyearleft 1997\harvardyearright ,
+  `Identifying mega-environments and targeting genotypes.', {\em Crop Science}
+  {\bf 37},~311--326.
+
+\harvarditem[Hadasch et~al.]{Hadasch, Forkman, Malik \harvardand\
+  Piepho}{2018}{Hadaschetal2018}
+Hadasch, S., Forkman, J., Malik, W. \harvardand\ Piepho, H.  \harvardyearleft
+  2018\harvardyearright , `Weighted estimation of ammi and gge models.', {\em
+  Journal of Agricultural, Biological and Environmental Statistics} {\bf
+  23},~255--275.
+
+\harvarditem{Hester}{2020}{Hester2020}
+Hester, J.  \harvardyearleft 2020\harvardyearright , {\em covr: Test Coverage
+  for Packages}.
+\newblock R package version 3.5.0.
+\newline\harvardurl{https://CRAN.R-project.org/package=covr}
+
+\harvarditem{Hill \harvardand\ Rosenberg}{1985}{HillRosenberg1985}
+Hill, J.~R. \harvardand\ Rosenberg, J.  \harvardyearleft 1985\harvardyearright
+  , `Models for combining data from germplasm evaluation trials.', {\em Crop
+  Science} {\bf 25},~467--470.
+
+\harvarditem{Huber}{1981}{Huber1981}
+Huber, P.~J.  \harvardyearleft 1981\harvardyearright , {\em Robust Statistics},
+  John Wiley and Sons.
+
+\harvarditem[Jarquín et~al.]{Jarquín, Pérez-Elizalde, Burgueño \harvardand\
+  Crossa}{2016}{Jarquin2016}
+Jarquín, D., Pérez-Elizalde, S., Burgueño, J. \harvardand\ Crossa, J.
+  \harvardyearleft 2016\harvardyearright , `A hierarchical bayesian estimation
+  model for multi-environment plant breeding trials in successive years.', {\em
+  Crop Science} {\bf 56},~2260--2276.
+
+\harvarditem{Josse \harvardand\ Husson}{2016}{JosseHusson2016}
+Josse, J. \harvardand\ Husson, F.  \harvardyearleft 2016\harvardyearright ,
+  `{missMDA}: A package for handling missing values in multivariate data
+  analysis', {\em Journal of Statistical Software} {\bf 70},~1--31.
+
+\harvarditem{Kang \harvardand\ Magari}{1996}{KangMagari1996}
+Kang, M. \harvardand\ Magari, R.  \harvardyearleft 1996\harvardyearright , {\em
+  Genotype by Environment Interaction}, Elsevier, New York, chapter New
+  Developments in Selecting for Phenotypic Stability in Crop Breeding.,
+  pp.~201--213.
+
+\harvarditem{Mason-Thom}{2019}{Mason2019}
+Mason-Thom, C.  \harvardyearleft 2019\harvardyearright , {\em shinyhelper:
+  Easily Add Markdown Help Files to 'shiny' App Elements}.
+\newblock R package version 0.3.2.
+\newline\harvardurl{https://CRAN.R-project.org/package=shinyhelper}
+
+\harvarditem[Perrier et~al.]{Perrier, Meyer \harvardand\
+  Granjon}{2020}{Perrieretal2020}
+Perrier, V., Meyer, F. \harvardand\ Granjon, D.  \harvardyearleft
+  2020\harvardyearright , {\em shinyWidgets: Custom Inputs Widgets for Shiny}.
+\newblock R package version 0.5.3.
+\newline\harvardurl{https://CRAN.R-project.org/package=shinyWidgets}
+
+\harvarditem{Peto}{1982}{Peto1982}
+Peto, R.~c.  \harvardyearleft 1982\harvardyearright , {\em Treatment of
+  cancer}, Chapman and hall, London, chapter Statistical aspects of cancer
+  trials, pp.~867--871.
+
+\harvarditem[Rodrigues et~al.]{Rodrigues, Monteiro \harvardand\
+  Lourenço}{2016}{Rodriguesetal2016}
+Rodrigues, P., Monteiro, A. \harvardand\ Lourenço, V.  \harvardyearleft
+  2016\harvardyearright , `A robust ammi model for the analysis of
+  genotype-by-environment data.', {\em Bioinformatics} {\bf 32},~58--66.
+
+\harvarditem[Troyanskaya et~al.]{Troyanskaya, Cantor, Sherlock, Brown, Hastie,
+  Tibshirani, Botstein \harvardand\ Altman}{2001}{Troyanskayaetal2001}
+Troyanskaya, O., Cantor, M., Sherlock, G., Brown, P., Hastie, T., Tibshirani,
+  R., Botstein, D. \harvardand\ Altman, R.  \harvardyearleft
+  2001\harvardyearright , `Missing value estimation methods for dna
+  microarrays.', {\em Bioinformatics} {\bf 17},~520–525.
+
+\harvarditem{Wickham}{2011}{Wickham2011}
+Wickham, H.  \harvardyearleft 2011\harvardyearright , `testthat: Get started
+  with testing', {\em The R Journal} {\bf 3},~5--10.
+
+\harvarditem{Wickham \harvardand\ Bryan}{2021}{WickhamBryan2021}
+Wickham, H. \harvardand\ Bryan, J.  \harvardyearleft 2021\harvardyearright ,
+  {\em usethis: Automate Package and Project Setup}.
+\newblock R package version 2.0.1.
+\newline\harvardurl{https://CRAN.R-project.org/package=usethis}
+
+\harvarditem[Wickham et~al.]{Wickham, Danenberg, Csárdi \harvardand\
+  Eugster}{2020}{Wickhametal2020}
+Wickham, H., Danenberg, P., Csárdi, G. \harvardand\ Eugster, M.
+  \harvardyearleft 2020\harvardyearright , {\em roxygen2: In-Line Documentation
+  for R}.
+\newblock R package version 7.1.1.
+\newline\harvardurl{https://CRAN.R-project.org/package=roxygen2}
+
+\harvarditem{Wickham \harvardand\ Hesselberth}{2020}{HadleyHesselberth2020}
+Wickham, H. \harvardand\ Hesselberth, J.  \harvardyearleft
+  2020\harvardyearright , {\em pkgdown: Make Static HTML Documentation for a
+  Package}.
+\newblock R package version 1.6.1.
+\newline\harvardurl{https://CRAN.R-project.org/package=pkgdown}
+
+\harvarditem[Wickham et~al.]{Wickham, Hester \harvardand\
+  Chang}{2021}{Wickhametal2021}
+Wickham, H., Hester, J. \harvardand\ Chang, W.  \harvardyearleft
+  2021\harvardyearright , {\em devtools: Tools to Make Developing R Packages
+  Easier}.
+\newblock R package version 2.4.2.
+\newline\harvardurl{https://CRAN.R-project.org/package=devtools}
+
+\harvarditem[Woyann et~al.]{Woyann, Benin, Storck, Trevizan, Meneguzzi,
+  Marchioro, Tonnatto \harvardand\ Madureira}{2017}{Woyann2017}
+Woyann, L.~G., Benin, G., Storck, L., Trevizan, D.~M., Meneguzzi, C.,
+  Marchioro, V.~S., Tonnatto, M. \harvardand\ Madureira, A.  \harvardyearleft
+  2017\harvardyearright , `Estimation of missing values affects important
+  aspects of gge biplot analysis.', {\em Crop Science} {\bf 57},~40--52.
+
+\harvarditem{Wright}{2020}{Wright2020}
+Wright, K.  \harvardyearleft 2020\harvardyearright , {\em agridat: Agricultural
+  Datasets}.
+\newblock R package version 1.17.
+\newline\harvardurl{https://CRAN.R-project.org/package=agridat}
+
+\harvarditem{Yan}{2002}{Yan2002}
+Yan, W.  \harvardyearleft 2002\harvardyearright , `Singular-value partitioning
+  in biplot analysis of multienvironment trial data.', {\em Agronomy Journal}
+  {\bf 94},~990--996.
+
+\harvarditem[Yan et~al.]{Yan, Cornelius, Crossa \harvardand\
+  Hunt}{2001}{Yanetal2001}
+Yan, W., Cornelius, P., Crossa, J. \harvardand\ Hunt, L.  \harvardyearleft
+  2001\harvardyearright , `Two types of gge biplots for analyzing
+  multi-environment trial data.', {\em Crop Science} {\bf 41},~656--663.
+
+\harvarditem{Yan \harvardand\ Hunt}{2001}{YanHunt2001}
+Yan, W. \harvardand\ Hunt, L.~A.  \harvardyearleft 2001\harvardyearright ,
+  `Genetic and environment causes of genotype by environment interaction for
+  winter wheat yield in ontario.', {\em Crop Science} {\bf 41},~19--25.
+
+\harvarditem[Yan et~al.]{Yan, Hunt, Sheng \harvardand\
+  Szlavnics}{2000}{Yanetal2000}
+Yan, W., Hunt, L.~A., Sheng, Q. \harvardand\ Szlavnics, Z.  \harvardyearleft
+  2000\harvardyearright , `Cultivar evaluation and mega-environment
+  investigation based on the {GGE} biplot.', {\em Crop Science} {\bf
+  40},~597--605.
+
+\harvarditem{Yan \harvardand\ Kang}{2003}{YanKang2003}
+Yan, W. \harvardand\ Kang, M.  \harvardyearleft 2003\harvardyearright , {\em
+  GGE Biplot Analysis: A Graphical Tool for Breeders, Geneticists}, CRC Press.
+
+\harvarditem{Yan \harvardand\ Rajcan}{2002}{YanRajcan2002}
+Yan, W. \harvardand\ Rajcan, I.  \harvardyearleft 2002\harvardyearright ,
+  `Biplot evaluation of test sites and traitrelations of soybean in ontario.',
+  {\em Crop Science} {\bf 42},~11--20.
+
+\harvarditem[Zobel et~al.]{Zobel, Wright \harvardand\ Gauch}{1988}{Zobel1988}
+Zobel, R., Wright, M. \harvardand\ Gauch, H.  \harvardyearleft
+  1988\harvardyearright , `Statistical analysis of a yield trial.', {\em
+  Agronomy Journal} {\bf 80},~88--393.
+
+\end{thebibliography}

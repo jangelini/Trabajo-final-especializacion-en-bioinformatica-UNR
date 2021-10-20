@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: TrabajoFinal_EBioinformatica_AngeliniJ.aux
+The style file: ezspanish.bst
+A level-1 auxiliary file: titlepage.aux
+A level-1 auxiliary file: ddjj.aux
+A level-1 auxiliary file: gracias.aux
+A level-1 auxiliary file: abrysimb.aux
+A level-1 auxiliary file: resumen.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: intro.aux
+A level-1 auxiliary file: objetivos.aux
+A level-1 auxiliary file: metodos.aux
+A level-1 auxiliary file: resultados2.aux
+A level-1 auxiliary file: conclu.aux
+Database file #1: biblio.bib
+Warning--can't use both author and editor fields in Corneliusetal1996
+Warning--can't use both author and editor fields in KangMagari1996
+Warning--can't use both author and editor fields in Peto1982
+You've used 45 entries,
+            2833 wiz_defined-function locations,
+            895 strings with 12603 characters,
+and the built_in function-call counts, 26553 in all, are:
+= -- 1985
+> -- 1122
+< -- 30
++ -- 416
+- -- 363
+* -- 1864
+:= -- 3992
+add.period$ -- 148
+call.type$ -- 45
+change.case$ -- 340
+chr.to.int$ -- 45
+cite$ -- 48
+duplicate$ -- 2098
+empty$ -- 2057
+format.name$ -- 494
+if$ -- 5241
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 486
+newline$ -- 247
+num.names$ -- 180
+pop$ -- 1066
+preamble$ -- 1
+purify$ -- 301
+quote$ -- 0
+skip$ -- 744
+stack$ -- 0
+substring$ -- 1093
+swap$ -- 980
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 387
+warning$ -- 3
+while$ -- 166
+width$ -- 0
+write$ -- 603
+(There were 3 warnings)

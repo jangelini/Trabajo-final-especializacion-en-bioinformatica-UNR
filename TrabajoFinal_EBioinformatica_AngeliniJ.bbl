@@ -137,12 +137,6 @@ S.~Hadasch, J.~Forkman, W.A. Malik, y H.P. Piepho.
 \newblock \emph{Journal of Agricultural, Biological and Environmental
   Statistics}, 23:255--275, 2018.
 
-\bibitem[{Hadley y Hesselberth(2020)}]{HadleyHesselberth2020}
-W.~Hadley y J.~Hesselberth.
-\newblock \emph{pkgdown: Make Static HTML Documentation for a Package}, 2020.
-\newblock \urlprefix\url{https://CRAN.R-project.org/package=pkgdown}.
-\newblock R package version 1.6.1.
-
 \bibitem[{Hester(2020)}]{Hester2020}
 J.~Hester.
 \newblock \emph{covr: Test Coverage for Packages}, 2020.
@@ -227,6 +221,12 @@ H.~Wickham, P.~Danenberg, G.~Csárdi, y M.~Eugster.
 \newblock \emph{roxygen2: In-Line Documentation for R}, 2020.
 \newblock \urlprefix\url{https://CRAN.R-project.org/package=roxygen2}.
 \newblock R package version 7.1.1.
+
+\bibitem[{Wickham y Hesselberth(2020)}]{HadleyHesselberth2020}
+H.~Wickham y J.~Hesselberth.
+\newblock \emph{pkgdown: Make Static HTML Documentation for a Package}, 2020.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=pkgdown}.
+\newblock R package version 1.6.1.
 
 \bibitem[{Wickham et~al.(2021)Wickham, Hester, y Chang}]{Wickhametal2021}
 H.~Wickham, J.~Hester, y W.~Chang.

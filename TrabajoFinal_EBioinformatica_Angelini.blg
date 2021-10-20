@@ -1,7 +1,7 @@
 This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: tesis.aux
-The style file: ezspanish.bst
+The top-level auxiliary file: TrabajoFinal_EBioinformatica_Angelini.aux
+The style file: agsm.bst
 A level-1 auxiliary file: titlepage.aux
 A level-1 auxiliary file: ddjj.aux
 A level-1 auxiliary file: gracias.aux
@@ -18,44 +18,44 @@ Warning--can't use both author and editor fields in Corneliusetal1996
 Warning--can't use both author and editor fields in KangMagari1996
 Warning--can't use both author and editor fields in Peto1982
 You've used 45 entries,
-            2833 wiz_defined-function locations,
-            895 strings with 12536 characters,
-and the built_in function-call counts, 26553 in all, are:
-= -- 1985
-> -- 1122
-< -- 30
-+ -- 416
-- -- 363
-* -- 1864
-:= -- 3992
-add.period$ -- 148
+            2909 wiz_defined-function locations,
+            945 strings with 12529 characters,
+and the built_in function-call counts, 201399 in all, are:
+= -- 32839
+> -- 2782
+< -- 3
++ -- 15805
+- -- 847
+* -- 17537
+:= -- 40315
+add.period$ -- 58
 call.type$ -- 45
-change.case$ -- 340
+change.case$ -- 611
 chr.to.int$ -- 45
 cite$ -- 48
-duplicate$ -- 2098
-empty$ -- 2057
-format.name$ -- 494
-if$ -- 5241
-int.to.chr$ -- 1
-int.to.str$ -- 1
-missing$ -- 486
-newline$ -- 247
-num.names$ -- 180
-pop$ -- 1066
+duplicate$ -- 710
+empty$ -- 1401
+format.name$ -- 1002
+if$ -- 36161
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 38
+newline$ -- 164
+num.names$ -- 471
+pop$ -- 173
 preamble$ -- 1
-purify$ -- 301
+purify$ -- 675
 quote$ -- 0
-skip$ -- 744
+skip$ -- 555
 stack$ -- 0
-substring$ -- 1093
-swap$ -- 980
-text.length$ -- 6
+substring$ -- 46585
+swap$ -- 127
+text.length$ -- 633
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 387
+type$ -- 168
 warning$ -- 3
-while$ -- 166
+while$ -- 976
 width$ -- 0
-write$ -- 603
+write$ -- 616
 (There were 3 warnings)
