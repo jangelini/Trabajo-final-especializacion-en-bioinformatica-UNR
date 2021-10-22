@@ -6,9 +6,9 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Chequeo de disponibilidad del nombre \emph {geneticae} elegido para el paquete en desarrollo mediante la función \leavevmode {\color {fandango}available()} del paquete \emph {available}.}}{11}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Creación del paquete \emph {geneticae} mediante la función \leavevmode {\color {fandango}create\_package()} del paquete \emph {usethis}.}}{12}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Archivo DESCRIPTION de \emph {geneticae}.}}{14}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Fragmento de función \leavevmode {\color {fandango}GGEmodel()} del paquete \emph {geneticae}.}}{15}{figure.3.4}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Fragmento de función \leavevmode {\color {fandango}GGEmodel()} del paquete \emph {geneticae}.}}{14}{figure.3.4}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Fragmento de los comentarios roxygen de la función \leavevmode {\color {fandango}GGEmodel()} del paquete \emph {geneticae}.}}{16}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Resultado de correr la función \leavevmode {\color {fandango}test()} del paquete \emph {devtools} en \emph {geneticae}.}}{18}{figure.3.6}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Resultado de correr la función \leavevmode {\color {fandango}test()} del paquete \emph {devtools} en \emph {geneticae}.}}{17}{figure.3.6}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Porcentaje del código de \emph {geneticae} que es evaluado durante los testeos obtenido mediante la función \leavevmode {\color {fandango}test\_coverage()} del paquete \emph {covr}.}}{18}{figure.3.7}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Fragmento del archivo README mostrado en el respositorio GitHub del paquete \emph {geneticae}.}}{19}{figure.3.8}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Archivo NEWS de \emph {geneticae}.}}{20}{figure.3.9}%

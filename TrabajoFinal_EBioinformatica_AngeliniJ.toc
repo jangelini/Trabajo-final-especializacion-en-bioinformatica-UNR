@@ -20,8 +20,8 @@
 \contentsline {subsection}{\numberline {3.2.6}Uso de funciones de otros paquetes}{16}{subsection.3.2.6}%
 \contentsline {subsection}{\numberline {3.2.7}Testeos}{17}{subsection.3.2.7}%
 \contentsline {subsection}{\numberline {3.2.8}Datasets}{18}{subsection.3.2.8}%
-\contentsline {subsection}{\numberline {3.2.9}Archivo README}{19}{subsection.3.2.9}%
-\contentsline {subsection}{\numberline {3.2.10}Archivo NEWS}{20}{subsection.3.2.10}%
+\contentsline {subsection}{\numberline {3.2.9}Archivo README}{18}{subsection.3.2.9}%
+\contentsline {subsection}{\numberline {3.2.10}Archivo NEWS}{19}{subsection.3.2.10}%
 \contentsline {subsection}{\numberline {3.2.11}Viñetas}{20}{subsection.3.2.11}%
 \contentsline {subsection}{\numberline {3.2.12}R CMD check e instalación}{21}{subsection.3.2.12}%
 \contentsline {subsection}{\numberline {3.2.13}Publicación y difusión}{21}{subsection.3.2.13}%

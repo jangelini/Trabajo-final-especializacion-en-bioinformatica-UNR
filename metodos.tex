@@ -13,7 +13,7 @@ La primera parte de este capítulo presenta la metodología estadística para el
 \section{Métodos estadísticos}
 
 \subsection{Modelo AMMI y SREG}
-Para el estudio de la IGA y los análisis que de ella se derivan, dos modelos multiplicativos han aumentado su popularidad elntre los fitomejoradores como herramientas de análisis gráfico: el modelo de los efectos principales aditivos e interacción multiplicativa (AMMI de las siglas en inglés, \emph{Additive Main effects and Multiplicative Interaction}) \citep{Gauch1988, Gauch1992} y el de regresión por sitio (SREG de las siglas en inglés, \emph{Site Regression model}) \citep{Corneliusetal1996, CrossaCornelius1997}. Estos modelos se ajustan en dos etapas. Primero, se realiza un ANOVA para obtener estimaciones de los efectos principales aditivos de ambientes y genotipos en AMMI y sólo de los ambientes en SREG. En segundo lugar, los residuos del ANOVA se ordenan en una matriz con genotipos en las filas y ambientes en las columnas y se aplica una DVS, representando los patrones de IGA presentes en los residuos en AMMI, y de G e IGA conjuntamente en SREG.
+Para el estudio de la IGA y los análisis que de ella se derivan, dos modelos multiplicativos han aumentado su popularidad elntre los fitomejoradores como herramientas de análisis gráfico: el modelo de los efectos principales aditivos e interacción multiplicativa (AMMI de las siglas en inglés, \emph{Additive Main effects and Multiplicative Interaction}) \citep{Gauch1988, Gauch1992} y el de regresión por sitio (SREG de las siglas en inglés, \emph{Site Regression model}) \citep{Corneliusetal1996, CrossaCornelius1997}. Estos modelos se ajustan en dos etapas. Primero, se realiza un ANOVA para obtener estimaciones de los efectos principales aditivos de ambientes y genotipos en AMMI y sólo de los ambientes en SREG. En segundo lugar, los residuos del ANOVA se ordenan en una matriz con genotipos en las filas y ambientes en las columnas y se aplica una DVS, representando los patrones de IGA presentes en los residuos en AMMI, y de G e IGA conjuntamente en SREG.\\
 
 Las ecuaciones de los distintos modelos son:
 
@@ -150,13 +150,11 @@ El archivo DESCRIPTION provee toda la metadata sobre el paquete presentada a tra
 \item License: nombre de la licencia bajo la cual se distribuye el paquete. Si se pretende que cualquiera lo puede usar, entonces se debe recurrir a los tipos más comunes de licencia para código abierto: CC0, MIT o GPL. 
 \end{itemize}
 
-Los elementos no obligatorios son:\textbf{PONGO LOS QUE APARECEN EN LA FIGURA}
-
+Los elementos no obligatorios son:
 \begin{itemize}
 \item Encoding: especifica la codificación que se utiliza para el archivo DESCRIPTION, los .R, el NAMESPACE y los archivos .Rd.
 \item LazyData: indica si los datos estan o no disponibles inmediatamente cuando se carga el paquete.
 \item RoxygenNote: versión de roxygen. \textbf{?????}
-\item Date: fecha de publicación de la versión actual del paquete. \textbf{SACARIA PORQUE NO ESTÁ EN MI DESCRIPTION}
 \item Imports: en el caso de que el código desarrollado haga uso de funciones pertenecientes a otros paquetes, los mismos deben ser listados en este campo.
 \item Suggests: listado de paquetes que no son imprescindibles para el uso del nuevo paquete, pero que pueden ser útiles como herramientas secundarias para el mismo (por ejemplo, para seguir los tutoriales).
 \item VignetteBuilder: paquetes requeridos para la creación de las viñetas.
@@ -167,6 +165,7 @@ Los elementos no obligatorios son:\textbf{PONGO LOS QUE APARECEN EN LA FIGURA}
 \end{itemize}
 
 El archivo DESCRIPTION del paquete \emph{geneticae} se muestra en la Figura \ref{fig:fig33}.
+
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=0.50\textwidth]{./Graficos/DESCRIPTION.png}	
@@ -240,7 +239,7 @@ Probar el código desarrollado, somentiéndolo a casos particulares y a distinto
 
 Como se mencionó anteriormente, esto puede hacerse de manera dinámica e interactiva durante el desarrollo al instalar y cargar el paquete en gestación con \textcolor{fandango}{load\_all()}. Sin embargo, si siempre se realizan los mismos controles es posible automatizar este proceso. Para ello, se generan unidades de testeo que ponen a prueba el código corriendo parte del mismo bajo distintas circunstancias y comparando el resultado obtenido con el esperado por el desarrollador.  La función \textcolor{fandango}{use\_test()} del paquete \emph{testthat}, que agrega ``testthat'' al campo Suggest del archivo DESCRIPTION, crea un directorio test/testthat para ubicar los códigos con los testeos y un archivo testthat.R que se encarga de la ejecución de los mismos. Una vez escritos estos archivos que establecen cuales son los controles a realizar automáticamente, se pueden evaluar los resultados con la función \textcolor{fandango}{test()} del paquete \emph{devtools}. Ante cada error encontrado, se debe corregir el código y repetir este proceso hasta que todas las unidades de testeo pasen la prueba. En la Figura \ref{fig:fig36} se muestra el resultado de evaluar las unidades de testeo creadas para el paquete \emph{geneticae}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=11cm]{./Graficos/Test.png}	
 	\end{center}
