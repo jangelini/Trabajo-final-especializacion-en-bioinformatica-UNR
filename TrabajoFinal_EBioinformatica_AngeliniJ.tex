@@ -201,6 +201,9 @@ commentstyle=\color{YellowGreen}   % comment style
 %% # 'Indices y listas de contenido #
 %% Quitar los comentarios en las lineas siguientes para obtener listas de
 %% figuras y cuadros/tablas.
+\fancyhead{}%Clear all header fields
+\fancyhead[RO,LE]{\textsc{Índice general}}
+
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
@@ -210,6 +213,8 @@ commentstyle=\color{YellowGreen}   % comment style
 \tableofcontents
 \cleardoublepage
 
+\fancyhead{}%Clear all header fields
+\fancyhead[RO,LE]{\textsc{Índice de figuras}}
 \listoffigures
 \cleardoublepage
 
@@ -231,12 +236,26 @@ commentstyle=\color{YellowGreen}   % comment style
 \pagestyle{plain}
 \pagenumbering{arabic}
 
+\fancyhead{}%Clear all header fields
+\fancyhead[RO,LE]{\textsc{Capítulo 1 - Introducción}}
 \include{intro}
+
+
+\fancyhead{}%Clear all header fields
 \include{objetivos}
+
+\fancyhead{}%Clear all header fields
+\fancyhead[RO,LE]{\textsc{Capítulo 3 - Métodos}}
 \include{metodos}
 %cambie un poco la estructura de resultados pero como para no reescribir la idea anterior le llame resultados 2
+
+\fancyhead{}%Clear all header fields
+\fancyhead[RO,LE]{\textsc{Capítulo 4 - Resultados}}
 \include{resultados2}
 %\include{capitulo3}
+
+\fancyhead{}%Clear all header fields
+\fancyhead[RO,LE]{\textsc{Capítulo 5 - Conclusión}}
 \include{conclu}
 %\include{perspfuturo}
 
@@ -252,6 +271,8 @@ commentstyle=\color{YellowGreen}   % comment style
 %% Incluir la bibliograf'ia. Mirar el archivo "biblio.bib" para m'as detales
 %% y un ejemplo.
 
+\fancyhead{}%Clear all header fields
+\fancyhead[RO,LE]{\textsc{Bibliografía}}
 \bibliography{biblio}
 
 \end{document}
