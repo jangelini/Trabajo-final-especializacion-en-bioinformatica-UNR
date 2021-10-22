@@ -11,13 +11,15 @@
 
 Siguiendo el flujo de trabajo descripto en el capítulo anterior fue posible desarrollar el paquete de R \emph{geneticae} que implementa los métodos estadísticos discutidos para el análisis de datos de EMA.
 
-El paquete fue enviado a CRAN, donde pasó los exhaustivos controles de R CMD check exitosamente, logrando así una rápida aceptación. En el momento de la escritura de este informe, pasaron 3 semanas desde su publicación en el repositorio y cuenta con más de 400 descargas, a pesar de que aún no se ha hecho difusión del paquete. 
+El paquete \emph{geneticae} fue enviado a CRAN, donde pasó los exhaustivos controles de R CMD check exitosamente, logrando así una rápida aceptación  (\url{https://cran.r-project.
+org/web/packages/geneticae/index.html}). En el momento de la escritura de este informe, pasaron 3 semanas desde su publicación en el repositorio y cuenta con más de 400 descargas, a pesar de que aún no se ha hecho difusión del paquete. El código fuente se encuentra disponible en GitHub (\url{https://github.com/
+jangelini/geneticae}).
 
 Para instalar la versión del paquete publicada en CRAN:  \textcolor{fandango}{install.packages(``geneticae")}, mientras que la versión en desarrollo se debe instalar desde el repositorio de GitHub:  \textcolor{fandango}{devtools::install\_github(``jangelini/geneticae")}. Una vez instalado el paquete, se debe cargar en la sesion de R mediante el comando: \textcolor{fandango}{library(geneticae)}. 
 
 Información detallada sobre las funciones del paquete \emph{geneticae} se puede obtener mediante \textcolor{fandango}{help(package = ``geneticae")}. La ayuda para una función, por ejemplo \textcolor{fandango}{imputation()}, en una sesión R se puede obtener usando \textcolor{fandango}{?imputation} o \textcolor{fandango}{help(imputation)}. La función \textcolor{fandango}{browseVignettes(``geneticae")} permite obtener la viñeta del paquete, es decir una descripción el problema que está diseñado para resolver así como ejemplos de aplicación del mismo. 
 
-Además, se encuentra disponible una página web\footnote{\url{https://jangelini.github.io/geneticae/}} que contiene una breve descripción de la utilidad del paquete, las funciones que se incluyen en él, un tutorial de uso, un enlace de acceso a la aplicación web Shiny, entre otros elementos.
+Además, se encuentra disponible una página web que contiene una breve descripción de la utilidad del paquete, las funciones que se incluyen en él, un tutorial de uso, un enlace de acceso a la aplicación web Shiny, entre otros elementos (\url{https://jangelini.github.io/geneticae/}).
 
 
 \subsection{Conjuntos de datos en \emph{geneticae}}
@@ -367,7 +369,7 @@ El resultado es la matriz con datos imputados en aquellas celdas vacías.
 
 \section{Aplicación web \emph{Geneticae}}
 
-Siguiendo el procedimiento descripto se desarrolló la aplicación web \emph{Geneticae}, con el objetivo de proporcionar una interfaz gráfica de usuario para el paquete, de modo que pueda ser utilizado por fitomejoradores y analistas sin experiencia previa en programación R. 
+Siguiendo el procedimiento descripto se desarrolló la aplicación web \emph{Geneticae}, con el objetivo de proporcionar una interfaz gráfica de usuario para el paquete, de modo que pueda ser utilizado por fitomejoradores y analistas sin experiencia previa en programación R. El código fuente de \emph{Geneticae} se encuentra disponible en GitHub (\url{https://github.com/jangelini/Geneticae-Shiny-Web-APP}). 
 
 Es un software interactivo, no comercial y de código abierto, que ofrece una alternativa gratuita al software comercial disponible para analizar datos provenientes de ensayos multiambientales. Momentáneamente se encuentra disponible en un servidor gratuito con una cuota mensual de horas de uso, al cual se puede acceder con el enlace \url{https://geneticae.shinyapps.io/geneticae-shiny-web-app/} o desde la página web \url{https://www.cefobi-conicet.gov.ar/bases-de-datos-y-programas/} del Centro de Estudios Fotosintéticos y Bioquímicos del Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET).
 
@@ -379,21 +381,13 @@ En las subsecciones siguientes se presentará un ejemplo de cómo cargar y anali
 
 La aplicación web \emph{Geneticae} requiere que los datos de entrada se encuentren en archivos de texto plano, con delimitaciones por comas o punto y coma (formato .csv) o tabulaciones (formato .txt). Los nombres de las columnas pueden ubicarse en la primera fila del archivo (\emph{heading}). Los datos deben estar en formato largo, es decir, cada fila debe corresponder a una observación y cada columna a una variable (genotipo, ambiente, fenotipo observado y, si existe, repetición). Si cada genotipo ha sido evaluado más de una vez en cada ambiente, la media fenotípica requerida por el modelo SREG y AMMI para cada combinación de genotipo y ambiente se calcula internamente antes de ajustar dichos modelos. Las variables adicionales que no se utilizarán en el análisis pueden estar presentes en el conjunto de datos. No se permiten valores perdidos.
 
-Los dos conjuntos de datos \emph{plrv} y \emph{yanwinterwheat} descriptos en la subsección \ref{subsec:datosejemplos} están disponibles en la pestaña \emph{Data $\rightarrow$ Example datasets} y se pueden descargar en formato .csv (Figura \ref{fig:dataexample}) para poder seguir el tutorial de uso de la aplicación. El conjunto de datos \emph{yanwinterwheat} no tiene repeticiones, mientras que \emph{plrv} sí. 
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.60\textwidth]{./Graficos/www/exampledata2.png}
-	\end{center}
-	\caption{Conjuntos de datos (A) \emph{plrv} y (B) \emph{yanwinterwheat} disponibles en la aplicación web \emph{Geneticae}.}
-	\label{fig:dataexample}
-\end{figure}
+Los dos conjuntos de datos \emph{plrv} y \emph{yanwinterwheat} descriptos en la subsección \ref{subsec:datosejemplos} están disponibles en la pestaña \emph{Data $\rightarrow$ Example datasets} y se pueden descargar en formato .csv para poder seguir el tutorial de uso de la aplicación. El conjunto de datos \emph{yanwinterwheat} no tiene repeticiones, mientras que \emph{plrv} sí. 
 
 En los siguientes ejemplos se trabajará con \emph{yanwinterwheat} para mostrar el uso de la aplicación. Luego de obtener el archivo de datos con el formato indicado, es posible importarlo en la pestaña \emph{Data $\rightarrow$ Upload data}. Por ejemplo, para importar \emph{yanwinterwheat}, se debe cargar el archivo .csv. Una vez cargado, se debe indicar que está delimitado por comas, que en la primera fila contiene los nombres de cada variable (\emph{heading}) y los nombres de las columnas en las cuales se encuentra la información del genotipo, ambiente y rasgo fenotípico (\emph{gen}, \emph{env} y \emph{yield} en este ejemplo) (Figura \ref{fig:fig431}). Si hay repeticiones disponibles, se debe especificar el nombre de la columna con dicha información; de lo contrario, el campo queda vacío. 
 
  \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{./Graficos/www/Data.png}
+		\includegraphics[width=0.9\textwidth]{./Graficos/www/Data.png}
 	\end{center}
 	\caption{Importar el conjunto de datos \emph{yanwinterwheat} en la aplicación web \emph{Geneticae}.}
 	\label{fig:fig431}
@@ -409,17 +403,18 @@ Un \emph{boxplot} que compara el rasgo cuantitativo entre ambientes o genotipos 
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{./Graficos/www/boxplot.png}
+		\includegraphics[width=0.95\textwidth]{./Graficos/www/boxplot.png}
 	\end{center}
 	\caption{Diagrama de caja de (A) genotipos y (B) ambientes para el conjunto de datos \emph{yanwinterwheat} obtenido con la aplicación web \emph{Geneticae}.}
 	\label{fig:figdesc1}
 \end{figure}
 
+
 Los coeficientes de correlación de Pearson o Spearman entre genotipos se pueden mostrar con un gráfico o una matriz (Figura \ref{fig:figdesc2}). Gráficamente, las correlaciones positivas se muestran en azul y las negativas en rojo, mientras que la intensidad del color y el tamaño del círculo son proporcionales a la magnitud de los coeficientes de correlación. La gráfica de correlación se puede descargar en formato .png. En el ejemplo, se observan altas correlaciones entre el rendimiento de los genotipos estudiados. 
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{./Graficos/www/correlacion.png}
+		\includegraphics[width=0.95\textwidth]{./Graficos/www/correlacion.png}
 	\end{center}
 	\caption{(A) Gráfico y (B) matriz de correlación entre genotipos para el conjunto de datos \emph{yanwinterwheat} obtenido con la aplicación web \emph{Geneticae}.}
 	\label{fig:figdesc2}
@@ -429,9 +424,9 @@ Los coeficientes de correlación de Pearson o Spearman entre genotipos se pueden
 Dado que la IGA genera respuestas genotípicas diferenciales en diferentes ambientes complicando la selección de los mejores cultivares, una gráfico de interacción puede ser de interés (Figura \ref{fig:figdesc3}). El cambio en el efecto genotípico a través de los ambientes se muestra en la figura \ref{fig:figdesc3} A, mientras que el cambio en el efecto ambiental a través de los genotipos en la figura \ref{fig:figdesc3} B. Estos también son gráficos interactivos por lo que es posible descargarla en formatos .HTML o .png con el botón Descargar o haciendo clic en la cámara que aparece en el gráfico, respectivamente. Además, el usuario puede personalizar los nombres de los ejes. En este ejemplo se pueden ver inconsistencias en el desempeño de genotipos en diferentes ambientes. 
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{./Graficos/www/interaction.png}
+		\includegraphics[width=0.95\textwidth]{./Graficos/www/interaction.png}
 	\end{center}
 	\caption{Gráfico de interacción para (A) ambientes a través de genotipos y (B) genotipos a través de los ambientes para conjunto de datos de \emph{yanwinterwheat} obtenido con la aplicación web \emph{Geneticae}.}
 	\label{fig:figdesc3}
