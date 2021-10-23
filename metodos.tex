@@ -13,7 +13,7 @@ La primera parte de este capítulo presenta la metodología estadística para el
 \section{Métodos estadísticos}
 
 \subsection{Modelo AMMI y SREG}
-Para el estudio de la IGA y los análisis que de ella se derivan, dos modelos multiplicativos han aumentado su popularidad elntre los fitomejoradores como herramientas de análisis gráfico: el modelo de los efectos principales aditivos e interacción multiplicativa (AMMI de las siglas en inglés, \emph{Additive Main effects and Multiplicative Interaction}) \citep{Gauch1988, Gauch1992} y el de regresión por sitio (SREG de las siglas en inglés, \emph{Site Regression model}) \citep{Corneliusetal1996, CrossaCornelius1997}. Estos modelos se ajustan en dos etapas. Primero, se realiza un ANOVA para obtener estimaciones de los efectos principales aditivos de ambientes y genotipos en AMMI y sólo de los ambientes en SREG. En segundo lugar, los residuos del ANOVA se ordenan en una matriz con genotipos en las filas y ambientes en las columnas y se aplica una DVS, representando los patrones de IGA presentes en los residuos en AMMI, y de G e IGA conjuntamente en SREG.\\
+Para el estudio de la IGA y los análisis que de ella se derivan, dos modelos multiplicativos han aumentado su popularidad entre los fitomejoradores como herramientas de análisis gráfico: el modelo de los efectos principales aditivos e interacción multiplicativa (AMMI, siglas en inglés de \emph{Additive Main effects and Multiplicative Interaction}) \citep{Gauch1988, Gauch1992} y el de regresión por sitio (SREG, siglas en inglés de \emph{Site Regression model}) \citep{Corneliusetal1996, CrossaCornelius1997}. Estos modelos se ajustan en dos etapas. Primero, se realiza un ANOVA para obtener estimaciones de los efectos principales aditivos de ambientes y genotipos en AMMI y sólo de los ambientes en SREG. En segundo lugar, los residuos del ANOVA se ordenan en una matriz con genotipos en las filas y ambientes en las columnas y se aplica una DVS, representando los patrones de IGA presentes en los residuos en AMMI, y de G e IGA conjuntamente en SREG.\\
 
 Las ecuaciones de los distintos modelos son:
 
@@ -31,10 +31,10 @@ donde
 \end{itemize}
 
 
-El resultado de los dos primeros términos multiplicativos de la SVD se presenta a menudo en un biplot llamado GE (genotipo-ambiente de las siglas en inglés, \emph{Genotype-Environment}) para el modelo AMMI \citep{Zobel1988} y GGE (genotipo más genotipo-ambiente de las siglas en inglés, \emph{Genotype plus Genotype-Environment}) en SREG \citep{Yanetal2000} y representan una aproximación de dos rangos de los efectos multiplicativos. Dado que para seleccionar cultivares el G e IGA debe considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos provenientes de EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos provenientes de EMA permite, entre otras cosas, visualizar tres aspectos importantes: 
+El resultado de los dos primeros términos multiplicativos de la SVD se presenta a menudo en un biplot llamado GE (genotipo-ambiente, siglas en inglés de \emph{Genotype-Environment}) para el modelo AMMI \citep{Zobel1988} y GGE (genotipo más genotipo-ambiente, siglas en inglés de \emph{Genotype plus Genotype-Environment}) en SREG \citep{Yanetal2000} y representan una aproximación de dos rangos de los efectos multiplicativos. Dado que para seleccionar cultivares el G e IGA deben considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos provenientes de EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos provenientes de EMA permite, entre otras cosas, visualizar tres aspectos importantes: 
 
 \begin{itemize}
-\item[(i)] las relaciones entre los genotipos y ambientes representadas por el patrón ``cuál-gana-dónde" (\emph{which-won-where}), que facilitan la investigación de mega-ambientes \citep{GauchZobel1997};
+\item[(i)] las relaciones entre los genotipos y ambientes representadas por el patrón ``cuál-ganó-donde'' (\emph{which-won-where}), que facilitan la investigación de mega-ambientes \citep{GauchZobel1997};
 
 \item[(ii)] las interrelaciones entre los ambientes de prueba, que facilitan la identificación de mejores ambientes para la evaluación de cultivares \citep{Cooperetal1997} y de aquellos que son redundantes y pueden descartarse \citep{YanRajcan2002};
 
@@ -88,7 +88,7 @@ Un paquete de R es un conjunto de funciones programadas en este lenguaje que com
 
 Una vez finalizada esta etapa, dichas carpetas y archivos se compilan y comprimen para su distribución. Si esto se realiza con Windows como sistema operativo, se debe descargar e instalar el software Rtools disponible en CRAN. 
 
-Todo este proceso se realizó utilizando Git y GitHub. Git es un sistema de control de versiones, una herramienta que toma inicialmente una versión de un documento y luego registra los cambios que sufre el mismo a lo largo del tiempo. Esto facilita el trabajo colaborativo entre distintas personas ya que si más de una persona trabaja en el mismo documento, el sistema de control de versiones las puede integrar en una nueva. Git es más útil cuando se combina con GitHub. Este último es el servicio de \emph{hosting} que se utiliza para que el proyecto tenga una presencia en la web permitiéndole a otras personas explorar los archivos, su historia, sincronizarse con la versión actual, proponer y realizar cambios, etc. Git + GitHub es el entorno más popular para los desarrolladores de paquetes de R ya que permite a cualquier persona descargar e instalar un paquete e incluso realizar aportes, detectar \emph{bugs}, incluir sugerencias, etc.
+Todo este proceso se realizó utilizando Git y GitHub. Git es un sistema de control de versiones, una herramienta que toma inicialmente una versión de un documento y luego registra los cambios que sufre el mismo a lo largo del tiempo. Esto facilita el trabajo colaborativo entre distintas personas ya que si más de una persona trabaja en el mismo documento, el sistema de control de versiones las puede integrar en una nueva. Git es más útil cuando se combina con GitHub. Este último es el servicio de \emph{hosting} que se utiliza para que el proyecto tenga una presencia en la web permitiéndole a otras personas explorar los archivos, su historia, sincronizarse con la versión actual, proponer y realizar cambios, etc. Git y GitHub en conjunto forman el entorno más popular para los desarrolladores de paquetes de R ya que permite a cualquier persona descargar e instalar un paquete e incluso realizar aportes, detectar errores, incluir sugerencias, etc.
 
 
 A continuación se detallan los distintos pasos que componen la creación de un paquete en R bajo un enfoque de trabajo reproducible, lo cual significa que los mismos pueden usarse de ejemplo para el desarrollo de nuevos paquetes o para imitar la creación del paquete \emph{geneticae} que es objeto de desarrollo de este trabajo. 
@@ -99,7 +99,7 @@ En primer lugar se debe elegir el nombre del paquete cumpliendo con ciertas regl
 
 \begin{figure}[h]
 \begin{center}
-	\includegraphics[width=0.50\textwidth]{./Graficos/available.png}	
+	\includegraphics[width=0.60\textwidth]{./Graficos/available.png}	
 \end{center}
 	\caption{Chequeo de disponibilidad del nombre \emph{geneticae} elegido para el paquete en desarrollo mediante la función \textcolor{fandango}{available()} del paquete \emph{available}.}
 \label{fig:fig31}
@@ -108,11 +108,11 @@ En primer lugar se debe elegir el nombre del paquete cumpliendo con ciertas regl
 
 \subsection{Estructura general del paquete}
 
-Un paquete de R se construye creando y guardando diversos archivos y carpetas en un directorio cuyo nombre es igual al elegido en el paso anterior. Algunos elementos son de presencia obligatoria; entre ellos:
+Un paquete de R se construye creando y guardando diversos archivos y carpetas en un directorio cuyo nombre es igual al elegido en el paso anterior. Algunos elementos son de presencia obligatoria, entre ellos:
 
 \begin{itemize}
-\item Archivo DESCRIPTION: archivo de texto que describe el contenido del paquete, quienes son sus desarrolladores, establece como se va a relacionar con otros, el tipo de licencia con el que se distribuye, los requisitos de sistema, etc.
-\item Carpeta R: contiene el o los archivos de código (\emph{script}) de R con las funciones del paquete.
+\item Archivo DESCRIPTION: archivo de texto que describe el contenido del paquete, quiénes son sus desarrolladores, establece cómo se va a relacionar con otros, el tipo de licencia con el que se distribuye, los requisitos de sistema, etc.
+\item Carpeta R: contiene el o los archivos de código (\emph{scripts}) de R con las funciones del paquete.
 \item Carpeta man: incluye archivos con la documentación del paquete, funciones y datasets.
 \item README: archivo de texto que brinda información sobre el proyecto.
 \item Archivo NAMESPACE: declara las funciones del paquete que se ponen a disposición de los usuarios y lista las funciones de otros paquetes de las cuales hace uso. 
@@ -121,8 +121,9 @@ Un paquete de R se construye creando y guardando diversos archivos y carpetas en
 Existen otros elementos cuya inclusión es opcional, por ejemplo:
 
 \begin{itemize}
-\item Carpeta data: contiene objetos de R con los conjuntos de datos.
-\item Carpeta vignettes: contiene los tutoriales que muestran ejemplos de uso del paquete, generalmente escritos en Rmarkdown
+\item Carpeta data: contiene objetos de R con conjuntos de datos.
+\item Carpeta vignettes: contiene los tutoriales que muestran ejemplos de uso del paquete, generalmente escritos en Rmarkdown, un formato de escritura que
+facilita la presentación de texto entrelazado con código y resultados.
 \item Carpeta tests: incluye código que permiten someter al paquete a diversos controles.
 \end{itemize}
 
@@ -130,7 +131,7 @@ Si bien estas carpetas y archivos pueden crearse en forma manual, es conveniente
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.50\textwidth]{./Graficos/creacion.png}	
+		\includegraphics[width=0.60\textwidth]{./Graficos/creacion.png}	
 	\end{center}
 	\caption{Creación del paquete \emph{geneticae} mediante la función \textcolor{fandango}{create\_package()} del paquete \emph{usethis}.}
 	\label{fig:fig32}
@@ -150,18 +151,13 @@ El archivo DESCRIPTION provee toda la metadata sobre el paquete presentada a tra
 \item License: nombre de la licencia bajo la cual se distribuye el paquete. Si se pretende que cualquiera lo puede usar, entonces se debe recurrir a los tipos más comunes de licencia para código abierto: CC0, MIT o GPL. 
 \end{itemize}
 
-Los elementos no obligatorios son:
+Entre los campos opcionales los más improtantes son:
 \begin{itemize}
-\item Encoding: especifica la codificación que se utiliza para el archivo DESCRIPTION, los .R, el NAMESPACE y los archivos .Rd.
-\item LazyData: indica si los datos estan o no disponibles inmediatamente cuando se carga el paquete.
-\item RoxygenNote: versión de roxygen. \textcolor{red}{\textbf{?????}}
 \item Imports: en el caso de que el código desarrollado haga uso de funciones pertenecientes a otros paquetes, los mismos deben ser listados en este campo.
 \item Suggests: listado de paquetes que no son imprescindibles para el uso del nuevo paquete, pero que pueden ser útiles como herramientas secundarias para el mismo (por ejemplo, para seguir los tutoriales).
-\item VignetteBuilder: paquetes requeridos para la creación de las viñetas.
 \item Depends: mínima versión de R con la cual el paquete es compatible.
 \item URL: dirección de la página web del paquete.
 \item BugReports: dirección donde los usuarios pueden enviar avisos sobre los problemas que encuentren al utilizar el paquete.
-\item Language: indica el idioma en la que se escribe la documentación del paquete.
 \end{itemize}
 
 El archivo DESCRIPTION del paquete \emph{geneticae} se muestra en la Figura \ref{fig:fig33}.
@@ -177,9 +173,9 @@ El archivo DESCRIPTION del paquete \emph{geneticae} se muestra en la Figura \ref
 
 \subsection{Archivos de código}
 
-Una vez creada la estructura del paquete y el archivo DESCRIPTION se deben programar las funciones que el mismo contendrá. Estas deben ser guardadas en \emph{scripts} con extensión .R, en el subdirectorio R/. Los \emph{scripts} pueden contener código para una o más funciones y ser guardadas con cualquier nombre, aunque es recomendable que el mismo este relacionado con su contenido  (Figura \ref{fig:fig34}).
+Una vez creada la estructura del paquete y el archivo DESCRIPTION se deben programar las funciones que el mismo contendrá. Estas deben ser guardadas en \emph{scripts} con extensión .R, en el subdirectorio R/. Los \emph{scripts} pueden contener código para una o más funciones y ser guardadas con cualquier nombre, aunque es recomendable que el mismo esté relacionado con su contenido  (Figura \ref{fig:fig34}).
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=0.60\textwidth]{./Graficos/GGEMODELFUNCTION.png}	
 	\end{center}
@@ -188,13 +184,13 @@ Una vez creada la estructura del paquete y el archivo DESCRIPTION se deben progr
 \end{figure}
 
 
-A medida que se desarrolla el paquete, se van generando relaciones complejas entre las funciones programadas. Algunas de ellas son de uso interno (son invocadas por otras funciones del paquete para cumplir con alguna tarea específica) y otras son diseñadas para que estén disponibles para los usuarios (es decir se ``exportan"). Además algunas funciones invocan a otras pertenecientes a paquetes escritos por terceros. Esto hace necesario realizar pruebas del funcionamiento del código  producido durante todo el proceso de desarrollo para garantizar que el código realice lo que realmente se desea y para corregir errores en la programación (depuración o \emph{debugging}). Para simular el proceso de construcción, instalación y carga del paquete durante su desarrollo se utiliza la función 
+A medida que se desarrolla el paquete se van generando relaciones complejas entre las funciones programadas. Algunas de ellas son de uso interno (son invocadas por otras funciones del paquete para cumplir con alguna tarea específica) y otras son diseñadas para que estén disponibles para los usuarios (es decir, se ``exportan"). Además algunas funciones invocan a otras pertenecientes a paquetes escritos por terceros. Esto hace necesario realizar pruebas del funcionamiento del código  producido durante todo el proceso de desarrollo para garantizar que realice lo que realmente se desea y para corregir errores en la programación (depuración o \emph{debugging}). Para simular el proceso de construcción, instalación y carga del paquete durante su desarrollo se utiliza la función 
 \textcolor{fandango}{load\_all()} que permite acceder a las funciones del paquete para su evaluación.
 
 
 \subsection{Documentación}
 
-Uno de los aspectos más importantes de la creación de un paquete es la documentación donde se describe cómo se usa cada función, para qué sirven los argumentos, aclarar qué tipo de resultado devuelve, proveer ejemplos para el uso, etc. El paquete \emph{roxygen2} provee pautas para escribir comentarios con un formato especial que incluyan toda la información requerida antes de la definición de la función en el mismo archivo de código. 
+Uno de los aspectos más importantes de la creación de un paquete es la documentación donde se describe cómo se usa cada función y para qué sirven los argumentos, se aclara qué tipo de resultado devuelve, se proveen ejemplos para el uso, etc. El paquete \emph{roxygen2} provee pautas para incluir todo esto escribiendo comentarios con un formato especial antes de la definición de la función en el mismo archivo de código. 
 
 El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} es el siguiente:
 
@@ -203,11 +199,11 @@ El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} 
 \item Agregar comentarios a los archivos .R. Estos deben comenzar con \#', para distinguirlo de los comentarios regulares, y preceden a cada función. La primera línea es el título y el párrafo que le sigue es su descripción. Para el resto de los campos de la documentación, se utilizan etiquetas listadas línea tras línea que comienzan con @, siendo las más importantes a incluir:
 
 \begin{itemize}
-\item @param: detalla para qué sirve cada parámetro de la función, que tipo de objeto es y que valor toma por defecto (opcional).
+\item @param: detalla para qué sirve cada parámetro de la función, qué tipo de objeto es y qué valor toma por defecto (opcional).
 \item @return: explica qué objeto devuelve la función.
 \item @details: agrega cualquier aclaración que se considere necesaria.
 \item @examples: incluye ejemplos de uso de la función.
-\item @export: indica que esta función tiene que estar disponible cuando alguien cargue el paquete con \textcolor{fandango}{library()}.
+\item @export: indica que la función tiene que estar disponible cuando alguien cargue el paquete con \textcolor{fandango}{library()}.
 \item @references: inserta referencias bibliogŕaficas.
 \end{itemize}
 
@@ -229,9 +225,9 @@ La figura \ref{fig:fig35} muestra un fragmento de los comentarios roxygen de la 
 \subsection{Uso de funciones de otros paquetes}
 Cuando el código desarrollado invoca a funciones de otros paquetes, los mismos deben ser listados en el campo Imports del archivo DESCRIPTION como se mencionó en la sección \ref{subsec:description}. Esto puede hacerse de manera manual o mediante la función \textcolor{fandango}{use\_package()} del paquete \emph{devtools} indicando el nombre del paquete.
 
-En el código se debe hacer uso de tales funciones anteponiendolo a su nombre el del paquete y el operador ``::". Por ejemplo, \textcolor{fandango}{dplyr::group\_by()} invoca la función \textcolor{fandango}{group\_by()} del paquete \emph{dplyr}. En el caso de que alguna función se aplicara con mucha frecuencia, se puede prescindir del comando anterior si se agrega el nombre de la función y el paquete de procedencia en la etiqueta @importFrom en los comentarios roxygen. Para el ejemplo anterior se debería indicar @importFrom dplyr group\_by. Esto permite mencionar a la función en el código sin el operador ``::".
+En el código se debe hacer uso de tales funciones anteponiendolo a su nombre el del paquete y el operador ``::". Por ejemplo, \textcolor{fandango}{dplyr::group\_by()} invoca la función \textcolor{fandango}{group\_by()} del paquete \emph{dplyr}. En el caso de que alguna función se aplicara con mucha frecuencia, se puede prescindir del comando anterior si se agrega el nombre de la función y el paquete de procedencia en la etiqueta \textcolor{fandango}{@importFrom} en los comentarios roxygen. Para el ejemplo anterior se debería indicar \textcolor{fandango}{@importFrom dplyr group\_by}. Esto permite mencionar a la función en el código sin el operador ``::".
 
-Si se utilizan repetidamente muchas funciones de otro paquete, es posible importarlas todas indicando el nombre del mismo en la etiqueta @import en los comentarios roxygen. Sin embargo, esta es la solución menos recomendada porque hace que el código sea más difícil de leer, y si tiene muchos paquetes, aumenta la posibilidad de que entren en conflicto nombres de funciones.
+Si se utilizan repetidamente muchas funciones de otro paquete, es posible importarlas todas indicando el nombre del mismo en la etiqueta @import en los comentarios roxygen. Sin embargo, esta es la solución menos recomendada porque hace que el código sea más difícil de leer y aumenta la posibilidad de que entren en conflicto nombres de funciones pertenecientes a diversos paquetes.
 
 \subsection{Testeos}
 
@@ -301,12 +297,12 @@ La figura \ref{fig:fig39} presenta el contenido del archivo NEWS del paquete \em
 
 \subsection{Viñetas}
 
-Una viñeta es un tipo especial de documentación que puede agregarse al paquete para dar más detalles y ejemplos sobre el uso del mismo. En ella se brinda es una descripción el problema que el paquete está diseñado para resolver y muestra al lector cómo resolverlo. Se diferencian de las páginas de ayuda en que su adición es opcional y no sigue una estructura fija, dándole la libertad al autor de enseñar de la forma que más le guste cómo usar su paquete. 
+Una viñeta es un tipo especial de documentación que puede agregarse al paquete para dar más detalles y ejemplos sobre el uso del mismo. En ella se brinda una descripción del problema que el paquete está diseñado para resolver y se muestra al lector cómo resolverlo. Se diferencian de las páginas de ayuda en que su adición es opcional y no sigue una estructura fija, dándole la libertad al autor de enseñar de la forma que más le guste cómo usar su paquete. 
 
 
-Muchos de los paquetes existentes tienen viñetas a las que se puede acceder utilizando la función \textcolor{fandango}{browseVignettes(``nombre del paquete")} si el mismo se encuentra instalado o consultando en su página de CRAN, por ejemplo para el paquete \emph{geneticae}: \url{https://cran.r-project.org/web/packages/geneticae/vignettes/a-tutorial.html}.
+Muchos de los paquetes existentes tienen viñetas a las que se puede acceder utilizando la función \textcolor{fandango}{browseVignettes(``nombre del paquete")} si el mismo se encuentra instalado o consultando en su página de CRAN. Por ejemplo para el paquete \emph{geneticae}: \url{https://cran.r-project.org/web/packages/geneticae/vignettes/a-tutorial.html}.
 
-Generalmente, las viñetas son generadas en RMarkdown, un formato de escritura que facilita la presentación de texto entrelazado con código y resultados. Para crear viñetas se emplea la función \textcolor{fandango}{use\_vignette(``nombre del paquete'')} del paquete \emph{usethis} que crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y genera una plantilla en RMarkdown para redactar la viñeta. 
+Generalmente, las viñetas son generadas en RMarkdown. Para crear viñetas se emplea la función \textcolor{fandango}{use\_vignette(``nombre del paquete'')} del paquete \emph{usethis} que crea un directorio vignettes/, agrega las dependencias necesarias a DESCRIPTION y genera una plantilla en RMarkdown para redactar la viñeta. 
 
 
 \subsection{R CMD check e instalación}
@@ -317,7 +313,7 @@ Se aconseja realizar verificaciones completas de que todo funciona a medida que 
 
 \subsection{Publicación y difusión}
 
-Por último para que otros usuarios puedan utilizar el paquete desarrollado es necesario publicarlo en algún sitio de cual pueda ser descargado e instalado. Esto se logra subiéndolo a un proyecto público en GitHub o enviándolo a repositorios oficiales como CRAN. Para ser aceptado en CRAN, el paquete además de atravesar con éxito los rigurosos controles de R CMD check debe superar una serie de políticas que son comprobadas manualmente por revisores. 
+Por último para que otros usuarios puedan utilizar el paquete desarrollado es necesario publicarlo en algún sitio del cual pueda ser descargado e instalado. Esto se logra subiéndolo a un proyecto público en GitHub o enviándolo a repositorios oficiales como CRAN. Para ser aceptado en CRAN, el paquete además de atravesar con éxito los rigurosos controles de R CMD check debe superar una serie de políticas que son comprobadas manualmente por revisores. 
 
 Con el fin de favorecer a la difusión del paquete una vez que el mismo es finalizado, es conveniente publicarlo en una página web. Esta es una tarea realtivamente sencilla gracias a dos factores. En primer lugar, la función \textcolor{fandango}{build\_site()} del paquete \emph{pkgdown} \citep{HadleyHesselberth2020} toma todo el material creado para el paquete (documentación, README, tutoriales, NEWS, etc.) y crea automáticamente en un sitio web que pude ser posteriormente personalizado. En segundo lugar, GitHub ofrece un servicio gratuito de \emph{web-hosting} que posibilita la publicación del sitio en internet.
 
@@ -340,7 +336,7 @@ Existen diversas formas para que un usuario pueda utilizar una aplicación Shiny
 
 \begin{itemize}
 
-\item En formal local, desde RStudio. Si se dispone del código fuente de forma local, se puede lanzar a correr la aplicación con la función \textcolor{fandango}{shinyApp()} del paquete \emph{shiny}. Si el código está disponible en un repositorio público de GitHub, se lo puede correr con la función \textcolor{fandango}{runGitHub()} del paquete \emph{shiny}. En ambos casos, se habilita el uso de la aplicación dentro del mismo RStudio o en algún navegador web como Gogole Chorme.
+\item En formal local, desde RStudio. Si se dispone del código fuente de forma local, se puede lanzar a correr la aplicación con la función \textcolor{fandango}{shinyApp()} del paquete \emph{shiny}. Si el código está disponible en un repositorio público de GitHub, se lo puede correr con la función \textcolor{fandango}{runGitHub()} del paquete \emph{shiny}. En ambos casos, se habilita el uso de la aplicación dentro del mismo RStudio o en algún navegador web como \emph{Google Chorme}.
 
 \item En forma remota, accediendo a algún servidor donde la aplicación esté alojada. En este caso, se debe contar con conexión a internet para acceder a la web del servidor y poder hacer uso de la aplicación online.
 
