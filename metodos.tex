@@ -64,7 +64,7 @@ Una limitación importante que presentan los modelos multiplicativos descriptos 
 Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
 
 \begin{itemize}
-\item EM-AMMI: \citet{GauchZobel1990} desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza (EM de las siglas en inglés, \emph{Expectation Maximization}) incorporando el modelo AMMI. 
+\item EM-AMMI: \citet{GauchZobel1990} desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza (EM, siglas en inglés de \emph{Expectation Maximization}) incorporando el modelo AMMI. 
 \end{itemize}
 \begin{itemize}
 \item EM-SVD: \citet{Troyanskayaetal2001} propusieron un método de imputación que combina el algoritmo EM con DVS. 
@@ -326,7 +326,7 @@ El paquete \emph{shiny} \citep{Changetal2020} de R permite construir aplicacione
 
 El desarrollo de una aplicación web Shiny consiste en programar en lenguaje R dos componentes, la interfaz de usuario y las evaluaciones a ejecutar por el servidor que aloje a la aplicación.
 
-La interfaz de usuario (conocida como ui por sus siglas en inglés, \emph{user interface}) controla el diseño de la aplicación y se encarga de establecer cuáles son los argumentos de entrada (\emph{inputs}) que el usario provee al hacer uso de la aplicación y las salidas (\emph{outputs}) que el servidor debe mostrar luego de procesar los \emph{inputs}. En general, definir las características de la interfaz de usuario puede no resultar tan sencillo ya que muchas de sus herramientas están vinculadas a otros lenguajes de programación, por ejemplo HTML, CSS o JavaScript. Sin embargo, las funciones del paquete \emph{shiny}, junto con las de otros paquetes auxiliares como \emph{shinyWidgets} \citep{Perrieretal2020} \emph{shinythemes} \citep{Chang2018} y \emph{shinyhelper} \citep{Mason2019}, facilitan la tarea, al proveer código en lenguaje R para administrar el contenido y apariencia de la página web.
+La interfaz de usuario (conocida como ui, siglas en inglés de \emph{user interface}) controla el diseño de la aplicación y se encarga de establecer cuáles son los argumentos de entrada (\emph{inputs}) que el usario provee al hacer uso de la aplicación y las salidas (\emph{outputs}) que el servidor debe mostrar luego de procesar los \emph{inputs}. En general, definir las características de la interfaz de usuario puede no resultar tan sencillo ya que muchas de sus herramientas están vinculadas a otros lenguajes de programación, por ejemplo HTML, CSS o JavaScript. Sin embargo, las funciones del paquete \emph{shiny}, junto con las de otros paquetes auxiliares como \emph{shinyWidgets} \citep{Perrieretal2020} \emph{shinythemes} \citep{Chang2018} y \emph{shinyhelper} \citep{Mason2019}, facilitan la tarea, al proveer código en lenguaje R para administrar el contenido y apariencia de la página web.
 
 El segundo elemento a programar recibe el nombre de \emph{server} e incluye el código de R que le indica a la aplicación qué debe hacer y cómo debe funcionar, incluyendo la lectura y manipulación de datos, el armado de gráficos, el ajuste de modelos, etc. En la programación del \emph{server} se debe prestar especial atención a los \emph{inputs} (datos u opciones elegidas por el usuario a través de la ui) y \emph{outputs} (resultados, tablas, gráficos, mapas, etc.), que se almacenan como objetos de R de tipo lista.
 
