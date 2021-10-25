@@ -13,7 +13,7 @@ La primera parte de este capítulo presenta la metodología estadística para el
 \section{Métodos estadísticos}
 
 \subsection{Modelo AMMI y SREG}
-Para el estudio de la IGA y los análisis que de ella se derivan, dos modelos multiplicativos han aumentado su popularidad entre los fitomejoradores como herramientas de análisis gráfico: el modelo de los efectos principales aditivos e interacción multiplicativa (AMMI, siglas en inglés de \emph{Additive Main effects and Multiplicative Interaction}) \citep{Gauch1988, Gauch1992} y el de regresión por sitio (SREG, siglas en inglés de \emph{Site Regression model}) \citep{Corneliusetal1996, CrossaCornelius1997}. Estos modelos se ajustan en dos etapas. Primero, se realiza un ANOVA para obtener estimaciones de los efectos principales aditivos de ambientes y genotipos en AMMI y sólo de los ambientes en SREG. En segundo lugar, los residuos del ANOVA se ordenan en una matriz con genotipos en las filas y ambientes en las columnas y se aplica una DVS, representando los patrones de IGA presentes en los residuos en AMMI, y de G e IGA conjuntamente en SREG.\\
+Para el estudio de la IGA y los análisis que de ella se derivan, dos modelos multiplicativos han aumentado su popularidad entre los fitomejoradores como herramientas de análisis gráfico: el modelo de los efectos principales aditivos e interacción multiplicativa (AMMI, siglas en inglés de \emph{Additive Main effects and Multiplicative Interaction}) \citep{Gauch1988, Gauch1992} y el de regresión por sitio (SREG, siglas en inglés de \emph{Site Regression model}) \citep{Corneliusetal1996, CrossaCornelius1997}. Estos modelos se ajustan en dos etapas. Primero, se realiza un ANOVA para obtener estimaciones de los efectos principales aditivos de ambientes y genotipos en AMMI y sólo de los ambientes en SREG. En segundo lugar, los residuos del ANOVA se ordenan en una matriz con genotipos en las filas y ambientes en las columnas y se aplica una DVS, representando los patrones de IGA presentes en los residuos en AMMI y de G e IGA conjuntamente en SREG.\\
 
 Las ecuaciones de los distintos modelos son:
 
@@ -41,15 +41,15 @@ El resultado de los dos primeros términos multiplicativos de la SVD se presenta
 \item[(iii)] las interrelaciones entre genotipos que posibilita la comparación entre ellos y la clasificación de los mismos considerando tanto en el rendimiento medio como la estabilidad \citep{Yanetal2001}.
 \end{itemize}
 
-En un biplot la puntuación del i-ésimo genotipo en la k-ésima componente principal se muestra como un punto definido por $g_{ik} = \lambda_k^{s} \alpha_{ik}$, y la correspondiente al j-ésimo ambiente en la k-ésima componente por $e_{kj} = \lambda_k^{1-s} \gamma_{jk}$ donde $k=1,2$ para un biplot bidimensional y $s$ es el factor de partición de los valores singulares. Teóricamente, el factor de partición puede tomar cualquier valor entre 0 y 1. Dentro de este rango, la elección de $s$ no altera las relaciones o interacciones relativas entre los genotipos y los ambientes, aunque la apariencia del biplot será diferente. Cuando $s=1$, 
-$g_{ik} = \lambda_k \alpha_{ik}$, y $e_{kj} = \gamma_{jk}$, los valores singulares se dividen por completo en los autovectores de los genotipos. En esta escala la unidad de las puntuaciones de los genotipos ($g_{ik}$) es la unidad original del carácter fenotípico evaluado y las puntuaciones ambientales ($e_{kj}$) están normalizadas (es decir no tienen unidad). Cuando $s=0$, $g_{ik} = \alpha_{ik}$, y $e_{kj} = \lambda_k \gamma_{jk}$, los valores singulares se dividen por completo en los autovectores de los ambientes. En esta escala las puntuaciones ambientales están en la unidad original del carácter fenotípico evaluado y las de los genotipos no tienen unidad. Cuando $s=0.5$, $g_{ik} = \lambda_k^{0.5} \alpha_{ik}$, y $e_{kj} = \lambda_k^{0.5} \gamma_{jk}$, la partición es simétrica. En esta escala las puntuaciones de los genotipos y las ambientales tienen la misma unidad que es la raíz cuadrada de la unidad original. El valor de $s=0.5$ es empleado en el biplot GE y el más utilizado en GGE, aunque dependiendo de los intereses de la investigación, se pueden construir numerosas vistas del biplot GGE derivado de SREG. Independientemente del factor de partición en valores singulares utilizado, los biplots GGE revelan el mismo patrón \emph{which-won-where}. Sin embargo, difieren en su precisión al mostrar la interrelación entre ambientes y genotipos. La partición centrada en los genotipos ($s=1$) muestra la interrelación entre genotipos con mayor precisión que cualquier otro método; la partición enfocada en los ambientes ($s=0$) es la más informativa sobre las interrelaciones entre los ambientes; y la simétrica ($s=0.5$) permite visualizar la magnitud relativa tanto de la variación de los genotipos como de los ambientes. 
+En un biplot la puntuación del i-ésimo genotipo en la k-ésima componente principal se muestra como un punto definido por $g_{ik} = \lambda_k^{s} \alpha_{ik}$ y la correspondiente al j-ésimo ambiente en la k-ésima componente por $e_{kj} = \lambda_k^{1-s} \gamma_{jk}$ donde $k=1,2$ para un biplot bidimensional y $s$ es el factor de partición de los valores singulares. Teóricamente, el factor de partición puede tomar cualquier valor entre 0 y 1. Dentro de este rango, la elección de $s$ no altera las relaciones o interacciones relativas entre los genotipos y los ambientes, aunque la apariencia del biplot será diferente. Cuando $s=1$, 
+$g_{ik} = \lambda_k \alpha_{ik}$ y $e_{kj} = \gamma_{jk}$, los valores singulares se dividen por completo en los autovectores de los genotipos. En esta escala la unidad de las puntuaciones de los genotipos ($g_{ik}$) es la unidad original del carácter fenotípico evaluado y las puntuaciones ambientales ($e_{kj}$) están normalizadas (es decir no tienen unidad). Cuando $s=0$, $g_{ik} = \alpha_{ik}$ y $e_{kj} = \lambda_k \gamma_{jk}$, los valores singulares se dividen por completo en los autovectores de los ambientes. En esta escala las puntuaciones ambientales están en la unidad original del carácter fenotípico evaluado y las de los genotipos no tienen unidad. Cuando $s=0.5$, $g_{ik} = \lambda_k^{0.5} \alpha_{ik}$ y $e_{kj} = \lambda_k^{0.5} \gamma_{jk}$, la partición es simétrica. En esta escala las puntuaciones de los genotipos y las ambientales tienen la misma unidad que es la raíz cuadrada de la unidad original. El valor de $s=0.5$ es empleado en el biplot GE y el más utilizado en GGE, aunque dependiendo de los intereses de la investigación, se pueden construir numerosas vistas del biplot GGE derivado de SREG. Independientemente del factor de partición en valores singulares utilizado, los biplots GGE revelan el mismo patrón \emph{which-won-where}. Sin embargo, difieren en su precisión al mostrar la interrelación entre ambientes y genotipos. La partición centrada en los genotipos ($s=1$) muestra la interrelación entre genotipos con mayor precisión que cualquier otro método; la partición enfocada en los ambientes ($s=0$) es la más informativa sobre las interrelaciones entre los ambientes; y la simétrica ($s=0.5$) permite visualizar la magnitud relativa tanto de la variación de los genotipos como de los ambientes. 
 
 
 
 
 \subsection{Modelo AMMI robusto}
 
-El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. Sin embargo, la presencia de \emph{outliers} es más una regla que una excepción cuando se consideran datos agronómicos debido características inherentes a los genotipos que se evalúan, errores de medición o el efecto inesperado de plagas o enfermedades que pueden afectar el rendimiento de algunos genotipos.
+El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. Sin embargo, la presencia de \emph{outliers} es más una regla que una excepción cuando se consideran datos agronómicos debido a características inherentes de los genotipos que se evalúan, errores de medición o el efecto inesperado de plagas o enfermedades que pueden afectar el rendimiento de algunos genotipos.
 
 \citet{Rodriguesetal2016} proponen una generalización robusta del modelo AMMI, que resulta de ajustar un modelo lineal robusto basado en el estimador M-Huber \citep{Huber1981} y luego utilizar un procedimiento de DVS o de análisis de componentes principales (ACP) robusto. Para la DVS o el ACP los autores consideraron varios métodos, dando lugar a un total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
 
@@ -59,7 +59,7 @@ El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil 
 \subsection{Métodos de imputación}
 
 
-Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el carácter fenotípico bajo estudio se encuentre registrado para todas las combinaciones entre genotipos y ambientes, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de las evaluaciones en las que se incorporan o descartan genotipos debido a su pobre desempeño \citep{HillRosenberg1985}.
+Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el carácter fenotípico bajo estudio se encuentre registrado para todas las combinaciones entre genotipos y ambientes, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de las evaluaciones en las que se incorporan o descartan genotipos debido a su mal desempeño \citep{HillRosenberg1985}.
 
 Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
 
@@ -95,7 +95,7 @@ A continuación se detallan los distintos pasos que componen la creación de un 
 
 \subsection{\emph{geneticae}}
 
-En primer lugar se debe elegir el nombre del paquete cumpliendo con ciertas reglas: solo puede contener letras, números o puntos; debe tener al menos dos caracteres y empezar con una letra y no terminar con un punto. Se debe chequear si el nombre elegido está disponible en los repositorios  CRAN, Bioconductor y GitHub. Para ello, se utiliza la función \textcolor{fandango}{available()} del paquete \emph{available}, que además indicará si el nombre elegido tiene algún significado especial que podemos desconocer (revisa las webs de \emph{Wikipedia}, \emph{Wiktionary} y \emph{Urban Dictionary}). El nombre elegido en este caso fue ``geneticae"  (Figura \ref{fig:fig31}). 
+En primer lugar se debe elegir el nombre del paquete cumpliendo con ciertas reglas: solo puede contener letras, números o puntos; debe tener al menos dos caracteres y empezar con una letra y no terminar con un punto. Se debe chequear si el nombre elegido está disponible en los repositorios  CRAN, Bioconductor y GitHub. Para ello, se utiliza la función \textcolor{fandango}{available()} del paquete \emph{available}, que además indicará si el nombre elegido tiene algún significado especial que podemos desconocer (revisa las webs de \emph{Wikipedia}, \emph{Wiktionary} y \emph{Urban Dictionary}). El nombre elegido en este caso fue ``geneticae''  (Figura \ref{fig:fig31}). 
 
 \begin{figure}[h]
 \begin{center}
@@ -113,7 +113,7 @@ Un paquete de R se construye creando y guardando diversos archivos y carpetas en
 \begin{itemize}
 \item Archivo DESCRIPTION: archivo de texto que describe el contenido del paquete, quiénes son sus desarrolladores, establece cómo se va a relacionar con otros, el tipo de licencia con el que se distribuye, los requisitos de sistema, etc.
 \item Carpeta R: contiene el o los archivos de código (\emph{scripts}) de R con las funciones del paquete.
-\item Carpeta man: incluye archivos con la documentación del paquete, funciones y datasets.
+\item Carpeta man: incluye archivos con la documentación del paquete, funciones y \emph{datasets}.
 \item README: archivo de texto que brinda información sobre el proyecto.
 \item Archivo NAMESPACE: declara las funciones del paquete que se ponen a disposición de los usuarios y lista las funciones de otros paquetes de las cuales hace uso. 
 \end{itemize}
@@ -131,7 +131,7 @@ Si bien estas carpetas y archivos pueden crearse en forma manual, es conveniente
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.60\textwidth]{./Graficos/creacion.png}	
+		\includegraphics[width=0.65\textwidth]{./Graficos/creacion2.png}	
 	\end{center}
 	\caption{Creación del paquete \emph{geneticae} mediante la función \textcolor{fandango}{create\_package()} del paquete \emph{usethis}.}
 	\label{fig:fig32}
@@ -164,7 +164,7 @@ El archivo DESCRIPTION del paquete \emph{geneticae} se muestra en la Figura \ref
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.50\textwidth]{./Graficos/DESCRIPTION.png}	
+		\includegraphics[width=0.50\textwidth]{./Graficos/DESCRIPTION2.png}	
 	\end{center}
 	\caption{Archivo DESCRIPTION de \emph{geneticae}.}
 	\label{fig:fig33}
@@ -173,19 +173,19 @@ El archivo DESCRIPTION del paquete \emph{geneticae} se muestra en la Figura \ref
 
 \subsection{Archivos de código}
 
-Una vez creada la estructura del paquete y el archivo DESCRIPTION se deben programar las funciones que el mismo contendrá. Estas deben ser guardadas en \emph{scripts} con extensión .R, en el subdirectorio R/. Los \emph{scripts} pueden contener código para una o más funciones y ser guardadas con cualquier nombre, aunque es recomendable que el mismo esté relacionado con su contenido  (Figura \ref{fig:fig34}).
+Una vez creada la estructura del paquete y el archivo DESCRIPTION se deben programar las funciones que el mismo contendrá. Estas deben ser guardadas en \emph{scripts} con extensión .R, en el subdirectorio R/. Los \emph{scripts} pueden contener código para una o más funciones y ser guardadas con cualquier nombre, aunque es recomendable que el mismo esté relacionado con su contenido. La figura \ref{fig:fig34} muestra un fragmento de la función \textcolor{fandango}{GGEmodel()} del paquete \emph{geneticae}.
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.60\textwidth]{./Graficos/GGEMODELFUNCTION.png}	
+		\includegraphics[width=0.55\textwidth]{./Graficos/GGEMODELFUNCTION.png}	
 	\end{center}
-	\caption{Fragmento de función \textcolor{fandango}{GGEmodel()} del paquete \emph{geneticae}.}
+	\caption{Fragmento de la función \textcolor{fandango}{GGEmodel()} del paquete \emph{geneticae}.}
 	\label{fig:fig34}
 \end{figure}
 
 
 A medida que se desarrolla el paquete se van generando relaciones complejas entre las funciones programadas. Algunas de ellas son de uso interno (son invocadas por otras funciones del paquete para cumplir con alguna tarea específica) y otras son diseñadas para que estén disponibles para los usuarios (es decir, se ``exportan"). Además algunas funciones invocan a otras pertenecientes a paquetes escritos por terceros. Esto hace necesario realizar pruebas del funcionamiento del código  producido durante todo el proceso de desarrollo para garantizar que realice lo que realmente se desea y para corregir errores en la programación (depuración o \emph{debugging}). Para simular el proceso de construcción, instalación y carga del paquete durante su desarrollo se utiliza la función 
-\textcolor{fandango}{load\_all()} que permite acceder a las funciones del paquete para su evaluación.
+\textcolor{fandango}{load\_all()} de \emph{devtools} que permite acceder a las funciones del paquete para su evaluación.
 
 
 \subsection{Documentación}
@@ -196,7 +196,7 @@ El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} 
 
 \begin{enumerate}
 
-\item Agregar comentarios a los archivos .R. Estos deben comenzar con \#', para distinguirlo de los comentarios regulares, y preceden a cada función. La primera línea es el título y el párrafo que le sigue es su descripción. Para el resto de los campos de la documentación, se utilizan etiquetas listadas línea tras línea que comienzan con @, siendo las más importantes a incluir:
+\item Agregar comentarios a los archivos .R. Estos deben comenzar con \#', para distinguirlo de los comentarios regulares y preceden a cada función. La primera línea es el título y el párrafo que le sigue es su descripción. Para el resto de los campos de la documentación, se utilizan etiquetas listadas línea tras línea que comienzan con @, siendo las más importantes a incluir:
 
 \begin{itemize}
 \item @param: detalla para qué sirve cada parámetro de la función, qué tipo de objeto es y qué valor toma por defecto (opcional).
@@ -227,7 +227,7 @@ Cuando el código desarrollado invoca a funciones de otros paquetes, los mismos 
 
 En el código se debe hacer uso de tales funciones anteponiendolo a su nombre el del paquete y el operador ``::". Por ejemplo, \textcolor{fandango}{dplyr::group\_by()} invoca la función \textcolor{fandango}{group\_by()} del paquete \emph{dplyr}. En el caso de que alguna función se aplicara con mucha frecuencia, se puede prescindir del comando anterior si se agrega el nombre de la función y el paquete de procedencia en la etiqueta \textcolor{fandango}{@importFrom} en los comentarios roxygen. Para el ejemplo anterior se debería indicar \textcolor{fandango}{@importFrom dplyr group\_by}. Esto permite mencionar a la función en el código sin el operador ``::".
 
-Si se utilizan repetidamente muchas funciones de otro paquete, es posible importarlas todas indicando el nombre del mismo en la etiqueta @import en los comentarios roxygen. Sin embargo, esta es la solución menos recomendada porque hace que el código sea más difícil de leer y aumenta la posibilidad de que entren en conflicto nombres de funciones pertenecientes a diversos paquetes.
+Si se utilizan repetidamente muchas funciones de otro paquete, es posible importarlas todas indicando el nombre del mismo en la etiqueta \textcolor{fandango}{@import} en los comentarios roxygen. Sin embargo, esta es la solución menos recomendada porque hace que el código sea más difícil de leer y aumenta la posibilidad de que entren en conflicto nombres de funciones pertenecientes a diversos paquetes.
 
 \subsection{Testeos}
 
@@ -254,9 +254,9 @@ Una medida de la calidad de un paquete está dada por el porcentaje de código q
 \end{figure}
 
 
-\subsection{Datasets}
+\subsection{\emph{Datasets}}
 
-A menudo es útil incluir conjutnos de datos en un paquete a fin de proporcionar ejemplos de uso de las funciones incluidas. Los datasets que se deseen añadir a un paquete deben ser guardados como archivos .RData en el directorio data/. La función \textcolor{fandango}{use\_data()} del paquete \emph{usethis} puede ser empleada para automatizar este proceso.
+A menudo es útil incluir conjuntos de datos en un paquete a fin de proporcionar ejemplos de uso de las funciones incluidas. Los \emph{datasets} que se deseen añadir a un paquete deben ser guardados como archivos .RData en el directorio data/. La función \textcolor{fandango}{use\_data()} del paquete \emph{usethis} puede ser empleada para automatizar este proceso.
 
 Los objetos de la carpeta data siempre se exportan, por lo cual se debe agregar documentación para los mismos. Esto se puede incluir en cualquier archivo de código .R dentro del directorio R/. 
 
@@ -265,13 +265,13 @@ Los objetos de la carpeta data siempre se exportan, por lo cual se debe agregar 
 
 Un README es un archivo de texto plano que se utiliza para documentar o brindar información sobre alguna pieza de software o proyecto. Si un directorio contiene un archivo README, se espera que el usuario lo lea antes de explorar el resto del contenido. En el contexto de creación de paquetes de R, el README se suele escribir en RMarkdown y describe brevemente por qué y para qué alguien podría usar el paquete, junto con menciones para su instalación y un ejemplo introductorio. Además, este archivo se muestra en la página del paquete cuando este es publicado en plataformas como GitHub. 
 
-Para generar el README se utiliza la función \textcolor{fandango}{use\_readme\_rmd()} que crea un archivo de Rmarkdown con una plantilla donde se completa su contenido. 
+Para generar el README se utiliza la función \textcolor{fandango}{use\_readme\_rmd()} del paquete \emph{usethis} que crea un archivo de Rmarkdown con una plantilla donde se completa su contenido. 
 
 En el archivo README se suelen incluir insignias (``bagdes") y el logo del paquete. Algunas funciones del paquete \emph{usethis} permiten agregar las insignias al README. Por otro lado, muchos de los paquetes de R disponen de un logo con forma hexagonal conocido como hexSticker. Esto permite darle identidad al paquete. El logo se puede crear con ayuda del paquete \emph{HexSticker} y ser añadido al README con la función \textcolor{fandango}{use\_logo()}. La Figura \ref{fig:fig38} presenta un fragmento del archivo README mostrado en el respositorio GitHub del paquete \emph{geneticae}.
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=11cm]{./Graficos/README.png}	
+		\includegraphics[width=11cm]{./Graficos/README2.png}	
 	\end{center}
 	\caption{Fragmento del archivo README mostrado en el respositorio GitHub del paquete \emph{geneticae}.}
 	\label{fig:fig38}
@@ -282,7 +282,7 @@ En el archivo README se suelen incluir insignias (``bagdes") y el logo del paque
 
 El archivo NEWS se encarga de contar los cambios presentes en cada versión nueva del paquete que se publica. Mientras que el README apunta a ser leído por nuevos usuarios, el archivo NEWS es para aquellos que ya usan el paquete.
 
-Se sugiere usar RMarkdown para escribir este archivo y colocar un título principal para cada versión, seguido por títulos secundarios que describen lo realizado (cambios principales, bugs arreglados, etc.). Si se trata de cambios impulsados por otras personas, por ejemplo, a través de sugerencias hechas en GitHub, se los menciona para darles mérito. Una buena práctica es ir escribiendo este archivo cada vez que se realiza algo nuevo en el paquete. La función que permite crear este archivo automáticamente es \textcolor{fandango}{use\_news\_md()} del paquete \emph{usethis}. 
+Se sugiere usar RMarkdown para escribir este archivo y colocar un título principal para cada versión, seguido por títulos secundarios que describen lo realizado (cambios principales, errores arreglados, etc.). Si se trata de cambios impulsados por otras personas, por ejemplo, a través de sugerencias hechas en GitHub, se los menciona para darles mérito. Una buena práctica es ir escribiendo este archivo cada vez que se realiza algo nuevo en el paquete. La función que permite crear este archivo automáticamente es \textcolor{fandango}{use\_news\_md()} del paquete \emph{usethis}. 
 
 La figura \ref{fig:fig39} presenta el contenido del archivo NEWS del paquete \emph{geneticae}.
 
@@ -308,7 +308,7 @@ Generalmente, las viñetas son generadas en RMarkdown. Para crear viñetas se em
 \subsection{R CMD check e instalación}
 Además de los controles interactivos o automatizados que los desarrolladores realicen, existe un riguroso proceso de control conocido como R CMD check que debe ser superado sin errores, adevertencias ni ningún tipo de nota si se desea publicar el paquete en algún repositorio oficial como CRAN. R CMD check esta compuesto por más de 50 chequeos individuales entre los cuales se encuentran: la estructura del paquete, el archivo DESCRIPTION, NAMESPACE, el código de R, los datos, la documentación, entre otros.  
 
-Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones para detectar y solucionar problemas de forma temprana. Una vez que se desarrollaron todos los elementos necesarios para el paquete y no se detectan errores, advertencias o notas, se ejecuta la función \textcolor{fandango}{install()}, con el objetivo de instalar el paquete en la biblioteca.
+Se aconseja realizar verificaciones completas de que todo funciona a medida que se van incorporando funciones para detectar y solucionar problemas de forma temprana. Una vez que se desarrollaron todos los elementos necesarios para el paquete y no se detectan errores, advertencias o notas, se ejecuta la función \textcolor{fandango}{install()} del paquete \emph{devtools}, con el objetivo de instalar el paquete en la biblioteca.
 
 
 \subsection{Publicación y difusión}
@@ -330,13 +330,13 @@ La interfaz de usuario (conocida como ui, siglas en inglés de \emph{user interf
 
 El segundo elemento a programar recibe el nombre de \emph{server} e incluye el código de R que le indica a la aplicación qué debe hacer y cómo debe funcionar, incluyendo la lectura y manipulación de datos, el armado de gráficos, el ajuste de modelos, etc. En la programación del \emph{server} se debe prestar especial atención a los \emph{inputs} (datos u opciones elegidas por el usuario a través de la ui) y \emph{outputs} (resultados, tablas, gráficos, mapas, etc.), que se almacenan como objetos de R de tipo lista.
 
-El código para la generación de una aplicación web Shiny debe finalizar con una llamada a la función \textcolor{fandango}{shinyApp()} que se encarga de la ejecución y lanzamiento de la aplicación.
+El código para la generación de una aplicación web Shiny debe finalizar con una llamada a la función \textcolor{fandango}{shinyApp()} del paquete \emph{shiny} que se encarga de la ejecución y lanzamiento de la aplicación.
 
 Existen diversas formas para que un usuario pueda utilizar una aplicación Shiny:
 
 \begin{itemize}
 
-\item En formal local, desde RStudio. Si se dispone del código fuente de forma local, se puede lanzar a correr la aplicación con la función \textcolor{fandango}{shinyApp()} del paquete \emph{shiny}. Si el código está disponible en un repositorio público de GitHub, se lo puede correr con la función \textcolor{fandango}{runGitHub()} del paquete \emph{shiny}. En ambos casos, se habilita el uso de la aplicación dentro del mismo RStudio o en algún navegador web como \emph{Google Chorme}.
+\item En formal local, desde RStudio. Si se dispone del código fuente de forma local, se puede lanzar a correr la aplicación con la función \textcolor{fandango}{shinyApp()}. Si el código está disponible en un repositorio público de GitHub, se lo puede correr con la función \textcolor{fandango}{runGitHub()} del paquete \emph{shiny}. En ambos casos, se habilita el uso de la aplicación dentro del mismo RStudio o en algún navegador web como \emph{Google Chorme}.
 
 \item En forma remota, accediendo a algún servidor donde la aplicación esté alojada. En este caso, se debe contar con conexión a internet para acceder a la web del servidor y poder hacer uso de la aplicación online.
 

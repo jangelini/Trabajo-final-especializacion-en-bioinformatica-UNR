@@ -19,13 +19,13 @@
 \contentsline {subsection}{\numberline {3.2.5}Documentación}{15}{subsection.3.2.5}%
 \contentsline {subsection}{\numberline {3.2.6}Uso de funciones de otros paquetes}{16}{subsection.3.2.6}%
 \contentsline {subsection}{\numberline {3.2.7}Testeos}{17}{subsection.3.2.7}%
-\contentsline {subsection}{\numberline {3.2.8}Datasets}{18}{subsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.2.8}\emph {Datasets}}{18}{subsection.3.2.8}%
 \contentsline {subsection}{\numberline {3.2.9}Archivo README}{18}{subsection.3.2.9}%
 \contentsline {subsection}{\numberline {3.2.10}Archivo NEWS}{19}{subsection.3.2.10}%
 \contentsline {subsection}{\numberline {3.2.11}Viñetas}{20}{subsection.3.2.11}%
 \contentsline {subsection}{\numberline {3.2.12}R CMD check e instalación}{21}{subsection.3.2.12}%
 \contentsline {subsection}{\numberline {3.2.13}Publicación y difusión}{21}{subsection.3.2.13}%
-\contentsline {section}{\numberline {3.3}Aplicación web Shiny}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Aplicación web Shiny}{22}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Programación de una aplicación web Shiny}{22}{subsection.3.3.1}%
 \contentsline {chapter}{\numberline {4}Resultados}{24}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Paquete de R \emph {geneticae}}{24}{section.4.1}%
