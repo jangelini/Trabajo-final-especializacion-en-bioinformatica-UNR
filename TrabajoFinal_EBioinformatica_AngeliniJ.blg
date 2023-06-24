@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2020)
+This is BibTeX, Version 0.99d (TeX Live 2021)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: TrabajoFinal_EBioinformatica_AngeliniJ.aux
 The style file: ezspanish.bst
@@ -11,51 +11,52 @@ A level-1 auxiliary file: abstract.aux
 A level-1 auxiliary file: intro.aux
 A level-1 auxiliary file: objetivos.aux
 A level-1 auxiliary file: metodos.aux
-A level-1 auxiliary file: resultados2.aux
+A level-1 auxiliary file: resultados.aux
 A level-1 auxiliary file: conclu.aux
 Database file #1: biblio.bib
 Warning--can't use both author and editor fields in Corneliusetal1996
+Warning--empty booktitle in Hawkins2002RobustSV
 Warning--can't use both author and editor fields in KangMagari1996
 Warning--can't use both author and editor fields in Peto1982
-You've used 45 entries,
+You've used 66 entries,
             2833 wiz_defined-function locations,
-            895 strings with 12604 characters,
-and the built_in function-call counts, 26553 in all, are:
-= -- 1985
-> -- 1122
-< -- 30
-+ -- 416
-- -- 363
-* -- 1864
-:= -- 3992
-add.period$ -- 148
-call.type$ -- 45
-change.case$ -- 340
-chr.to.int$ -- 45
-cite$ -- 48
-duplicate$ -- 2098
-empty$ -- 2057
-format.name$ -- 494
-if$ -- 5241
+            1035 strings with 16521 characters,
+and the built_in function-call counts, 39861 in all, are:
+= -- 2954
+> -- 1698
+< -- 46
++ -- 634
+- -- 552
+* -- 2813
+:= -- 5968
+add.period$ -- 213
+call.type$ -- 66
+change.case$ -- 506
+chr.to.int$ -- 66
+cite$ -- 70
+duplicate$ -- 3148
+empty$ -- 3105
+format.name$ -- 744
+if$ -- 7879
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 486
-newline$ -- 247
-num.names$ -- 180
-pop$ -- 1066
+missing$ -- 735
+newline$ -- 354
+num.names$ -- 264
+pop$ -- 1600
 preamble$ -- 1
-purify$ -- 301
+purify$ -- 448
 quote$ -- 0
-skip$ -- 744
+skip$ -- 1099
 stack$ -- 0
-substring$ -- 1093
-swap$ -- 980
-text.length$ -- 6
+substring$ -- 1701
+swap$ -- 1484
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 387
-warning$ -- 3
-while$ -- 166
+type$ -- 570
+warning$ -- 4
+while$ -- 250
 width$ -- 0
-write$ -- 603
-(There were 3 warnings)
+write$ -- 876
+(There were 4 warnings)

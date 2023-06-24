@@ -1,10 +1,12 @@
 \chapter{Conclusión}
 
+En el presente trabajo se crearon herramientas informáticas para el análisis para datos provenientes de EMA a fin de facilitar la tarea de los mejoradores genéticos de cultivos. Por un lado, se desarrolló un paquete de R llamado \emph{geneticae} que reúne metodología ampliamente utilizada y recientemente publicada, y que está abierto a que nuevas propuestas para el estudio de la interacción genotipo ambiente sean incorporados. Por otro lado, se confeccionó una interfaz gráfica de usuario que permite analizar, visualizar y extraer los resultados desde una página web sin la necesidad de contar con conocimiento específico de un lenguaje de programación.
+
 Como resultados del presente trabajo fue posible:\\
 
 \textbf{Mostrar un flujo de trabajo reproducible para la construcción de paquetes de R}. El mismo se puede utilizar de ejemplo para el desarrollo de nuevos paquetes o imitar la construcción del paquete \emph{geneticae} objeto de este trabajo. \\
 
-\textbf{Construir un paquete de R llamado \emph{geneticae}} para el análisis de datos provenientes de EMA. A pesar de que aún no se haya hecho difusión del paquete, en el momento de la escritura de este informe, pasaron 3 semanas desde su publicación en el repositorio CRAN y cuenta con más de 400 descargas. La gran utilidad del mismo se debe a que:
+\textbf{Construir un paquete de R llamado \emph{geneticae}} para el análisis de datos provenientes de EMA. A pesar de que aún no se haya hecho difusión del paquete, hasta el momento\footnote{30 de marzo 2022} el paquete cuenta con 2500 descargas. La gran utilidad del mismo se debe a que:
 
 \begin{itemize}
 \item incluye metodología recientemente publicada para ajustar el modelo AMMI en presencia de \emph{outliers} y para el tratamiento de información faltante que no se encuentra disponible en R así como tampoco en softwares comerciales,
@@ -21,7 +23,7 @@ Como resultados del presente trabajo fue posible:\\
 
 \textbf{Implementar una metodología de desarrollo de software colaborativa y basada en el sistema de control de versiones Git y los servicios web de GitHub}, adhiriendo a los principios de la investigación reproducible y de libre acceso.\\
 
-Como línea futura de trabajo se plantea continuar con la inclusión de los avances metodológicos que se vayan publicando en el contexto de datos provenientes de EMA tanto en el paquete como en la aplicación web Shiny. 
+Como línea futura de trabajo se plantea continuar con la inclusión de los avances metodológicos que se vayan publicando en el contexto de datos provenientes de EMA tanto en el paquete como en la aplicación web Shiny. Por ejemplo, en el marco de mi tesis doctoral de estadística, he propuesto una alternativa robusta para el modelo SREG \citep{Angelinietal2022} que será puesta a disposición de la comunidad científica y de los mejoradores al incluirla en la próxima versión del paquete y en la aplicación web Shiny.
 
 
 

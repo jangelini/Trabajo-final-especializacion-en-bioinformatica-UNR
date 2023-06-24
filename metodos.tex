@@ -1,11 +1,5 @@
-%% Los cap'itulos inician con \chapter{T'itulo}, estos aparecen numerados y
-%% se incluyen en el 'indice general.
-%%
-%% Recuerda que aqu'i ya puedes escribir acentos como: 'a, 'e, 'i, etc.
-%% La letra n con tilde es: 'n.
 
 \chapter{Métodos}
-%\setcounter{section}{1}
 
 La primera parte de este capítulo presenta la metodología estadística para el análisis de datos provenientes de EMA incluída en el paquete de R y que puede ser empleada interactivamente mediante la aplicación web Shiny. En la segunda y tercera sección, se presenta un flujo de trabajo reproducible para el desarrollo del paquete de R y una descripción de las etapas para la creación de la aplicación web Shiny.
 
@@ -31,58 +25,67 @@ donde
 \end{itemize}
 
 
-El resultado de los dos primeros términos multiplicativos de la SVD se presenta a menudo en un biplot llamado GE (genotipo-ambiente, siglas en inglés de \emph{Genotype-Environment}) para el modelo AMMI \citep{Zobel1988} y GGE (genotipo más genotipo-ambiente, siglas en inglés de \emph{Genotype plus Genotype-Environment}) en SREG \citep{Yanetal2000} y representan una aproximación de dos rangos de los efectos multiplicativos. Dado que para seleccionar cultivares el G e IGA deben considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos provenientes de EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos provenientes de EMA permite, entre otras cosas, visualizar tres aspectos importantes: 
+El resultado de los dos primeros términos multiplicativos de la DVS se presenta a menudo en un biplot llamado GE (genotipo-ambiente, siglas en inglés de \emph{Genotype-Environment}) para el modelo AMMI \citep{Zobel1988} y GGE (genotipo más genotipo-ambiente, siglas en inglés de \emph{Genotype plus Genotype-Environment}) en SREG \citep{Yanetal2000} y representan una aproximación de dos rangos de los efectos multiplicativos. Dado que para seleccionar cultivares el G e IGA deben considerarse simultáneamente, el modelo SREG resulta superior a AMMI para visualizar patrones en datos provenientes de EMA. Un biplot GGE que explica suficiente variabilidad debida a G e IGA de un conjunto de datos provenientes de EMA permite, entre otras cosas, visualizar tres aspectos importantes: 
 
 \begin{itemize}
-\item[(i)] las relaciones entre los genotipos y ambientes representadas por el patrón ``cuál-ganó-donde'' (\emph{which-won-where}), que facilitan la investigación de mega-ambientes \citep{GauchZobel1997};
+\item[(i)] las relaciones entre los genotipos y ambientes representadas por el patrón ``cuál-ganó-donde'' (\emph{which-won-where}), que facilitan la investigación de mega-ambientes \citep{GauchZobel1997}.
 
 \item[(ii)] las interrelaciones entre los ambientes de prueba, que facilitan la identificación de mejores ambientes para la evaluación de cultivares \citep{Cooperetal1997} y de aquellos que son redundantes y pueden descartarse \citep{YanRajcan2002};
 
-\item[(iii)] las interrelaciones entre genotipos que posibilita la comparación entre ellos y la clasificación de los mismos considerando tanto en el rendimiento medio como la estabilidad \citep{Yanetal2001}.
+\item[(iii)] las interrelaciones entre genotipos en cada mega-ambiente posibilita la comparación entre ellos y la clasificación de los mismos comparándolos con un genotipo ``ideal'' que es aquel con el rendimiento más alto y que es absolutamente estable \citep{Yanetal2001}.  Al compararse el orden de los genotipos en cada mega-ambiente, podría identificarse aquellos con adaptabilidad amplia (el orden del genotipo no varía entre los ambientes), y aquellos con adaptabilidad especifica (sólo muestra buen desempeño en uno o pocos ambientes). Sin embargo, la posibilidad de que algunos genotipos sean seleccionados o no, dependerá de la comparación que se realice con los genotipos controles que se incluyen en los ensayos.
 \end{itemize}
+
+Aunque el biplot GGE se usó inicialmente solo para la exploración de los efectos conjuntos de G e IGA, su aplicación se ha extendido a cualquier conjunto de datos que tenga una estructura de doble entrada. En el área de fitomejoramiento en particular, el biplot GGE se ha utilizado para abordar preguntas importantes que es probable que un fitomejorador o investigador plantee. Hasta el momento, ha permitido una visualización holística de la asociación genotipo x carácter, datos de cruces dialélicos, genotipo x marcador, análisis de QTL (siglas en inglés de \emph{Quantitive Trait Loci}) con datos de mapeo, y de interacción planta x patógeno \citep{YanKang2003, Singhetal2020, Hernandezetal2020, Adueral2021}.
+
 
 En un biplot la puntuación del i-ésimo genotipo en la k-ésima componente principal se muestra como un punto definido por $g_{ik} = \lambda_k^{s} \alpha_{ik}$ y la correspondiente al j-ésimo ambiente en la k-ésima componente por $e_{kj} = \lambda_k^{1-s} \gamma_{jk}$ donde $k=1,2$ para un biplot bidimensional y $s$ es el factor de partición de los valores singulares. Teóricamente, el factor de partición puede tomar cualquier valor entre 0 y 1. Dentro de este rango, la elección de $s$ no altera las relaciones o interacciones relativas entre los genotipos y los ambientes, aunque la apariencia del biplot será diferente. Cuando $s=1$, 
 $g_{ik} = \lambda_k \alpha_{ik}$ y $e_{kj} = \gamma_{jk}$, los valores singulares se dividen por completo en los autovectores de los genotipos. En esta escala la unidad de las puntuaciones de los genotipos ($g_{ik}$) es la unidad original del carácter fenotípico evaluado y las puntuaciones ambientales ($e_{kj}$) están normalizadas (es decir no tienen unidad). Cuando $s=0$, $g_{ik} = \alpha_{ik}$ y $e_{kj} = \lambda_k \gamma_{jk}$, los valores singulares se dividen por completo en los autovectores de los ambientes. En esta escala las puntuaciones ambientales están en la unidad original del carácter fenotípico evaluado y las de los genotipos no tienen unidad. Cuando $s=0.5$, $g_{ik} = \lambda_k^{0.5} \alpha_{ik}$ y $e_{kj} = \lambda_k^{0.5} \gamma_{jk}$, la partición es simétrica. En esta escala las puntuaciones de los genotipos y las ambientales tienen la misma unidad que es la raíz cuadrada de la unidad original. El valor de $s=0.5$ es empleado en el biplot GE y el más utilizado en GGE, aunque dependiendo de los intereses de la investigación, se pueden construir numerosas vistas del biplot GGE derivado de SREG. Independientemente del factor de partición en valores singulares utilizado, los biplots GGE revelan el mismo patrón \emph{which-won-where}. Sin embargo, difieren en su precisión al mostrar la interrelación entre ambientes y genotipos. La partición centrada en los genotipos ($s=1$) muestra la interrelación entre genotipos con mayor precisión que cualquier otro método; la partición enfocada en los ambientes ($s=0$) es la más informativa sobre las interrelaciones entre los ambientes; y la simétrica ($s=0.5$) permite visualizar la magnitud relativa tanto de la variación de los genotipos como de los ambientes. 
-
-
 
 
 \subsection{Modelo AMMI robusto}
 
 El modelo AMMI, en su forma estándar, asume que no hay valores atípicos en el conjunto de datos. Sin embargo, la presencia de \emph{outliers} es más una regla que una excepción cuando se consideran datos agronómicos debido a características inherentes de los genotipos que se evalúan, errores de medición o el efecto inesperado de plagas o enfermedades que pueden afectar el rendimiento de algunos genotipos.
 
-\citet{Rodriguesetal2016} proponen una generalización robusta del modelo AMMI, que resulta de ajustar un modelo lineal robusto basado en el estimador M-Huber \citep{Huber1981} y luego utilizar un procedimiento de DVS o de análisis de componentes principales (ACP) robusto. Para la DVS o el ACP los autores consideraron varios métodos, dando lugar a un total de cinco modelos robustos llamados: R-AMMI, H-AMMI, G-AMMI, L-AMMI, PP-AMMI. 
+\citet{Rodriguesetal2016} proponen una generalización robusta del modelo AMMI, que resulta de ajustar un modelo lineal robusto basado en el estimador M-Huber \citep{Huber1981} y luego utilizar un procedimiento de DVS o de análisis de componentes principales (ACP) robusto. Para la DVS o el ACP los autores consideraron varios métodos, dando lugar a un total de cinco modelos robustos llamados: 
+
+\begin{itemize}
+\item R-AMMI: utiliza la DVS robusta propuesta por \citet{Hawkins2002RobustSV} en la cual se reemplaza la norma euclidea por la suma de valores absolutos para calcular una aproximación robusta a la DVS de una matriz rectangular.
+
+\item H-AMMI: se basa en el ACP robusto propuesto por \citet{Hubert2005} que combina las ventajas de un ACP  basado en una matriz de covarianza robusta y uno basado en la búsqueda de proyección.
+
+\item G-AMMI: considera el algoritmo \emph{Grid} robusto propuesto por \citet{Croux2007} que utiliza técnicas de búsqueda de proyección para calcular estimadores del ACP.
+
+\item L-AMMI: utiliza ACP esférico robusto propuesto por \citet{Locantore1999} que consiste en realizar ACP clásico en los datos proyectados en una esfera unitaria.
+
+\item PP-AMMI: considera una técnica de búsqueda de proyección robusta propuesta por \citet{Croux2005} que calcula los autovalores y autovectores secuencialmente sin estimar una matriz de covarianza robusta.
+\end{itemize}
 
 El empleo de la versión robusta del modelo AMMI puede ser extremadamente útil debido a que una mala representación de genotipos y ambientes puede resultar en una mala decisión con respecto a qué genotipos seleccionar para un conjunto dado de ambientes \citep{GauchZobel1997, Yanetal2000}. A su vez, la elección de los genotipos incorrectos pueden provocar grandes pérdidas en términos de rendimiento. Los biplots obtenidos de los modelos robustos mantienen las características e interpretación estándar del modelo AMMI clásico \citep{Rodriguesetal2016}.
 
 
 \subsection{Métodos de imputación}
 
-
 Una limitación importante que presentan los modelos multiplicativos descriptos previamente es que requieren que el carácter fenotípico bajo estudio se encuentre registrado para todas las combinaciones entre genotipos y ambientes, es decir no admiten valores perdidos. Aunque los EMA están diseñados para que todos los genotipos se evalúen en todos los ambientes, la presencia de valores faltantes es muy común debido a errores de medición o pérdidas de plantas por animales, inundaciones o problemas durante la cosecha, además de la dinámica propia de las evaluaciones en las que se incorporan o descartan genotipos debido a su mal desempeño \citep{HillRosenberg1985}.
 
-Se han propuesto numerosas metodologías para superar el problema de valores ausentes en el conjunto de datos, entre las cuales se encuentran:
+Para superar el problema de los datos incompletos, existen diversas soluciones: (i) extraer el subconjunto completo de datos eliminando aquellos genotipos o ambientes con valores faltantes, generando una gran pérdida de información; (ii) completar las celdas incompletas utilizando la media ambiental, lo cual no es una buena estrategia, especialmente cuando la cantidad de valores perdidos es grande; (iii) considerar un método más complejo que permita la falta de datos; y (iv) completar las celdas faltantes con valores estimados utilizando métodos de imputación \citep{GauchZobel1990, Troyanskayaetal2001,Alarconetal2010, Paderewski2013, Alarconetal2014, JosseHusson2016, Alarconetal2020}. Dado que las dos primeras opciones no resultan apropiadas y la tercera complejiza mucho el análisis, en el paquete se incluyen metodologías de imputación para poder ajustar el modelo AMMI o SREG, aún en presencia de valores perdidos, entre las cuales se encuentran: 
 
 \begin{itemize}
-\item EM-AMMI: \citet{GauchZobel1990} desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza (EM, siglas en inglés de \emph{Expectation Maximization}) incorporando el modelo AMMI. 
-\end{itemize}
-\begin{itemize}
-\item EM-SVD: \citet{Troyanskayaetal2001} propusieron un método de imputación que combina el algoritmo EM con DVS. 
-\end{itemize}
-\begin{itemize}
-\item EM-PCA: \citet{JosseHusson2016} propusieron imputar los valores faltantes de un conjunto de datos mediante un ACP.
-\end{itemize}
-\begin{itemize}
-\item GabrielEigen: \citet{Alarconetal2010} presentaron un método de imputación que combina regresión y aproximación de rango inferior usando DVS. 
-\end{itemize}
-\begin{itemize}
-\item WGabriel Eigen: \citet{Alarconetal2014} plantearon una extensión ponderada del método GabrielEigen.
+\item EM-AMMI: \citet{GauchZobel1990} desarrollaron un procedimiento iterativo que utiliza el algoritmo de maximización de la esperanza (EM, siglas en inglés de \emph{Expectation Maximization}) incorporando el modelo AMMI. Para llevar a cabo este procedimiento, en primer lugar los parámetros aditivos del modelo AMMI se establecen mediante la media general, la de los genotipos y de los ambientes obtenidas a partir de los datos observados. Los residuos de las celdas observadas se calculan como la media de dicha celda menos la media del genotipo menos la media del ambiente más la media general. Los K parámetros multiplicativos del modelo se obtienen al aplicar la DVS sobre la matriz de residuos, y los valores faltantes se completan con las estimaciones de AMMI. En iteraciones posteriores, el procedimiento habitual de AMMI se aplica a la matriz completa y los valores faltantes se actualizan mediante las estimaciones de AMMI correspondientes. Las iteraciones se detienen cuando el cambio entre los valores imputados para las celdas faltantes de dos pasos sucesivos sea pequeño, por ejemplo 0.01. El código de R de esta metodología fue implementado por \citet{Paderewski2013}.
 \end{itemize}
 
+\begin{itemize}
+\item EM-SVD: \citet{Troyanskayaetal2001} propusieron un método de imputación que combina el algoritmo EM con la DVS. Este método reemplaza los valores faltantes de una matriz inicialmente por valores arbitrarios para obtener una matriz completa, y luego se calcula iterativamente la DVS de esta matriz. Al final del proceso, cuando las iteraciones alcanzan la estabilidad, se obtiene una matriz que contiene las imputaciones de los valores faltantes.
+\end{itemize}
+
+\begin{itemize}
+\item EM-PCA: \citet{JosseHusson2016} propusieron imputar los valores faltantes de un conjunto de datos utilizando el algoritmo ACP iterativo. Este procedimiento consiste primero en imputar valores perdidos con valores iniciales como la media de la variable. El segundo paso es realizar un ACP en el conjunto de datos completo. Luego, imputa los valores faltantes con las fórmulas de reconstrucción de orden k (la matriz ajustada calculada con una cantidad de componentes ``k'' para los \emph{scores} y cargas). Estos pasos de estimación de los parámetros vía ACP e imputación de los valores faltantes usando la matriz ajustada se iteran hasta la convergencia. 
+\end{itemize}
+
+\begin{itemize}
+\item GabrielEigen fue propuesto por \citet{Alarconetal2010} y luego fue extendido a una versión ponderada llamada WGabriel \citep{Alarconetal2014}. El primero combina una regresión y aproximación de rango inferior utilizando la DVS. Este método reemplaza inicialmente las celdas faltantes por valores arbitrarios. Posteriormente las imputaciones se actualizan a través de un esquema iterativo que define una partición de la matriz para cada valor faltante y utiliza una regresión lineal de columnas (o filas) para obtener la nueva imputación.  En esta regresión se aproxima la matriz de diseño por una matriz de menor rango utilizando la DVS. WGabriel es una modificación de GabrielEigen que usa pesos elegidos por validación cruzada para imputar los datos.
+\end{itemize}
 
 \section{Creación de un paquete de R}
-
-%https://oscarperpinan.github.io/R/Paquetes.html 
 
 Un paquete de R es un conjunto de funciones programadas en este lenguaje que comparten fines específicos y se distribuyen con un protocolo estandarizado, garantizando su correcto funcionamiento. Para la creación de un paquete se deben seguir ciertas convenciones referidas a la creación y almacenaje de carpetas y archivo con código de programación, documentación e instrucciones de sistema. La gestión de todos estos documentos puede ser manual, pero existen paquetes de R que asisten en la tarea del desarrollo de nuevos paquetes automatizando ciertas fases del proceso. En este trabajo se usaron los paquetes: \emph{devtools} \citep{Wickhametal2021}, \emph{usethis} \citep{WickhamBryan2021}, \emph{roxygen2} \citep{Wickhametal2020}, \emph{testthat} \citep{Wickham2011} y \emph{available} \citep{Ganzetal2019}. 
 
@@ -99,7 +102,7 @@ En primer lugar se debe elegir el nombre del paquete cumpliendo con ciertas regl
 
 \begin{figure}[h]
 \begin{center}
-	\includegraphics[width=0.60\textwidth]{./Graficos/available.png}	
+	\includegraphics[width=0.50\textwidth]{./Graficos/available.png}	
 \end{center}
 	\caption{Chequeo de disponibilidad del nombre \emph{geneticae} elegido para el paquete en desarrollo mediante la función \textcolor{fandango}{available()} del paquete \emph{available}.}
 \label{fig:fig31}
@@ -131,7 +134,7 @@ Si bien estas carpetas y archivos pueden crearse en forma manual, es conveniente
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{./Graficos/creacion2.png}	
+		\includegraphics[width=0.60\textwidth]{./Graficos/creacion2.png}	
 	\end{center}
 	\caption{Creación del paquete \emph{geneticae} mediante la función \textcolor{fandango}{create\_package()} del paquete \emph{usethis}.}
 	\label{fig:fig32}
@@ -162,7 +165,7 @@ Entre los campos opcionales los más improtantes son:
 
 El archivo DESCRIPTION del paquete \emph{geneticae} se muestra en la Figura \ref{fig:fig33}.
 
-\begin{figure}[h]
+\begin{figure}[p]
 	\begin{center}
 		\includegraphics[width=0.50\textwidth]{./Graficos/DESCRIPTION2.png}	
 	\end{center}
@@ -173,9 +176,9 @@ El archivo DESCRIPTION del paquete \emph{geneticae} se muestra en la Figura \ref
 
 \subsection{Archivos de código}
 
-Una vez creada la estructura del paquete y el archivo DESCRIPTION se deben programar las funciones que el mismo contendrá. Estas deben ser guardadas en \emph{scripts} con extensión .R, en el subdirectorio R/. Los \emph{scripts} pueden contener código para una o más funciones y ser guardadas con cualquier nombre, aunque es recomendable que el mismo esté relacionado con su contenido. La figura \ref{fig:fig34} muestra un fragmento de la función \textcolor{fandango}{GGEmodel()} del paquete \emph{geneticae}.
+Una vez creada la estructura del paquete y el archivo DESCRIPTION se deben programar las funciones que el mismo contendrá. Estas deben ser guardadas en \emph{scripts} con extensión .R, en el subdirectorio R/. Los \emph{scripts} pueden contener código para una o más funciones y ser guardadas con cualquier nombre, aunque es recomendable que el mismo esté relacionado con su contenido. La Figura \ref{fig:fig34} muestra un fragmento de la función \textcolor{fandango}{GGEmodel()} del paquete \emph{geneticae}.
 
-\begin{figure}[h]
+\begin{figure}[p]
 	\begin{center}
 		\includegraphics[width=0.55\textwidth]{./Graficos/GGEMODELFUNCTION.png}	
 	\end{center}
@@ -211,7 +214,7 @@ El flujo de trabajo para crear la documentación con el paquete \emph{roxygen2} 
 
 \end{enumerate}
 
-La figura \ref{fig:fig35} muestra un fragmento de los comentarios roxygen de la función \textcolor{fandango}{GGEmodel()} del paquete \emph{geneticae}.
+La Figura \ref{fig:fig35} muestra un fragmento de los comentarios roxygen de la función \textcolor{fandango}{GGEmodel()} del paquete \emph{geneticae}.
 
 \begin{figure}[h]
 	\begin{center}
@@ -284,7 +287,7 @@ El archivo NEWS se encarga de contar los cambios presentes en cada versión nuev
 
 Se sugiere usar RMarkdown para escribir este archivo y colocar un título principal para cada versión, seguido por títulos secundarios que describen lo realizado (cambios principales, errores arreglados, etc.). Si se trata de cambios impulsados por otras personas, por ejemplo, a través de sugerencias hechas en GitHub, se los menciona para darles mérito. Una buena práctica es ir escribiendo este archivo cada vez que se realiza algo nuevo en el paquete. La función que permite crear este archivo automáticamente es \textcolor{fandango}{use\_news\_md()} del paquete \emph{usethis}. 
 
-La figura \ref{fig:fig39} presenta el contenido del archivo NEWS del paquete \emph{geneticae}.
+La Figura \ref{fig:fig39} presenta el contenido del archivo NEWS del paquete \emph{geneticae}.
 
 \begin{figure}[h]
 	\begin{center}
