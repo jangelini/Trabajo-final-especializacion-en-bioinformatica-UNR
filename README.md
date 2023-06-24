@@ -1,6 +1,6 @@
-# Trabajo-Final
+# Trabajo final especialización en bioinformática 
 
-En este repositorio se encuentra el [trabajo final](escrito/TrabajoFinal_EBioinformatica_AngeliniJ.pdf) que he realizado para obtener el título de especialista en bioinformática. 
+En este repositorio se encuentra el [trabajo final](escrito/TrabajoFinal_EBioinformatica_AngeliniJ.pdf) que he realizado para obtener el título de especialista en bioinformática de la Universidad Nacional de Rosario. 
 
 En el presente trabajo se crearon herramientas informáticas para el análisis para datos provenientes de ensayos multiambientales (EMA) a fin de facilitar la tarea de los mejoradores genéticos de cultivos. Por un lado, se desarrolló un paquete de R llamado geneticae que reúne metodologı́a ampliamente utilizada y recientemente publicada, y que está abierto a que nuevas propuestas para el estudio de la interacción genotipo ambiente sean incorporados. Por otro lado, se confeccionó una interfaz gráfica de usuario que permite analizar, visualizar y extraer los resultados desde una página web sin la necesidad de contar con conocimiento especı́fico de un lenguaje de programación.
 
