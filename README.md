@@ -10,6 +10,7 @@ construcción del paquete geneticae objeto de este trabajo.
 
 * **Construir un paquete de R llamado geneticae para el análisis de datos provenientes de EMA** . Hasta el momento (Junio 2023) el paquete cuenta con más de 5000 descargas. La gran utilidad del mismo se debe a que:
     * incluye metodologı́a recientemente publicada para ajustar el modelo AMMI en presencia de outliers y para el tratamiento de información faltante que no se encuentra disponible en R ası́ como tampoco en softwares comerciales,
+      
     *ofrece mayor flexibilidad en el manejo de la estructura de los conjuntos de datos que en las herramientas disponibles hasta este momento, brinda la posibilidad de generar representaciones gráficas de los biplots de buena calidad y configurables, está acompañado por un manual de ayuda completo y por un tutorial (viñeta) para su uso.
 
 * **Desarrollar una aplicación web Shiny denominada Geneticae**, la cual es de suma importancia para aquellos analistas no familiarizados con la programación. Esta es de libre
